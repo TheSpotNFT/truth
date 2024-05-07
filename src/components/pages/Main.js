@@ -131,9 +131,9 @@ const Main = () => {
   
   
     return (
-        <div className="bg-transparent pt-6"><div className="text-3xl font-bond text-white pb-8"><h1>Avax Cooks</h1></div> 
-        <div className="text-xl text-white p-8 px-96">Welcome to Avax Cooks, where you can mint your signature BBQ cookout recipe, or any other recipe you may have sitting around ready to be created and enjoyed. If nothing else this bull run we will eat like kings... Share your favourites and view the collection. 0.1 avax to mint to avoid spamming, which will be adjusted according to the USD value of Avax.</div>
-        <div className="text-xl text-white pb-8 px-96">It's easy. First choose an image for your recipe, second input the ingredients and quantity of that ingredient, and last enter the cooking method. Then hit Mint Recipe and your culinary taste will be forver minted on the Avax blockchain.</div>
+        <div className="bg-transparent pt-6">
+        <div className="text-xl text-white p-8 px-4 md:px-36 lg:px-40 xl:px-96">Welcome to Avax Cooks, where you can mint your signature BBQ cookout recipe, or any other recipe you may have sitting around ready to be created and enjoyed. If nothing else this bull run we will eat like kings... Share your favourites and view the collection. 0.05 avax to mint.</div>
+        <div className="text-xl text-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">It's easy. First choose an image for your recipe, then go through the form and fill that shit out. Then hit Mint Recipe MFER and your culinary taste will be forver minted on the Avax blockchain.</div>
             <div className="max-w-md mx-auto p-4 bg-white shadow-lg rounded">
             <div className="pb-4 font-bold"><h1>Upload an image</h1></div>
             <input type="file" onChange={handleImageChange} />
@@ -342,7 +342,7 @@ const Main = () => {
         onChange={e => setRecipeDetails({ ...recipeDetails, contributor: e.target.value })}
     /></div>
                        <button onClick={handleSubmit} disabled={txProcessing} className="bg-red-500 rounded-md p-4 font-bold text-xl">
-                    {txProcessing ? "Processing..." : "Mint Recipe"}
+                    {txProcessing ? "Processing..." : "Mint Recipe MFER!"}
                 </button>
             </div>
             

@@ -300,7 +300,7 @@ const Main = () => {
         checked={recipeDetails.kidFriendly}
         onChange={e => setRecipeDetails({ ...recipeDetails, kidFriendly: e.target.checked })}
     />
-    <span className="ml-2">Is this recipe kid-friendly?</span>
+    <span className="ml-2">Recipe is good for kids.</span>
 </div>
 
          {/* Ingredients */}

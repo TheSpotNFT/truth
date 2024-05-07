@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Barcode';
+  src: url('./assets/fonts/LibreBarcode128Text-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Mansalva';
+  src: url('./assets/fonts/Mansalva-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Pixel';
+  src: url('./assets/fonts/PressStart2P-vaV7.ttf');
+}
+
+.mansalva {
+  font-family: 'Mansalva';
+  white-space: normal;
+}
+
+.barcode {
+  font-family: 'Barcode';
+}
+
+.pixelated {
+  font-family: 'Pixel';
+  white-space: normal;
+}
+
+.animatedFade {
+  animation: fadeIn 2s ease-out forwards;
+}
+
+.fade {
+  animation: fade 1s ease-out forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+    transform: translateY(100%)
+  }
+
+  50% {
+    opacity: 0%;
+    transform: translateY(100%)
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1c1917;
+  width: 100%;
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -367,7 +367,26 @@ const uploadMetadataToIPFS = async (metadata) => {
         <option value="Other">Other</option>
     </select>
 </div>
+                    {/* Special Equipment */}
+                    <input
+                    type="text"
+                    className="block w-full mt-4 mb-2 px-3 py-2 bg-gray-50 border border-gray-300 rounded-md text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Special Equipment (if required)"
+                    value={recipeDetails.specialEquipment}
+                    onChange={e => setRecipeDetails({ ...recipeDetails, specialEquipment: e.target.value })}
+                />
+         
+{/* Kid-Friendly Checkbox */}
+<div className="mb-4">
 
+    <input
+        type="checkbox"
+        id="kidFriendly"
+        checked={recipeDetails.kidFriendly}
+        onChange={e => setRecipeDetails({ ...recipeDetails, kidFriendly: e.target.checked })}
+    />
+    <span className="ml-2">Recipe is kid specific</span>
+</div>
 
 {/* Allergy-Safe Checkboxes with "Other" Textbox*/}
 <div className="mb-4">
@@ -409,26 +428,7 @@ const uploadMetadataToIPFS = async (metadata) => {
     )}
 </div>
 
- {/* Special Equipment */}
- <input
-                    type="text"
-                    className="block w-full mt-4 mb-2 px-3 py-2 bg-gray-50 border border-gray-300 rounded-md text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Special Equipment (if required)"
-                    value={recipeDetails.specialEquipment}
-                    onChange={e => setRecipeDetails({ ...recipeDetails, specialEquipment: e.target.value })}
-                />
-         
-{/* Kid-Friendly Checkbox */}
-<div className="mb-4">
 
-    <input
-        type="checkbox"
-        id="kidFriendly"
-        checked={recipeDetails.kidFriendly}
-        onChange={e => setRecipeDetails({ ...recipeDetails, kidFriendly: e.target.checked })}
-    />
-    <span className="ml-2">Recipe is kid specific</span>
-</div>
 
             {/* Ingredient Inputs */}
             {recipeDetails.ingredients.map((ingredient, index) => (
@@ -463,7 +463,7 @@ const uploadMetadataToIPFS = async (metadata) => {
                         value={recipeDetails.method}
                         onChange={(e) => setRecipeDetails({...recipeDetails, method: e.target.value})}
                     />
-                   
+
 
 
                      <div className="pb-8"><label htmlFor="contributor" className="block text-gray-700 text-sm font-bold mb-2">Contributor</label>
@@ -480,7 +480,7 @@ const uploadMetadataToIPFS = async (metadata) => {
     <label className="block text-gray-700 text-sm font-bold mb-2">
         Tag up to 3 different Avax NFT communities
     </label>
-    {['Avax Apes', 'Cuddlefish', 'Kingshit', 'Steady', 'The Spot'].map((community, index) => (
+    {['Avax Apes', 'Cuddlefish', 'Kingshit', 'Steady', 'The Spot', 'The Arena', 'No Chill'].map((community, index) => (
         <div key={index} className="flex items-center mb-2">
             <input
                 type="checkbox"

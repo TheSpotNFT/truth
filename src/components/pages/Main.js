@@ -21,7 +21,8 @@ const Main = ({account}) => {
         servingSize: '',
         difficultyLevel: '',
         cuisineType: '',
-        specialEquipment: ''
+        specialEquipment: '',
+        communityTags: [] 
     });
     const [imageFile, setImageFile] = useState(null);
     const [imagePreviewUrl, setImagePreviewUrl] = useState('');
@@ -186,11 +187,18 @@ const Main = ({account}) => {
             value: "true"         // Hard-coded true for checked
         }));
   
+          // Construct community tag attributes
+          const communityTagsAttributes = recipeDetails.communityTags.map((community, index) => ({
+            trait_type: `Community Tag`,
+            value: community
+        }));
+
           // Combine all attributes
           const attributes = [
               ...otherAttributes,
               ...allergySafeAttributes,
-              ...filledIngredients
+              ...filledIngredients,
+              ...communityTagsAttributes
              
           ];
   
@@ -467,6 +475,35 @@ const uploadMetadataToIPFS = async (metadata) => {
         value={recipeDetails.contributor}
         onChange={e => setRecipeDetails({ ...recipeDetails, contributor: e.target.value })}
     /></div>
+   
+<div className="mb-4">
+    <label className="block text-gray-700 text-sm font-bold mb-2">
+        Tag up to 3 different Avax NFT communities
+    </label>
+    {['Avax Apes', 'Cuddlefish', 'Kingshit', 'Steady', 'The Spot'].map((community, index) => (
+        <div key={index} className="flex items-center mb-2">
+            <input
+                type="checkbox"
+                id={`community-${index}`}
+                className="mr-2 leading-tight focus:outline-none focus:shadow-outline"
+                value={community}
+                checked={recipeDetails.communityTags.includes(community)}
+                onChange={e => {
+                    let selectedTags = recipeDetails.communityTags;
+                    if (e.target.checked) {
+                        if (selectedTags.length < 3) {
+                            selectedTags = [...selectedTags, community];
+                        }
+                    } else {
+                        selectedTags = selectedTags.filter(tag => tag !== community);
+                    }
+                    setRecipeDetails({ ...recipeDetails, communityTags: selectedTags });
+                }}
+            />
+            <label htmlFor={`community-${index}`} className="text-gray-700">{community}</label>
+        </div>
+    ))}
+</div>
                        <button onClick={handleSubmit} disabled={txProcessing} className="bg-red-500 hover:bg-red-700 rounded-md p-4 font-bold text-xl">
                     {txProcessing ? "Processing..." : "Mint Recipe MFER!"}
                 </button>

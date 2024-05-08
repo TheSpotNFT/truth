@@ -137,20 +137,28 @@ const Main = ({account}) => {
               value: ing.quantity   // Quantity as value
           }));
   
-          // Construct other recipe attributes
-          const otherAttributes = [
-             
+            // Utility function to add attributes only if they are not empty
+        const addAttributeIfNotEmpty = (trait_type, value) => {
+            // Check for empty, null, undefined, and zero values specifically
+            if (value === null || value === undefined || value === '' || value === 0) {
+                return null;
+            }
+            return { trait_type, value };
+        };
 
-              { trait_type: "Category", value: recipeDetails.category },
-              { trait_type: "Preparation Time", value: `${recipeDetails.prepTime} minutes` },
-              { trait_type: "Serving Size", value: recipeDetails.servingSize },   
-              { trait_type: "Difficulty Level", value: recipeDetails.difficultyLevel },   
-              { trait_type: "Region", value: recipeDetails.region },
-              { trait_type: "Cuisine Type", value: recipeDetails.cuisineType },
-              { trait_type: "Kid-Specific", value: recipeDetails.kidFriendly ? "Yes" : "No" },
-              { trait_type: "Special Equipment", value: recipeDetails.specialEquipment },
-              { trait_type: "Contributor", value: recipeDetails.contributor } 
-          ];
+            
+        // Conditionally include non-empty fields
+        const otherAttributes = [
+            addAttributeIfNotEmpty("Category", recipeDetails.category),
+            addAttributeIfNotEmpty("Preparation Time", recipeDetails.prepTime ? `${recipeDetails.prepTime} minutes` : null),
+            addAttributeIfNotEmpty("Serving Size", recipeDetails.servingSize),
+            addAttributeIfNotEmpty("Difficulty Level", recipeDetails.difficultyLevel),
+            addAttributeIfNotEmpty("Region", recipeDetails.region),
+            addAttributeIfNotEmpty("Cuisine Type", recipeDetails.cuisineType),
+            { trait_type: "Kid-Specific", value: recipeDetails.kidFriendly ? "Yes" : "No" },
+            addAttributeIfNotEmpty("Special Equipment", recipeDetails.specialEquipment),
+            addAttributeIfNotEmpty("Contributor", recipeDetails.contributor)
+        ].filter(attr => attr !== null); // Remove any null values
 
            // Conditionally add "Special Equipment" only if there's a value
         if (recipeDetails.specialEquipment) {

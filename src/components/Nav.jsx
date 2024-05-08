@@ -12,12 +12,12 @@ export const Nav = ({
   setWeb3Provider,
   logoutOfWeb3Modal,
 }) => {
- 
+
   let Links = [
 
     //{ name: "Avax Cooks", link: "" },
     //{ name: "Avalanche FAQ", link: "/faq" },
-    { name: "View Recipes", link: "https://x.com" },
+    { name: "View Recipes", link: "https://campfire.exchange/collections/0x568863597b44AA509a45C15eE3Cab3150a562d32" },
     // { name: "Twitter", link: "https://discord.gg/gbfv2GuV" },
   ];
 
@@ -36,7 +36,7 @@ export const Nav = ({
               {/*<img src={truck} className={`h-12 pl-4 pt-0 ${open ? "hidden" : "block"
                 }`} />*/}
 
-<div className="text-3xl font-bold">AVAX COOKS</div>
+              <div className="text-3xl font-bold">AVAX COOKS</div>
               {Links.map((link) => (
                 <li
                   key={link.name}

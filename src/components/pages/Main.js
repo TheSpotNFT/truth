@@ -118,6 +118,18 @@ const Main = ({account}) => {
       }
 
     const handleSubmit = async () => {
+        // Retrieve the mandatory fields from the form data
+    const { recipeName, method, ingredients } = recipeDetails;
+
+    // Check that at least two ingredients are filled out (both name and quantity)
+    const filledIngredientsCount = ingredients.filter(ing => ing.name && ing.quantity).length;
+
+    // Perform the validation check for mandatory fields
+    if (!recipeName || !method || filledIngredientsCount < 2) {
+        alert("??!! How is that a recipe? You must enter: Recipe Name, Method, and at least 2 Ingredients.");
+        return;
+    }
+
      // Check if the account is available
      if (!account) {
         alert("No account found. Connect your wallet.");

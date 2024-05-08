@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { ethers, Contract } from "ethers";
+import { AVAXCOOKS_ABI, AVAXCOOKS_ADDRESS } from "../Contracts/AvaxCooks";
 
-const Main = () => {
+const Main = ({account}) => {
     const { setTxProcessing, txProcessing } = useState();
     const [recipeDetails, setRecipeDetails] = useState({
         recipeName: '',
@@ -24,6 +26,7 @@ const Main = () => {
     const [imageFile, setImageFile] = useState(null);
     const [imagePreviewUrl, setImagePreviewUrl] = useState('');
 
+    
 
     const handleIngredientChange = (index, field, value) => {
         const newIngredients = [...recipeDetails.ingredients];
@@ -72,8 +75,54 @@ const Main = () => {
         }
     };
 
+    async function mintNFT(metadataUrl) {
+        //setTxProcessing(true);
+         // Retrieve the actual account address string
+   
+    console.log("Address:", account)
+        try {
+            const { ethereum } = window;
+            if (ethereum) {
+              const provider = new ethers.providers.Web3Provider(ethereum);
+              const signer = provider.getSigner();
+              if (AVAXCOOKS_ABI && AVAXCOOKS_ADDRESS && signer) {
+                const contract = new Contract(
+                  AVAXCOOKS_ADDRESS,
+                  AVAXCOOKS_ABI,
+                  signer
+                );
+        console.log("account", account);
+               // Price calculation (adjust as needed)
+              let options = {
+                  value: ethers.utils.parseEther("0.05"), // Adjust the value as per your pricing
+              };
+      
+            // Call the contract's mint function
+            let tx = await contract.mint(account, metadataUrl, options);
+                console.log(tx.hash);
+                //setTxProcessing(false);
+                /*alert(
+                  "Minted Successfully! View your NFT on Campfire, Kalao or Joepegs!"
+                );*/
+              } else {
+                console.log("error with contract abi, address, or signer");
+              }
+            }
+          } catch (error) {
+            console.log("Error on mint");
+            console.log(error);
+            alert(error.data.message);
+          } finally {
+            //setTxProcessing(false);
+          }
+      }
+
     const handleSubmit = async () => {
-    
+     // Check if the account is available
+     if (!account) {
+        alert("No account found. Connect your wallet.");
+        return;
+    }
       try {
           const imageUrl = await uploadToIPFS();
           if (!imageUrl) {
@@ -81,27 +130,35 @@ const Main = () => {
            
               return;
           }
-  
-          // Construct ingredients attributes
           const filledIngredients = recipeDetails.ingredients
-              .filter(ing => ing.name && ing.quantity)
-              .map((ing, index) => ({
-                  trait_type: `Ingredient ${index + 1}`,
-                  value: `${ing.name} (${ing.quantity})`
-              }));
+          .filter(ing => ing.name && ing.quantity) // Ensure both fields are filled
+          .map(ing => ({
+              trait_type: ing.name, // Ingredient name as trait type
+              value: ing.quantity   // Quantity as value
+          }));
   
           // Construct other recipe attributes
           const otherAttributes = [
+             
+
               { trait_type: "Category", value: recipeDetails.category },
-              { trait_type: "Region", value: recipeDetails.region },
-              { trait_type: "Kid-Friendly", value: recipeDetails.kidFriendly ? "Yes" : "No" },
               { trait_type: "Preparation Time", value: `${recipeDetails.prepTime} minutes` },
-              { trait_type: "Serving Size", value: recipeDetails.servingSize },
-              { trait_type: "Difficulty Level", value: recipeDetails.difficultyLevel },
+              { trait_type: "Serving Size", value: recipeDetails.servingSize },   
+              { trait_type: "Difficulty Level", value: recipeDetails.difficultyLevel },   
+              { trait_type: "Region", value: recipeDetails.region },
               { trait_type: "Cuisine Type", value: recipeDetails.cuisineType },
+              { trait_type: "Kid-Specific", value: recipeDetails.kidFriendly ? "Yes" : "No" },
               { trait_type: "Special Equipment", value: recipeDetails.specialEquipment },
-              { trait_type: "Contributor", value: recipeDetails.contributor }
+              { trait_type: "Contributor", value: recipeDetails.contributor } 
           ];
+
+           // Conditionally add "Special Equipment" only if there's a value
+        if (recipeDetails.specialEquipment) {
+            otherAttributes.push({
+                trait_type: "Special Equipment",
+                value: recipeDetails.specialEquipment
+            });
+        }
   
           // Construct allergy-safe attributes dynamically
           const allergySafeAttributes = recipeDetails.allergySafe.map((allergy, index) => ({
@@ -111,26 +168,65 @@ const Main = () => {
   
           // Combine all attributes
           const attributes = [
-              ...filledIngredients,
               ...otherAttributes,
-              ...allergySafeAttributes
+              ...allergySafeAttributes,
+              ...filledIngredients
+             
           ];
   
           // Create the final metadata object
           const metadata = {
               name: recipeDetails.recipeName,
               description: 'Avax is Cookin',
-              image: imageUrl,
+              image: `ipfs://${imageUrl}`,
               attributes
           };
+
   
           console.log("Recipe metadata prepared for minting:", metadata);
+        // Upload metadata to IPFS
+        const metadataUrl = await uploadMetadataToIPFS(metadata);
+
+        if (metadataUrl) {
+            console.log("Metadata uploaded to IPFS at:", metadataUrl);
+            mintNFT(metadataUrl);
+        } else {
+            alert("Failed to upload metadata. Please try again.");
+        }
+        
+          
       } catch (error) {
           console.error("Error during recipe card customization:", error);
       } finally {
          
       }
   };
+
+  // Function to upload metadata to IPFS
+const uploadMetadataToIPFS = async (metadata) => {
+    const jsonString = JSON.stringify(metadata);
+
+    const formData = new FormData();
+    formData.append('file', new Blob([jsonString], { type: 'application/json' }), 'metadata.json');
+
+    try {
+        const response = await axios.post("https://api.pinata.cloud/pinning/pinFileToIPFS", formData, {
+            maxBodyLength: "Infinity",
+            headers: {
+                'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
+                Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiIwZmQ5MzgwYy1mYmI2LTQ1OWQtYjkzYy00Mzk3ZjNmMWVlZjYiLCJlbWFpbCI6ImpqemltbWVyQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaW5fcG9saWN5Ijp7InJlZ2lvbnMiOlt7ImlkIjoiTllDMSIsImRlc2lyZWRSZXBsaWNhdGlvbkNvdW50IjoxfV0sInZlcnNpb24iOjF9LCJtZmFfZW5hYmxlZCI6ZmFsc2UsInN0YXR1cyI6IkFDVElWRSJ9LCJhdXRoZW50aWNhdGlvblR5cGUiOiJzY29wZWRLZXkiLCJzY29wZWRLZXlLZXkiOiIzMmY5YWY0YzIwNTE2NTMxOWYyYyIsInNjb3BlZEtleVNlY3JldCI6Ijg3MWYwODVmMGEyM2FiZmU3YjMzOWNkODBiMzNmNGMwOTM5NGMzMTNjODRlYmViNDNkZGY0ZDYwMGFjNjgzYjkiLCJpYXQiOjE2NjY1NjcyMzB9.6GHJUEgK0W_Cc-z9ZxGBGbETjvSUKo8h6yh7u4__t_k` // Replace with your Pinata JWT
+            }
+        });
+
+        const ipfsHash = response.data.IpfsHash;
+        console.log(ipfsHash);
+        return `ipfs://${ipfsHash}`;
+        
+    } catch (error) {
+        console.error("Error uploading metadata to IPFS:", error);
+        return null;
+    }
+};
   
   
     return (
@@ -303,7 +399,7 @@ const Main = () => {
         checked={recipeDetails.kidFriendly}
         onChange={e => setRecipeDetails({ ...recipeDetails, kidFriendly: e.target.checked })}
     />
-    <span className="ml-2">Recipe is kid friendly.</span>
+    <span className="ml-2">Recipe is kid specific</span>
 </div>
 
             {/* Ingredient Inputs */}

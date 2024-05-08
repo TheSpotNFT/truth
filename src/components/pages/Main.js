@@ -168,11 +168,11 @@ const Main = ({account}) => {
             });
         }
   
-          // Construct allergy-safe attributes dynamically
-          const allergySafeAttributes = recipeDetails.allergySafe.map((allergy, index) => ({
-              trait_type: `Allergy-Safe ${index + 1}`,
-              value: allergy
-          }));
+        // Map through allergy-safe options to include only checked ones with value "true"
+        const allergySafeAttributes = recipeDetails.allergySafe.map(allergy => ({
+            trait_type: allergy,  // The allergy name itself as trait type
+            value: "true"         // Hard-coded true for checked
+        }));
   
           // Combine all attributes
           const attributes = [

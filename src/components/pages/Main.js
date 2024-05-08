@@ -6,7 +6,10 @@ const Main = () => {
     const [recipeDetails, setRecipeDetails] = useState({
         recipeName: '',
         category: '',
-        ingredients: Array.from({ length: 15 }, () => ({ name: '', quantity: '' })),
+        ingredients: [
+            { name: "", quantity: "" }, // Start with two fields initially
+            { name: "", quantity: "" }
+        ],
         method: '',
         contributor: '',
         region: '',
@@ -23,14 +26,14 @@ const Main = () => {
 
 
     const handleIngredientChange = (index, field, value) => {
-        const newIngredients = recipeDetails.ingredients.map((ingredient, i) => {
-            if (i === index) {
-                return { ...ingredient, [field]: value };
-            }
-            return ingredient;
-        });
+        const newIngredients = [...recipeDetails.ingredients];
+        newIngredients[index][field] = value;
         setRecipeDetails({ ...recipeDetails, ingredients: newIngredients });
     };
+  // Function to add more ingredient fields
+  const addIngredientField = () => {
+    setRecipeDetails({ ...recipeDetails, ingredients: [...recipeDetails.ingredients, { name: "", quantity: "" }] });
+};
 
     const handleImageChange = (event) => {
       if (event.target.files && event.target.files[0]) {
@@ -300,29 +303,36 @@ const Main = () => {
         checked={recipeDetails.kidFriendly}
         onChange={e => setRecipeDetails({ ...recipeDetails, kidFriendly: e.target.checked })}
     />
-    <span className="ml-2">Recipe is good for kids.</span>
+    <span className="ml-2">Recipe is kid friendly.</span>
 </div>
 
-         {/* Ingredients */}
-                {recipeDetails.ingredients.map((ingredient, index) => (
+            {/* Ingredient Inputs */}
+            {recipeDetails.ingredients.map((ingredient, index) => (
                     <div key={index} className="grid grid-cols-2 gap-4 mb-2">
                         <input
                             type="text"
                             className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             placeholder="Ingredient Name"
                             value={ingredient.name}
-                            onChange={e => handleIngredientChange(index, 'name', e.target.value)}
+                            onChange={(e) => handleIngredientChange(index, 'name', e.target.value)}
                         />
                         <input
                             type="text"
                             className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             placeholder="Quantity"
                             value={ingredient.quantity}
-                            onChange={e => handleIngredientChange(index, 'quantity', e.target.value)}
+                            onChange={(e) => handleIngredientChange(index, 'quantity', e.target.value)}
                         />
-                        
                     </div>
                 ))}
+
+                {/* Add Ingredient Button */}
+                <button
+                    onClick={addIngredientField}
+                    className="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+                    + Add Ingredient
+                </button>
                   <textarea
                         className="block w-full mt-4 mb-2 px-3 py-2 bg-gray-50 border border-gray-300 rounded-md text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Describe the method here..."
@@ -341,7 +351,7 @@ const Main = () => {
         value={recipeDetails.contributor}
         onChange={e => setRecipeDetails({ ...recipeDetails, contributor: e.target.value })}
     /></div>
-                       <button onClick={handleSubmit} disabled={txProcessing} className="bg-red-500 rounded-md p-4 font-bold text-xl">
+                       <button onClick={handleSubmit} disabled={txProcessing} className="bg-red-500 hover:bg-red-700 rounded-md p-4 font-bold text-xl">
                     {txProcessing ? "Processing..." : "Mint Recipe MFER!"}
                 </button>
             </div>

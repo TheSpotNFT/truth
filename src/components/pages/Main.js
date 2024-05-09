@@ -298,10 +298,11 @@ const uploadMetadataToIPFS = async (metadata) => {
   </g>
                 </svg>
             </div></div>
-        <div className="relative text-xl text-avax-white p-8 px-4 md:px-36 lg:px-40 xl:px-96">Welcome to Avax Cooks, where you can mint your signature BBQ cookout recipe, or any other recipe you may have sitting around ready to be created and enjoyed. If nothing else this bull run we will eat like kings... Share your favourites and view the collection. 0.05 avax to mint.</div>
+        <div className="relative text-xl text-avax-white p-8 px-4 md:px-36 lg:px-40 xl:px-96">Welcome to Avax Cooks! The first world-wide, crowd sourced, on chain cook book! Submit your recipe to the soon to be largest recipe database worldwide! Stake your claim and mint your recipes!</div>
        
         
-        <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">It's easy. First choose an image for your recipe, then go through the form and fill that shit out. Then hit Mint Recipe MFER and your culinary taste will be forver minted on the Avax blockchain.</div>
+        <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">It's easy. Just choose an image to upload that will represent your recipe, then enter in as much data as possible about the recipe. Better data = better search results. It costs 0.05 avax to submit your recipe, which at the time is around $1USD and this fee should discourage spammers.</div>
+        <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">Have fun, Rep your Communities and lets build..</div>
             <div className="sm:max-w-md md:max-w-xl mx-auto p-4 bg-avax-white shadow-lg rounded-lg relative z-10 opacity-95">
             <div className="pb-4 font-bold"><h1>Upload an image</h1></div>
             <input type="file" onChange={handleImageChange} />
@@ -548,7 +549,7 @@ const uploadMetadataToIPFS = async (metadata) => {
     ))}
 </div>
                        <button onClick={handleSubmit} disabled={txProcessing} className="bg-avax-red hover:bg-red-700 rounded-md p-4 font-bold text-xl">
-                    {txProcessing ? "Processing..." : "Mint Recipe MFER!"}
+                    {txProcessing ? "Processing..." : "Mint Your Recipe!"}
                 </button>
             </div>
                  {/* Bottom-left Fixed Image */}

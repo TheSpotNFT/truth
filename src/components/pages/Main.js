@@ -523,7 +523,7 @@ const uploadMetadataToIPFS = async (metadata) => {
     <label className="block text-gray-700 text-sm font-bold mb-2">
         Tag up to 3 different Avax NFT communities
     </label>
-    {['Avax Apes', 'Cuddlefish', 'Kingshit', 'Steady', 'The Spot', 'The Arena', 'No Chill', 'Quirkies', 'Cryptmories', 'Creature World'].map((community, index) => (
+    {['Avax Apes', 'Cuddlefish', 'Kingshit', 'Steady', 'The Spot', 'The Arena', 'No Chill', 'Quirkies', 'Creature World'].map((community, index) => (
         <div key={index} className="flex items-center mb-2">
             <input
                 type="checkbox"

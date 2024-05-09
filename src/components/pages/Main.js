@@ -193,14 +193,16 @@ const Main = ({account}) => {
             trait_type: `Community Tag`,
             value: community
         }));
+        // Add method as a separate trait
+        const methodAttribute = { trait_type: "Method", value: recipeDetails.method };
 
           // Combine all attributes
           const attributes = [
               ...otherAttributes,
               ...allergySafeAttributes,
               ...filledIngredients,
-              ...communityTagsAttributes
-             
+              ...communityTagsAttributes,
+              methodAttribute
           ];
   
           // Create the final metadata object

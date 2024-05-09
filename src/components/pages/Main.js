@@ -260,7 +260,7 @@ const uploadMetadataToIPFS = async (metadata) => {
   
     return (
         <div className="relative min-h-screen">
-             <div className="py-8"><div className="mx-auto w-96 h-96 pointer-events-none block md:hidden pb-8">
+             <div className="py-8 md:py-0"><div className="mx-auto w-96 h-96 pointer-events-none block md:hidden pb-8">
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
                     <defs>
                         <style>

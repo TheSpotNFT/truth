@@ -22,6 +22,9 @@ module.exports = {
       'avaxtruck-green': '#1eff05',
       'avaxtruck-pink': '#ff05ea',
       'avaxtruck-yellow': '#fffc00',
+      'avax-red': '#e84142',
+      'avax-white': '#f3f2f2',
+      'avax-black': '#000000',
     
     },
       backgroundImage: {

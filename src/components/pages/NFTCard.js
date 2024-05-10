@@ -4,7 +4,7 @@ import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from "../Con
 
 const NFTCard = ({ token, account }) => {
   const { metadata, tokenId } = token;
-  const { name, imageUri, contributor } = metadata || {};
+  const { name, imageUri, attributes: attributesStr } = metadata || {};
   const [likes, setLikes] = useState(0);
   const [hasLiked, setHasLiked] = useState(false);
   const [tipAmount, setTipAmount] = useState("");
@@ -15,6 +15,17 @@ const NFTCard = ({ token, account }) => {
     { symbol: "NOCHILL", address: "0xAcFb898Cff266E53278cC0124fC2C7C94C8cB9a5" },
     { symbol: "MEOW", address: "0x8aD25B0083C9879942A64f00F20a70D3278f6187" },
   ];
+
+  let attributes = [];
+  try {
+    attributes = JSON.parse(attributesStr);
+  } catch (e) {
+    console.error("Failed to parse attributes", e);
+  }
+
+    // Find the contributor value from the parsed attributes array
+    const contributorObj = attributes.find(attr => attr.trait_type === "Contributor");
+    const contributor = contributorObj ? contributorObj.value : "Unknown";
 
   // Function to fetch likes count and check if the current user has liked this token
   const fetchLikesAndCheckLiked = async (tokenId) => {
@@ -169,7 +180,7 @@ const NFTCard = ({ token, account }) => {
       )}
 
       <h2 className="font-bold text-lg mt-2 text-center">{name || "Unnamed Recipe"}</h2>
-      <h2 className="font-bold text-lg mt-2 text-center">{contributor || "No Contributor Submitted"}</h2>
+      <h2 className="font-bold text-lg mt-2 text-center">{`Contributor: ${contributor || "None"}`}</h2>
       {/* Row for Like button and count */}
       <div className="flex items-center justify-end mt-2 space-x-2 pb-4">
         <button

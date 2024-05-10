@@ -35,7 +35,7 @@ const Gallery = ({ account }) => {
 
   useEffect(() => {
     fetchItems(); // Initial fetch
-  }, [account]);
+  }, []);
 
   return (
     <div className="container mx-auto p-4">

@@ -4,7 +4,7 @@ import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from "../Con
 
 const NFTCard = ({ token, account }) => {
   const { metadata, tokenId } = token;
-  const { name, imageUri } = metadata || {};
+  const { name, imageUri, contributor } = metadata || {};
   const [likes, setLikes] = useState(0);
   const [hasLiked, setHasLiked] = useState(false);
   const [tipAmount, setTipAmount] = useState("");
@@ -169,7 +169,7 @@ const NFTCard = ({ token, account }) => {
       )}
 
       <h2 className="font-bold text-lg mt-2 text-center">{name || "Unnamed Recipe"}</h2>
-
+      <h2 className="font-bold text-lg mt-2 text-center">{contributor || "No Contributor Submitted"}</h2>
       {/* Row for Like button and count */}
       <div className="flex items-center justify-end mt-2 space-x-2 pb-4">
         <button

@@ -93,7 +93,7 @@ const NFTCard = ({ token, account }) => {
       );
   
       // Convert the tip amount to a big number
-      const amountWei = ethers.utils.parseUnits(amount, "wei");
+      const amountWei = ethers.utils.parseEther(amount);
   
       // Check the current allowance for the tipping contract
       const currentAllowance = await tokenContract.allowance(signerAddress, AVAXCOOKSLIKESANDTIPS_ADDRESS);

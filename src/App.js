@@ -4,7 +4,7 @@ import { Nav } from "./components/Nav";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Main from "./components/pages/Main";
-import Docs from "./components/pages/Docs";
+import Gallery from "./components/pages/Gallery"
 import Faq from "./components/pages/Faq";
 import { useState, useCallback } from "react";
 import { web3ModalSetup } from "./helpers/Web3Modal";
@@ -109,10 +109,10 @@ function App() {
                 }
               />
               <Route
-                path="/docs"
+                path="/gallery"
                 exact
                 element={
-                  <Docs
+                  <Gallery
                     account={account}
                     web3Modal={web3Modal}
                     loadWeb3Modal={loadWeb3Modal}

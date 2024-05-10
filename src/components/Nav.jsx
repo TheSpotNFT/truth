@@ -16,8 +16,8 @@ export const Nav = ({
   let Links = [
 
     //{ name: "Avax Cooks", link: "" },
-    //{ name: "Avalanche FAQ", link: "/faq" },
-    { name: "View Recipes", link: "https://campfire.exchange/collections/0x568863597b44AA509a45C15eE3Cab3150a562d32" },
+    { name: "Home", link: "/" },
+    { name: "View Recipes", link: "/gallery" },
     // { name: "Twitter", link: "https://discord.gg/gbfv2GuV" },
   ];
 
@@ -36,7 +36,7 @@ export const Nav = ({
               {/*<img src={truck} className={`h-12 pl-4 pt-0 ${open ? "hidden" : "block"
                 }`} />*/}
 
-              <div className="text-3xl font-bold sm:invisible md:visible">AVAX COOKS</div>
+              <div className="text-3xl font-bold hidden lg:block">AVAX COOKS</div>
               {Links.map((link) => (
                 <li
                   key={link.name}

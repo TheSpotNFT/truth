@@ -194,7 +194,7 @@ const NFTCard = ({ token, account }) => {
       {/* Tip Amount Input */}
       <div className="pb-4"><input
         type="number"
-        placeholder="Tip Amount (WEI)"
+        placeholder="Tip Amount"
         value={tipAmount}
         onChange={(e) => setTipAmount(e.target.value)}
         className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"

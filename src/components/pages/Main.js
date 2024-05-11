@@ -96,7 +96,7 @@ const Main = ({account}) => {
         console.log("account", account);
                // Price calculation (adjust as needed)
               let options = {
-                  value: ethers.utils.parseEther("0.05"), // Adjust the value as per your pricing
+                  value: ethers.utils.parseEther("0.01"), // Adjust the value as per your pricing
               };
       
             // Call the contract's mint function

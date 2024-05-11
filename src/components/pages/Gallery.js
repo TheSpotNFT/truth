@@ -5,12 +5,14 @@ import Modal from "./Modal"
 
 
 const Gallery = ({ account }) => {
-
+  const [allTokens, setAllTokens] = useState([]);
+  const [displayTokens, setDisplayTokens] = useState([]);
   const [tokens, setTokens] = useState([]);
   const [loading, setLoading] = useState(false);
   const [pageToken, setPageToken] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [showBookmarks, setShowBookmarks] = useState(false);
+  const [mealType, setMealType] = useState('all');
 
   const fetchItems = async () => {
     if (loading) return;
@@ -27,6 +29,8 @@ const Gallery = ({ account }) => {
       if (response.ok && Array.isArray(data.tokens)) {
         setTokens((prevTokens) => [...prevTokens, ...data.tokens]);
         setPageToken(data.nextPageToken); // Update pageToken if it exists
+        setAllTokens(data.tokens);
+        setDisplayTokens(data.tokens); 
       } else {
         throw new Error(data.message || "Error fetching data");
       }
@@ -40,6 +44,19 @@ const Gallery = ({ account }) => {
   useEffect(() => {
     fetchItems(); // Initial fetch
   }, []);
+
+  useEffect(() => {
+    // Filter tokens based on mealType whenever it changes
+    if (mealType === 'all') {
+      setDisplayTokens(allTokens);
+    } else {
+      const filteredTokens = allTokens.filter(token => {
+        const attributes = JSON.parse(token.metadata.attributes);
+        return attributes.some(attr => attr.trait_type === "Category" && attr.value === mealType);
+      });
+      setDisplayTokens(filteredTokens);
+    }
+  }, [mealType, allTokens]); 
 
   const toggleBookmarks = () => {
     setShowBookmarks(!showBookmarks);  // Toggle bookmark view
@@ -88,16 +105,32 @@ const Gallery = ({ account }) => {
   </g>
                 </svg>
             </div></div>
-      <div className="flex items-center justify-center md:justify-end mt-2 space-x-2 pb-4 lg:pr-3"><button
+            
+      <div className="grid md:flex items-center justify-center md:justify-end mt-2 space-x-2 pb-4 lg:pr-3">
+        {/* Dropdown for selecting meal types */}
+        <div className="md:pr-4 pb-4 md:pt-4"><select
+          className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 h-10 block w-48 p-2.5"
+          value={mealType}
+          onChange={(e) => setMealType(e.target.value)}
+        >
+          <option value="all">All Meals</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Desserts">Desserts</option>
+          <option value="Snacks">Snacks</option>
+        </select></div>
+        <div className="pr-2">
+        <button
         onClick={toggleBookmarks}
-        className="mb-4 bg-avax-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full md:w-96"
+        className="bg-avax-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full md:w-96"
       >
         {showBookmarks ? "Show All" : "Show Bookmarked"}
-      </button></div>
+      </button></div></div>
      
      
-            <div className="relative flex flex-wrap justify-center z-10 opacity-95">
-        {tokens.map((token, index) => (
+      <div className="relative flex flex-wrap justify-center z-10 opacity-95">
+        {displayTokens.map((token, index) => (
           <NFTCard key={index} token={token} account={account} showBookmarks={showBookmarks}/>
         ))}
       </div>

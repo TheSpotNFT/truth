@@ -81,7 +81,7 @@ function App() {
      <div className="App bg-darkgray opacity-90">
       <Router>
         <div className="bg-transparent w-full h-100">
-          <div className="z-10">
+          <div className="relative z-10">
           <Nav
             account={account}
             web3Modal={web3Modal}
@@ -90,7 +90,7 @@ function App() {
             setWeb3Provider={setWeb3Provider}
             logoutOfWeb3Modal={logoutOfWeb3Modal}
           /></div>
-          <div className="flex justify-center items-center gap-2 bg-transparent z-0">
+          <div className="relative flex justify-center items-center gap-2 bg-transparent z-0">
             <Routes>
               <Route
                 path="/"

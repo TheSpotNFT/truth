@@ -18,6 +18,8 @@ const Gallery = ({ account }) => {
   const [sortLikes, setSortLikes] = useState(false);
   const [likes, setLikes] = useState(0);
   const [community, setCommunity] = useState('All Communities');
+  const [searchText, setSearchText] = useState('');
+
 
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const contract = new ethers.Contract(AVAXCOOKSLIKESANDTIPS_ADDRESS, AVAXCOOKSLIKESANDTIPS_ABI, provider);
@@ -83,7 +85,7 @@ const Gallery = ({ account }) => {
 
   useEffect(() => {
     filterAndSortTokens();
-  }, [mealType, allTokens, sortLikes, community]); // Re-filter and sort when these dependencies change
+  }, [mealType, allTokens, sortLikes, community, searchText]); // Re-filter and sort when these dependencies change
 
   const filterAndSortTokens = () => {
     let filteredTokens = allTokens;
@@ -103,6 +105,17 @@ const Gallery = ({ account }) => {
         return attributes.some(attr => attr.trait_type === "Community Tag" && attr.value === community);
       });
     }
+
+      // Filter by search text
+  if (searchText.trim() !== '') {
+    const lowerCaseSearchText = searchText.toLowerCase();
+    filteredTokens = filteredTokens.filter(token => {
+      const attributes = JSON.parse(token.metadata.attributes);
+      return attributes.some(attr => 
+        attr.value.toLowerCase().includes(lowerCaseSearchText)
+      );
+    });
+  }
   
     // Sort by likes if enabled
     if (sortLikes) {
@@ -160,55 +173,76 @@ const Gallery = ({ account }) => {
                 </svg>
             </div></div>
             
-      <div className="grid md:flex items-center justify-center md:justify-end mt-2 space-x-2 pb-4 lg:pr-3">
-        {/* Dropdown for selecting meal types */}
-        <div className="pl-2 md:pr-4 pr-0 pb-4 md:pt-4"><select
-          className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 h-10 block w-48 p-2.5"
-          value={mealType}
-          onChange={(e) => setMealType(e.target.value)}
-        >
-          <option value="all">All Meals</option>
-          <option value="Breakfast">Breakfast</option>
-          <option value="Lunch">Lunch</option>
-          <option value="Dinner">Dinner</option>
-          <option value="Desserts">Desserts</option>
-          <option value="Snacks">Snacks</option>
-        </select></div>
-        <div className="md:pr-4 pb-4 md:pt-4">
-  <select
-    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 h-10 block w-48 p-2.5"
-    value={community}
-    onChange={(e) => setCommunity(e.target.value)}
-  >
-    <option value="All Communities">All Communities</option>
-    <option value="Avax Apes">Avax Apes</option>
-    <option value="Cuddlefish">Cuddlefish</option>
-    <option value="Kingshit">Kingshit</option>
-    <option value="Steady">Steady</option>
-    <option value="The Spot">The Spot</option>
-    <option value="The Arena">The Arena</option>
-    <option value="No Chill">No Chill</option>
-    <option value="Cozyverse">Cozyverse</option>
-    <option value="Quirkies">Quirkies</option>
-    <option value="Creature World">Creature World</option>
-  </select>
+            <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 sm:space-x-2 mt-2 pb-4">
+  {/* Search attributes input */}
+  <div className="flex-1 w-full pl-3 pr-1">
+    <input
+      type="text"
+      value={searchText}
+      onChange={(e) => setSearchText(e.target.value)}
+      placeholder="Search attributes..."
+      className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+    />
+  </div>
+
+  {/* Dropdown for selecting meal types */}
+  <div className="flex-1 px-2 w-full">
+    <select
+      className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      value={mealType}
+      onChange={(e) => setMealType(e.target.value)}
+    >
+      <option value="all">All Meals</option>
+      <option value="Breakfast">Breakfast</option>
+      <option value="Lunch">Lunch</option>
+      <option value="Dinner">Dinner</option>
+      <option value="Desserts">Desserts</option>
+      <option value="Snacks">Snacks</option>
+    </select>
+  </div>
+
+  {/* Community filter dropdown */}
+  <div className="flex-1 px-2 w-full">
+    <select
+      className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      value={community}
+      onChange={(e) => setCommunity(e.target.value)}
+    >
+      <option value="All Communities">All Communities</option>
+      <option value="Avax Apes">Avax Apes</option>
+      <option value="Cuddlefish">Cuddlefish</option>
+      <option value="Kingshit">Kingshit</option>
+      <option value="Steady">Steady</option>
+      <option value="The Spot">The Spot</option>
+      <option value="The Arena">The Arena</option>
+      <option value="No Chill">No Chill</option>
+      <option value="Cozyverse">Cozyverse</option>
+      <option value="Quirkies">Quirkies</option>
+      <option value="Creature World">Creature World</option>
+    </select>
+  </div>
+
+  {/* Sort by likes button
+  <div className="flex-1 px-2">
+    <button
+      onClick={toggleSortLikes}
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+    >
+      Sort by Likes {sortLikes ? " (Descending)" : " (Unsorted)"}
+    </button>
+  </div> */}
+
+  {/* Show Bookmarks toggle button */}
+  <div className="flex-1 px-2 w-full">
+    <button
+      onClick={toggleBookmarks}
+      className="bg-avax-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full"
+    >
+      {showBookmarks ? "Show All" : "Show Bookmarked"}
+    </button>
+  </div>
 </div>
-         {/* Button to sort by likes 
-         <div className="pr-2">
-         <button
-          onClick={toggleSortLikes}
-          className="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Sort by Likes {sortLikes ? " (Descending)" : " (Unsorted)"}
-        </button></div>*/}
-        <div className="">
-        <button
-        onClick={toggleBookmarks}
-        className="bg-avax-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full md:w-96"
-      >
-        {showBookmarks ? "Show All" : "Show Bookmarked"}
-      </button></div></div>
-     
+
      
       <div className="relative flex flex-wrap justify-center z-10 opacity-95">
         {displayTokens.map((token, index) => (

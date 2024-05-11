@@ -21,6 +21,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
     { symbol: "COQ", address: "0x420FcA0121DC28039145009570975747295f2329" },
     { symbol: "NOCHILL", address: "0xAcFb898Cff266E53278cC0124fC2C7C94C8cB9a5" },
     { symbol: "MEOW", address: "0x8aD25B0083C9879942A64f00F20a70D3278f6187" },
+    { symbol: "KINGSHIT.X", address: "0x05B0Def5c00bA371683D7035934BcF82B737C364"},
   ];
 
   let attributes = [];

@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from "../Contracts/AvaxCooksLikeAndTip";
 
-const NFTCard = ({ token, account }) => {
+const NFTCard = ({ token, account, showBookmarks }) => {
+ 
   const { metadata, tokenId } = token;
   const { name, imageUri, attributes: attributesStr } = metadata || {};
   const [likes, setLikes] = useState(0);
   const [hasLiked, setHasLiked] = useState(false);
   const [tipAmount, setTipAmount] = useState("");
-  const [selectedToken, setSelectedToken] = useState("COQ");
+  const [selectedToken, setSelectedToken] = useState("NOCHILL");
 
   const availableTokens = [
     { symbol: "COQ", address: "0x420FcA0121DC28039145009570975747295f2329" },
@@ -215,7 +216,7 @@ const NFTCard = ({ token, account }) => {
   };
 
   return (
-    <div className="border p-4 m-2 shadow-md rounded-lg bg-avax-white w-96">
+    <div className={`border p-4 m-2 shadow-md rounded-lg bg-avax-white w-96 ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
       {/* Display the imageUri if it exists */}
       <div className="pt-4">
       {imageUri ? (

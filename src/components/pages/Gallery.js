@@ -52,13 +52,6 @@ const Gallery = ({ account }) => {
   return (
     <div className="container mx-auto p-4 pt-8 md:pt-4">
       <h1 className="text-2xl font-bold mb-4 text-avax-white">The Cook Book</h1>
-      <div className="flex items-center justify-end mt-2 space-x-2 pb-4 lg:pr-3"><button
-        onClick={toggleBookmarks}
-        className="mb-4 bg-avax-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-      >
-        {showBookmarks ? "Show All" : "Show Bookmarked"}
-      </button></div>
-     
       <div className="py-8 pb-24 md:py-0 mx-auto"><div className="mx-auto w-72 h-72 pointer-events-none block md:hidden pb-8">
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
                     <defs>
@@ -95,6 +88,14 @@ const Gallery = ({ account }) => {
   </g>
                 </svg>
             </div></div>
+      <div className="flex items-center justify-center md:justify-end mt-2 space-x-2 pb-4 lg:pr-3"><button
+        onClick={toggleBookmarks}
+        className="mb-4 bg-avax-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full md:w-96"
+      >
+        {showBookmarks ? "Show All" : "Show Bookmarked"}
+      </button></div>
+     
+     
             <div className="relative flex flex-wrap justify-center z-10 opacity-95">
         {tokens.map((token, index) => (
           <NFTCard key={index} token={token} account={account} showBookmarks={showBookmarks}/>

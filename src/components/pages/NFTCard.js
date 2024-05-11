@@ -182,7 +182,7 @@ const NFTCard = ({ token, account }) => {
   // Fetch likes count and liked status when the component mounts
   useEffect(() => {
     fetchLikesAndCheckLiked(tokenId);
-  }, [tokenId, account]);
+  }, [account]);
 
   // Handle Like button click
   const handleLike = () => {

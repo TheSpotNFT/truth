@@ -1,4 +1,4 @@
-export const AVAXCOOKSLIKESANDTIPS_ADDRESS = "0xaD98FbbB851aEe75409d6CBfc0c54E9688A2Da88";
+export const AVAXCOOKSLIKESANDTIPS_ADDRESS = "0x3953Cc9d3e0ef9A7011436c39Fbe215bECFb574e";
 export const AVAXCOOKSLIKESANDTIPS_ABI = 
 [
 	{
@@ -38,6 +38,25 @@ export const AVAXCOOKSLIKESANDTIPS_ABI =
 		],
 		"name": "OwnableUnauthorizedAccount",
 		"type": "error"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "bookmarker",
+				"type": "address"
+			}
+		],
+		"name": "Bookmark",
+		"type": "event"
 	},
 	{
 		"anonymous": false,
@@ -146,12 +165,44 @@ export const AVAXCOOKSLIKESANDTIPS_ABI =
 			{
 				"indexed": true,
 				"internalType": "address",
+				"name": "bookmarker",
+				"type": "address"
+			}
+		],
+		"name": "Unbookmark",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
 				"name": "unliker",
 				"type": "address"
 			}
 		],
 		"name": "Unlike",
 		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "bookmark",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"inputs": [],
@@ -198,6 +249,54 @@ export const AVAXCOOKSLIKESANDTIPS_ABI =
 				"internalType": "address[]",
 				"name": "",
 				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			}
+		],
+		"name": "hasBookmarked",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "hasBookmarkedToken",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",

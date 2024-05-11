@@ -53,6 +53,54 @@ const NFTCard = ({ token, account }) => {
     }
   };
 
+  const onBookmark = async (tokenId) => {
+    try {
+      const { ethereum } = window;
+      if (!ethereum) return;
+  
+      const provider = new ethers.providers.Web3Provider(ethereum);
+      const signer = provider.getSigner();
+      const contract = new Contract(
+        AVAXCOOKSLIKESANDTIPS_ADDRESS,
+        AVAXCOOKSLIKESANDTIPS_ABI,
+        signer
+      );
+  
+      const tx = await contract.bookmark(tokenId);
+      await tx.wait();
+      fetchBookmarkStatus();  // Refresh bookmark status after toggling
+    } catch (error) {
+      console.error("Error toggling bookmark state:", error);
+    }
+  };
+  
+
+  const [hasBookmarked, setHasBookmarked] = useState(false);
+
+  const fetchBookmarkStatus = async () => {
+    try {
+      if (!window.ethereum) return;
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contract = new Contract(
+        AVAXCOOKSLIKESANDTIPS_ADDRESS,
+        AVAXCOOKSLIKESANDTIPS_ABI,
+        signer
+      );
+  
+      const bookmarked = await contract.hasBookmarked(tokenId, account);
+      setHasBookmarked(bookmarked);
+    } catch (error) {
+      console.error("Error fetching bookmark status:", error);
+    }
+  };
+  
+  useEffect(() => {
+    fetchBookmarkStatus();
+  
+  }, [account]); // Re-fetch when tokenId or account changes
+  
+
   // Function to like or unlike a token
   const onLike = async (tokenId) => {
     try {
@@ -134,7 +182,7 @@ const NFTCard = ({ token, account }) => {
   // Fetch likes count and liked status when the component mounts
   useEffect(() => {
     fetchLikesAndCheckLiked(tokenId);
-  }, [tokenId]);
+  }, [tokenId, account]);
 
   // Handle Like button click
   const handleLike = () => {
@@ -162,10 +210,14 @@ const NFTCard = ({ token, account }) => {
     onTip(tokenId, tokenData.address, tipAmount);
   };
   
+  const handleBookmark = () => {
+    onBookmark(tokenId);
+  };
 
   return (
     <div className="border p-4 m-2 shadow-md rounded-lg bg-avax-white w-96">
       {/* Display the imageUri if it exists */}
+      <div className="pt-4">
       {imageUri ? (
         <img
           src={`https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`}
@@ -178,28 +230,26 @@ const NFTCard = ({ token, account }) => {
           No Image Available
         </div>
       )}
-
-      <h2 className="font-bold text-lg mt-2 text-center">{name || "Unnamed Recipe"}</h2>
-      <h2 className="font-bold text-lg mt-2 text-center">{`Contributor: ${contributor || "None"}`}</h2>
+</div>
+      <h2 className="font-bold text-lg mt-2 text-center pt-8">{name || "Unnamed Recipe"}</h2>
+      <h2 className="font-bold text-lg mt-2 text-center pb-8">{`Contributor: ${contributor || "None"}`}</h2>
       {/* Row for Like button and count */}
       <div className="flex items-center justify-end mt-2 space-x-2 pb-4">
         <button
           onClick={handleLike}
-          className="bg-avax-red hover:bg-red-800 text-white px-2 py-1 rounded"
+          className={`bg-avax-red hover:opacity-100 text-white px-2 py-1 rounded ${hasLiked ? 'bg-avax-red opacity-100' : 'opacity-50'}`}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-            width="25"
-            height="25"
-            fill={hasLiked ? "black" : "white"}
-          >
-            <path d="M78.4,38.4c-0.8,0-1.6,0-2.4,0c-0.3-10.1-7.7-18.2-16.8-18.2c-7.3,0-13.6,4.9-16,11.7c-2.4-6.9-8.7-11.7-16-11.7
-      c-9.1,0-16.5,8.1-16.8,18.2c-0.8,0-1.6,0-2.4,0C9.9,38.4,4,44.2,4,51.5c0,7.2,5.9,13.1,13.1,13.1H21v19.8c0,2.4,2,4.4,4.4,4.4
-      h49.2c2.4,0,4.4-2,4.4-4.4V64.6h3.9c7.2,0,13.1-5.9,13.1-13.1C96,44.2,90.1,38.4,78.4,38.4z M70.6,73.3H29.4v-8.8h41.2V73.3z"/>
-          </svg>
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="currentColor">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
         </button>
         <p className="text-gray-600 text-lg font-bold pl-4">{likes}</p>
+        <div className="pl-4"><button onClick={handleBookmark} className={`bg-avax-red hover:opacity-100 text-white px-2 py-1 rounded ${hasBookmarked ? 'bg-avax-red opacity-100' : 'opacity-50'}`}>
+        {/* Simple bookmark icon */}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="25" height="25" fill="currentColor">
+    <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/>
+</svg>
+      </button></div>
       </div>
 
       {/* Tip Amount Input */}

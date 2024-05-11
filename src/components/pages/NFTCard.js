@@ -10,6 +10,12 @@ const NFTCard = ({ token, account, showBookmarks }) => {
   const [hasLiked, setHasLiked] = useState(false);
   const [tipAmount, setTipAmount] = useState("");
   const [selectedToken, setSelectedToken] = useState("NOCHILL");
+  const [showDetails, setShowDetails] = useState(false); 
+
+
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
 
   const availableTokens = [
     { symbol: "COQ", address: "0x420FcA0121DC28039145009570975747295f2329" },
@@ -280,6 +286,20 @@ const NFTCard = ({ token, account, showBookmarks }) => {
           Tip Recipe Holder
         </button>
       </div>
+      {/* Toggle button for showing/hiding details */}
+      <button onClick={toggleDetails} className="flex items-center justify-center w-full p-2">
+        <div style={{ transform: showDetails ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+      </button>
+      {/* Details section that shows attributes */}
+      {showDetails && (
+        <div className="text-sm text-gray-600">
+          {attributes.map((attr, index) => (
+            <p key={index}><strong>{attr.trait_type}:</strong> {attr.value}</p>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

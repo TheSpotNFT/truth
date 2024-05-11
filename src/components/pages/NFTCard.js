@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from "../Contracts/AvaxCooksLikeAndTip";
 
-const NFTCard = ({ token, account, showBookmarks }) => {
+const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
  
   const { metadata, tokenId } = token;
   const { name, imageUri, attributes: attributesStr } = metadata || {};

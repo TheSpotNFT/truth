@@ -94,7 +94,7 @@ const Gallery = ({ account }) => {
     if (mealType !== 'all') {
       filteredTokens = filteredTokens.filter(token => {
         const attributes = JSON.parse(token.metadata.attributes);
-        return attributes.some(attr => attr.trait_type === "Meal Type" && attr.value === mealType);
+        return attributes.some(attr => attr.trait_type === "Category" && attr.value === mealType);
       });
     }
   

@@ -25,6 +25,27 @@ const Main = ({account}) => {
         specialEquipment: '',
         communityTags: [] 
     });
+
+    const initialRecipeDetails = {
+        recipeName: '',
+        category: '',
+        ingredients: [
+            { name: "", quantity: "" },
+            { name: "", quantity: "" }
+        ],
+        method: '',
+        contributor: '',
+        region: '',
+        kidFriendly: false,
+        allergySafe: [],
+        prepTime: '',
+        servingSize: '',
+        difficultyLevel: '',
+        cuisineType: '',
+        specialEquipment: '',
+        communityTags: []
+    };
+    
     const [imageFile, setImageFile] = useState(null);
     const [imagePreviewUrl, setImagePreviewUrl] = useState('');
 
@@ -221,6 +242,7 @@ const Main = ({account}) => {
         if (metadataUrl) {
             console.log("Metadata uploaded to IPFS at:", metadataUrl);
             mintNFT(metadataUrl);
+            handleReset();
         } else {
             alert("Failed to upload metadata. Please try again.");
         }
@@ -232,7 +254,11 @@ const Main = ({account}) => {
          
       }
   };
-
+  const handleReset = () => {
+    setRecipeDetails(initialRecipeDetails);
+    setImageFile(null);
+    setImagePreviewUrl('');
+};
   // Function to upload metadata to IPFS
 const uploadMetadataToIPFS = async (metadata) => {
     const jsonString = JSON.stringify(metadata);
@@ -303,6 +329,9 @@ const uploadMetadataToIPFS = async (metadata) => {
         
         <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">It's easy. Just choose an image to upload that will represent your recipe, then enter in as much data as possible about the recipe. Better data = better search results. It costs 0.05 avax to submit your recipe, which at the time is around $1USD and this fee should discourage spammers.</div>
         <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">Have fun, Rep your Communities and lets build..</div>
+        <div className="pb-4"> <button onClick={handleReset} className="bg-avax-red hover:bg-red-700 rounded-md p-4 font-bold text-xl">
+            Reset Form
+        </button></div>
             <div className="sm:max-w-md md:max-w-xl mx-auto p-4 bg-avax-white shadow-lg rounded-lg relative z-10 opacity-95">
             <div className="pb-4 font-bold"><h1>Upload an image</h1></div>
             <input type="file" onChange={handleImageChange} />

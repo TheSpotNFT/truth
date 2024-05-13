@@ -11,6 +11,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
   const [tipAmount, setTipAmount] = useState("");
   const [selectedToken, setSelectedToken] = useState("NOCHILL");
   const [showDetails, setShowDetails] = useState(false); 
+  const [totalTips, setTotalTips] = useState({});
+
 
 
   const toggleDetails = () => {
@@ -30,6 +32,43 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
   } catch (e) {
     console.error("Failed to parse attributes", e);
   }
+
+  const fetchTotalTips = async () => {
+    try {
+        const { ethereum } = window;
+        if (!ethereum) {
+            console.error("Ethereum object not found");
+            return;
+        }
+
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const contract = new Contract(
+            AVAXCOOKSLIKESANDTIPS_ADDRESS,
+            AVAXCOOKSLIKESANDTIPS_ABI,
+            signer
+        );
+
+        let tips = {};
+        for (const token of availableTokens) {
+            // Fetch all tip details for the token
+            const tipDetails = await contract.getTipsForToken(tokenId, token.address);
+            // Aggregate the total tips from the details
+            const total = tipDetails.reduce((acc, tip) => acc.add(ethers.BigNumber.from(tip.amount)), ethers.BigNumber.from(0));
+            // Format the total tips to a readable format and update the state
+            tips[token.symbol] = ethers.utils.formatEther(total.toString());
+        }
+        setTotalTips(tips);
+    } catch (error) {
+        console.error("Error fetching total tips:", error);
+    }
+};
+
+  
+  useEffect(() => {
+    fetchTotalTips();
+  }, [tokenId, account]); // Include other dependencies if necessary
+  
 
     // Find the contributor value from the parsed attributes array
     const contributorObj = attributes.find(attr => attr.trait_type === "Contributor");
@@ -260,6 +299,17 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
 </svg>
       </button></div>
       </div>
+      <div className="pt-2 pb-4 pl-2 pr-2">
+  {Object.entries(totalTips).map(([symbol, amount], index) => (
+    parseFloat(amount) > 0 && (  // Only render if the amount is greater than 0
+      <div key={index} className="flex justify-between items-center py-1">
+        <span className="text-gray-700">{`Total tips in ${symbol}:`}</span>
+        <span className="font-bold">{amount}</span>
+      </div>
+    )
+  ))}
+</div>
+
 
       {/* Tip Amount Input */}
       <div className="pb-4"><input

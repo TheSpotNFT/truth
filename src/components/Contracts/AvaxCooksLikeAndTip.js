@@ -1,4 +1,4 @@
-export const AVAXCOOKSLIKESANDTIPS_ADDRESS = "0x3953Cc9d3e0ef9A7011436c39Fbe215bECFb574e";
+export const AVAXCOOKSLIKESANDTIPS_ADDRESS = "0x7c9f38aa384f92ad63e0849cc5cbf5c8ceda5edc";
 export const AVAXCOOKSLIKESANDTIPS_ABI = 
 [
 	{
@@ -122,6 +122,12 @@ export const AVAXCOOKSLIKESANDTIPS_ABI =
 				"internalType": "uint256",
 				"name": "amount",
 				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
 			}
 		],
 		"name": "Tip",
@@ -220,6 +226,42 @@ export const AVAXCOOKSLIKESANDTIPS_ABI =
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "tokenAddress",
+				"type": "address"
+			}
+		],
+		"name": "getTipsForToken",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "tipper",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct GetCookin.TipDetail[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "recipient",
 				"type": "address"
@@ -231,6 +273,30 @@ export const AVAXCOOKSLIKESANDTIPS_ABI =
 			}
 		],
 		"name": "getTotalTips",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "tokenAddress",
+				"type": "address"
+			}
+		],
+		"name": "getTotalTipsByTokenId",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -441,6 +507,40 @@ export const AVAXCOOKSLIKESANDTIPS_ABI =
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tipsByTokenId",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "tipper",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
@@ -452,6 +552,30 @@ export const AVAXCOOKSLIKESANDTIPS_ABI =
 			}
 		],
 		"name": "totalTips",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "totalTipsByTokenId",
 		"outputs": [
 			{
 				"internalType": "uint256",

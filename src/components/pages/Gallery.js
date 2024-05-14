@@ -90,7 +90,7 @@ const Gallery = ({ account }) => {
 
       }
     } catch (error) {
-      console.error("Error fetching likes count or checking liked status:", error);
+      //console.error("Error fetching likes count or checking liked status:", error);
     }
   };
   useEffect(() => {
@@ -202,14 +202,14 @@ const Gallery = ({ account }) => {
       value={searchText}
       onChange={(e) => setSearchText(e.target.value)}
       placeholder="Search attributes..."
-      className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      className= "border text-gray-900 bg-zinc-300 border-zinc-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
     />
   </div>
 
   {/* Dropdown for selecting meal types */}
   <div className="flex-1 px-2 w-full">
     <select
-      className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      className=" bg-zinc-300 border-zinc-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
       value={mealType}
       onChange={(e) => setMealType(e.target.value)}
     >
@@ -225,7 +225,7 @@ const Gallery = ({ account }) => {
   {/* Community filter dropdown */}
   <div className="flex-1 px-2 w-full">
     <select
-      className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      className=" bg-zinc-300 border-zinc-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
       value={community}
       onChange={(e) => setCommunity(e.target.value)}
     >

@@ -12,7 +12,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
   const [selectedToken, setSelectedToken] = useState("NOCHILL");
   const [showDetails, setShowDetails] = useState(false); 
   const [totalTips, setTotalTips] = useState({});
-
+   
+ 
 
 
   const toggleDetails = () => {
@@ -24,11 +25,14 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
     { symbol: "NOCHILL", address: "0xAcFb898Cff266E53278cC0124fC2C7C94C8cB9a5" },
     { symbol: "MEOW", address: "0x8aD25B0083C9879942A64f00F20a70D3278f6187" },
     { symbol: "KINGSHIT.X", address: "0x05B0Def5c00bA371683D7035934BcF82B737C364"},
+    { symbol: "KONG", address: "0xEbB5d4959B2FbA6318FbDa7d03cd44aE771fc999"},
+    
   ];
 
   let attributes = [];
   try {
     attributes = JSON.parse(attributesStr);
+    const infoAttributes = attributes.filter(attr => !['Contributor'].includes(attr.trait_type));
   } catch (e) {
     console.error("Failed to parse attributes", e);
   }
@@ -267,7 +271,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
   let amount;
 
   return (
-    <div className={`border p-4 m-2 shadow-md rounded-lg bg-avax-white w-96 ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
+    <div className={`border p-4 m-2 shadow-md rounded-lg bg-zinc-500 border-zinc-700 w-96 ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
       {/* Display the imageUri if it exists */}
       <div className="pt-4">
       {imageUri ? (
@@ -327,14 +331,14 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
         placeholder="Tip Amount"
         value={tipAmount}
         onChange={(e) => setTipAmount(e.target.value)}
-        className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
+        className="shadow appearance-none border rounded py-2 px-3 bg-zinc-300 border-zinc-300 text-gray-800 leading-tight focus:outline-none focus:shadow-outline w-full"
       /></div>
 
       {/* Token Selection Dropdown */}
       <select
         value={selectedToken}
         onChange={(e) => setSelectedToken(e.target.value)}
-        className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow border rounded w-full py-2 px-3 text-gray-800 bg-zinc-300 border-zinc-300 leading-tight focus:outline-none focus:shadow-outline"
       >
         {availableTokens.map((token, index) => (
           <option key={index} value={token.symbol}>
@@ -356,9 +360,9 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
       </button>
       {/* Details section that shows attributes */}
       {showDetails && (
-        <div className="text-sm text-gray-600">
+        <div className="text-md text-black">
           {attributes.map((attr, index) => (
-            <p key={index}><strong>{attr.trait_type}:</strong> {attr.value}</p>
+           <div className="px-4 py-2"> <div className="bg-zinc-300 rounded p-2 drop-shadow-md"><p key={index}>{attr.trait_type}: <strong>{attr.value}</strong></p></div></div>
           ))}
         </div>
       )}

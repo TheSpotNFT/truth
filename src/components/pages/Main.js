@@ -242,7 +242,7 @@ const Main = ({account}) => {
         if (metadataUrl) {
             console.log("Metadata uploaded to IPFS at:", metadataUrl);
             mintNFT(metadataUrl);
-            handleReset();
+         
         } else {
             alert("Failed to upload metadata. Please try again.");
         }
@@ -360,6 +360,8 @@ const uploadMetadataToIPFS = async (metadata) => {
                     <option value="Snacks">Snacks</option>
                     <option value="Dinner">Dinner</option>
                     <option value="Desserts">Desserts</option>
+                    <option value="Drinks">Drinks</option>
+                    <option value="Cleaners">Cleaners</option>
                     <option value="Other">Other</option>
                 </select></div>
 

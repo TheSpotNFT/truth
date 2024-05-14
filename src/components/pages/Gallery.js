@@ -4,6 +4,7 @@ import NFTCard from "./NFTCard";
 import Modal from "./Modal"
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from '../Contracts/AvaxCooksLikeAndTip';
+import TipDisplay from "../TipDisplay";
 
 
 const Gallery = ({ account }) => {
@@ -19,10 +20,19 @@ const Gallery = ({ account }) => {
   const [likes, setLikes] = useState(0);
   const [community, setCommunity] = useState('All Communities');
   const [searchText, setSearchText] = useState('');
+  const [sortTips, setSortTips] = useState(false);
+  const [tipsData, setTipsData] = useState({});
 
+  const toggleSortTips = () => {
+    setSortTips(!sortTips); // Toggle sortTips state
+  };
 
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
-  const contract = new ethers.Contract(AVAXCOOKSLIKESANDTIPS_ADDRESS, AVAXCOOKSLIKESANDTIPS_ABI, provider);
+  const handleTipsFetch = (tokenId, tips) => {
+    setTipsData(prev => ({ ...prev, [tokenId]: tips }));
+  };
+
+  //const provider = new ethers.providers.Web3Provider(ethereum);
+  //const contract = new ethers.Contract(AVAXCOOKSLIKESANDTIPS_ADDRESS, AVAXCOOKSLIKESANDTIPS_ABI, provider);
 
 
   const fetchItems = async () => {
@@ -38,6 +48,7 @@ const Gallery = ({ account }) => {
       const data = await response.json();
         console.log(data);
       if (response.ok && Array.isArray(data.tokens)) {
+        
         setTokens((prevTokens) => [...prevTokens, ...data.tokens]);
         setPageToken(data.nextPageToken); // Update pageToken if it exists
         setAllTokens(data.tokens);
@@ -82,6 +93,9 @@ const Gallery = ({ account }) => {
       console.error("Error fetching likes count or checking liked status:", error);
     }
   };
+  useEffect(() => {
+    fetchLikesAndCheckLiked();
+  }, [account]);
 
   useEffect(() => {
     filterAndSortTokens();
@@ -120,6 +134,13 @@ const Gallery = ({ account }) => {
     // Sort by likes if enabled
     if (sortLikes) {
       filteredTokens = filteredTokens.slice().sort((a, b) => b.likes - a.likes);
+    }
+    if (sortTips) {
+      filteredTokens = filteredTokens.slice().sort((a, b) => {
+        const tipsA = Object.values(tipsData[a.tokenId] || {}).reduce((acc, val) => acc + parseFloat(val), 0);
+        const tipsB = Object.values(tipsData[b.tokenId] || {}).reduce((acc, val) => acc + parseFloat(val), 0);
+        return tipsB - tipsA;
+      });
     }
   
     setDisplayTokens(filteredTokens);
@@ -222,6 +243,16 @@ const Gallery = ({ account }) => {
     </select>
   </div>
 
+  {/* Sort by tips button 
+  <div className="flex-1 px-2">
+          <button
+            onClick={toggleSortTips}
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full"
+          >
+            Sort by Tips {sortTips ? " (Descending)" : " (Unsorted)"}
+          </button>
+        </div>*/}
+
   {/* Sort by likes button
   <div className="flex-1 px-2">
     <button
@@ -245,8 +276,8 @@ const Gallery = ({ account }) => {
 
      
       <div className="relative flex flex-wrap justify-center z-10 opacity-95">
-        {displayTokens.map((token, index) => (
-          <NFTCard key={index} token={token} account={account} showBookmarks={showBookmarks}/>
+      {displayTokens.slice().reverse().map((token, index) => (
+          <NFTCard key={index} token={token} account={account} showBookmarks={showBookmarks} onTipsFetch={handleTipsFetch} />
         ))}
       </div>
       {loading && <p>Loading...</p>}
@@ -287,7 +318,7 @@ const Gallery = ({ account }) => {
   </g>
                 </svg>
             </div>
-     
+         {/*}   <TipDisplay displayTokens={displayTokens} />*/}
     </div>
   );
 };

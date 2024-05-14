@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from "../Contracts/AvaxCooksLikeAndTip";
 
-const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
+const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) => {
  
   const { metadata, tokenId } = token;
   const { name, imageUri, attributes: attributesStr } = metadata || {};
@@ -33,7 +33,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
     console.error("Failed to parse attributes", e);
   }
 
-  const fetchTotalTips = async () => {
+  const fetchTotalTips = async (onTipsFetch) => {
     try {
         const { ethereum } = window;
         if (!ethereum) {
@@ -56,9 +56,11 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
             // Aggregate the total tips from the details
             const total = tipDetails.reduce((acc, tip) => acc.add(ethers.BigNumber.from(tip.amount)), ethers.BigNumber.from(0));
             // Format the total tips to a readable format and update the state
-            tips[token.symbol] = ethers.utils.formatEther(total.toString());
+          const formattedTotal = ethers.utils.formatEther(total.toString());
+          tips[token.symbol] = Math.floor(parseFloat(formattedTotal)).toString();
         }
         setTotalTips(tips);
+       
     } catch (error) {
         console.error("Error fetching total tips:", error);
     }
@@ -69,6 +71,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
     fetchTotalTips();
   }, [tokenId, account]); // Include other dependencies if necessary
   
+
+
 
     // Find the contributor value from the parsed attributes array
     const contributorObj = attributes.find(attr => attr.trait_type === "Contributor");
@@ -260,6 +264,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
   const handleBookmark = () => {
     onBookmark(tokenId);
   };
+  let amount;
 
   return (
     <div className={`border p-4 m-2 shadow-md rounded-lg bg-avax-white w-96 ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
@@ -300,15 +305,20 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
       </button></div>
       </div>
       <div className="pt-2 pb-4 pl-2 pr-2">
+  {/* Check if there are any visible tips before rendering the header */}
+  {Object.entries(totalTips).some(([symbol, amount]) => parseFloat(amount) > 0) && (
+    <h3 className="text-lg font-semibold mb-2">Tips</h3>  // Header for the section, shown only if there are tips
+  )}
+
   {Object.entries(totalTips).map(([symbol, amount], index) => (
     parseFloat(amount) > 0 && (  // Only render if the amount is greater than 0
       <div key={index} className="flex justify-between items-center py-1">
-        <span className="text-gray-700">{`Total tips in ${symbol}:`}</span>
-        <span className="font-bold">{amount}</span>
+        {amount} {`$${symbol}`} 
       </div>
     )
   ))}
 </div>
+
 
 
       {/* Tip Amount Input */}
@@ -352,6 +362,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes }) => {
           ))}
         </div>
       )}
+      
     </div>
   );
 };

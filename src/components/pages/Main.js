@@ -332,7 +332,7 @@ const uploadMetadataToIPFS = async (metadata) => {
         <div className="pb-4"> <button onClick={handleReset} className="bg-avax-red hover:bg-red-700 rounded-md p-4 font-bold text-xl">
             Reset Form
         </button></div>
-            <div className="sm:max-w-md md:max-w-xl mx-auto p-4 bg-avax-white shadow-lg rounded-lg relative z-10 opacity-95">
+            <div className="sm:max-w-md md:max-w-xl mx-auto p-4 bg-avax-black text-gray-100 shadow-lg rounded-lg relative z-10 opacity-95">
             <div className="pb-4 font-bold"><h1>Upload an image</h1></div>
             <input type="file" onChange={handleImageChange} />
             {imagePreviewUrl && (
@@ -343,14 +343,14 @@ const uploadMetadataToIPFS = async (metadata) => {
             <div className="mb-4">
             <input
                     type="text"
-                    className="block w-full mt-4 mb-2 px-3 py-2 bg-gray-50 border border-gray-300 rounded-md text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                    className="block w-full mt-4 mb-2 px-3 py-2 bg-zinc-700 border border-zinc-800 rounded-md text-gray-100 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Recipe Name"
                     value={recipeDetails.recipeName}
                     onChange={e => setRecipeDetails({ ...recipeDetails, recipeName: e.target.value })}
                 /></div>
                 <div className="mb-4">
             <select
-                    className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500"
+                    className="shadow border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500"
                     value={recipeDetails.category}
                     onChange={e => setRecipeDetails({ ...recipeDetails, category: e.target.value })}
                 >
@@ -368,7 +368,7 @@ const uploadMetadataToIPFS = async (metadata) => {
                 {/* Preparation Time */}
                 <input
                     type="number"
-                    className="block w-full mt-4 mb-2 px-3 py-2 bg-gray-50 border border-gray-300 rounded-md text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                    className="block w-full mt-4 mb-2 px-3 py-2 bg-zinc-700 border border-zinc-800 rounded-md text-gray-100 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Preparation Time (in minutes)"
                     min="0"
                     value={recipeDetails.prepTime}
@@ -378,7 +378,7 @@ const uploadMetadataToIPFS = async (metadata) => {
                 {/* Serving Size */}
                 <div className="mb-4"><input
                     type="number"
-                    className="block w-full mt-4 mb-2 px-3 py-2 bg-gray-50 border border-gray-300 rounded-md text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                    className="block w-full mt-4 mb-2 px-3 py-2 bg-zinc-700 border border-zinc-800 rounded-md text-gray-100 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Serving Size"
                     min="1"
                     value={recipeDetails.servingSize}
@@ -387,7 +387,7 @@ const uploadMetadataToIPFS = async (metadata) => {
 
                 {/* Difficulty Level */}
                <div className="mb-4"><select
-                    className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500"
                     value={recipeDetails.difficultyLevel}
                     onChange={e => setRecipeDetails({ ...recipeDetails, difficultyLevel: e.target.value })}
                 >
@@ -402,7 +402,7 @@ const uploadMetadataToIPFS = async (metadata) => {
     
     <select
         id="region"
-        className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500"
         value={recipeDetails.region}
         onChange={e => setRecipeDetails({ ...recipeDetails, region: e.target.value })}
     >
@@ -422,7 +422,7 @@ const uploadMetadataToIPFS = async (metadata) => {
   
     <select
         id="cuisineType"
-        className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none focus:shadow-outline focus:ring-blue-500 focus:border-blue-500"
         value={recipeDetails.cuisineType}
         onChange={e => setRecipeDetails({ ...recipeDetails, cuisineType: e.target.value })}
     >
@@ -445,7 +445,7 @@ const uploadMetadataToIPFS = async (metadata) => {
                     {/* Special Equipment */}
                     <input
                     type="text"
-                    className="block w-full mt-4 mb-2 px-3 py-2 bg-gray-50 border border-gray-300 rounded-md text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                    className="block w-full mt-4 mb-2 px-3 py-2 bg-zinc-700 border border-zinc-800 rounded-md text-gray-100 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Special Equipment (if required)"
                     value={recipeDetails.specialEquipment}
                     onChange={e => setRecipeDetails({ ...recipeDetails, specialEquipment: e.target.value })}
@@ -465,7 +465,7 @@ const uploadMetadataToIPFS = async (metadata) => {
 
 {/* Allergy-Safe Checkboxes with "Other" Textbox*/}
 <div className="mb-4">
-    <label className="block text-gray-700 text-sm font-bold mb-2">Is this recipe allergy-safe? If so select below</label>
+    <label className="block text-gray-200 text-sm font-bold mb-2">Is this recipe allergy-safe? If so select below</label>
     {['Gluten-Free', 'Dairy-Free', 'Nut-Free', 'Shellfish-Free', 'Soy-Free', 'Egg-Free', 'Other'].map((allergy, index) => (
         <div key={index} className="flex items-center mb-2">
             <input
@@ -487,7 +487,7 @@ const uploadMetadataToIPFS = async (metadata) => {
                     setRecipeDetails({ ...recipeDetails, allergySafe: [...selectedAllergies] });
                 }}
             />
-            <label htmlFor={`allergy-${index}`} className="text-gray-700">{allergy}</label>
+            <label htmlFor={`allergy-${index}`} className="text-gray-200">{allergy}</label>
         </div>
     ))}
 
@@ -510,14 +510,14 @@ const uploadMetadataToIPFS = async (metadata) => {
                     <div key={index} className="grid grid-cols-2 gap-4 mb-2">
                         <input
                             type="text"
-                            className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none focus:shadow-outline"
                             placeholder="Ingredient Name"
                             value={ingredient.name}
                             onChange={(e) => handleIngredientChange(index, 'name', e.target.value)}
                         />
                         <input
                             type="text"
-                            className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none focus:shadow-outline"
                             placeholder="Quantity"
                             value={ingredient.quantity}
                             onChange={(e) => handleIngredientChange(index, 'quantity', e.target.value)}
@@ -533,7 +533,7 @@ const uploadMetadataToIPFS = async (metadata) => {
                     + Add Ingredient
                 </button>
                   <textarea
-                        className="block w-full mt-4 mb-2 px-3 py-2 bg-gray-50 border border-gray-300 rounded-md text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                        className="block w-full h-96 mt-4 mb-2 px-3 py-2 bg-zinc-700 border border-zinc-800 rounded-md text-gray-100 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Describe the method here..."
                         value={recipeDetails.method}
                         onChange={(e) => setRecipeDetails({...recipeDetails, method: e.target.value})}
@@ -541,18 +541,18 @@ const uploadMetadataToIPFS = async (metadata) => {
 
 
 
-                     <div className="pb-8"><label htmlFor="contributor" className="block text-gray-700 text-sm font-bold mb-2">Contributor</label>
+                     <div className="pb-8"><label htmlFor="contributor" className="block text-gray-200 text-sm font-bold mb-2">Contributor</label>
     <input
         type="text"
         id="contributor"
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none focus:shadow-outline"
         placeholder="Contributor Name"
         value={recipeDetails.contributor}
         onChange={e => setRecipeDetails({ ...recipeDetails, contributor: e.target.value })}
     /></div>
    
 <div className="mb-4">
-    <label className="block text-gray-700 text-sm font-bold mb-2">
+    <label className="block text-gray-100 text-sm font-bold mb-2">
         Tag up to 3 different Avax NFT communities
     </label>
     {['Avax Apes', 'Cuddlefish', 'Kingshit', 'Steady', 'The Spot', 'The Arena', 'No Chill', 'Cozyverse', 'Quirkies', 'Creature World'].map((community, index) => (
@@ -575,7 +575,7 @@ const uploadMetadataToIPFS = async (metadata) => {
                     setRecipeDetails({ ...recipeDetails, communityTags: selectedTags });
                 }}
             />
-            <label htmlFor={`community-${index}`} className="text-gray-700">{community}</label>
+            <label htmlFor={`community-${index}`} className="text-gray-200">{community}</label>
         </div>
     ))}
 </div>

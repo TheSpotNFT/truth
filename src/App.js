@@ -78,7 +78,7 @@ function App() {
 
   return (
     //<div className="App bg-background bg-no-repeat bg-cover bg-center bg-fixed">
-     <div className="App bg-darkgray opacity-90">
+     <div className="App bg-zinc-900 opacity-90">
       <Router>
         <div className="bg-transparent w-full h-100">
           <div className="relative z-10">

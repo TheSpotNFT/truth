@@ -25,6 +25,11 @@ module.exports = {
       'avax-red': '#e84142',
       'avax-white': '#f3f2f2',
       'avax-black': '#000000',
+      'sphere-red': '#cc5500',
+      'sphere-yellow': '#FFFDD0',
+      'sphere-green': '#808000',
+      'sphere-white': '#fffdd0',
+      'sphere-dark': '#2e2828'
     
     },
       backgroundImage: {

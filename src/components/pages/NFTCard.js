@@ -12,6 +12,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
   const [selectedToken, setSelectedToken] = useState("NOCHILL");
   const [showDetails, setShowDetails] = useState(false); 
   const [totalTips, setTotalTips] = useState({});
+  
    
  
 
@@ -271,23 +272,24 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
   let amount;
 
   return (
-    <div className={`border p-4 m-2 shadow-md rounded-lg bg-zinc-500 border-zinc-700 w-96 ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
+    <div className={`text-white border p-4 m-2 shadow-md rounded-lg bg-avax-black border-avax-black transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-24' : 'w-full md:w-3/4 lg:w-1/5'} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
+
       {/* Display the imageUri if it exists */}
       <div className="pt-4">
       {imageUri ? (
         <img
           src={`https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`}
           alt={name}
-          className="mx-auto h-48 object-cover rounded"
+          className="mx-auto w-full object-cover rounded hover:scale-105 cursor-pointer duration-300 border-zinc-900 border-8 max-w-[100vw] sm:max-w-[80vw] md:max-w-[50vw] lg:max-w-[33vw]"
           onClick={() => window.open(`https://campfire.exchange/collections/0x568863597b44AA509a45C15eE3Cab3150a562d32/${tokenId}`, '_blank')}
         />
       ) : (
-        <div className="w-full h-48 bg-gray-200 flex items-center justify-center rounded">
+        <div className="w-full h-48 bg-avax-black flex items-center justify-center rounded">
           No Image Available
         </div>
       )}
 </div>
-      <h2 className="font-bold text-lg mt-2 text-center pt-8">{name || "Unnamed Recipe"}</h2>
+      <h2 className="font-bold text-lg xl:text-2xl mt-2 text-center pt-8">{name || "Unnamed Recipe"}</h2>
       <h2 className="font-bold text-lg mt-2 text-center pb-8">{`Contributor: ${contributor || "None"}`}</h2>
       {/* Row for Like button and count */}
       <div className="flex items-center justify-end mt-2 space-x-2 pb-4">
@@ -331,14 +333,14 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
         placeholder="Tip Amount"
         value={tipAmount}
         onChange={(e) => setTipAmount(e.target.value)}
-        className="shadow appearance-none border rounded py-2 px-3 bg-zinc-300 border-zinc-300 text-gray-800 leading-tight focus:outline-none focus:shadow-outline w-full"
+        className="shadow appearance-none border rounded py-2 px-3 bg-zinc-800 border-zinc-700 text-gray-100 leading-tight focus:outline-none focus:shadow-outline w-full"
       /></div>
 
       {/* Token Selection Dropdown */}
       <select
         value={selectedToken}
         onChange={(e) => setSelectedToken(e.target.value)}
-        className="shadow border rounded w-full py-2 px-3 text-gray-800 bg-zinc-300 border-zinc-300 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none focus:shadow-outline"
       >
         {availableTokens.map((token, index) => (
           <option key={index} value={token.symbol}>
@@ -348,7 +350,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
       </select>
       <div className="pt-4">
         {/* Tip button */}
-        <button onClick={handleTip} className="bg-gray-800 w-full hover:bg-blue-600 text-white px-3 py-1 rounded">
+        <button onClick={handleTip} className="bg-gray-800 w-full hover:bg-avax-red text-white px-3 py-1 rounded">
           Tip Recipe Holder
         </button>
       </div>
@@ -360,13 +362,26 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
       </button>
       {/* Details section that shows attributes */}
       {showDetails && (
-        <div className="text-md text-black">
-          {attributes.map((attr, index) => (
-           <div className="px-4 py-2"> <div className="bg-zinc-300 rounded p-2 drop-shadow-md"><p key={index}>{attr.trait_type}: <strong>{attr.value}</strong></p></div></div>
-          ))}
+  <div className="grid grid-cols-2 gap-4 p-4">
+    <div className="col-span-1">
+      {/* Map through all attributes except the last one */}
+      {attributes.slice(0, -1).map((attr, index) => (
+        <div key={index} className="bg-zinc-300 text-black rounded p-2 drop-shadow-md mb-2 text-sm md:text-base xl:text-lg">
+          <p>{attr.trait_type}: <strong>{attr.value}</strong></p>
+        </div>
+      ))}
+    </div>
+    <div className="col-span-1 flex flex-col justify-between">
+      {/* Render the last attribute if there are attributes */}
+      {attributes.length > 0 && (
+        <div className="bg-zinc-300 text-black rounded p-2 drop-shadow-md h-full flex items-center justify-center text-sm md:text-base xl:text-lg">
+          <p><div>{attributes[attributes.length - 1].trait_type}</div> <strong>{attributes[attributes.length - 1].value}</strong></p>
         </div>
       )}
-      
+    </div>
+  </div>
+)}
+
     </div>
   );
 };

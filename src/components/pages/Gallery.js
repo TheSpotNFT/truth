@@ -5,6 +5,7 @@ import Modal from "./Modal"
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from '../Contracts/AvaxCooksLikeAndTip';
 import TipDisplay from "../TipDisplay";
+import rebrand from "../../assets/rebrand.png";
 
 
 const Gallery = ({ account }) => {
@@ -156,7 +157,7 @@ const Gallery = ({ account }) => {
 
   return (
     <div className="container mx-auto p-4 pt-8 md:pt-4">
-      <h1 className="text-2xl font-bold mb-4 text-avax-white">The Cook Book</h1>
+      <h1 className="text-4xl pb-16 pt-8 font-bold mb-4 text-avax-white">The Cook Book</h1>
       <div className="py-8 pb-24 md:py-0 mx-auto"><div className="mx-auto w-72 h-72 pointer-events-none block md:hidden pb-8">
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
                     <defs>
@@ -192,9 +193,11 @@ const Gallery = ({ account }) => {
     <path class="cls-2" d="M268.41,189.27c-19.21-7.31-38.35-8.63-55.53-3.9,3.43,2.52,7.86,3.79,12.18,4.53,9.53,1.65,19.26,1.67,28.84,2.94,15.35,2.02,30.65,7.59,44.88,14.33v-7.18c-9.02-2.54-17.85-5.92-26.55-9.25l-3.83-1.46Z"/>
   </g>
                 </svg>
+              
             </div></div>
             
             <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 sm:space-x-2 mt-2 pb-4">
+      
   {/* Search attributes input */}
   <div className="flex-1 w-full pl-3 pr-1">
     <input
@@ -202,14 +205,14 @@ const Gallery = ({ account }) => {
       value={searchText}
       onChange={(e) => setSearchText(e.target.value)}
       placeholder="Search attributes..."
-      className= "border text-gray-900 bg-zinc-300 border-zinc-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      className= "border text-gray-200 bg-zinc-700 border-zinc-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
     />
   </div>
 
   {/* Dropdown for selecting meal types */}
   <div className="flex-1 px-2 w-full">
     <select
-      className=" bg-zinc-300 border-zinc-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      className=" bg-zinc-700 border-zinc-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
       value={mealType}
       onChange={(e) => setMealType(e.target.value)}
     >
@@ -225,7 +228,7 @@ const Gallery = ({ account }) => {
   {/* Community filter dropdown */}
   <div className="flex-1 px-2 w-full">
     <select
-      className=" bg-zinc-300 border-zinc-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      className=" bg-zinc-700 border-zinc-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
       value={community}
       onChange={(e) => setCommunity(e.target.value)}
     >
@@ -267,22 +270,26 @@ const Gallery = ({ account }) => {
   <div className="flex-1 px-2 w-full">
     <button
       onClick={toggleBookmarks}
-      className="bg-avax-red hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full"
+      className="bg-avax-red text-black hover:text-white font-bold py-2 px-4 rounded w-full"
     >
       {showBookmarks ? "Show All" : "Show Bookmarked"}
     </button>
   </div>
 </div>
 
-     
-      <div className="relative flex flex-wrap justify-center z-10 opacity-95">
+     <div className="">
+      <div className="relative flex flex-wrap justify-center z-10 opacity-95 col-span-3">
       {displayTokens.slice().reverse().map((token, index) => (
           <NFTCard key={index} token={token} account={account} showBookmarks={showBookmarks} onTipsFetch={handleTipsFetch} />
         ))}
       </div>
+
+      {/*<div className="pb-4 pt-2 fixed bottom-0 right-4 lg:block hidden"><TipDisplay displayTokens={displayTokens} /></div>*/}
+</div>
       {loading && <p>Loading...</p>}
          {/* Bottom-left Fixed Image */}
          <div className="fixed bottom-20 left-10 w-96 h-96 pointer-events-none z-0 hidden md:block opacity-100">
+          {/*}<img src={rebrand}></img>*/} 
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
                     <defs>
                         <style>
@@ -318,7 +325,7 @@ const Gallery = ({ account }) => {
   </g>
                 </svg>
             </div>
-         {/*}   <TipDisplay displayTokens={displayTokens} />*/}
+           
     </div>
   );
 };

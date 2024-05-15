@@ -15,6 +15,7 @@ const Main = ({account}) => {
         ],
         method: '',
         contributor: '',
+        xUsername: '',
         region: '',
         kidFriendly: false,  // New field for kid-friendly
         allergySafe: [],      // New field for allergy-safe options
@@ -35,6 +36,7 @@ const Main = ({account}) => {
         ],
         method: '',
         contributor: '',
+        xUsername: '',
         region: '',
         kidFriendly: false,
         allergySafe: [],
@@ -192,7 +194,8 @@ const Main = ({account}) => {
             addAttributeIfNotEmpty("Cuisine Type", recipeDetails.cuisineType),
             { trait_type: "Kid-Specific", value: recipeDetails.kidFriendly ? "Yes" : "No" },
             addAttributeIfNotEmpty("Special Equipment", recipeDetails.specialEquipment),
-            addAttributeIfNotEmpty("Contributor", recipeDetails.contributor)
+            addAttributeIfNotEmpty("Contributor", recipeDetails.contributor),
+            addAttributeIfNotEmpty("X Username", recipeDetails.xUsername)
         ].filter(attr => attr !== null); // Remove any null values
 
            // Conditionally add "Special Equipment" only if there's a value
@@ -541,7 +544,7 @@ const uploadMetadataToIPFS = async (metadata) => {
 
 
 
-                     <div className="pb-8"><label htmlFor="contributor" className="block text-gray-200 text-sm font-bold mb-2">Contributor</label>
+                     <div className="pb-4 pt-4"><label htmlFor="contributor" className="block text-gray-200 text-sm font-bold mb-2">Contributor</label>
     <input
         type="text"
         id="contributor"
@@ -550,10 +553,19 @@ const uploadMetadataToIPFS = async (metadata) => {
         value={recipeDetails.contributor}
         onChange={e => setRecipeDetails({ ...recipeDetails, contributor: e.target.value })}
     /></div>
+    <div className="pb-8"><label htmlFor="xUsername" className="block text-gray-200 text-sm font-bold mb-2">X Username</label>
+    <input
+        type="text"
+        id="xUsername"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none focus:shadow-outline"
+        placeholder="username"
+        value={recipeDetails.xUsername}
+        onChange={e => setRecipeDetails({ ...recipeDetails, xUsername: e.target.value })}
+    /></div>
    
 <div className="mb-4">
     <label className="block text-gray-100 text-sm font-bold mb-2">
-        Tag up to 3 different Avax NFT communities
+        Tag up to 3 different NFT communities
     </label>
     {['Avax Apes', 'Cuddlefish', 'Kingshit', 'Steady', 'The Spot', 'The Arena', 'No Chill', 'Cozyverse', 'Quirkies', 'Creature World'].map((community, index) => (
         <div key={index} className="flex items-center mb-2">

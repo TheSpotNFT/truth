@@ -558,7 +558,7 @@ const uploadMetadataToIPFS = async (metadata) => {
         type="text"
         id="xUsername"
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none focus:shadow-outline"
-        placeholder="username"
+        placeholder="Username"
         value={recipeDetails.xUsername}
         onChange={e => setRecipeDetails({ ...recipeDetails, xUsername: e.target.value })}
     /></div>

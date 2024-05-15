@@ -18,7 +18,8 @@ export const Nav = ({
     //{ name: "Avax Cooks", link: "" },
     { name: "Home", link: "/" },
     { name: "View Recipes", link: "/gallery" },
-    // { name: "Twitter", link: "https://discord.gg/gbfv2GuV" },
+    { name: "Getting Started", link: "/faq" },
+    { name: "Twitter", link: "https://twitter.com/avaxcooks" },
   ];
 
   const [open, setOpen] = useState(false);

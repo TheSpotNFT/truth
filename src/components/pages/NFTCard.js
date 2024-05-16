@@ -12,6 +12,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
   const [selectedToken, setSelectedToken] = useState("NOCHILL");
   const [showDetails, setShowDetails] = useState(false); 
   const [totalTips, setTotalTips] = useState({});
+ 
   
    
  
@@ -369,8 +370,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
         <div key={index} className="bg-zinc-300 text-black rounded p-2 drop-shadow-md mb-2 text-sm md:text-base xl:text-lg">
           <p>{attr.trait_type}: <strong>
             {attr.trait_type === "X Username" ? 
-            <a href={`https://arena.social/${attr.value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attr.value}</a> :
-              attr.value
+             <a href={`https://arena.social/${attr.value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attr.value}</a> :
+              attr.value 
             }</strong>
           </p>
         </div>

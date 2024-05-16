@@ -35,7 +35,7 @@ export const Nav = ({
             >
               <div className="text-3xl font-bold hidden xl:flex items-end">
                 iprs
-                <div className="text-xs ml-2">inter-planetary recipe system</div>
+                <div className="text-xs ml-2">interplanetary recipe system</div>
               </div>
               {Links.map((link) => (
                 <li
@@ -57,7 +57,7 @@ export const Nav = ({
             </ul>
           </div><div className="text-3xl font-bold xl:hidden lg:flex items-end pl-32 pb-2">
             iprs
-            <div className="text-xs ml-2">inter-planetary recipe system</div>
+            <div className="text-xs ml-2">interplanetary recipe system</div>
           </div>
           <div
             onClick={() => setOpen(!open)}

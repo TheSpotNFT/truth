@@ -337,7 +337,7 @@ const uploadMetadataToIPFS = async (metadata) => {
             <div className="pb-16 justify-center items-center md:pt-36"> <button onClick={goToGallery} className="bg-avax-red hover:bg-red-700 text-black rounded-md p-4 font-bold text-xl w-2/4 h-24">
             iprs database
         </button></div>
-        <div className="relative text-xl text-avax-white p-8 px-4 md:px-36 lg:px-40 xl:px-96">Welcome to the iprs or inter-planetary recipe system. The first world-wide, crowd sourced, on chain cook book! Submit your recipe to the soon to be largest recipe database worldwide! Stake your claim and mint your recipes! All metadata is stored securely on the ipfs or inter-planetary file system, so you know your data will be safe for centuries to come.</div>
+        <div className="relative text-xl text-avax-white p-8 px-4 md:px-36 lg:px-40 xl:px-96">Welcome to the iprs or InterPlanetary Recipe System. The first world-wide, crowd sourced, on-chain cook book! Submit your recipe to the soon to be largest recipe database worldwide! Stake your claim and mint your recipes! All metadata is stored securely on the ipfs or InterPlanetary file system, so you know your data will be safe for centuries to come.</div>
        
        
         <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96 pt-4">Visit the recipes by entering the iprs database above.</div>

@@ -14,8 +14,6 @@ export const Nav = ({
 }) => {
 
   let Links = [
-
-    //{ name: "Avax Cooks", link: "" },
     { name: "Home", link: "/" },
     { name: "View Recipes", link: "/gallery" },
     { name: "Getting Started", link: "/faq" },
@@ -24,20 +22,21 @@ export const Nav = ({
 
   const [open, setOpen] = useState(false);
   console.log(account);
+
   return (
     <nav className="main-nav pb-20 md:pb-20 lg:pb-15 xl:pb-15 2xl:pb-15 z-10 relative">
-      <div className="shadow-sm w-full fixed top-0 left-0 pb-0 md:pb-4 sm:pb-4 bg-avax-red pt-4">
+      <div className="shadow-sm w-full fixed top-0 left-0 bg-avax-red pt-4 sm:pb-2">
         <div className="flex items-center justify-between bg-avax-red py-0 px-7">
           <div className="desktop-nav">
             <ul
-              className={`overflow-y-visible xl:flex xl:items-center md:pb-0 sm:pb-0 absolute xl:static bg-avax-red z-10 
-    left-0 sm:w-full md:w-1/3 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "top-[75px] opacity-100] overflow-y-visible" : "top-[-550px]"
+              className={`overflow-y-visible xl:flex xl:items-center absolute xl:static bg-avax-red z-10
+                left-0 sm:w-full md:w-1/3 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "md:top-[60px] sm:top-[85px] opacity-100 overflow-y-visible shadow-md" : "top-[-200px] md:top-[-200px]"
                 }`}
             >
-              {/*<img src={truck} className={`h-12 pl-4 pt-0 ${open ? "hidden" : "block"
-                }`} />*/}
-
-              <div className="text-3xl font-bold hidden lg:block">AVAX COOKS</div>
+              <div className="text-3xl font-bold hidden xl:flex items-end">
+                iprs
+                <div className="text-xs ml-2">inter-planetary recipe system</div>
+              </div>
               {Links.map((link) => (
                 <li
                   key={link.name}
@@ -56,12 +55,15 @@ export const Nav = ({
                 </li>
               ))}
             </ul>
+          </div><div className="text-3xl font-bold xl:hidden lg:flex items-end pl-32 pb-2">
+            iprs
+            <div className="text-xs ml-2">inter-planetary recipe system</div>
           </div>
           <div
             onClick={() => setOpen(!open)}
             className="text-3xl absolute left-8 top-6 cursor-pointer xl:hidden z-10"
           >
-            <GiHamburgerMenu name={open ? "close" : "menu"} />
+            <GiHamburgerMenu />
           </div>
           <LogoutButton
             account={account}

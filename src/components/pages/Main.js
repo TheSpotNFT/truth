@@ -3,9 +3,16 @@ import axios from "axios";
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKS_ABI, AVAXCOOKS_ADDRESS } from "../Contracts/AvaxCooks";
 import avaxcooks from '../../assets/avaxcook_trans.png';
+import logo from "../../assets/iprs2.png";
+import { useNavigate } from "react-router-dom";
 
 const Main = ({account}) => {
     const { setTxProcessing, txProcessing } = useState();
+    const navigate = useNavigate();
+    const goToGallery = () => {
+        navigate('/gallery');
+      };
+    
     const [recipeDetails, setRecipeDetails] = useState({
         recipeName: '',
         category: '',
@@ -291,8 +298,8 @@ const uploadMetadataToIPFS = async (metadata) => {
   
     return (
         <div className="relative min-h-screen">
-             <div className="py-8 md:py-0"><div className="mx-auto w-96 h-96 pointer-events-none block md:hidden pb-8">
-                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
+             <div className="py-8 md:py-0"><div className="mx-auto pointer-events-none block md:hidden md:pb-8">
+                {/*<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
                     <defs>
                         <style>
                             {`.cls-1 { fill: #e84142; fill-rule: evenodd; }
@@ -325,14 +332,19 @@ const uploadMetadataToIPFS = async (metadata) => {
     <path class="cls-2" d="M155.19,227.32c-8.33-8.01-12.81-17.37-10.43-28.94,0-.04.01-.07.02-.11,1.36-6.52,5.52-12.11,11.22-15.56,8.57-5.19,17.67-9.59,26.91-13.34,17.04-6.92,34.96-11.22,53.13-14.15-19.62.44-39.16,4.9-56.93,13.23-9.75,4.57-18.87,10.17-28.53,16.11-.61.38-1.23.76-1.85,1.13h0c-2.11,1.3-4.26,2.61-6.42,3.91-.26.15-.51.31-.77.46-2.14,1.29-4.31,2.57-6.48,3.81-1.48.85-3.03,1.71-4.62,2.58v36.85c0,6.9-3.81,13.16-9.95,16.32l-8.61,4.44c-.38.2-.61.58-.61,1.01,0,.37.15.67.44.9.29.23.63.29.98.19l6.5-1.76c22.52-8.3,47.66-13.52,73.71-15.41-2.61-.37-5.27-.53-8.01-.68-11.42-.62-21.25-2.86-29.71-10.99Z"/>
     <path class="cls-2" d="M268.41,189.27c-19.21-7.31-38.35-8.63-55.53-3.9,3.43,2.52,7.86,3.79,12.18,4.53,9.53,1.65,19.26,1.67,28.84,2.94,15.35,2.02,30.65,7.59,44.88,14.33v-7.18c-9.02-2.54-17.85-5.92-26.55-9.25l-3.83-1.46Z"/>
   </g>
-                </svg>
+                </svg>*/}
             </div></div>
-        <div className="relative text-xl text-avax-white p-8 px-4 md:px-36 lg:px-40 xl:px-96">Welcome to Avax Cooks! The first world-wide, crowd sourced, on chain cook book! Submit your recipe to the soon to be largest recipe database worldwide! Stake your claim and mint your recipes!</div>
+            <div className="pb-16 justify-center items-center md:pt-36"> <button onClick={goToGallery} className="bg-avax-red hover:bg-red-700 text-black rounded-md p-4 font-bold text-xl w-2/4 h-24">
+            iprs database
+        </button></div>
+        <div className="relative text-xl text-avax-white p-8 px-4 md:px-36 lg:px-40 xl:px-96">Welcome to the iprs or inter-planetary recipe system. The first world-wide, crowd sourced, on chain cook book! Submit your recipe to the soon to be largest recipe database worldwide! Stake your claim and mint your recipes! All metadata is stored securely on the ipfs or inter-planetary file system, so you know your data will be safe for centuries to come.</div>
        
-        
-        <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">It's easy. Just choose an image to upload that will represent your recipe, then enter in as much data as possible about the recipe. Better data = better search results. It costs 0.05 avax to submit your recipe, which at the time is around $1USD and this fee should discourage spammers.</div>
-        <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">Have fun, Rep your Communities and lets build..</div>
-        <div className="pb-4"> <button onClick={handleReset} className="bg-avax-red hover:bg-red-700 rounded-md p-4 font-bold text-xl">
+       
+        <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96 pt-4">Visit the recipes by entering the iprs database above.</div>
+        <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">It's easy. Just choose an image to upload that will represent your recipe, then enter in as much data as possible about the recipe. Better data = better search results. It costs 0.01 avax to submit your recipe, which at the time is around $0.35USD and this fee should discourage spammers.</div>
+      
+        <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">Secure good food for centuries to come. Mint your recipes today..</div>
+        <div className="pb-4"><button onClick={handleReset} className="bg-avax-red hover:bg-red-700 rounded-md p-4 font-bold text-xl">
             Reset Form
         </button></div>
             <div className="sm:max-w-md md:max-w-xl mx-auto p-4 bg-avax-black text-gray-100 shadow-lg rounded-lg relative z-10 opacity-95">
@@ -597,7 +609,8 @@ const uploadMetadataToIPFS = async (metadata) => {
             </div>
                  {/* Bottom-left Fixed Image */}
                  <div className="fixed bottom-20 left-10 w-96 h-96 pointer-events-none z-0 hidden md:block">
-                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
+                    <img src={logo}></img>
+               {/* <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
                     <defs>
                         <style>
                             {`.cls-1 { fill: #e84142; fill-rule: evenodd; }
@@ -630,7 +643,7 @@ const uploadMetadataToIPFS = async (metadata) => {
     <path class="cls-2" d="M155.19,227.32c-8.33-8.01-12.81-17.37-10.43-28.94,0-.04.01-.07.02-.11,1.36-6.52,5.52-12.11,11.22-15.56,8.57-5.19,17.67-9.59,26.91-13.34,17.04-6.92,34.96-11.22,53.13-14.15-19.62.44-39.16,4.9-56.93,13.23-9.75,4.57-18.87,10.17-28.53,16.11-.61.38-1.23.76-1.85,1.13h0c-2.11,1.3-4.26,2.61-6.42,3.91-.26.15-.51.31-.77.46-2.14,1.29-4.31,2.57-6.48,3.81-1.48.85-3.03,1.71-4.62,2.58v36.85c0,6.9-3.81,13.16-9.95,16.32l-8.61,4.44c-.38.2-.61.58-.61,1.01,0,.37.15.67.44.9.29.23.63.29.98.19l6.5-1.76c22.52-8.3,47.66-13.52,73.71-15.41-2.61-.37-5.27-.53-8.01-.68-11.42-.62-21.25-2.86-29.71-10.99Z"/>
     <path class="cls-2" d="M268.41,189.27c-19.21-7.31-38.35-8.63-55.53-3.9,3.43,2.52,7.86,3.79,12.18,4.53,9.53,1.65,19.26,1.67,28.84,2.94,15.35,2.02,30.65,7.59,44.88,14.33v-7.18c-9.02-2.54-17.85-5.92-26.55-9.25l-3.83-1.46Z"/>
   </g>
-                </svg>
+                </svg>*/}
             </div>
      
         </div>

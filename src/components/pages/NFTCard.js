@@ -273,23 +273,34 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
   let amount;
 
   return (
-    <div className={`text-white border p-4 m-2 shadow-md rounded-lg bg-avax-black border-avax-black transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-24' : 'w-full md:w-3/4 lg:w-1/5'} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
-
+    <div className={`text-white border pr-4 pl-4 pb-4 pt-2 m-2 shadow-md rounded-lg bg-avax-black border-avax-black transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-24' : 'w-full md:w-3/4 lg:w-1/5'} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
+ 
       {/* Display the imageUri if it exists */}
-      <div className="pt-4">
-      {imageUri ? (
-        <img
-          src={`https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`}
-          alt={name}
-          className="mx-auto w-full object-cover rounded hover:scale-105 cursor-pointer duration-300 border-zinc-900 border-8 max-w-[100vw] sm:max-w-[80vw] md:max-w-[50vw] lg:max-w-[33vw]"
-          onClick={() => window.open(`https://campfire.exchange/collections/0x568863597b44AA509a45C15eE3Cab3150a562d32/${tokenId}`, '_blank')}
-        />
-      ) : (
-        <div className="w-full h-48 bg-avax-black flex items-center justify-center rounded">
-          No Image Available
+      <div className="relative pt-4">
+  {imageUri ? (
+    <div className="relative group">
+      <img
+        src={`https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`}
+        alt={name}
+        className="mx-auto w-full object-cover rounded duration-300 border-zinc-900 border-8 max-w-[100vw] sm:max-w-[80vw] md:max-w-[50vw] lg:max-w-[33vw] group-hover:scale-105"
+      />
+      {/* Toggle button for showing/hiding details */}
+      <button onClick={toggleDetails} className="absolute top-0 right-0 p-2">
+        <div style={{ transform: `rotate(${showDetails ? '135deg' : '0deg'})`, transition: 'transform 0.3s ease' }}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
+            <path fillRule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4.5h4.5a.5.5 0 0 1 0 1H8.5v4.5a.5.5 0 0 1-1 0V9.5H3a.5.5 0 0 1 0-1h4.5V4a.5.5 0 0 1 .5-.5z"/>
+          </svg>
         </div>
-      )}
+      </button>
+    </div>
+  ) : (
+    <div className="w-full h-48 bg-avax-black flex items-center justify-center rounded">
+      No Image Available
+    </div>
+  )}
 </div>
+
+
       <h2 className="font-bold text-lg xl:text-2xl mt-2 text-center pt-8">{name || "Unnamed Recipe"}</h2>
       <h2 className="font-bold text-lg mt-2 text-center pb-8">{`Contributor: ${contributor || "None"}`}</h2>
       {/* Row for Like button and count */}
@@ -332,21 +343,21 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
       <div className="pb-4"><input
         type="number"
         placeholder="Tip Amount"
+        disabled={!account}
         value={tipAmount}
         onChange={(e) => setTipAmount(e.target.value)}
         className="shadow appearance-none border rounded py-2 px-3 bg-zinc-800 border-zinc-700 text-gray-100 leading-tight focus:outline-none focus:shadow-outline w-full"
       /></div>
 
-      {/* Token Selection Dropdown */}
-      <select
+    {/* Token Selection Dropdown */}
+    <select
         value={selectedToken}
         onChange={(e) => setSelectedToken(e.target.value)}
-        className="shadow border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none focus:shadow-outline"
+        disabled={!account}  // Disable if there is no account connected
+        className={`shadow border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none ${account ? 'opacity-100' : 'opacity-50 cursor-not-allowed'}`}
       >
         {availableTokens.map((token, index) => (
-          <option key={index} value={token.symbol}>
-            {token.symbol}
-          </option>
+          <option key={index} value={token.symbol}>{token.symbol}</option>
         ))}
       </select>
       <div className="pt-4">
@@ -355,12 +366,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
           Tip Recipe Holder
         </button>
       </div>
-      {/* Toggle button for showing/hiding details */}
-      <button onClick={toggleDetails} className="flex items-center justify-center w-full p-2">
-        <div style={{ transform: showDetails ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
-        </div>
-      </button>
+    
       {/* Details section that shows attributes */}
       {showDetails && (
   <div className="grid grid-cols-2 gap-4 p-4">

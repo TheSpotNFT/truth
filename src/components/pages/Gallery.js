@@ -6,6 +6,7 @@ import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from '../Contracts/AvaxCooksLikeAndTip';
 import TipDisplay from "../TipDisplay";
 import rebrand from "../../assets/rebrand.png";
+import logo from "../../assets/iprs2.png";
 
 
 const Gallery = ({ account }) => {
@@ -157,9 +158,10 @@ const Gallery = ({ account }) => {
 
   return (
     <div className="container mx-auto p-4 pt-8 md:pt-4">
-      <h1 className="text-4xl pb-16 pt-8 font-bold mb-4 text-avax-white">The Cook Book</h1>
+      <h1 className="text-6xl pb-16 pt-8 font-bold mb-4 text-avax-white">iprs</h1>
       <div className="py-8 pb-24 md:py-0 mx-auto"><div className="mx-auto w-72 h-72 pointer-events-none block md:hidden pb-8">
-                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
+        <img src={logo}></img>
+                {/*<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
                     <defs>
                         <style>
                             {`.cls-1 { fill: #e84142; fill-rule: evenodd; }
@@ -192,11 +194,11 @@ const Gallery = ({ account }) => {
     <path class="cls-2" d="M155.19,227.32c-8.33-8.01-12.81-17.37-10.43-28.94,0-.04.01-.07.02-.11,1.36-6.52,5.52-12.11,11.22-15.56,8.57-5.19,17.67-9.59,26.91-13.34,17.04-6.92,34.96-11.22,53.13-14.15-19.62.44-39.16,4.9-56.93,13.23-9.75,4.57-18.87,10.17-28.53,16.11-.61.38-1.23.76-1.85,1.13h0c-2.11,1.3-4.26,2.61-6.42,3.91-.26.15-.51.31-.77.46-2.14,1.29-4.31,2.57-6.48,3.81-1.48.85-3.03,1.71-4.62,2.58v36.85c0,6.9-3.81,13.16-9.95,16.32l-8.61,4.44c-.38.2-.61.58-.61,1.01,0,.37.15.67.44.9.29.23.63.29.98.19l6.5-1.76c22.52-8.3,47.66-13.52,73.71-15.41-2.61-.37-5.27-.53-8.01-.68-11.42-.62-21.25-2.86-29.71-10.99Z"/>
     <path class="cls-2" d="M268.41,189.27c-19.21-7.31-38.35-8.63-55.53-3.9,3.43,2.52,7.86,3.79,12.18,4.53,9.53,1.65,19.26,1.67,28.84,2.94,15.35,2.02,30.65,7.59,44.88,14.33v-7.18c-9.02-2.54-17.85-5.92-26.55-9.25l-3.83-1.46Z"/>
   </g>
-                </svg>
+                </svg>*/}
               
             </div></div>
             
-            <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 sm:space-x-2 mt-2 pb-4">
+            <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 sm:space-x-2 mt-2 pb-24">
       
   {/* Search attributes input */}
   <div className="flex-1 w-full pl-3 pr-1">
@@ -289,8 +291,8 @@ const Gallery = ({ account }) => {
       {loading && <p>Loading...</p>}
          {/* Bottom-left Fixed Image */}
          <div className="fixed bottom-20 left-10 w-96 h-96 pointer-events-none z-0 hidden md:block opacity-100">
-          {/*}<img src={rebrand}></img>*/} 
-                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
+          <img src={logo}></img>
+                {/*<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.18 474.09">
                     <defs>
                         <style>
                             {`.cls-1 { fill: #e84142; fill-rule: evenodd; }
@@ -323,7 +325,7 @@ const Gallery = ({ account }) => {
     <path class="cls-2" d="M155.19,227.32c-8.33-8.01-12.81-17.37-10.43-28.94,0-.04.01-.07.02-.11,1.36-6.52,5.52-12.11,11.22-15.56,8.57-5.19,17.67-9.59,26.91-13.34,17.04-6.92,34.96-11.22,53.13-14.15-19.62.44-39.16,4.9-56.93,13.23-9.75,4.57-18.87,10.17-28.53,16.11-.61.38-1.23.76-1.85,1.13h0c-2.11,1.3-4.26,2.61-6.42,3.91-.26.15-.51.31-.77.46-2.14,1.29-4.31,2.57-6.48,3.81-1.48.85-3.03,1.71-4.62,2.58v36.85c0,6.9-3.81,13.16-9.95,16.32l-8.61,4.44c-.38.2-.61.58-.61,1.01,0,.37.15.67.44.9.29.23.63.29.98.19l6.5-1.76c22.52-8.3,47.66-13.52,73.71-15.41-2.61-.37-5.27-.53-8.01-.68-11.42-.62-21.25-2.86-29.71-10.99Z"/>
     <path class="cls-2" d="M268.41,189.27c-19.21-7.31-38.35-8.63-55.53-3.9,3.43,2.52,7.86,3.79,12.18,4.53,9.53,1.65,19.26,1.67,28.84,2.94,15.35,2.02,30.65,7.59,44.88,14.33v-7.18c-9.02-2.54-17.85-5.92-26.55-9.25l-3.83-1.46Z"/>
   </g>
-                </svg>
+                </svg>*/}
             </div>
            
     </div>

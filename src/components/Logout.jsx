@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 
 function LogoutButton({
   account,
@@ -8,6 +8,40 @@ function LogoutButton({
   setWeb3Provider,
   logoutOfWeb3Modal,
 }) {
+  const AVAX_NETWORK_PARAMS = {
+    chainId: "0xa86a", // Avalanche chain ID in hexadecimal (43114)
+    chainName: "Avalanche C-Chain",
+    nativeCurrency: {
+      name: "Avalanche",
+      symbol: "AVAX",
+      decimals: 18,
+    },
+    rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
+    blockExplorerUrls: ["https://cchain.explorer.avax.network/"],
+  };
+
+  const switchToAvalanche = async () => {
+    try {
+      await window.ethereum.request({
+        method: "wallet_addEthereumChain",
+        params: [AVAX_NETWORK_PARAMS],
+      });
+    } catch (error) {
+      console.error("Failed to switch to the Avalanche network", error);
+    }
+  };
+
+  useEffect(() => {
+    const checkNetwork = async () => {
+      if (web3Provider) {
+        const network = await web3Provider.getNetwork();
+        if (network.chainId !== 43114) {
+          await switchToAvalanche();
+        }
+      }
+    };
+    checkNetwork();
+  }, [web3Provider]);
   // const { logout, isAuthenticating, account } = useMoralis();
   // const { switchNetwork, chainId } = useChain();
   if (account) {

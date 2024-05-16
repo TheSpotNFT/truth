@@ -55,7 +55,7 @@ export const Nav = ({
                 </li>
               ))}
             </ul>
-          </div><div className="text-3xl font-bold xl:hidden lg:flex items-end pl-32 pb-2">
+          </div><div className="text-3xl font-bold xl:hidden lg:flex items-end pl-32 md:pl-32 pb-2">
             iprs
             <div className="text-xs ml-2">interplanetary recipe system</div>
           </div>

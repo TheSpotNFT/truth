@@ -31,8 +31,8 @@ const Docs = () => {
       <h1 className="text-2xl font-bold text-center text-gray-200 my-4 pb-8">FAQ & Getting Started</h1>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="bg-avax-black text-gray-200 p-4 rounded-lg shadow-md pb-12">
-          <h2 className="font-semibold mb-2 pb-4 text-xl">What is Avax Cooks?</h2>
-          <p>Living on the avalanche blockchain, Avax Cooks brings tokenization to recipe assets. This means users who submit recipes can be tipped and get credit for their contributions to the recipes on the blockchain.</p>
+          <h2 className="font-semibold mb-2 pb-4 text-xl">What is the iprs?</h2>
+          <p>Living on the avalanche blockchain, the InterPlanetary Recipe System brings tokenization to recipe assets. This means users who submit recipes can receive tips and get credit for their contributions to the recipes on the blockchain, forever.</p>
         </div>
         <div className="bg-avax-black text-gray-200 p-4 rounded-lg shadow-md">
           <h2 className="font-semibold mb-2 pb-4 text-xl">How to Install a Web3 Wallet?</h2>
@@ -45,8 +45,8 @@ const Docs = () => {
         </div>
         <div className="bg-avax-black text-gray-200 p-4 rounded-lg shadow-md">
           <h2 className="font-semibold mb-2 pb-4 text-xl">Join Our Community</h2>
-          <p>Follow us on Twitter @avaxcooks and DM us your wallet address to receive FREE AVAX to get started. This offer is part of a promotional campaign to welcome new users.</p>
-          <a href="https://twitter.com/avaxcooks" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600">Follow @avaxcooks</a>
+          <p>Follow us on Twitter @__iprs and DM us your wallet address to receive FREE AVAX to get started. This offer is part of a promotional campaign to welcome new users.</p>
+          <a href="https://twitter.com/__iprs" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600">Follow @__iprs</a>
         </div>
       </div>
     </div>

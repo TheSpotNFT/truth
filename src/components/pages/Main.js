@@ -341,7 +341,7 @@ const uploadMetadataToIPFS = async (metadata) => {
        
        
         <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96 pt-4">Visit the recipes by entering the iprs database above.</div>
-        <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">It's easy. Just choose an image to upload that will represent your recipe, then enter in as much data as possible about the recipe. Better data = better search results. It costs 0.01 avax to submit your recipe, which at the time is around $0.35USD and this fee should discourage spammers.</div>
+        <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">Submitting recipes is easy. Check out <a href="/faq" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600">getting started</a> to learn how to install a web3 wallet and follow the steps. Once you are all set up just choose an image to upload that will represent your recipe, then enter in as much data as possible about the recipe. Better data = better search results. It costs 0.01 avax to submit your recipe, which at the time of publish was around $0.35USD, this fee is designed to stop spam.</div>
       
         <div className="text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96">Secure good food for centuries to come. Mint your recipes today..</div>
         <div className="pb-4"><button onClick={handleReset} className="bg-avax-red hover:bg-red-700 rounded-md p-4 font-bold text-xl">

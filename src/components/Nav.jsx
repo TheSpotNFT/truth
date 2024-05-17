@@ -14,7 +14,7 @@ export const Nav = ({
 }) => {
 
   let Links = [
-    { name: "Home", link: "/" },
+    { name: "Add Recipe", link: "/" },
     { name: "View Recipes", link: "/gallery" },
     { name: "Getting Started", link: "/faq" },
     { name: "Twitter", link: "https://twitter.com/avaxcooks" },

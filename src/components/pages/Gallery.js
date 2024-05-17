@@ -160,7 +160,7 @@ const Gallery = ({ account }) => {
 
   return (
     <div className="container mx-auto p-4 pt-8 md:pt-4">
-      <h1 className="text-6xl pb-16 pt-8 font-bold mb-4 text-avax-white">iprs</h1>
+      <h1 className="text-6xl pb-16 pt-8 font-bold mb-4 text-avax-white">Browse Recipes</h1>
       <div className="py-8 pb-24 md:py-0 mx-auto">
         <div className="mx-auto w-72 h-72 pointer-events-none block md:hidden pb-8">
           <img src={logo} alt="Logo" />

@@ -3,8 +3,8 @@ import "./App.css";
 import { Nav } from "./components/Nav";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
-import Main from "./components/pages/Main";
-import Gallery from "./components/pages/Gallery"
+import Main from "./components/pages/Gallery";
+import Gallery from "./components/pages/Main"
 import Faq from "./components/pages/Faq";
 import { useState, useCallback } from "react";
 import { web3ModalSetup } from "./helpers/Web3Modal";

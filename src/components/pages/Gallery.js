@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import NFTCard from "./NFTCard";
-import Modal from "./Modal";
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from '../Contracts/AvaxCooksLikeAndTip';
-import TipDisplay from "../TipDisplay";
 import logo from "../../assets/iprs2.png";
+import { useLocation } from 'react-router-dom';
 
 const Gallery = ({ account }) => {
   const [allTokens, setAllTokens] = useState([]);
@@ -12,7 +11,6 @@ const Gallery = ({ account }) => {
   const [tokens, setTokens] = useState([]);
   const [loading, setLoading] = useState(false);
   const [pageToken, setPageToken] = useState(null);
-  const [modalOpen, setModalOpen] = useState(false);
   const [showBookmarks, setShowBookmarks] = useState(false);
   const [mealType, setMealType] = useState('all');
   const [sortLikes, setSortLikes] = useState(false);
@@ -21,6 +19,9 @@ const Gallery = ({ account }) => {
   const [searchText, setSearchText] = useState('');
   const [sortTips, setSortTips] = useState(false);
   const [tipsData, setTipsData] = useState({});
+  const [expandedTokenId, setExpandedTokenId] = useState(null);
+
+  const location = useLocation();
 
   const toggleSortTips = () => {
     setSortTips(!sortTips);
@@ -93,9 +94,8 @@ const Gallery = ({ account }) => {
   }, [mealType, allTokens, sortLikes, community, searchText, sortTips]);
 
   const filterAndSortTokens = () => {
-    let filteredTokens = allTokens.filter(token => token.metadata && token.metadata.attributes); // Filter out tokens with no metadata or attributes
+    let filteredTokens = allTokens.filter(token => token.metadata && token.metadata.attributes);
 
-    // Filter by meal type if not 'all'
     if (mealType !== 'all') {
       filteredTokens = filteredTokens.filter(token => {
         try {
@@ -108,7 +108,6 @@ const Gallery = ({ account }) => {
       });
     }
 
-    // Filter by community if not 'All Communities'
     if (community !== 'All Communities') {
       filteredTokens = filteredTokens.filter(token => {
         try {
@@ -121,7 +120,6 @@ const Gallery = ({ account }) => {
       });
     }
 
-    // Filter by search text
     if (searchText.trim() !== '') {
       const lowerCaseSearchText = searchText.toLowerCase();
       filteredTokens = filteredTokens.filter(token => {
@@ -137,12 +135,10 @@ const Gallery = ({ account }) => {
       });
     }
 
-    // Sort by likes if enabled
     if (sortLikes) {
       filteredTokens = filteredTokens.slice().sort((a, b) => b.likes - a.likes);
     }
 
-    // Sort by tips if enabled
     if (sortTips) {
       filteredTokens = filteredTokens.slice().sort((a, b) => {
         const tipsA = Object.values(tipsData[a.tokenId] || {}).reduce((acc, val) => acc + parseFloat(val), 0);
@@ -157,6 +153,14 @@ const Gallery = ({ account }) => {
   const toggleBookmarks = () => {
     setShowBookmarks(!showBookmarks);
   };
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const tokenId = params.get("tokenId");
+    if (tokenId) {
+      setExpandedTokenId(tokenId);
+    }
+  }, [location]);
 
   return (
     <div className="container mx-auto p-4 pt-8 md:pt-4">
@@ -226,7 +230,14 @@ const Gallery = ({ account }) => {
       <div className="">
         <div className="relative flex flex-wrap justify-center z-10 opacity-95 col-span-3">
           {displayTokens.slice().reverse().map((token, index) => (
-            <NFTCard key={index} token={token} account={account} showBookmarks={showBookmarks} onTipsFetch={handleTipsFetch} />
+            <NFTCard
+              key={index}
+              token={token}
+              account={account}
+              showBookmarks={showBookmarks}
+              onTipsFetch={handleTipsFetch}
+              expanded={expandedTokenId === token.tokenId} // Pass the expanded state
+            />
           ))}
         </div>
       </div>

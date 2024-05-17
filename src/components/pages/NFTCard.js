@@ -266,7 +266,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       <h2 className="font-bold text-lg xl:text-2xl mt-2 text-center pt-8">{name || "Unnamed Recipe"}</h2>
       <h2 className="font-bold text-lg mt-2 text-center pb-8">{`Contributor: ${contributor || "None"}`}</h2>
 
-      <div className="flex items-center justify-end mt-2 space-x-2 pb-4">
+      <div className="flex items-center justify-end mt-2 space-x-2 pb-4 pr-1">
         <div className="pr-2"><p className="text-gray-600 text-lg font-bold pl-4">{likes}</p></div>
         <button
           onClick={handleLike}

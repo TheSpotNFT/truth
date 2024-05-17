@@ -282,6 +282,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch }) =
       <img
         src={`https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`}
         alt={name}
+        onClick={toggleDetails}
         className="mx-auto w-full object-cover rounded duration-300 border-zinc-900 border-8 max-w-[100vw] sm:max-w-[80vw] md:max-w-[50vw] lg:max-w-[33vw] group-hover:scale-105"
       />
       {/* Toggle button for showing/hiding details */}

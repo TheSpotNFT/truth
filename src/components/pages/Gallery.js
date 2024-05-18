@@ -19,6 +19,7 @@ const Gallery = ({ account }) => {
   const [searchText1, setSearchText1] = useState('');
   const [searchText2, setSearchText2] = useState('');
   const [searchText3, setSearchText3] = useState('');
+  const [recipeNameSearch, setRecipeNameSearch] = useState('');
   const [sortTips, setSortTips] = useState(false);
   const [tipsData, setTipsData] = useState({});
   const [expandedTokenId, setExpandedTokenId] = useState(null);
@@ -107,7 +108,7 @@ const Gallery = ({ account }) => {
 
   useEffect(() => {
     filterAndSortTokens();
-  }, [mealType, allTokens, sortLikes, community, searchText1, searchText2, searchText3, sortTips]);
+  }, [mealType, allTokens, sortLikes, community, searchText1, searchText2, searchText3, recipeNameSearch, sortTips]);
 
   const filterAndSortTokens = () => {
     let filteredTokens = allTokens.filter(token => token.metadata && token.metadata.attributes);
@@ -115,7 +116,7 @@ const Gallery = ({ account }) => {
     if (mealType !== 'all') {
       filteredTokens = filteredTokens.filter(token => {
         try {
-          const attributes = JSON.parse(token.metadata.attributes);
+          const attributes = token.metadata.attributes;
           return attributes.some(attr => attr.trait_type === "Category" && attr.value === mealType);
         } catch (error) {
           console.error("Error parsing attributes:", error);
@@ -127,7 +128,7 @@ const Gallery = ({ account }) => {
     if (community !== 'All Communities') {
       filteredTokens = filteredTokens.filter(token => {
         try {
-          const attributes = JSON.parse(token.metadata.attributes);
+          const attributes = token.metadata.attributes;
           return attributes.some(attr => attr.trait_type === "Community Tag" && attr.value === community);
         } catch (error) {
           console.error("Error parsing attributes:", error);
@@ -141,12 +142,24 @@ const Gallery = ({ account }) => {
     if (searchTerms.length > 0) {
       filteredTokens = filteredTokens.filter(token => {
         try {
-          const attributes = JSON.parse(token.metadata.attributes);
+          const attributes = token.metadata.attributes;
           return searchTerms.every(term =>
             attributes.some(attr => attr.value.toLowerCase().includes(term.toLowerCase()))
           );
         } catch (error) {
           console.error("Error parsing attributes:", error);
+          return false;
+        }
+      });
+    }
+
+    if (recipeNameSearch.trim() !== '') {
+      filteredTokens = filteredTokens.filter(token => {
+        try {
+          const metadata = token.metadata;
+          return metadata.name.toLowerCase().includes(recipeNameSearch.toLowerCase());
+        } catch (error) {
+          console.error("Error parsing metadata:", error);
           return false;
         }
       });
@@ -188,7 +201,16 @@ const Gallery = ({ account }) => {
       <div className="py-0 md:pb-0 md:py-0 mx-auto">
         {/* Search Inputs */}
         <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 mt-2 pb-2">
-          <div className="flex-1 w-full md:pr-2">
+        <div className="flex-1 w-full md:pr-2">
+            <input
+              type="text"
+              value={recipeNameSearch}
+              onChange={(e) => setRecipeNameSearch(e.target.value)}
+              placeholder="Search recipe name..."
+              className="border text-gray-200 bg-zinc-700 border-zinc-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            />
+          </div>
+          <div className="flex-1 w-full md:pr-2 md:pl-2">
             <input
               type="text"
               value={searchText1}
@@ -215,55 +237,54 @@ const Gallery = ({ account }) => {
               className="border text-gray-200 bg-zinc-700 border-zinc-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
           </div>
+         
         </div>
       </div>
       <div className="mx-auto">
-      <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 md:mt-2 pb-20">
-        <div className="flex-1 w-full md:pr-2">
-          <select
-            className="bg-zinc-700 border-zinc-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            value={mealType}
-            onChange={(e) => setMealType(e.target.value)}
-          >
-            <option value="all">All Meals</option>
-            <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
-            <option value="Desserts">Desserts</option>
-            <option value="Snacks">Snacks</option>
-          </select>
+        <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 md:mt-2 pb-20">
+          <div className="flex-1 w-full md:pr-2">
+            <select
+              className="bg-zinc-700 border-zinc-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              value={mealType}
+              onChange={(e) => setMealType(e.target.value)}
+            >
+              <option value="all">All Meals</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Desserts">Desserts</option>
+              <option value="Snacks">Snacks</option>
+            </select>
+          </div>
+          <div className="flex-1 w-full md:px-2">
+            <select
+              className="bg-zinc-700 border-zinc-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              value={community}
+              onChange={(e) => setCommunity(e.target.value)}
+            >
+              <option value="All Communities">All Communities</option>
+              <option value="Avax Apes">Avax Apes</option>
+              <option value="Cuddlefish">Cuddlefish</option>
+              <option value="Kingshit">Kingshit</option>
+              <option value="Steady">Steady</option>
+              <option value="The Spot">The Spot</option>
+              <option value="The Arena">The Arena</option>
+              <option value="No Chill">No Chill</option>
+              <option value="Cozyverse">Cozyverse</option>
+              <option value="Quirkies">Quirkies</option>
+              <option value="Creature World">Creature World</option>
+            </select>
+          </div>
+          <div className="flex-1 w-full md:pl-2">
+            <button
+              onClick={toggleBookmarks}
+              className="bg-avax-red text-black hover:text-white font-bold py-2 px-4 rounded-lg w-full"
+            >
+              {showBookmarks ? "Show All" : "Show Bookmarked"}
+            </button>
+          </div>
         </div>
-
-        <div className="flex-1 w-full md:px-2">
-          <select
-            className="bg-zinc-700 border-zinc-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            value={community}
-            onChange={(e) => setCommunity(e.target.value)}
-          >
-            <option value="All Communities">All Communities</option>
-            <option value="Avax Apes">Avax Apes</option>
-            <option value="Cuddlefish">Cuddlefish</option>
-            <option value="Kingshit">Kingshit</option>
-            <option value="Steady">Steady</option>
-            <option value="The Spot">The Spot</option>
-            <option value="The Arena">The Arena</option>
-            <option value="No Chill">No Chill</option>
-            <option value="Cozyverse">Cozyverse</option>
-            <option value="Quirkies">Quirkies</option>
-            <option value="Creature World">Creature World</option>
-          </select>
-        </div>
-
-        <div className="flex-1 w-full md:pl-2">
-          <button
-            onClick={toggleBookmarks}
-            className="bg-avax-red text-black hover:text-white font-bold py-2 px-4 rounded-lg w-full"
-          >
-            {showBookmarks ? "Show All" : "Show Bookmarked"}
-          </button>
-        </div>
-      </div></div>
-
+      </div>
       <div className="">
         <div className="relative flex flex-wrap justify-center z-10 opacity-95 col-span-3">
           {shuffledTokens.slice().reverse().map((token, index) => (
@@ -279,7 +300,6 @@ const Gallery = ({ account }) => {
         </div>
       </div>
       {loading && <p>Loading...</p>}
-      
       <div className="fixed bottom-20 left-10 w-96 h-96 pointer-events-none z-0 hidden md:block opacity-100">
         <img src={logo} alt="Logo" />
       </div>

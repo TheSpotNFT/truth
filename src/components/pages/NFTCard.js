@@ -243,7 +243,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   };
 
   return (
-    <div className={`text-white border pr-4 pl-4 pb-4 pt-2 m-2 shadow-md rounded-lg bg-avax-black border-avax-black transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-24' : 'w-full lg:w-1/4 2xl:w-1/6'} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
+    <div className={`text-white border pr-4 pl-4 pb-4 pt-2 m-2 shadow-md rounded-lg bg-avax-black border-avax-black transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-36' : 'w-full lg:w-1/4 2xl:w-1/6'} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
       <div className="relative pt-4">
         {imageUri ? (
           <div className="relative group">

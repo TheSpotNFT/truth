@@ -355,7 +355,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
 
       <div className="pt-4">
         <button onClick={toggleTipInputs} className="bg-gray-800 w-full hover:bg-avax-red text-white px-3 py-1 rounded">
-          {showTipInputs ? "Hide Tip Inputs" : "Tip Recipe Holder"}
+          {showTipInputs ? "Hide Tipping" : "Tip Recipe Holder"}
         </button>
       </div>
 

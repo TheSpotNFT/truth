@@ -184,7 +184,7 @@ const Gallery = ({ account }) => {
       <div className="mx-auto w-72 h-72 pointer-events-none block md:hidden pb-8">
         <img src={logo} alt="Logo" />
       </div>
-      <h1 className="text-6xl pb-16 pt-8 font-bold mb-4 text-avax-white">Browse Recipes</h1>
+      <h1 className="text-6xl pb-16 pt-16 font-bold mb-4 text-avax-white">Browse Recipes</h1>
       <div className="py-0 md:pb-0 md:py-0 mx-auto">
         {/* Search Inputs */}
         <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 mt-2 pb-2">

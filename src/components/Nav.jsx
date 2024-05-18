@@ -34,7 +34,7 @@ export const Nav = ({
             </div>
             <ul
               className={`pr-8 overflow-y-visible xl:flex xl:items-center absolute xl:static bg-avax-red z-10
-                left-0 sm:w-full md:w-1/3 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "md:top-[60px] sm:top-[85px] opacity-100 overflow-y-visible shadow-md" : "top-[-200px] md:top-[-200px]"
+                left-0 sm:w-full md:w-1/3 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "md:top-24 sm:top-[75px] opacity-100 overflow-y-visible shadow-md" : "top-[-200px] md:top-[-200px]"
                 }`}
             >
               {Links.map((link) => (

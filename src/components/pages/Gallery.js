@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import NFTCard from "./NFTCard";
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from '../Contracts/AvaxCooksLikeAndTip';
-import logo from "../../assets/iprs2.png";
+import logo from "../../assets/iprs_spot.png";
 import { useLocation } from 'react-router-dom';
 
 const Gallery = ({ account }) => {
@@ -16,10 +16,26 @@ const Gallery = ({ account }) => {
   const [sortLikes, setSortLikes] = useState(false);
   const [likes, setLikes] = useState(0);
   const [community, setCommunity] = useState('All Communities');
-  const [searchText, setSearchText] = useState('');
+  const [searchText1, setSearchText1] = useState('');
+  const [searchText2, setSearchText2] = useState('');
+  const [searchText3, setSearchText3] = useState('');
   const [sortTips, setSortTips] = useState(false);
   const [tipsData, setTipsData] = useState({});
   const [expandedTokenId, setExpandedTokenId] = useState(null);
+  const shuffleArray = (array) => {
+    const shuffledArray = array.slice();
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+  };
+
+  const [shuffledTokens, setShuffledTokens] = useState([]);
+
+  useEffect(() => {
+    setShuffledTokens(shuffleArray(displayTokens));
+  }, [displayTokens]);
 
   const location = useLocation();
 
@@ -91,7 +107,7 @@ const Gallery = ({ account }) => {
 
   useEffect(() => {
     filterAndSortTokens();
-  }, [mealType, allTokens, sortLikes, community, searchText, sortTips]);
+  }, [mealType, allTokens, sortLikes, community, searchText1, searchText2, searchText3, sortTips]);
 
   const filterAndSortTokens = () => {
     let filteredTokens = allTokens.filter(token => token.metadata && token.metadata.attributes);
@@ -120,13 +136,14 @@ const Gallery = ({ account }) => {
       });
     }
 
-    if (searchText.trim() !== '') {
-      const lowerCaseSearchText = searchText.toLowerCase();
+    const searchTerms = [searchText1, searchText2, searchText3].filter(text => text.trim() !== '');
+
+    if (searchTerms.length > 0) {
       filteredTokens = filteredTokens.filter(token => {
         try {
           const attributes = JSON.parse(token.metadata.attributes);
-          return attributes.some(attr => 
-            attr.value.toLowerCase().includes(lowerCaseSearchText)
+          return searchTerms.every(term =>
+            attributes.some(attr => attr.value.toLowerCase().includes(term.toLowerCase()))
           );
         } catch (error) {
           console.error("Error parsing attributes:", error);
@@ -164,25 +181,45 @@ const Gallery = ({ account }) => {
 
   return (
     <div className="container mx-auto p-4 pt-8 md:pt-4">
+      <div className="mx-auto w-72 h-72 pointer-events-none block md:hidden pb-8">
+        <img src={logo} alt="Logo" />
+      </div>
       <h1 className="text-6xl pb-16 pt-8 font-bold mb-4 text-avax-white">Browse Recipes</h1>
-      <div className="py-8 pb-24 md:py-0 mx-auto">
-        <div className="mx-auto w-72 h-72 pointer-events-none block md:hidden pb-8">
-          <img src={logo} alt="Logo" />
+      <div className="py-0 md:pb-0 md:py-0 mx-auto">
+        {/* Search Inputs */}
+        <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 mt-2 pb-2">
+          <div className="flex-1 w-full md:pr-2">
+            <input
+              type="text"
+              value={searchText1}
+              onChange={(e) => setSearchText1(e.target.value)}
+              placeholder="Search ingredient 1..."
+              className="border text-gray-200 bg-zinc-700 border-zinc-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            />
+          </div>
+          <div className="flex-1 w-full md:px-2">
+            <input
+              type="text"
+              value={searchText2}
+              onChange={(e) => setSearchText2(e.target.value)}
+              placeholder="Search ingredient 2..."
+              className="border text-gray-200 bg-zinc-700 border-zinc-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            />
+          </div>
+          <div className="flex-1 w-full md:pl-2">
+            <input
+              type="text"
+              value={searchText3}
+              onChange={(e) => setSearchText3(e.target.value)}
+              placeholder="Search ingredient 3..."
+              className="border text-gray-200 bg-zinc-700 border-zinc-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            />
+          </div>
         </div>
       </div>
-
-      <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 sm:space-x-2 mt-2 pb-24">
-        <div className="flex-1 w-full pl-3 pr-1">
-          <input
-            type="text"
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            placeholder="Search attributes..."
-            className="border text-gray-200 bg-zinc-700 border-zinc-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          />
-        </div>
-
-        <div className="flex-1 px-2 w-full">
+      <div className="mx-auto">
+      <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 md:mt-2 pb-20">
+        <div className="flex-1 w-full md:pr-2">
           <select
             className="bg-zinc-700 border-zinc-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             value={mealType}
@@ -197,7 +234,7 @@ const Gallery = ({ account }) => {
           </select>
         </div>
 
-        <div className="flex-1 px-2 w-full">
+        <div className="flex-1 w-full md:px-2">
           <select
             className="bg-zinc-700 border-zinc-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             value={community}
@@ -217,19 +254,19 @@ const Gallery = ({ account }) => {
           </select>
         </div>
 
-        <div className="flex-1 px-2 w-full">
+        <div className="flex-1 w-full md:pl-2">
           <button
             onClick={toggleBookmarks}
-            className="bg-avax-red text-black hover:text-white font-bold py-2 px-4 rounded w-full"
+            className="bg-avax-red text-black hover:text-white font-bold py-2 px-4 rounded-lg w-full"
           >
             {showBookmarks ? "Show All" : "Show Bookmarked"}
           </button>
         </div>
-      </div>
+      </div></div>
 
       <div className="">
         <div className="relative flex flex-wrap justify-center z-10 opacity-95 col-span-3">
-          {displayTokens.slice().reverse().map((token, index) => (
+          {shuffledTokens.slice().reverse().map((token, index) => (
             <NFTCard
               key={index}
               token={token}

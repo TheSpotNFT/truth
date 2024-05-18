@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LogoutButton from "./Logout";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "../index.css";
-import truck from "../assets/avaxtrucks/Plum.png";
+import logo from "../assets/iprs_thin.png";
 
 export const Nav = ({
   account,
@@ -14,8 +14,8 @@ export const Nav = ({
 }) => {
 
   let Links = [
-    { name: "Add Recipe", link: "/" },
-    { name: "View Recipes", link: "/gallery" },
+    { name: "Add Recipe", link: "/gallery" },
+    { name: "View Recipes", link: "/" },
     { name: "Getting Started", link: "/faq" },
     { name: "Twitter", link: "https://twitter.com/avaxcooks" },
   ];
@@ -27,16 +27,16 @@ export const Nav = ({
     <nav className="main-nav pb-20 md:pb-20 lg:pb-15 xl:pb-15 2xl:pb-15 z-10 relative">
       <div className="shadow-sm w-full fixed top-0 left-0 bg-avax-red pt-4 sm:pb-2">
         <div className="flex items-center justify-between bg-avax-red py-0 px-7">
-          <div className="desktop-nav">
+          <div className="flex flex-col items-center w-full xl:flex-row xl:justify-between">
+            <div className="flex items-center justify-center w-full xl:justify-start xl:w-auto">
+              <img src={logo} alt="Logo" className="w-24 hidden md:block" />
+              <span className="text-3xl font-bold ml-4">InterPlanetary Recipe System</span>
+            </div>
             <ul
-              className={`overflow-y-visible xl:flex xl:items-center absolute xl:static bg-avax-red z-10
+              className={`pr-8 overflow-y-visible xl:flex xl:items-center absolute xl:static bg-avax-red z-10
                 left-0 sm:w-full md:w-1/3 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "md:top-[60px] sm:top-[85px] opacity-100 overflow-y-visible shadow-md" : "top-[-200px] md:top-[-200px]"
                 }`}
             >
-              <div className="text-3xl font-bold hidden xl:flex items-end">
-                iprs
-                <div className="text-xs ml-2">interplanetary recipe system</div>
-              </div>
               {Links.map((link) => (
                 <li
                   key={link.name}
@@ -55,9 +55,6 @@ export const Nav = ({
                 </li>
               ))}
             </ul>
-          </div><div className="text-3xl font-bold xl:hidden lg:flex items-end pl-32 md:pl-32 pb-2">
-            iprs
-            <div className="text-xs ml-2">interplanetary recipe system</div>
           </div>
           <div
             onClick={() => setOpen(!open)}

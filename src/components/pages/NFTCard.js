@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from "../Contracts/AvaxCooksLikeAndTip";
 
-const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, expanded}) => {
+const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, expanded }) => {
   const { metadata, tokenId } = token;
   const { name, imageUri, attributes: attributesStr } = metadata || {};
   const [likes, setLikes] = useState(0);
@@ -10,11 +10,16 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   const [tipAmount, setTipAmount] = useState("");
   const [selectedToken, setSelectedToken] = useState("NOCHILL");
   const [showDetails, setShowDetails] = useState(false);
+  const [showTipInputs, setShowTipInputs] = useState(false);
   const [totalTips, setTotalTips] = useState({});
   const [hasBookmarked, setHasBookmarked] = useState(false);
 
   const toggleDetails = () => {
     setShowDetails(!showDetails);
+  };
+
+  const toggleTipInputs = () => {
+    setShowTipInputs(!showTipInputs);
   };
 
   useEffect(() => {
@@ -25,8 +30,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
     { symbol: "COQ", address: "0x420FcA0121DC28039145009570975747295f2329" },
     { symbol: "NOCHILL", address: "0xAcFb898Cff266E53278cC0124fC2C7C94C8cB9a5" },
     { symbol: "MEOW", address: "0x8aD25B0083C9879942A64f00F20a70D3278f6187" },
-    { symbol: "KINGSHIT.X", address: "0x05B0Def5c00bA371683D7035934BcF82B737C364"},
-    { symbol: "KONG", address: "0xEbB5d4959B2FbA6318FbDa7d03cd44aE771fc999"},
+    { symbol: "KINGSHIT.X", address: "0x05B0Def5c00bA371683D7035934BcF82B737C364" },
+    { symbol: "KONG", address: "0xEbB5d4959B2FbA6318FbDa7d03cd44aE771fc999" },
   ];
 
   let attributes = [];
@@ -36,7 +41,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
     console.error("Failed to parse attributes", e);
   }
 
-  const fetchTotalTips = async (onTipsFetch) => {
+  const fetchTotalTips = async () => {
     try {
       const { ethereum } = window;
       if (!ethereum) {
@@ -238,7 +243,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   };
 
   return (
-    <div className={`text-white border pr-4 pl-4 pb-4 pt-2 m-2 shadow-md rounded-lg bg-avax-black border-avax-black transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-24' : 'w-full md:w-3/4 lg:w-1/5'} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
+    <div className={`text-white border pr-4 pl-4 pb-4 pt-2 m-2 shadow-md rounded-lg bg-avax-black border-avax-black transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-24' : 'w-full lg:w-1/4 2xl:w-1/6'} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
       <div className="relative pt-4">
         {imageUri ? (
           <div className="relative group">
@@ -265,6 +270,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
 
       <h2 className="font-bold text-lg xl:text-2xl mt-2 text-center pt-8">{name || "Unnamed Recipe"}</h2>
       <h2 className="font-bold text-lg mt-2 text-center pb-8">{`Contributor: ${contributor || "None"}`}</h2>
+      
 
       <div className="flex items-center justify-end mt-2 space-x-2 pb-4 pr-1">
         <div className="pr-2"><p className="text-gray-600 text-lg font-bold pl-4">{likes}</p></div>
@@ -285,23 +291,21 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
         </div>
         <div className="pl-4">
           <button onClick={copyLinkToClipboard} className="bg-avax-red text-white pl-2 pr-2 py-1 rounded hover:bg-red-600">
-          <svg
-    fill="currentColor"
-    width="25"
-    height="25"
-    viewBox="0 0 32 32"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <defs>
-      <style>{'.cls-1 { fill: none; }'}</style>
-    </defs>
-    <path d="M11.9474,19a4.9476,4.9476,0,0,1-3.4991-8.4465l5.1053-5.1043a4.9482,4.9482,0,0,1,6.9981,6.9976l-.5523.5526-1.4158-1.4129.5577-.5579a2.95,2.95,0,0,0-.0039-4.1653,3.02,3.02,0,0,0-4.17,0l-5.1047,5.104a2.9474,2.9474,0,0,0,0,4.1692,3.02,3.02,0,0,0,4.17,0l1.4143,1.4145A4.9176,4.9176,0,0,1,11.9474,19Z" />
-    <path d="M19.9474,17a4.9476,4.9476,0,0,1-3.4991-8.4465l.5526-.5526,1.4143,1.4146-.5526.5523a2.9476,2.9476,0,0,0,0,4.1689,3.02,3.02,0,0,0,4.17,0c.26-.26,4.7293-4.7293,5.1053-5.1045a2.951,2.951,0,0,0,0-4.1687,3.02,3.02,0,0,0-4.17,0L21.5536,3.449a4.9483,4.9483,0,0,1,6.9981,6.9978c-.3765.376-4.844,4.8428-5.1038,5.1035A4.9193,4.9193,0,0,1,19.9474,17Z" />
-    <path d="M24,30H4a2.0021,2.0021,0,0,1-2-2V8A2.0021,2.0021,0,0,1,4,6H8V8H4V28H24V18h2V28A2.0021,2.0021,0,0,1,24,30Z" />
-    <rect id="Transparent_Rectangle" width="32" height="32" fill="none" />
-  </svg> 
-
-
+            <svg
+              fill="currentColor"
+              width="25"
+              height="25"
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <style>{'.cls-1 { fill: none; }'}</style>
+              </defs>
+              <path d="M11.9474,19a4.9476,4.9476,0,0,1-3.4991-8.4465l5.1053-5.1043a4.9482,4.9482,0,0,1,6.9981,6.9976l-.5523.5526-1.4158-1.4129.5577-.5579a2.95,2.95,0,0,0-.0039-4.1653,3.02,3.02,0,0,0-4.17,0l-5.1047,5.104a2.9474,2.9474,0,0,0,0,4.1692,3.02,3.02,0,0,0,4.17,0l1.4143,1.4145A4.9176,4.9176,0,0,1,11.9474,19Z" />
+              <path d="M19.9474,17a4.9476,4.9476,0,0,1-3.4991-8.4465l.5526-.5526,1.4143,1.4146-.5526.5523a2.9476,2.9476,0,0,0,0,4.1689,3.02,3.02,0,0,0,4.17,0c.26-.26,4.7293-4.7293,5.1053-5.1045a2.951,2.951,0,0,0,0-4.1687,3.02,3.02,0,0,0-4.17,0L21.5536,3.449a4.9483,4.9483,0,0,1,6.9981,6.9978c-.3765.376-4.844,4.8428-5.1038,5.1035A4.9193,4.9193,0,0,1,19.9474,17Z" />
+              <path d="M24,30H4a2.0021,2.0021,0,0,1-2-2V8A2.0021,2.0021,0,0,1,4,6H8V8H4V28H24V18h2V28A2.0021,2.0021,0,0,1,24,30Z" />
+              <rect id="Transparent_Rectangle" width="32" height="32" fill="none" />
+            </svg>
           </button>
         </div>
       </div>
@@ -320,29 +324,44 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
         ))}
       </div>
 
-      <div className="pb-4"><input
-        type="number"
-        placeholder="Tip Amount"
-        disabled={!account}
-        value={tipAmount}
-        onChange={(e) => setTipAmount(e.target.value)}
-        className="shadow appearance-none border rounded py-2 px-3 bg-zinc-800 border-zinc-700 text-gray-100 leading-tight focus:outline-none focus:shadow-outline w-full"
-      /></div>
+      {showTipInputs && (
+        <>
+          <div className="pb-4"><input
+            type="number"
+            placeholder="Tip Amount"
+            disabled={!account}
+            value={tipAmount}
+            onChange={(e) => setTipAmount(e.target.value)}
+            className="shadow appearance-none border rounded py-2 px-3 bg-zinc-800 border-zinc-700 text-gray-100 leading-tight focus:outline-none focus:shadow-outline w-full"
+          /></div>
 
-      <select
-        value={selectedToken}
-        onChange={(e) => setSelectedToken(e.target.value)}
-        disabled={!account}
-        className={`shadow border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none ${account ? 'opacity-100' : 'opacity-50 cursor-not-allowed'}`}
-      >
-        {availableTokens.map((token, index) => (
-          <option key={index} value={token.symbol}>{token.symbol}</option>
-        ))}
-      </select>
+          <select
+            value={selectedToken}
+            onChange={(e) => setSelectedToken(e.target.value)}
+            disabled={!account}
+            className={`shadow border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none ${account ? 'opacity-100' : 'opacity-50 cursor-not-allowed'}`}
+          >
+            {availableTokens.map((token, index) => (
+              <option key={index} value={token.symbol}>{token.symbol}</option>
+            ))}
+          </select>
+          <div className="pt-4">
+            <button onClick={handleTip} className="bg-gray-800 w-full hover:bg-avax-red text-white px-3 py-1 rounded">
+              Submit Tip
+            </button>
+          </div>
+        </>
+      )}
 
       <div className="pt-4">
-        <button onClick={handleTip} className="bg-gray-800 w-full hover:bg-avax-red text-white px-3 py-1 rounded">
-          Tip Recipe Holder
+        <button onClick={toggleTipInputs} className="bg-gray-800 w-full hover:bg-avax-red text-white px-3 py-1 rounded">
+          {showTipInputs ? "Hide Tip Inputs" : "Tip Recipe Holder"}
+        </button>
+      </div>
+
+      <div className="pt-4">
+        <button onClick={toggleDetails} className="bg-gray-800 w-full hover:bg-avax-red text-white px-3 py-1 rounded">
+          {showDetails ? "Hide Recipe" : "View Recipe"}
         </button>
       </div>
 

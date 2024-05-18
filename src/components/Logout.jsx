@@ -55,9 +55,9 @@ function LogoutButton({
           hover:bg-white hover:border-black hover:text-black duration-300 hover:scale-105"
           onClick={() => logoutOfWeb3Modal()}
         >
-          {account.substring(0, 5) +
-            "..." +
-            account.substring(account.length - 4)}
+          {account.substring(0, 4) +
+            ".." +
+            account.substring(account.length - 3)}
         </button>
       </div>
     );

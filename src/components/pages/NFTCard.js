@@ -310,7 +310,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
         </div>
       </div>
 
-      <div className="pt-2 pb-4 pl-2 pr-2">
+      <div className="pt-2 pb-4 pl-2 pr-2 ">
         {Object.entries(totalTips).some(([symbol, amount]) => parseFloat(amount) > 0) && (
           <h3 className="text-lg font-semibold mb-2">Tips</h3>
         )}
@@ -332,21 +332,21 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
             disabled={!account}
             value={tipAmount}
             onChange={(e) => setTipAmount(e.target.value)}
-            className="shadow appearance-none border rounded py-2 px-3 bg-zinc-800 border-zinc-700 text-gray-100 leading-tight focus:outline-none focus:shadow-outline w-full"
+            className={`shadow appearance-none border rounded py-2 px-3 bg-zinc-800 border-zinc-700 text-gray-100 leading-tight focus:outline-none focus:shadow-outline ${showDetails ? "w-96" : "w-full"}`}
           /></div>
 
           <select
             value={selectedToken}
             onChange={(e) => setSelectedToken(e.target.value)}
             disabled={!account}
-            className={`shadow border rounded w-full py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none ${account ? 'opacity-100' : 'opacity-50 cursor-not-allowed'}`}
+            className={`shadow border rounded py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none ${account ? 'opacity-100' : 'opacity-50 cursor-not-allowed'} ${showDetails ? "w-96" : "w-full"}`}
           >
             {availableTokens.map((token, index) => (
               <option key={index} value={token.symbol}>{token.symbol}</option>
             ))}
           </select>
           <div className="pt-4">
-            <button onClick={handleTip} className="bg-gray-800 w-full hover:bg-avax-red text-white px-3 py-1 rounded">
+            <button onClick={handleTip} className={`bg-gray-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red text-white px-3 py-1 rounded`}>
               Submit Tip
             </button>
           </div>
@@ -354,13 +354,13 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       )}
 
       <div className="pt-4">
-        <button onClick={toggleTipInputs} className="bg-gray-800 w-full hover:bg-avax-red text-white px-3 py-1 rounded">
+        <button onClick={toggleTipInputs} className={`bg-gray-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red text-white px-3 py-1 rounded`}>
           {showTipInputs ? "Hide Tipping" : "Tip Recipe Holder"}
         </button>
       </div>
 
       <div className="pt-4">
-        <button onClick={toggleDetails} className="bg-gray-800 w-full hover:bg-avax-red text-white px-3 py-1 rounded">
+        <button onClick={toggleDetails} className={`bg-gray-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red text-white px-3 py-1 rounded`}>
           {showDetails ? "Hide Recipe" : "View Recipe"}
         </button>
       </div>
@@ -369,7 +369,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
         <div className="grid grid-cols-2 gap-4 p-4">
           <div className="col-span-1">
             {attributes.slice(0, -1).map((attr, index) => (
-              <div key={index} className="bg-zinc-300 text-black rounded p-2 drop-shadow-md mb-2 text-sm md:text-base xl:text-lg">
+              <div key={index} className="bg-zinc-800 text-avax-white rounded p-2 drop-shadow-md mb-2 text-sm md:text-base xl:text-lg">
                 <p>{attr.trait_type}: <strong>
                   {attr.trait_type === "X Username" ? 
                   <a href={`https://arena.social/${attr.value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attr.value}</a> :
@@ -381,7 +381,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           </div>
           <div className="col-span-1 flex flex-col justify-between">
             {attributes.length > 0 && (
-              <div className="bg-zinc-300 text-black rounded p-2 drop-shadow-md h-full flex items-center justify-center text-sm md:text-base xl:text-lg">
+              <div className="bg-zinc-800 text-avax-white rounded p-2 drop-shadow-md h-full flex items-center justify-center text-sm md:text-base xl:text-lg">
                 <p>
                   <div>{attributes[attributes.length - 1].trait_type}</div>
                   <strong>

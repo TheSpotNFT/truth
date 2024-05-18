@@ -18,7 +18,7 @@ export const Nav = ({
     { name: "View Recipes", link: "/" },
     { name: "Getting Started", link: "/faq" },
     { name: "Twitter", link: "https://twitter.com/avaxcooks" },
-    { name: "Discord", linkg: "https://discord.gg/pJT7ndQ88F" },
+    { name: "Discord", link: "https://discord.gg/pJT7ndQ88F" },
   ];
 
   const [open, setOpen] = useState(false);

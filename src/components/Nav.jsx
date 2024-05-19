@@ -26,15 +26,15 @@ export const Nav = ({
 
   return (
     <nav className="main-nav pb-20 md:pb-20 lg:pb-15 xl:pb-15 2xl:pb-15 z-10 relative">
-      <div className="shadow-sm w-full fixed top-0 left-0 bg-avax-red pt-4 sm:pb-2">
-        <div className="flex items-center justify-between bg-avax-red py-0 px-7">
+      <div className="shadow-sm w-full fixed top-0 left-0 bg-dark-teal pt-4 sm:pb-2">
+        <div className="flex items-center justify-between bg-dark-teal py-0 px-7">
           <div className="flex flex-col items-center w-full xl:flex-row xl:justify-between">
             <div className="flex items-center justify-center w-full xl:justify-start xl:w-auto">
               <img src={logo} alt="Logo" className="w-24 hidden md:block" />
-              <span className="text-base md:text-3xl font-bold ml-4">InterPlanetary Recipe System</span>
+              <span className="text-xs flex md:text-3xl font-bold ml-4">InterPlanetary Recipe System</span>
             </div>
             <ul
-              className={`pr-8 overflow-y-visible xl:flex xl:items-center absolute xl:static bg-avax-red z-10
+              className={`pr-8 overflow-y-visible xl:flex xl:items-center absolute xl:static bg-dark-teal z-10
                 left-0 sm:w-full md:w-1/3 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "md:top-24 sm:top-[75px] opacity-100 overflow-y-visible shadow-md" : "top-[-250px] md:top-[-250px]"
                 }`}
             >

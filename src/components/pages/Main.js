@@ -225,26 +225,26 @@ const Main = ({ account }) => {
                     {/* SVG logo or image can be here */}
                 </div>
             </div>
-            <div className="relative text-xl text-avax-white p-8 pt-24 px-4 md:px-36 lg:px-40 xl:px-96 z-20">
+            <div className="relative text-xl text-avax-black p-8 pt-0 md:pt-16 px-4 md:px-36 lg:px-40 xl:px-96 z-20">
                 Congrats! You made it. You have browsed the iprs for long enough and finally you want to submit your own recipes. We want to thank you in advance as our submittors make the iprs what it is.
             </div>
-            <div className="relative pb-16 justify-center items-center md:pt-12 z-20">
-                <button onClick={goToGallery} className="bg-avax-red hover:bg-red-700 text-black rounded-md p-4 font-bold text-xl w-2/4 h-24">
+            <div className="relative pb-16 justify-center items-center md:pt-4 z-20">
+                <button onClick={goToGallery} className="bg-bold-orange hover:bg-red-700 text-black rounded-md p-4 font-bold text-xl w-2/4 h-24">
                     iprs database
                 </button>
             </div>
            
-            <div className="relative text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96 pt-4 z-20">
+            <div className="relative text-xl text-avax-black pb-8 px-4 md:px-36 lg:px-40 xl:px-96 pt-0 z-20">
                 Make sure you visit the recipes by visiting the iprs database above and see what makes a good entry, the more data the better.
             </div>
-            <div className="relative text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96 z-20">
+            <div className="relative text-xl text-avax-black pb-8 px-4 md:px-36 lg:px-40 xl:px-96 z-20">
                 Actually submitting the recipe is easy. Check out <a href="/faq" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600">getting started</a> to learn how to install a web3 wallet and follow the steps. Once you are all set up just choose an image to upload that will represent your recipe, then enter in as much data as possible about the recipe. Better data = better search results. It costs 0.01 avax to submit your recipe, which at the time of publish was around $0.35USD, this fee is designed to stop spam.
             </div>
-            <div className="relative text-xl text-avax-white pb-8 px-4 md:px-36 lg:px-40 xl:px-96 z-20">
+            <div className="relative text-xl text-avax-black pb-8 px-4 md:px-36 lg:px-40 xl:px-96 z-20">
                 Secure good food for centuries to come. Mint your recipes today..
             </div>
             <div className="relative pb-4 z-20">
-                <button onClick={handleReset} className="bg-avax-red hover:bg-red-700 rounded-md p-4 font-bold text-xl">
+                <button onClick={handleReset} className="bg-neutral-500 hover:bg-red-700 rounded-md p-4 font-bold text-xl">
                     Reset Form
                 </button>
             </div>
@@ -424,7 +424,7 @@ const Main = ({ account }) => {
                 ))}
                 <button
                     onClick={addIngredientField}
-                    className="bg-avax-red hover:bg-red-700 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    className="bg-bold-red hover:bg-red-700 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 >
                     + Add Ingredient
                 </button>
@@ -484,12 +484,12 @@ const Main = ({ account }) => {
                         </div>
                     ))}
                 </div>
-                <button onClick={handleSubmit} disabled={txProcessing} className="bg-avax-red hover:bg-red-700 rounded-md p-4 font-bold text-xl">
+                <button onClick={handleSubmit} disabled={txProcessing} className="bg-bold-red hover:bg-red-700 rounded-md p-4 font-bold text-xl">
                     {txProcessing ? "Processing..." : "Mint Your Recipe!"}
                 </button>
             </div>
             <div className="fixed bottom-20 left-10 w-96 h-96 pointer-events-none z-0 hidden md:block">
-                <img src={logo} className="absolute z-0 opacity-60" />
+                <img src={logo} className="absolute z-0" />
             </div>
         </div>
     );

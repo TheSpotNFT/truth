@@ -1,3 +1,15 @@
+.bg-custom-gradient {
+  background: linear-gradient(to bottom, #4cb1ac 0px, #4cb1ac 390px, orange 375px, orange 775px, rgb(194, 23, 0) 775px);
+  height: 100vh;
+
+}
+
+@media (max-width: 832px) {
+  .bg-custom-gradient {
+    background: linear-gradient(to bottom, #4cb1ac 350px, orange 350px, orange 925px, rgb(194, 23, 0) 50%);
+  }
+}
+
 .App {
   text-align: center;
 }

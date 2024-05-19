@@ -29,7 +29,11 @@ module.exports = {
       'sphere-yellow': '#FFFDD0',
       'sphere-green': '#808000',
       'sphere-white': '#fffdd0',
-      'sphere-dark': '#2e2828'
+      'sphere-dark': '#2e2828',
+      'bold-red':'#FF0000',
+      'bold-orange':'#FFA500',
+      'dark-teal':'#1e5479',
+      'light-teal': '#4cb1ac'
     
     },
       backgroundImage: {

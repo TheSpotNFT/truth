@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from "../Contracts/AvaxCooksLikeAndTip";
+import { InlineShareButtons } from 'sharethis-reactjs';
 
 const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, expanded }) => {
   const { metadata, tokenId } = token;
@@ -246,10 +247,9 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       console.error("Failed to copy link: ", err);
     });
   };
-  
 
   return (
-    <div className={`text-white border pr-4 pl-4 pb-4 pt-2 m-2 shadow-md rounded-lg bg-avax-black border-avax-black transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-36' : 'w-full lg:w-1/4 2xl:w-1/6'} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
+    <div className={`text-white border pr-4 pl-4 pb-4 pt-2 m-2 shadow-md rounded-lg bg-neutral-900 border-neutral-900 transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-36' : 'w-full lg:w-1/4 2xl:w-1/6'} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
       <div className="relative pt-4">
         {imageUri ? (
           <div className="relative group">
@@ -276,9 +276,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
 
       <h2 className="font-bold text-lg xl:text-2xl mt-2 text-center pt-8">{name || "Unnamed Recipe"}</h2>
       <h2 className="font-bold text-lg mt-2 text-center pb-8">{`Contributor: ${contributor || "None"}`}</h2>
-      
 
-      <div className="flex items-center justify-end mt-2 space-x-2 pb-4 pr-1">
+      <div className="flex items-center justify-end mt-2 space-x-2 pb-4 sm:pr-6 lg:pr-6 xl:pr-4 2xl:pr-3">
         <div className="pr-2"><p className="text-gray-600 text-lg font-bold pl-4">{likes}</p></div>
         <button
           onClick={handleLike}
@@ -315,8 +314,35 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           </button>
         </div>
       </div>
-
-      <div className="pt-2 pb-4 pl-2 pr-2 ">
+  {/* Add ShareThis Inline Share Buttons */}
+  <div className="pt-2">
+        <InlineShareButtons
+        
+          config={{
+            alignment: 'center',  // alignment of buttons (left, center, right)
+            color: 'social',      // set the color of buttons (social, white)
+            enabled: true,        // show/hide buttons (true, false)
+            font_size: 16,        // font size for the buttons
+            labels: 'cta',        // button labels (cta, counts, null)
+            language: 'en',       // which language to use (see LANGUAGES)
+            networks: [           // which networks to include (see SHARING NETWORKS)
+              'twitter',
+              'facebook',
+              'pinterest'
+            ],
+            padding: 12,          // padding within buttons (INTEGER)
+            radius: 4,            // the corner radius on each button (INTEGER)
+            show_total: false,
+            size: 40,             // the size of each button (INTEGER)
+            url: `${window.location.origin}/?recipeName=${name ? name.replace(/\s+/g, '_') : tokenId}`, // Use the recipe name or tokenId as the URL
+            image: `https://gateway.pinata.cloud/ipfs/${imageUri?.split("ipfs://")[1]}`,  // Use the NFT image URL
+            description: `Check out this amazing recipe: ${name}`,  // Use the recipe name as the description
+            title: name,            // Use the recipe name as the title
+            
+          }}
+        />
+      </div>
+      <div className="pt-0 pb-4 pl-2 pr-2 ">
         {Object.entries(totalTips).some(([symbol, amount]) => parseFloat(amount) > 0) && (
           <h3 className="text-lg font-semibold mb-2">Tips</h3>
         )}
@@ -370,6 +396,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           {showDetails ? "Hide Recipe" : "View Recipe"}
         </button>
       </div>
+
+    
 
       {showDetails && (
         <div className="grid grid-cols-2 gap-4 p-4">

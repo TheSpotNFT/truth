@@ -24,6 +24,7 @@ const Gallery = ({ account }) => {
   const [sortTips, setSortTips] = useState(false);
   const [tipsData, setTipsData] = useState({});
   const [expandedTokenId, setExpandedTokenId] = useState(null);
+
   const shuffleArray = (array) => {
     const shuffledArray = array.slice();
     for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -32,12 +33,6 @@ const Gallery = ({ account }) => {
     }
     return shuffledArray;
   };
-
-  const [shuffledTokens, setShuffledTokens] = useState([]);
-
-  useEffect(() => {
-    setShuffledTokens(shuffleArray(displayTokens));
-  }, [displayTokens]);
 
   const location = useLocation();
 
@@ -62,9 +57,9 @@ const Gallery = ({ account }) => {
       const data = await response.json();
       if (response.ok && Array.isArray(data.tokens)) {
         setTokens((prevTokens) => [...prevTokens, ...data.tokens]);
-        setPageToken(data.nextPageToken); 
+        setPageToken(data.nextPageToken);
         setAllTokens(data.tokens);
-        setDisplayTokens(data.tokens);
+        filterAndSortTokens(data.tokens); // Apply filter and sort on initial fetch
       } else {
         throw new Error(data.message || "Error fetching data");
       }
@@ -108,16 +103,16 @@ const Gallery = ({ account }) => {
   }, [account]);
 
   useEffect(() => {
-    filterAndSortTokens();
-  }, [mealType, allTokens, sortLikes, community, searchText1, searchText2, searchText3, recipeNameSearch, sortTips]);
+    filterAndSortTokens(allTokens);
+  }, [mealType, community, searchText1, searchText2, searchText3, recipeNameSearch, sortLikes, sortTips]);
 
-  const filterAndSortTokens = () => {
-    let filteredTokens = allTokens.filter(token => token.metadata && token.metadata.attributes);
+  const filterAndSortTokens = (tokens) => {
+    let filteredTokens = tokens.filter(token => token.metadata && token.metadata.attributes);
 
     if (mealType !== 'all') {
       filteredTokens = filteredTokens.filter(token => {
         try {
-          const attributes = token.metadata.attributes;
+          const attributes = JSON.parse(token.metadata.attributes);
           return attributes.some(attr => attr.trait_type === "Category" && attr.value === mealType);
         } catch (error) {
           console.error("Error parsing attributes:", error);
@@ -129,7 +124,7 @@ const Gallery = ({ account }) => {
     if (community !== 'All Communities') {
       filteredTokens = filteredTokens.filter(token => {
         try {
-          const attributes = token.metadata.attributes;
+          const attributes = JSON.parse(token.metadata.attributes);
           return attributes.some(attr => attr.trait_type === "Community Tag" && attr.value === community);
         } catch (error) {
           console.error("Error parsing attributes:", error);
@@ -143,7 +138,7 @@ const Gallery = ({ account }) => {
     if (searchTerms.length > 0) {
       filteredTokens = filteredTokens.filter(token => {
         try {
-          const attributes = token.metadata.attributes;
+          const attributes = JSON.parse(token.metadata.attributes);
           return searchTerms.every(term =>
             attributes.some(attr => attr.value.toLowerCase().includes(term.toLowerCase()))
           );
@@ -178,7 +173,7 @@ const Gallery = ({ account }) => {
       });
     }
 
-    setDisplayTokens(filteredTokens);
+    setDisplayTokens(shuffleArray(filteredTokens));
   };
 
   const toggleBookmarks = () => {
@@ -206,7 +201,7 @@ const Gallery = ({ account }) => {
       <div className="py-0 md:pb-0 md:py-0 xl:px-32 mx-auto">
         {/* Search Inputs */}
         <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 mt-2 pb-2">
-        <div className="flex-1 w-full md:pr-2">
+          <div className="flex-1 w-full md:pr-2">
             <input
               type="text"
               value={recipeNameSearch}
@@ -242,7 +237,6 @@ const Gallery = ({ account }) => {
               className="text-gray-200 bg-zinc-700 shadow-md text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
           </div>
-         
         </div>
       </div>
       <div className="mx-auto">
@@ -292,7 +286,7 @@ const Gallery = ({ account }) => {
       </div>
       <div className="">
         <div className="relative flex flex-wrap justify-center z-10 opacity-95 col-span-3">
-          {shuffledTokens.slice().reverse().map((token, index) => (
+          {displayTokens.slice().reverse().map((token, index) => (
             <NFTCard
               key={index}
               token={token}

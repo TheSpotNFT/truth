@@ -187,11 +187,15 @@ const Gallery = ({ account }) => {
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const tokenId = params.get("tokenId");
-    if (tokenId) {
-      setExpandedTokenId(tokenId);
+    const recipeName = params.get("recipeName");
+    if (recipeName) {
+      const formattedName = recipeName.replace(/_/g, ' ');
+      const token = allTokens.find(token => token.metadata && token.metadata.name === formattedName);
+      if (token) {
+        setExpandedTokenId(token.tokenId);
+      }
     }
-  }, [location]);
+  }, [location, allTokens]);
 
   return (
     <div className="container mx-auto p-4 pt-0 md:pt-4">

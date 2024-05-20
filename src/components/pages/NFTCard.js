@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from "../Contracts/AvaxCooksLikeAndTip";
 import { InlineShareButtons } from 'sharethis-reactjs';
-import CommentSection from "../CommentSection"; // Import the CommentSection component
+import CommentSection from "../CommentSection";
 
 const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, expanded }) => {
   const { metadata, tokenId } = token;
@@ -296,7 +296,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           </button>
         </div>
         <div className="pl-4">
-          <button onClick={copyLinkToClipboard} className="bg-avax-red text-white pl-2 pr-2 py-1 rounded hover:bg-red-600 duration-300">
+          <button onClick={copyLinkToClipboard} className="bg-avax-red text-white pl-2 pr-2 py-1 rounded hover:bg-red-600">
             <svg
               fill="currentColor"
               width="25"
@@ -398,9 +398,42 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
         </button>
       </div>
 
-      {/* Comments Section 
+    
+
+      {showDetails && (
+        <div className="grid grid-cols-2 gap-4 p-4">
+          <div className="col-span-1">
+            {attributes.slice(0, -1).map((attr, index) => (
+              <div key={index} className="bg-zinc-800 text-avax-white rounded p-2 drop-shadow-md mb-2 text-sm md:text-base xl:text-lg">
+                <p>{attr.trait_type}: <strong>
+                  {attr.trait_type === "X Username" ? 
+                  <a href={`https://arena.social/${attr.value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attr.value}</a> :
+                    attr.value 
+                  }</strong>
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="col-span-1 flex flex-col justify-between">
+            {attributes.length > 0 && (
+              <div className="bg-zinc-800 text-avax-white rounded p-2 drop-shadow-md h-full flex items-center justify-center text-sm md:text-base xl:text-lg">
+                <p>
+                  <div>{attributes[attributes.length - 1].trait_type}</div>
+                  <strong>
+                    {attributes[attributes.length - 1].trait_type === "X Username" ? 
+                      <a href={`https://twitter.com/${attributes[attributes.length - 1].value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attributes[attributes.length - 1].value}</a> :
+                      attributes[attributes.length - 1].value}
+                  </strong>
+                </p>
+              </div>
+            )}
+          </div>
+          {/* Comments Section 
       <div className="w-full pt-4">  <CommentSection tokenId={tokenId} account={account} /></div>
     */}
+        </div>
+        
+      )}
     </div>
   );
 };

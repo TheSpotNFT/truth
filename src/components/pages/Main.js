@@ -229,7 +229,7 @@ const Main = ({ account }) => {
                 Congrats! You made it. You have browsed the iprs for long enough and finally you want to submit your own recipes. We want to thank you in advance as our submittors make the iprs what it is.
             </div>
             <div className="relative pb-16 justify-center items-center md:pt-4 z-20">
-                <button onClick={goToGallery} className="bg-bold-orange hover:bg-red-700 text-black rounded-md p-4 font-bold text-xl w-2/4 h-24">
+                <button onClick={goToGallery} className="bg-neutral-600 hover:bg-neutral-500 duration-300 text-black rounded-md p-4 font-bold text-xl w-2/4 h-24">
                     iprs database
                 </button>
             </div>
@@ -244,7 +244,7 @@ const Main = ({ account }) => {
                 Secure good food for centuries to come. Mint your recipes today..
             </div>
             <div className="relative pb-4 z-20">
-                <button onClick={handleReset} className="bg-neutral-500 hover:bg-red-700 rounded-md p-4 font-bold text-xl">
+                <button onClick={handleReset} className="bg-neutral-600 hover:bg-neutral-500 duration-300 rounded-md p-4 font-bold text-xl">
                     Reset Form
                 </button>
             </div>
@@ -426,7 +426,7 @@ const Main = ({ account }) => {
                 ))}
                 <button
                     onClick={addIngredientField}
-                    className="bg-bold-red hover:bg-red-700 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    className="bg-bold-red hover:bg-avax-red duration-300 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 >
                     + Add Ingredient
                 </button>
@@ -486,7 +486,7 @@ const Main = ({ account }) => {
                         </div>
                     ))}
                 </div>
-                <button onClick={handleSubmit} disabled={txProcessing} className="bg-bold-red hover:bg-red-700 rounded-md p-4 font-bold text-xl">
+                <button onClick={handleSubmit} disabled={txProcessing} className="bg-bold-red hover:bg-avax-red duration-300 rounded-md p-4 font-bold text-xl">
                     {txProcessing ? "Processing..." : "Mint Your Recipe!"}
                 </button>
             </div>

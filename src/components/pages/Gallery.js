@@ -290,6 +290,7 @@ const Gallery = ({ account }) => {
               <option value="Desserts">Desserts</option>
               <option value="Drinks">Drinks</option>
               <option value="Snacks">Snacks</option>
+              <option value="Cleaners">Cleaners</option>
             </select>
           </div>
           <div className="flex-1 w-full md:px-2">
@@ -318,10 +319,12 @@ const Gallery = ({ account }) => {
             onChange={(e) => setSortOption(e.target.value)}
           >
             <option value="random">Random Order</option>
-            <option value="likesDesc">Most Likes First</option>
-            <option value="tipsDesc">Most Tipped First</option>
+            
+           
             <option value="newest">Newest to Oldest</option>
             <option value="oldest">Oldest to Newest</option>
+            <option value="likesDesc">Most Likes First</option>
+            {/*<option value="tipsDesc">Most Tipped First</option>*/}
           </select>
         </div>
         </div>

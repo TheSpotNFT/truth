@@ -21,6 +21,8 @@ const Gallery = ({ account }) => {
   const [searchText2, setSearchText2] = useState('');
   const [searchText3, setSearchText3] = useState('');
   const [recipeNameSearch, setRecipeNameSearch] = useState('');
+  const [contributorSearch, setContributorSearch] = useState(''); // New state variable
+  const [sortOption, setSortOption] = useState('random'); // New state variable
   const [sortTips, setSortTips] = useState(false);
   const [tipsData, setTipsData] = useState({});
   const [expandedTokenId, setExpandedTokenId] = useState(null);
@@ -104,7 +106,7 @@ const Gallery = ({ account }) => {
 
   useEffect(() => {
     filterAndSortTokens(allTokens);
-  }, [mealType, community, searchText1, searchText2, searchText3, recipeNameSearch, sortLikes, sortTips]);
+  }, [mealType, community, searchText1, searchText2, searchText3, recipeNameSearch, contributorSearch, sortOption, sortLikes, sortTips]);
 
   const filterAndSortTokens = (tokens) => {
     let filteredTokens = tokens.filter(token => token.metadata && token.metadata.attributes);
@@ -161,19 +163,42 @@ const Gallery = ({ account }) => {
       });
     }
 
-    if (sortLikes) {
-      filteredTokens = filteredTokens.slice().sort((a, b) => b.likes - a.likes);
-    }
-
-    if (sortTips) {
-      filteredTokens = filteredTokens.slice().sort((a, b) => {
-        const tipsA = Object.values(tipsData[a.tokenId] || {}).reduce((acc, val) => acc + parseFloat(val), 0);
-        const tipsB = Object.values(tipsData[b.tokenId] || {}).reduce((acc, val) => acc + parseFloat(val), 0);
-        return tipsB - tipsA;
+    if (contributorSearch.trim() !== '') {
+      filteredTokens = filteredTokens.filter(token => {
+        try {
+          const attributes = JSON.parse(token.metadata.attributes);
+          return attributes.some(attr => attr.trait_type === "Contributor" && attr.value.toLowerCase().includes(contributorSearch.toLowerCase()));
+        } catch (error) {
+          console.error("Error parsing attributes:", error);
+          return false;
+        }
       });
     }
 
-    setDisplayTokens(shuffleArray(filteredTokens));
+    switch (sortOption) {
+      case 'likesDesc':
+        filteredTokens.sort((a, b) => b.likes - a.likes);
+        break;
+      case 'tipsDesc':
+        filteredTokens.sort((a, b) => {
+          const tipsA = Object.values(tipsData[a.tokenId] || {}).reduce((acc, val) => acc + parseFloat(val), 0);
+          const tipsB = Object.values(tipsData[b.tokenId] || {}).reduce((acc, val) => acc + parseFloat(val), 0);
+          return tipsB - tipsA;
+        });
+        break;
+      case 'newest':
+        filteredTokens.sort((a, b) => a.tokenId - b.tokenId);
+        break;
+      case 'oldest':
+        filteredTokens.sort((a, b) => b.tokenId - a.tokenId);
+        break;
+      case 'random':
+      default:
+        filteredTokens = shuffleArray(filteredTokens);
+        break;
+    }
+
+    setDisplayTokens(filteredTokens);
   };
 
   const toggleBookmarks = () => {
@@ -242,6 +267,15 @@ const Gallery = ({ account }) => {
       <div className="mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 md:mt-2 pb-20 xl:px-48 lg:px-32 2xl:px-32">
           <div className="flex-1 w-full md:pr-2">
+            <input
+              type="text"
+              value={contributorSearch}
+              onChange={(e) => setContributorSearch(e.target.value)}
+              placeholder="Search by contributor..."
+              className="text-gray-200 bg-neutral-700 shadow-md text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            />
+          </div>
+          <div className="flex-1 w-full md:pr-2">
             <select
               className="bg-neutral-700 border-neutral-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               value={mealType}
@@ -249,9 +283,12 @@ const Gallery = ({ account }) => {
             >
               <option value="all">All Meals</option>
               <option value="Breakfast">Breakfast</option>
+              <option value="Dressings">Dressings</option>
               <option value="Lunch">Lunch</option>
+              <option value="Sauces">Sauces</option>
               <option value="Dinner">Dinner</option>
               <option value="Desserts">Desserts</option>
+              <option value="Drinks">Drinks</option>
               <option value="Snacks">Snacks</option>
             </select>
           </div>
@@ -275,14 +312,20 @@ const Gallery = ({ account }) => {
             </select>
           </div>
           <div className="flex-1 w-full md:pl-2">
-            <button
-              onClick={toggleBookmarks}
-              className="bg-neutral-700 shadow-md text-avax-white hover:bg-neutral-800 duration-300 font-bold py-2 px-4 rounded-lg w-full"
-            >
-              {showBookmarks ? "Show All" : "Show Bookmarked"}
-            </button>
-          </div>
+          <select
+            className="bg-neutral-700 border-neutral-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value)}
+          >
+            <option value="random">Random Order</option>
+            <option value="likesDesc">Most Likes First</option>
+            <option value="tipsDesc">Most Tipped First</option>
+            <option value="newest">Newest to Oldest</option>
+            <option value="oldest">Oldest to Newest</option>
+          </select>
         </div>
+        </div>
+        
       </div>
       <div className="">
         <div className="relative flex flex-wrap justify-center z-10 opacity-95 col-span-3">

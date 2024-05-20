@@ -16,7 +16,7 @@ export const Nav = ({
     { name: "Add Recipe", link: "/gallery" },
     { name: "View Recipes", link: "/" },
     { name: "Getting Started", link: "/faq" },
-    { name: "Twitter", link: "https://twitter.com/avaxcooks" },
+    { name: "Twitter", link: "https://twitter.com/__iprs" },
     { name: "Discord", link: "https://discord.gg/pJT7ndQ88F" },
   ];
 

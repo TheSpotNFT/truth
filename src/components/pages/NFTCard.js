@@ -295,7 +295,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           </button>
         </div>
         <div className="pl-4">
-          <button onClick={copyLinkToClipboard} className="bg-avax-red text-white pl-2 pr-2 py-1 rounded hover:bg-red-600">
+          <button onClick={copyLinkToClipboard} className="bg-avax-red text-white pl-2 pr-2 py-1 rounded hover:bg-red-600 duration-300">
             <svg
               fill="currentColor"
               width="25"
@@ -364,21 +364,21 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
             disabled={!account}
             value={tipAmount}
             onChange={(e) => setTipAmount(e.target.value)}
-            className={`shadow appearance-none border rounded py-2 px-3 bg-zinc-800 border-zinc-700 text-gray-100 leading-tight focus:outline-none focus:shadow-outline ${showDetails ? "w-96" : "w-full"}`}
+            className={`shadow appearance-none border rounded py-2 px-3 bg-neutral-800 border-neutral-700 text-gray-100 leading-tight focus:outline-none focus:shadow-outline ${showDetails ? "w-96" : "w-full"}`}
           /></div>
 
           <select
             value={selectedToken}
             onChange={(e) => setSelectedToken(e.target.value)}
             disabled={!account}
-            className={`shadow border rounded py-2 px-3 text-gray-100 bg-zinc-700 border-zinc-800 leading-tight focus:outline-none ${account ? 'opacity-100' : 'opacity-50 cursor-not-allowed'} ${showDetails ? "w-96" : "w-full"}`}
+            className={`shadow border rounded py-2 px-3 text-gray-100 bg-neutral-700 border-neutral-800 leading-tight focus:outline-none ${account ? 'opacity-100' : 'opacity-50 cursor-not-allowed'} ${showDetails ? "w-96" : "w-full"}`}
           >
             {availableTokens.map((token, index) => (
               <option key={index} value={token.symbol}>{token.symbol}</option>
             ))}
           </select>
           <div className="pt-4">
-            <button onClick={handleTip} className={`bg-gray-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red text-white px-3 py-1 rounded`}>
+            <button onClick={handleTip} className={`bg-neutral-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red duration-300 text-white px-3 py-1 rounded`}>
               Submit Tip
             </button>
           </div>
@@ -386,13 +386,13 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       )}
 
       <div className="pt-4">
-        <button onClick={toggleTipInputs} className={`bg-gray-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red text-white px-3 py-1 rounded`}>
+        <button onClick={toggleTipInputs} className={`bg-neutral-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red duration-300 text-white px-3 py-1 rounded`}>
           {showTipInputs ? "Hide Tipping" : "Tip Recipe Holder"}
         </button>
       </div>
 
       <div className="pt-4">
-        <button onClick={toggleDetails} className={`bg-gray-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red text-white px-3 py-1 rounded`}>
+        <button onClick={toggleDetails} className={`bg-neutral-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red duration-300 text-white px-3 py-1 rounded`}>
           {showDetails ? "Hide Recipe" : "View Recipe"}
         </button>
       </div>

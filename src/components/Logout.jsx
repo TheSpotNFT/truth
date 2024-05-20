@@ -66,7 +66,7 @@ function LogoutButton({
     <div className="text-right lg:flex align-middle py-0">
       <div className="align-middle py-2">
         <button
-          className="rounded-sm px-4 py-0 border-4 border-opacity-80 border-black text-xl text-black 
+          className="rounded-sm px-4 py-0 border-4 border-opacity-80 border-white text-xl text-avax-white 
             hover:bg-white hover:border-black hover:text-black duration-300 hover:scale-105"
           onClick={() => loadWeb3Modal()}
         >

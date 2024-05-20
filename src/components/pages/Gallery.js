@@ -197,8 +197,8 @@ const Gallery = ({ account }) => {
       <div className="mx-auto w-64 h-64 pt-6 pointer-events-none block md:hidden pb-8">
         <img src={logothin} alt="Logo" />
       </div>
-      <h1 className="text-6xl pb-8 pt-12 font-bold mb-4 text-avax-black">Browse Recipes</h1>
-      <div className="py-0 md:pb-0 md:py-0 xl:px-32 mx-auto">
+      <h1 className="text-6xl pb-8 pt-12 font-bold mb-4 text-neutral-800">Browse Recipes</h1>
+      <div className="py-0 md:pb-0 md:py-0 lg:px-32 xl:px-48 mx-auto 2xl:px-32">
         {/* Search Inputs */}
         <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 mt-2 pb-2">
           <div className="flex-1 w-full md:pr-2">
@@ -207,7 +207,7 @@ const Gallery = ({ account }) => {
               value={recipeNameSearch}
               onChange={(e) => setRecipeNameSearch(e.target.value)}
               placeholder="Search recipe name..."
-              className="text-gray-200 bg-zinc-700 shadow-md text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="text-gray-200 bg-neutral-700 shadow-md text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
           </div>
           <div className="flex-1 w-full md:pr-2 md:pl-2">
@@ -216,7 +216,7 @@ const Gallery = ({ account }) => {
               value={searchText1}
               onChange={(e) => setSearchText1(e.target.value)}
               placeholder="Search ingredient 1..."
-              className="text-gray-200 bg-zinc-700 shadow-md text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="text-gray-200 bg-neutral-700 shadow-md text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
           </div>
           <div className="flex-1 w-full md:px-2">
@@ -225,7 +225,7 @@ const Gallery = ({ account }) => {
               value={searchText2}
               onChange={(e) => setSearchText2(e.target.value)}
               placeholder="Search ingredient 2..."
-              className="text-gray-200 bg-zinc-700 shadow-md text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="text-gray-200 bg-neutral-700 shadow-md text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
           </div>
           <div className="flex-1 w-full md:pl-2">
@@ -234,16 +234,16 @@ const Gallery = ({ account }) => {
               value={searchText3}
               onChange={(e) => setSearchText3(e.target.value)}
               placeholder="Search ingredient 3..."
-              className="text-gray-200 bg-zinc-700 shadow-md text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="text-gray-200 bg-neutral-700 shadow-md text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
           </div>
         </div>
       </div>
       <div className="mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 md:mt-2 pb-20 xl:px-32">
+        <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 md:mt-2 pb-20 xl:px-48 lg:px-32 2xl:px-32">
           <div className="flex-1 w-full md:pr-2">
             <select
-              className="bg-zinc-700 border-zinc-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="bg-neutral-700 border-neutral-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               value={mealType}
               onChange={(e) => setMealType(e.target.value)}
             >
@@ -257,7 +257,7 @@ const Gallery = ({ account }) => {
           </div>
           <div className="flex-1 w-full md:px-2">
             <select
-              className="bg-zinc-700 border-zinc-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              className="bg-neutral-700 border-neutral-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               value={community}
               onChange={(e) => setCommunity(e.target.value)}
             >
@@ -277,7 +277,7 @@ const Gallery = ({ account }) => {
           <div className="flex-1 w-full md:pl-2">
             <button
               onClick={toggleBookmarks}
-              className="bg-zinc-700 shadow-md text-white hover:text-white font-bold py-2 px-4 rounded-lg w-full"
+              className="bg-neutral-700 shadow-md text-avax-white hover:bg-neutral-800 duration-300 font-bold py-2 px-4 rounded-lg w-full"
             >
               {showBookmarks ? "Show All" : "Show Bookmarked"}
             </button>

@@ -6,7 +6,7 @@
 
 @media (max-width: 832px) {
   .bg-custom-gradient {
-    background: linear-gradient(to bottom, #4cb1ac 350px, orange 350px, orange 925px, rgb(194, 23, 0) 50%);
+    background: linear-gradient(to bottom, #4cb1ac 350px, orange 350px, orange 975px, rgb(194, 23, 0) 50%);
   }
 }
 

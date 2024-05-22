@@ -51,7 +51,7 @@ const Gallery = ({ account }) => {
     setLoading(true);
 
     const pageTokenParam = pageToken ? `&pageToken=${pageToken}` : "";
-    const url = `https://glacier-api.avax.network/v1/chains/43114/nfts/collections/0x568863597b44AA509a45C15eE3Cab3150a562d32/tokens?pageSize=120${pageTokenParam}`;
+    const url = `https://glacier-api.avax.network/v1/chains/43114/nfts/collections/0x568863597b44AA509a45C15eE3Cab3150a562d32/tokens?pageSize=100${pageTokenParam}`;
     const options = { method: "GET", headers: { accept: "application/json" } };
 
     try {

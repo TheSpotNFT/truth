@@ -9,7 +9,6 @@ import { useLocation } from 'react-router-dom';
 const Gallery = ({ account }) => {
   const [allTokens, setAllTokens] = useState([]);
   const [displayTokens, setDisplayTokens] = useState([]);
-  const [tokens, setTokens] = useState([]);
   const [loading, setLoading] = useState(false);
   const [pageToken, setPageToken] = useState(null);
   const [showBookmarks, setShowBookmarks] = useState(false);
@@ -21,8 +20,8 @@ const Gallery = ({ account }) => {
   const [searchText2, setSearchText2] = useState('');
   const [searchText3, setSearchText3] = useState('');
   const [recipeNameSearch, setRecipeNameSearch] = useState('');
-  const [contributorSearch, setContributorSearch] = useState(''); // New state variable
-  const [sortOption, setSortOption] = useState('random'); // New state variable
+  const [contributorSearch, setContributorSearch] = useState('');
+  const [sortOption, setSortOption] = useState('random');
   const [sortTips, setSortTips] = useState(false);
   const [tipsData, setTipsData] = useState({});
   const [expandedTokenId, setExpandedTokenId] = useState(null);
@@ -46,25 +45,33 @@ const Gallery = ({ account }) => {
     setTipsData(prev => ({ ...prev, [tokenId]: tips }));
   };
 
-  const fetchItems = async () => {
+  const fetchAllItems = async () => {
     if (loading) return;
     setLoading(true);
-
-    const pageTokenParam = pageToken ? `&pageToken=${pageToken}` : "";
-    const url = `https://glacier-api.avax.network/v1/chains/43114/nfts/collections/0x568863597b44AA509a45C15eE3Cab3150a562d32/tokens?pageSize=100${pageTokenParam}`;
-    const options = { method: "GET", headers: { accept: "application/json" } };
+    let allFetchedTokens = [];
+    let currentPageToken = null;
 
     try {
-      const response = await fetch(url, options);
-      const data = await response.json();
-      if (response.ok && Array.isArray(data.tokens)) {
-        setTokens((prevTokens) => [...prevTokens, ...data.tokens]);
-        setPageToken(data.nextPageToken);
-        setAllTokens(data.tokens);
-        filterAndSortTokens(data.tokens); // Apply filter and sort on initial fetch
-      } else {
-        throw new Error(data.message || "Error fetching data");
+      while (true) {
+        const pageTokenParam = currentPageToken ? `&pageToken=${currentPageToken}` : "";
+        const url = `https://glacier-api.avax.network/v1/chains/43114/nfts/collections/0x568863597b44AA509a45C15eE3Cab3150a562d32/tokens?pageSize=100${pageTokenParam}`;
+        const options = { method: "GET", headers: { accept: "application/json" } };
+
+        const response = await fetch(url, options);
+        const data = await response.json();
+        if (response.ok && Array.isArray(data.tokens)) {
+          allFetchedTokens = [...allFetchedTokens, ...data.tokens];
+          if (data.nextPageToken) {
+            currentPageToken = data.nextPageToken;
+          } else {
+            break;
+          }
+        } else {
+          throw new Error(data.message || "Error fetching data");
+        }
       }
+      setAllTokens(allFetchedTokens);
+      filterAndSortTokens(allFetchedTokens);
     } catch (err) {
       console.error("Fetch error:", err);
     } finally {
@@ -73,7 +80,7 @@ const Gallery = ({ account }) => {
   };
 
   useEffect(() => {
-    fetchItems();
+    fetchAllItems();
   }, []);
 
   const toggleSortLikes = () => {
@@ -281,16 +288,19 @@ const Gallery = ({ account }) => {
               value={mealType}
               onChange={(e) => setMealType(e.target.value)}
             >
-              <option value="all">All Meals</option>
+              <option value="all">All Categories</option>
               <option value="Breakfast">Breakfast</option>
-              <option value="Dressings">Dressings</option>
-              <option value="Lunch">Lunch</option>
-              <option value="Sauces">Sauces</option>
-              <option value="Dinner">Dinner</option>
-              <option value="Desserts">Desserts</option>
-              <option value="Drinks">Drinks</option>
-              <option value="Snacks">Snacks</option>
-              <option value="Cleaners">Cleaners</option>
+                        <option value="Dressings">Dressings</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Sauces">Sauces</option>
+                        <option value="Snacks">Snacks</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="Marinades">Marinades</option>
+                        <option value="Garnishes">Garnishes</option>
+                        <option value="Desserts">Desserts</option>
+                        <option value="Drinks">Drinks</option>
+                        <option value="Cleaners">Cleaners</option>
+                        <option value="Other">Other</option>
             </select>
           </div>
           <div className="flex-1 w-full md:px-2">
@@ -313,22 +323,19 @@ const Gallery = ({ account }) => {
             </select>
           </div>
           <div className="flex-1 w-full md:pl-2">
-          <select
-            className="bg-neutral-700 border-neutral-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            value={sortOption}
-            onChange={(e) => setSortOption(e.target.value)}
-          >
-            <option value="random">Random Order</option>
-            
-           
-            <option value="newest">Newest to Oldest</option>
-            <option value="oldest">Oldest to Newest</option>
-            <option value="likesDesc">Most Likes First</option>
-            {/*<option value="tipsDesc">Most Tipped First</option>*/}
-          </select>
+            <select
+              className="bg-neutral-700 border-neutral-800 text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              value={sortOption}
+              onChange={(e) => setSortOption(e.target.value)}
+            >
+              <option value="random">Random Order</option>
+              <option value="newest">Newest to Oldest</option>
+              <option value="oldest">Oldest to Newest</option>
+              <option value="likesDesc">Most Likes First</option>
+              <option value="tipsDesc">Most Tipped First</option>
+            </select>
+          </div>
         </div>
-        </div>
-        
       </div>
       <div className="">
         <div className="relative flex flex-wrap justify-center z-10 opacity-95 col-span-3">

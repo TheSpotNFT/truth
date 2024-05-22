@@ -278,6 +278,8 @@ const Main = ({ account }) => {
                         <option value="Sauces">Sauces</option>
                         <option value="Snacks">Snacks</option>
                         <option value="Dinner">Dinner</option>
+                        <option value="Marinades">Marinades</option>
+                        <option value="Garnishes">Garnishes</option>
                         <option value="Desserts">Desserts</option>
                         <option value="Drinks">Drinks</option>
                         <option value="Cleaners">Cleaners</option>
@@ -342,6 +344,7 @@ const Main = ({ account }) => {
                         <option value="Italian">Italian</option>
                         <option value="Mexican">Mexican</option>
                         <option value="Indian">Indian</option>
+                        <option value="Korean">Korean</option>
                         <option value="Chinese">Chinese</option>
                         <option value="French">French</option>
                         <option value="Japanese">Japanese</option>

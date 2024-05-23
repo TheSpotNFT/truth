@@ -25,6 +25,7 @@ const Gallery = ({ account }) => {
   const [sortTips, setSortTips] = useState(false);
   const [tipsData, setTipsData] = useState({});
   const [expandedTokenId, setExpandedTokenId] = useState(null);
+  const [viewMode, setViewMode] = useState('card'); // New state for view mode
 
   const shuffleArray = (array) => {
     const shuffledArray = array.slice();
@@ -117,6 +118,8 @@ const Gallery = ({ account }) => {
 
   const filterAndSortTokens = (tokens) => {
     let filteredTokens = tokens.filter(token => token.metadata && token.metadata.attributes);
+
+    filteredTokens = filteredTokens.filter(token => token.tokenId !== 106);
 
     if (mealType !== 'all') {
       filteredTokens = filteredTokens.filter(token => {
@@ -290,17 +293,17 @@ const Gallery = ({ account }) => {
             >
               <option value="all">All Categories</option>
               <option value="Breakfast">Breakfast</option>
-                        <option value="Dressings">Dressings</option>
-                        <option value="Lunch">Lunch</option>
-                        <option value="Sauces">Sauces</option>
-                        <option value="Snacks">Snacks</option>
-                        <option value="Dinner">Dinner</option>
-                        <option value="Marinades">Marinades</option>
-                        <option value="Garnishes">Garnishes</option>
-                        <option value="Desserts">Desserts</option>
-                        <option value="Drinks">Drinks</option>
-                        <option value="Cleaners">Cleaners</option>
-                        <option value="Other">Other</option>
+              <option value="Dressings">Dressings</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Sauces">Sauces</option>
+              <option value="Snacks">Snacks</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Marinades">Marinades</option>
+              <option value="Garnishes">Garnishes</option>
+              <option value="Desserts">Desserts</option>
+              <option value="Drinks">Drinks</option>
+              <option value="Cleaners">Cleaners</option>
+              <option value="Other">Other</option>
             </select>
           </div>
           <div className="flex-1 w-full md:px-2">
@@ -337,19 +340,68 @@ const Gallery = ({ account }) => {
           </div>
         </div>
       </div>
-      <div className="">
-        <div className="relative flex flex-wrap justify-center z-10 opacity-95 col-span-3">
-          {displayTokens.slice().reverse().map((token, index) => (
-            <NFTCard
-              key={index}
-              token={token}
-              account={account}
-              showBookmarks={showBookmarks}
-              onTipsFetch={handleTipsFetch}
-              expanded={expandedTokenId === token.tokenId} // Pass the expanded state
-            />
-          ))}
-        </div>
+      {/*<div className="flex justify-end py-0">
+        <button
+          onClick={() => setViewMode(viewMode === 'card' ? 'list' : 'card')}
+          className="bg-neutral-700 text-gray-200 rounded-lg p-2"
+        >
+          {viewMode === 'card' ? (
+            <span className="flex items-center">
+              <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M3 6h6v6H3V6zm8 0h10v6H11V6zM3 14h6v6H3v-6zm8 0h10v6H11v-6z" />
+              </svg>
+              List View
+            </span>
+          ) : (
+            <span className="flex items-center">
+              <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
+              </svg>
+              Card View
+            </span>
+          )}
+        </button>
+      </div>
+*/}
+      <div className="mt-4">
+        {viewMode === 'card' ? (
+          <div className="relative flex flex-wrap justify-center z-10 opacity-95 col-span-3">
+            {displayTokens.slice().reverse().map((token, index) => (
+              <NFTCard
+                key={index}
+                token={token}
+                account={account}
+                showBookmarks={showBookmarks}
+                onTipsFetch={handleTipsFetch}
+                expanded={expandedTokenId === token.tokenId} // Pass the expanded state
+                viewMode={viewMode}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="relative z-10 opacity-95 w-2/3 mx-auto">
+            <div className="grid grid-cols-1 gap-4 text-gray-200">
+              <div className="bg-neutral-800 p-4 rounded-lg space-y-4">
+                <div className="flex px-4 py-2 items-center">
+                  <div className="w-1/12"></div>
+                  <div className="w-1/3 text-left font-bold">Recipe Name</div>
+                  <div className="w-1/3 text-left font-bold">Contributor</div>
+                </div>
+                {displayTokens.slice().reverse().map((token, index) => (
+                  <NFTCard
+                    key={index}
+                    token={token}
+                    account={account}
+                    showBookmarks={showBookmarks}
+                    onTipsFetch={handleTipsFetch}
+                    expanded={expandedTokenId === token.tokenId} // Pass the expanded state
+                    viewMode={viewMode}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
       {loading && <p>Loading...</p>}
       <div className="fixed bottom-5 left-10 w-96 h-96 pointer-events-none z-0 hidden md:block opacity-100">

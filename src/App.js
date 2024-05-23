@@ -9,6 +9,7 @@ import Faq from "./components/pages/Faq";
 import { useState, useCallback } from "react";
 import { web3ModalSetup } from "./helpers/Web3Modal";
 import { ethers } from "ethers";
+import Update from "./components/pages/Update"
 
 
 function App() {
@@ -113,6 +114,22 @@ function App() {
                 exact
                 element={
                   <Gallery
+                    account={account}
+                    web3Modal={web3Modal}
+                    loadWeb3Modal={loadWeb3Modal}
+                    web3Provider={web3Provider}
+                    setWeb3Provider={setWeb3Provider}
+                    logoutOfWeb3Modal={logoutOfWeb3Modal}
+                    txProcessing={txProcessing}
+                    setTxProcessing={setTxProcessing}
+                  />
+                }
+              />
+              <Route
+                path="/update"
+                exact
+                element={
+                  <Update
                     account={account}
                     web3Modal={web3Modal}
                     loadWeb3Modal={loadWeb3Modal}

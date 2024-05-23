@@ -10,7 +10,7 @@ const UpdateNFTImage = ({ account }) => {
     const [newImageFile, setNewImageFile] = useState(null);
     const [newImagePreviewUrl, setNewImagePreviewUrl] = useState("");
     const [loading, setLoading] = useState(false);
-    const [ipfsAddress, setIpfsAddress] = useState('');
+    const [editMode, setEditMode] = useState(false);
 
     const fetchMetadata = async () => {
         if (!tokenId) {
@@ -59,6 +59,19 @@ const UpdateNFTImage = ({ account }) => {
         }
     };
 
+    const handleInputChange = (e, field) => {
+        setMetadata({
+            ...metadata,
+            [field]: e.target.value
+        });
+    };
+
+    const handleAttributeChange = (index, field, value) => {
+        const newAttributes = [...metadata.attributes];
+        newAttributes[index][field] = value;
+        setMetadata({ ...metadata, attributes: newAttributes });
+    };
+
     const uploadToIPFS = async () => {
         if (!newImageFile) {
             alert('No image file selected!');
@@ -71,7 +84,7 @@ const UpdateNFTImage = ({ account }) => {
         try {
             const response = await axios.post("https://api.pinata.cloud/pinning/pinFileToIPFS", formData, {
                 headers: {
-                    'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiIwZmQ5MzgwYy1mYmI2LTQ1OWQtYjkzYy00Mzk3ZjNmMWVlZjYiLCJlbWFpbCI6ImpqemltbWVyQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaW5fcG9saWN5Ijp7InJlZ2lvbnMiOlt7ImlkIjoiTllDMSIsImRlc2lyZWRSZXBsaWNhdGlvbkNvdW50IjoxfV0sInZlcnNpb24iOjF9LCJtZmFfZW5hYmxlZCI6ZmFsc2UsInN0YXR1cyI6IkFDVElWRSJ9LCJhdXRoZW50aWNhdGlvblR5cGUiOiJzY29wZWRLZXkiLCJzY29wZWRLZXlLZXkiOiI5NWQ0NmYxZDA2OWJlYjI0N2I1ZCIsInNjb3BlZEtleVNlY3JldCI6ImQ4NTM5MDMyZjQyZTU0MWQyMzZlOTljM2I4NjJlM2JiZjcxZTRlYWY5NDNkYTllOGI1NDhmMjk2YzM1YWMwYWEiLCJpYXQiOjE3MTYwNDk4NTh9.MiwhFpT1RdiswICA12Dt2IxDFMQqVkFJeSK9A416Afc`
+                   'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiIwZmQ5MzgwYy1mYmI2LTQ1OWQtYjkzYy00Mzk3ZjNmMWVlZjYiLCJlbWFpbCI6ImpqemltbWVyQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaW5fcG9saWN5Ijp7InJlZ2lvbnMiOlt7ImlkIjoiTllDMSIsImRlc2lyZWRSZXBsaWNhdGlvbkNvdW50IjoxfV0sInZlcnNpb24iOjF9LCJtZmFfZW5hYmxlZCI6ZmFsc2UsInN0YXR1cyI6IkFDVElWRSJ9LCJhdXRoZW50aWNhdGlvblR5cGUiOiJzY29wZWRLZXkiLCJzY29wZWRLZXlLZXkiOiI5NWQ0NmYxZDA2OWJlYjI0N2I1ZCIsInNjb3BlZEtleVNlY3JldCI6ImQ4NTM5MDMyZjQyZTU0MWQyMzZlOTljM2I4NjJlM2JiZjcxZTRlYWY5NDNkYTllOGI1NDhmMjk2YzM1YWMwYWEiLCJpYXQiOjE3MTYwNDk4NTh9.MiwhFpT1RdiswICA12Dt2IxDFMQqVkFJeSK9A416Afc`
                 }
             });
             return response.data.IpfsHash;
@@ -101,8 +114,7 @@ const UpdateNFTImage = ({ account }) => {
                 ...metadata,
                 image: `ipfs://${newImageHash}`
             };
-            console.log(updatedMetadata);
-           
+
             const metadataUri = await uploadMetadataToIPFS(updatedMetadata);
             if (!metadataUri) {
                 alert("Failed to upload updated metadata. Please try again.");
@@ -131,8 +143,6 @@ const UpdateNFTImage = ({ account }) => {
                     'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiIwZmQ5MzgwYy1mYmI2LTQ1OWQtYjkzYy00Mzk3ZjNmMWVlZjYiLCJlbWFpbCI6ImpqemltbWVyQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwaW5fcG9saWN5Ijp7InJlZ2lvbnMiOlt7ImlkIjoiTllDMSIsImRlc2lyZWRSZXBsaWNhdGlvbkNvdW50IjoxfV0sInZlcnNpb24iOjF9LCJtZmFfZW5hYmxlZCI6ZmFsc2UsInN0YXR1cyI6IkFDVElWRSJ9LCJhdXRoZW50aWNhdGlvblR5cGUiOiJzY29wZWRLZXkiLCJzY29wZWRLZXlLZXkiOiI5NWQ0NmYxZDA2OWJlYjI0N2I1ZCIsInNjb3BlZEtleVNlY3JldCI6ImQ4NTM5MDMyZjQyZTU0MWQyMzZlOTljM2I4NjJlM2JiZjcxZTRlYWY5NDNkYTllOGI1NDhmMjk2YzM1YWMwYWEiLCJpYXQiOjE3MTYwNDk4NTh9.MiwhFpT1RdiswICA12Dt2IxDFMQqVkFJeSK9A416Afc`
                 }
             });
-            console.log(`ipfs://${response.data.IpfsHash}`);
-            setIpfsAddress(`ipfs://${response.data.IpfsHash}`)
             return `ipfs://${response.data.IpfsHash}`;
         } catch (error) {
             console.error("Error uploading metadata to IPFS:", error);
@@ -161,6 +171,10 @@ const UpdateNFTImage = ({ account }) => {
         }
     };
 
+    const toggleEditMode = () => {
+        setEditMode(!editMode);
+    };
+
     return (
         <div className="container mx-auto p-4 pt-8 md:pt-16 px-4 md:px-36 lg:px-40 xl:px-96">
             <div className="text-center pb-8">
@@ -176,7 +190,7 @@ const UpdateNFTImage = ({ account }) => {
                         placeholder="Enter Token ID"
                         value={tokenId}
                         onChange={(e) => setTokenId(e.target.value)}
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                     <button
                         onClick={fetchMetadata}
@@ -190,17 +204,63 @@ const UpdateNFTImage = ({ account }) => {
                     <div className="mb-4">
                         <h3 className="font-bold text-lg text-gray-200">Current Metadata</h3>
                         <div className="bg-neutral-700 p-4 rounded mt-2 text-gray-200">
-                            <img src={`https://gateway.pinata.cloud/ipfs/${metadata.image.split("ipfs://")[1]}`} alt={metadata.name} className="w-full h-auto rounded mb-4" />
-                            <h2 className="text-2xl font-bold mb-2">{metadata.name}</h2>
-                            <p className="mb-4">{metadata.description}</p>
+                            <img src={`https://gateway.pinata.cloud/ipfs/${metadata.image.split("ipfs://")[1]}`} alt={metadata.name} className="w-1/2 h-auto rounded mb-4" />
+                            <div className="mb-4">
+                                <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="name">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    value={metadata.name}
+                                    onChange={(e) => handleInputChange(e, "name")}
+                                    disabled={!editMode}
+                                    className={`shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${editMode ? "" : "bg-gray-500 cursor-not-allowed"}`}
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor="description">Description</label>
+                                <textarea
+                                    id="description"
+                                    value={metadata.description}
+                                    onChange={(e) => handleInputChange(e, "description")}
+                                    disabled={!editMode}
+                                    className={`shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${editMode ? "" : "bg-gray-500 cursor-not-allowed"}`}
+                                />
+                            </div>
                             <div>
+                                <h4 className="font-bold text-lg text-gray-200 mb-2">Attributes</h4>
                                 {metadata.attributes.map((attribute, index) => (
-                                    <div key={index} className="flex justify-between mb-2">
-                                        <span className="font-bold">{attribute.trait_type}:</span>
-                                        <span>{attribute.value}</span>
+                                    <div key={index} className="mb-4">
+                                        <div className="flex justify-between mb-2">
+                                            <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor={`trait_type_${index}`}>Trait Type</label>
+                                            <input
+                                                type="text"
+                                                id={`trait_type_${index}`}
+                                                value={attribute.trait_type}
+                                                onChange={(e) => handleAttributeChange(index, "trait_type", e.target.value)}
+                                                disabled={!editMode}
+                                                className={`shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${editMode ? "" : "bg-gray-500 cursor-not-allowed"}`}
+                                            />
+                                        </div>
+                                        <div className="flex justify-between mb-2">
+                                            <label className="block text-gray-200 text-sm font-bold mb-2" htmlFor={`value_${index}`}>Value</label>
+                                            <input
+                                                type="text"
+                                                id={`value_${index}`}
+                                                value={attribute.value}
+                                                onChange={(e) => handleAttributeChange(index, "value", e.target.value)}
+                                                disabled={!editMode}
+                                                className={`shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${editMode ? "" : "bg-gray-500 cursor-not-allowed"}`}
+                                            />
+                                        </div>
                                     </div>
                                 ))}
                             </div>
+                            <button
+                                onClick={toggleEditMode}
+                                className="mt-4 bg-yellow-200 hover:bg-green-200 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            >
+                                {editMode ? "Disable Edit Text Mode" : "Enable Edit Text Mode"}
+                            </button>
                         </div>
                     </div>
                 )}
@@ -210,19 +270,18 @@ const UpdateNFTImage = ({ account }) => {
                     <input
                         type="file"
                         onChange={handleImageChange}
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2"
+                        className="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mt-2"
                     />
                     {newImagePreviewUrl && (
                         <div className="mt-4">
                             <img src={newImagePreviewUrl} alt="New Upload Preview" className="max-w-full h-auto rounded" />
                         </div>
                     )}
-                    <div className="text-white pt-8">New MetaData File Address for Token {tokenId}: {ipfsAddress}</div>
                 </div>
 
                 <button
                     onClick={handleUpdateImage}
-                    className="mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    className="mt-4 bg-neutral-200 hover:bg-neutral-400 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     disabled={loading}
                 >
                     {loading ? "Updating..." : "Update NFT Image"}

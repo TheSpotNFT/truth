@@ -4,7 +4,9 @@ import { COMMENTING_ABI, COMMENTING_ADDRESS } from './Contracts/CommentingContra
 import { VIBES_ABI, VIBES_ADDRESS } from './Contracts/VibesContract';
 import { AVAXCOOKS_ABI, AVAXCOOKS_ADDRESS } from './Contracts/AvaxCooks';
 import { db } from '../firebase3'; // Ensure you have firebase configured properly
-import { collection, addDoc, query, where, getDocs, Timestamp } from 'firebase/firestore';
+import { setDoc, getDoc, doc, updateDoc, increment, collection, addDoc, query, where, getDocs, Timestamp } from 'firebase/firestore';
+import good from "../assets/gud.png";
+import bad from "../assets/bad.png";
 
 const CommentComponent = ({ erc721TokenId, account }) => {
   const [comments, setComments] = useState([]);
@@ -13,6 +15,8 @@ const CommentComponent = ({ erc721TokenId, account }) => {
   const [displayNames, setDisplayNames] = useState({});
   const [loadingComments, setLoadingComments] = useState(false);
   const [loadingNames, setLoadingNames] = useState(false);
+  const [goodCommentsCount, setGoodCommentsCount] = useState(0);
+  const [badCommentsCount, setBadCommentsCount] = useState(0);
 
   useEffect(() => {
     if (showComments) {
@@ -21,10 +25,25 @@ const CommentComponent = ({ erc721TokenId, account }) => {
   }, [showComments]);
 
   useEffect(() => {
+      fetchCommentCounts();
+  }, []);
+
+  useEffect(() => {
     if (comments.length > 0) {
       fetchDisplayNames(comments);
     }
   }, [comments]);
+
+  const fetchCommentCounts = async () => {
+    const countsDocRef = doc(db, 'commentCounts', erc721TokenId);
+    const countsDoc = await getDoc(countsDocRef);
+
+    if (countsDoc.exists()) {
+      const data = countsDoc.data();
+      setGoodCommentsCount(data.goodComments || 0);
+      setBadCommentsCount(data.badComments || 0);
+    }
+  };
 
   const fetchComments = async () => {
     if (!erc721TokenId) {
@@ -80,9 +99,27 @@ const CommentComponent = ({ erc721TokenId, account }) => {
           isGood,
           account
         });
+
+      // Ensure the counts document exists
+      const countsDocRef = doc(db, 'commentCounts', erc721TokenId);
+      const countsDoc = await getDoc(countsDocRef);
+
+      if (!countsDoc.exists()) {
+        await setDoc(countsDocRef, {
+          goodComments: 0,
+          badComments: 0
+        });
+      }
+
+      // Update the counts in the 'commentCounts' document for the specific erc721TokenId
+      await updateDoc(countsDocRef, {
+        goodComments: isGood ? increment(1) : increment(0),
+        badComments: isGood ? increment(0) : increment(1)
+      });
   
         setCommentText('');
         fetchComments(); // Fetch comments after submitting a new comment
+        fetchCommentCounts();
       } catch (error) {
         console.error('Error adding comment to Firestore: ', error);
       }
@@ -121,12 +158,18 @@ const CommentComponent = ({ erc721TokenId, account }) => {
 
   return (
     <div className="bg-neutral-900 border-neutral-800 rounded-lg shadow-md w-full">
-      <button
-        onClick={() => setShowComments(!showComments)}
-        className="bg-neutral-800 text-white rounded px-4 py-2 mb-4 hover:bg-avax-red transition duration-300 w-full"
-      >
-        {showComments ? 'Hide Comments' : 'Show Comments'}
-      </button>
+         <div className="mb-4 flex items-center justify-between">
+        <button
+          onClick={() => setShowComments(!showComments)}
+          className="bg-neutral-800 text-white text-xs rounded px-4 py-2 hover:bg-avax-red transition duration-300 w-[60%]"
+        >
+          {showComments ? 'Hide Comments' : 'Show Comments'}
+        </button>
+        <div className="flex items-center pl-2">
+          <img src={good} className="w-6 mr-2" alt="Good" /> {goodCommentsCount}
+          <img src={bad} className="w-6 ml-4 mr-2" alt="Bad" /> <div className='pr-2'>{badCommentsCount}</div>
+        </div>
+      </div>
       {showComments && (
         <>
           {(loadingComments || loadingNames) ? (

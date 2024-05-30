@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 import { COMMENTING_ABI, COMMENTING_ADDRESS } from './Contracts/CommentingContract';
 import { VIBES_ABI, VIBES_ADDRESS } from './Contracts/VibesContract';
 import { AVAXCOOKS_ABI, AVAXCOOKS_ADDRESS } from './Contracts/AvaxCooks';
-import { db } from '../firebase3'; // Ensure you have firebase configured properly
+import { db } from '../firebase3'; 
 import { setDoc, getDoc, doc, updateDoc, increment, collection, addDoc, query, where, getDocs, Timestamp } from 'firebase/firestore';
 import good from "../assets/gud.png";
 import bad from "../assets/bad.png";
@@ -17,6 +17,7 @@ const CommentComponent = ({ erc721TokenId, account }) => {
   const [loadingNames, setLoadingNames] = useState(false);
   const [goodCommentsCount, setGoodCommentsCount] = useState(0);
   const [badCommentsCount, setBadCommentsCount] = useState(0);
+
 
   useEffect(() => {
     if (showComments) {

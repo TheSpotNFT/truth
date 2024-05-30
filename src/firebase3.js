@@ -1,8 +1,8 @@
-
-// src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth, signInAnonymously as firebaseSignInAnonymously } from "firebase/auth";
 
+// Firebase configuration object
 const firebaseConfig = {
   apiKey: "AIzaSyA-7ELypnxEXoNR_7AONIrDbb364Qzx4no",
   authDomain: "recipecomments.firebaseapp.com",
@@ -13,7 +13,19 @@ const firebaseConfig = {
   measurementId: "G-52ZXXGC956"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
-export { db };
+// Function to sign in with Firebase Anonymous Authentication
+async function signInAnonymously() {
+  try {
+    await firebaseSignInAnonymously(auth);
+    console.log("Signed in anonymously");
+  } catch (error) {
+    console.error("Error signing in anonymously:", error);
+  }
+}
+
+export { db, auth, signInAnonymously };

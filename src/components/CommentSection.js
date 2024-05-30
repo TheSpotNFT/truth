@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 import { COMMENTING_ABI, COMMENTING_ADDRESS } from './Contracts/CommentingContract';
 import { VIBES_ABI, VIBES_ADDRESS } from './Contracts/VibesContract';
 import { AVAXCOOKS_ABI, AVAXCOOKS_ADDRESS } from './Contracts/AvaxCooks';
-import { db } from '../firebase3'; 
+import { db, auth, signInAnonymously } from '../firebase3';
 import { setDoc, getDoc, doc, updateDoc, increment, collection, addDoc, query, where, getDocs, Timestamp } from 'firebase/firestore';
 import good from "../assets/gud.png";
 import bad from "../assets/bad.png";
@@ -26,7 +26,7 @@ const CommentComponent = ({ erc721TokenId, account }) => {
   }, [showComments]);
 
   useEffect(() => {
-      fetchCommentCounts();
+    fetchCommentCounts();
   }, []);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const CommentComponent = ({ erc721TokenId, account }) => {
 
     console.log('Fetching comments for erc721TokenId:', erc721TokenId);
     setLoadingComments(true);
-    
+
     try {
       const q = query(collection(db, 'comments'), where('erc721TokenId', '==', erc721TokenId));
       const querySnapshot = await getDocs(q);
@@ -69,6 +69,12 @@ const CommentComponent = ({ erc721TokenId, account }) => {
   const submitComment = async (isGood) => {
     if (!commentText) return;
   
+    if (!window.ethereum || !window.ethereum.selectedAddress) {
+      console.error('Wallet is not connected');
+      alert('Please connect your wallet to submit a comment');
+      return;
+    }
+  
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const avaxcooksContract = new ethers.Contract(AVAXCOOKS_ADDRESS, AVAXCOOKS_ABI, signer);
@@ -79,11 +85,9 @@ const CommentComponent = ({ erc721TokenId, account }) => {
   
     // Fetch the NFT owner's address (assuming this information is available in your setup)
     const nftOwnerAddress = await avaxcooksContract.ownerOf(erc721TokenId);
-    
   
     // Mint and send ERC-1155 token
     try {
-     
       let options = {
         // price is 0.2 avax
         value: ethers.utils.parseEther("0.2"),
@@ -100,23 +104,23 @@ const CommentComponent = ({ erc721TokenId, account }) => {
           isGood,
           account
         });
-
-      // Ensure the counts document exists
-      const countsDocRef = doc(db, 'commentCounts', erc721TokenId);
-      const countsDoc = await getDoc(countsDocRef);
-
-      if (!countsDoc.exists()) {
-        await setDoc(countsDocRef, {
-          goodComments: 0,
-          badComments: 0
+  
+        // Ensure the counts document exists
+        const countsDocRef = doc(db, 'commentCounts', erc721TokenId);
+        const countsDoc = await getDoc(countsDocRef);
+  
+        if (!countsDoc.exists()) {
+          await setDoc(countsDocRef, {
+            goodComments: 0,
+            badComments: 0
+          });
+        }
+  
+        // Update the counts in the 'commentCounts' document for the specific erc721TokenId
+        await updateDoc(countsDocRef, {
+          goodComments: isGood ? increment(1) : increment(0),
+          badComments: isGood ? increment(0) : increment(1)
         });
-      }
-
-      // Update the counts in the 'commentCounts' document for the specific erc721TokenId
-      await updateDoc(countsDocRef, {
-        goodComments: isGood ? increment(1) : increment(0),
-        badComments: isGood ? increment(0) : increment(1)
-      });
   
         setCommentText('');
         fetchComments(); // Fetch comments after submitting a new comment
@@ -159,7 +163,7 @@ const CommentComponent = ({ erc721TokenId, account }) => {
 
   return (
     <div className="bg-neutral-900 border-neutral-800 rounded-lg shadow-md w-full">
-         <div className="mb-4 flex items-center justify-between">
+      <div className="mb-4 flex items-center justify-between">
         <button
           onClick={() => setShowComments(!showComments)}
           className="bg-neutral-800 text-white text-xs rounded px-4 py-2 hover:bg-avax-red transition duration-300 w-[60%]"
@@ -185,32 +189,32 @@ const CommentComponent = ({ erc721TokenId, account }) => {
                   <div className="text-left mb-2 w-full">
                     <p className='text-sm'>{comment.text}</p>
                   </div>
-                  <div className="text-right text-xs mt-auto w-full">
-                    <small>{new Date(comment.timestamp.seconds * 1000).toLocaleString()}</small>
+                  <div className="text-right text-xs mt-2 w-full">
+                    <p className='text-[10px]'>({new Date(comment.timestamp.seconds * 1000).toLocaleString()})</p>
                   </div>
                 </div>
               ))}
             </div>
           )}
-          <div className="comment-input mt-4 w-full">
+          <div className="mt-4 w-full">
             <textarea
               value={commentText}
               onChange={(e) => setCommentText(e.target.value)}
-              className="w-full p-2 bg-neutral-800 text-white rounded mb-2 border border-neutral-700 focus:outline-none focus:ring focus:border-blue-500"
-              placeholder="Write your comment here..."
-            />
-            <div className="flex space-x-2 w-full">
+              className="bg-neutral-800 text-white text-xs rounded p-2 w-full"
+              placeholder="Write a comment..."
+            ></textarea>
+            <div className="flex items-center justify-end mt-2">
               <button
                 onClick={() => submitComment(true)}
-                className="bg-avax-red text-white rounded px-4 py-2 hover:bg-red-800 transition duration-300 w-full"
+                className="bg-avax-red text-white text-xs rounded px-4 py-2 mr-2 hover:bg-neutral-800 transition duration-300"
               >
-                👍 Submit
+                Submit Good
               </button>
               <button
                 onClick={() => submitComment(false)}
-                className="bg-avax-red text-white rounded px-4 py-2 hover:bg-red-800 transition duration-300 w-full"
+                className="bg-avax-red text-white text-xs rounded px-4 py-2 hover:bg-neutral-800 transition duration-300"
               >
-                👎 Submit
+                Submit Bad
               </button>
             </div>
           </div>
@@ -218,8 +222,6 @@ const CommentComponent = ({ erc721TokenId, account }) => {
       )}
     </div>
   );
-  
-  
 };
 
 export default CommentComponent;

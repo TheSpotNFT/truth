@@ -5,6 +5,7 @@ import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from '../Con
 import logo from "../../assets/iprs_spot.png";
 import logothin from "../../assets/iprs_thin.png";
 import { useLocation } from 'react-router-dom';
+import { signInAnonymously } from "../../firebase3";
 
 const Gallery = ({ account }) => {
   const [allTokens, setAllTokens] = useState([]);
@@ -26,6 +27,11 @@ const Gallery = ({ account }) => {
   const [tipsData, setTipsData] = useState({});
   const [expandedTokenId, setExpandedTokenId] = useState(null);
   const [viewMode, setViewMode] = useState('card'); // New state for view mode
+
+  useEffect(() => {
+    // Sign in anonymously on component mount
+    signInAnonymously();
+  }, []);
 
   const shuffleArray = (array) => {
     const shuffledArray = array.slice();

@@ -10,6 +10,7 @@ import { useState, useCallback } from "react";
 import { web3ModalSetup } from "./helpers/Web3Modal";
 import { ethers } from "ethers";
 import Update from "./components/pages/Update"
+//import YouAreHere from "./components/pages/YouAreHere"
 
 
 function App() {
@@ -125,6 +126,22 @@ function App() {
                   />
                 }
               />
+               {/*<Route
+                path="/youarehere"
+                exact
+                element={
+                  <YouAreHere
+                    account={account}
+                    web3Modal={web3Modal}
+                    loadWeb3Modal={loadWeb3Modal}
+                    web3Provider={web3Provider}
+                    setWeb3Provider={setWeb3Provider}
+                    logoutOfWeb3Modal={logoutOfWeb3Modal}
+                    txProcessing={txProcessing}
+                    setTxProcessing={setTxProcessing}
+                  />
+                }
+              />*/}
               <Route
                 path="/update"
                 exact

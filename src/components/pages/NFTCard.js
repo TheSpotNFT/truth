@@ -405,6 +405,10 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
             <button onClick={toggleDetails} className={`bg-neutral-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red duration-300 text-white px-3 py-1 rounded`}>
               {showDetails ? "Hide Recipe" : "View Recipe"}
             </button>
+                {/* Comments Section */}
+                <div className="w-full pt-4">
+                <CommentSection erc721TokenId={token.tokenId} account={account} />
+              </div>
           </div>
           {showDetails && (
             <div className="grid grid-cols-2 gap-4 p-4">
@@ -434,9 +438,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
                   </div>
                 )}
               </div>
-              {/* Comments Section 
-              <div className="w-full pt-4">  <CommentSection tokenId={tokenId} account={account} /></div>
-              */}
+          
             </div>
           )}
         </>

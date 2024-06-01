@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { ethers, Contract } from "ethers";
 import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from "../Contracts/AvaxCooksLikeAndTip";
 import { InlineShareButtons } from 'sharethis-reactjs';
@@ -15,6 +15,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   const [showTipInputs, setShowTipInputs] = useState(false);
   const [totalTips, setTotalTips] = useState({});
   const [hasBookmarked, setHasBookmarked] = useState(false);
+  const [shareUrl, setShareUrl] = useState('');
+  const [shareImage, setShareImage] = useState('');
 
   const toggleDetails = () => {
     setShowDetails(!showDetails);
@@ -28,20 +30,22 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
     setShowDetails(expanded);
   }, [expanded]);
 
-  const availableTokens = [
+  const availableTokens = useMemo(() => [
     { symbol: "COQ", address: "0x420FcA0121DC28039145009570975747295f2329" },
     { symbol: "NOCHILL", address: "0xAcFb898Cff266E53278cC0124fC2C7C94C8cB9a5" },
     { symbol: "MEOW", address: "0x8aD25B0083C9879942A64f00F20a70D3278f6187" },
     { symbol: "KINGSHIT.X", address: "0x05B0Def5c00bA371683D7035934BcF82B737C364" },
     { symbol: "KONG", address: "0xEbB5d4959B2FbA6318FbDa7d03cd44aE771fc999" },
-  ];
+  ], []);
 
-  let attributes = [];
-  try {
-    attributes = JSON.parse(attributesStr);
-  } catch (e) {
-    console.error("Failed to parse attributes", e);
-  }
+  const attributes = useMemo(() => {
+    try {
+      return JSON.parse(attributesStr);
+    } catch (e) {
+      console.error("Failed to parse attributes", e);
+      return [];
+    }
+  }, [attributesStr]);
 
   const fetchTotalTips = async () => {
     try {
@@ -74,7 +78,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
 
   useEffect(() => {
     fetchTotalTips();
-  }, [tokenId, account]);
+  }, [tokenId, account, availableTokens]);
 
   const contributorObj = attributes.find(attr => attr.trait_type === "Contributor");
   const contributor = contributorObj ? contributorObj.value : "Unknown";
@@ -235,19 +239,33 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
     onBookmark(tokenId);
   };
 
+  const sanitizeName = (name) => {
+    setShareUrl(name.replace(/[()]/g, '').replace(/\s+/g, '_'));
+    return name.replace(/[()]/g, '').replace(/\s+/g, '_');
+  };
+
   const copyLinkToClipboard = () => {
     if (!name) {
       console.error("Recipe name not found");
       return;
     }
-    const recipeName = name.replace(/\s+/g, '_'); // Replace spaces with underscores
-    const link = `${window.location.origin}/?recipeName=${recipeName}`;
+    const recipeName = sanitizeName(name); // Sanitize name
+    const link = `https://iprs.tech/?recipeName=${recipeName}`;
     navigator.clipboard.writeText(link).then(() => {
       alert("Link copied to clipboard!");
     }).catch(err => {
       console.error("Failed to copy link: ", err);
     });
   };
+
+  useEffect(() => {
+    if (name && imageUri) {
+      const recipeName = sanitizeName(name);
+      setShareUrl(`iprs.tech/?recipeName=${recipeName}`);
+      console.log(shareUrl);
+      setShareImage(`https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`);
+    }
+  }, [name, imageUri]);
 
   return (
     <div className={`text-white border pr-4 pl-4 pb-4 pt-2 m-2 shadow-md rounded-lg bg-neutral-900 border-neutral-900 transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-36' : (viewMode === 'list' ? 'w-full lg:w-full' : 'w-full lg:w-1/4 2xl:w-1/6')} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
@@ -324,14 +342,14 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
                     <style>{'.cls-1 { fill: none; }'}</style>
                   </defs>
                   <path d="M11.9474,19a4.9476,4.9476,0,0,1-3.4991-8.4465l5.1053-5.1043a4.9482,4.9482,0,0,1,6.9981,6.9976l-.5523.5526-1.4158-1.4129.5577-.5579a2.95,2.95,0,0,0-.0039-4.1653,3.02,3.02,0,0,0-4.17,0l-5.1047,5.104a2.9474,2.9474,0,0,0,0,4.1692,3.02,3.02,0,0,0,4.17,0l1.4143,1.4145A4.9176,4.9176,0,0,1,11.9474,19Z" />
-                  <path d="M19.9474,17a4.9476,4.9476,0,0,1-3.4991-8.4465l.5526-.5526,1.4143,1.4146-.5526.5523a2.9476,2.9476,0,0,0,0,4.1689,3.02,3.02,0,0,0,4.17,0c.26-.26,4.7293-4.7293,5.1053-5.1045a2.951,2.951,0,0,0,0-4.1687,3.02,3.02,0,0,0-4.17,0L21.5536,3.449a4.9483,4.9483,0,0,1,6.9981,6.9978c-.3765.376-4.844,4.8428-5.1038,5.1035A4.9193,4.9193,0,0,1,19.9474,17Z" />
+                  <path d="M19.9474,17a4.9476,4.9476,0,0,1-3.4991-8.4465l.5526-.5526,1.4143-1.4146-.5526.5523a2.9476,2.9476,0,0,0,0,4.1689,3.02,3.02,0,0,0,4.17,0c.26-.26,4.7293-4.7293,5.1053-5.1045a2.951,2.951,0,0,0,0-4.1687,3.02,3.02,0,0,0-4.17,0L21.5536,3.449a4.9483,4.9483,0,0,1,6.9981,6.9978c-.3765.376-4.844,4.8428-5.1038,5.1035A4.9193,4.9193,0,0,1,19.9474,17Z" />
                   <path d="M24,30H4a2.0021,2.0021,0,0,1-2-2V8A2.0021,2.0021,0,0,1,4,6H8V8H4V28H24V18h2V28A2.0021,2.0021,0,0,1,24,30Z" />
                   <rect id="Transparent_Rectangle" width="32" height="32" fill="none" />
                 </svg>
               </button>
             </div>
           </div>
-          {/* Add ShareThis Inline Share Buttons */}
+          {/* Add ShareThis Inline Share Buttons
           <div className="pt-2">
             <InlineShareButtons
               config={{
@@ -350,13 +368,13 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
                 radius: 4,            // the corner radius on each button (INTEGER)
                 show_total: false,
                 size: 40,             // the size of each button (INTEGER)
-                url: `${window.location.origin}/?recipeName=${name ? name.replace(/\s+/g, '_') : tokenId}`, // Use the recipe name or tokenId as the URL
-                image: `https://gateway.pinata.cloud/ipfs/${imageUri?.split("ipfs://")[1]}`,  // Use the NFT image URL
+                url: shareUrl,        // Use the recipe name or tokenId as the URL
+                image: shareImage,    // Use the NFT image URL
                 description: `Check out this amazing recipe: ${name}`,  // Use the recipe name as the description
                 title: name,            // Use the recipe name as the title
               }}
             />
-          </div>
+          </div> */}
           <div className="pt-0 pb-4 pl-2 pr-2 ">
             {Object.entries(totalTips).some(([symbol, amount]) => parseFloat(amount) > 0) && (
               <h3 className="text-lg font-semibold mb-2">Tips</h3>
@@ -431,7 +449,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
                       <div>{attributes[attributes.length - 1].trait_type}</div>
                       <strong>
                         {attributes[attributes.length - 1].trait_type === "X Username" ? 
-                          <a href={`https://twitter.com/${attributes[attributes.length - 1].value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attributes[attributes.length - 1].value}</a> :
+                          <a href={`https://twitter.com/${attributes[attributes.length - 1].value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attributes.value}</a> :
                           attributes[attributes.length - 1].value}
                       </strong>
                     </p>

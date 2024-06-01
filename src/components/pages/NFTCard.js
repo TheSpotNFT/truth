@@ -240,7 +240,6 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   };
 
   const sanitizeName = (name) => {
-    setShareUrl(name.replace(/[()]/g, '').replace(/\s+/g, '_'));
     return name.replace(/[()]/g, '').replace(/\s+/g, '_');
   };
 
@@ -250,7 +249,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       return;
     }
     const recipeName = sanitizeName(name); // Sanitize name
-    const link = `https://iprs.tech/?recipeName=${recipeName}`;
+    const link = `${window.location.origin}/?recipeName=${recipeName}`;
     navigator.clipboard.writeText(link).then(() => {
       alert("Link copied to clipboard!");
     }).catch(err => {
@@ -261,8 +260,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   useEffect(() => {
     if (name && imageUri) {
       const recipeName = sanitizeName(name);
-      setShareUrl(`iprs.tech/?recipeName=${recipeName}`);
-      console.log(shareUrl);
+      setShareUrl(`${window.location.origin}/?recipeName=${recipeName}`);
       setShareImage(`https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`);
     }
   }, [name, imageUri]);
@@ -349,7 +347,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
               </button>
             </div>
           </div>
-          {/* Add ShareThis Inline Share Buttons
+          {/* Add ShareThis Inline Share Buttons 
           <div className="pt-2">
             <InlineShareButtons
               config={{
@@ -368,13 +366,13 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
                 radius: 4,            // the corner radius on each button (INTEGER)
                 show_total: false,
                 size: 40,             // the size of each button (INTEGER)
-                url: shareUrl,        // Use the recipe name or tokenId as the URL
+                url: `${shareUrl}`,        // Use the recipe name or tokenId as the URL
                 image: shareImage,    // Use the NFT image URL
                 description: `Check out this amazing recipe: ${name}`,  // Use the recipe name as the description
                 title: name,            // Use the recipe name as the title
               }}
             />
-          </div> */}
+          </div>*/}
           <div className="pt-0 pb-4 pl-2 pr-2 ">
             {Object.entries(totalTips).some(([symbol, amount]) => parseFloat(amount) > 0) && (
               <h3 className="text-lg font-semibold mb-2">Tips</h3>
@@ -449,7 +447,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
                       <div>{attributes[attributes.length - 1].trait_type}</div>
                       <strong>
                         {attributes[attributes.length - 1].trait_type === "X Username" ? 
-                          <a href={`https://twitter.com/${attributes[attributes.length - 1].value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attributes.value}</a> :
+                          <a href={`https://twitter.com/${attributes[attributes.length - 1].value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attributes[attributes.length - 1].value}</a> :
                           attributes[attributes.length - 1].value}
                       </strong>
                     </p>

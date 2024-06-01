@@ -6,7 +6,7 @@ import logo from "../../assets/iprs_spot.png";
 import { useNavigate } from "react-router-dom";
 
 const Main = ({ account }) => {
-    const { setTxProcessing, txProcessing } = useState();
+    const [txProcessing, setTxProcessing] = useState(false);
     const navigate = useNavigate();
 
     const goToGallery = () => {
@@ -196,6 +196,7 @@ const Main = ({ account }) => {
         setRecipeDetails(initialRecipeDetails);
         setImageFile(null);
         setImagePreviewUrl('');
+        document.getElementById('fileInput').value = null;
     };
 
     const uploadMetadataToIPFS = async (metadata) => {
@@ -250,7 +251,7 @@ const Main = ({ account }) => {
             </div>
             <div className="sm:max-w-md md:max-w-xl mx-auto p-4 bg-avax-black text-gray-100 shadow-lg rounded-lg relative z-20 opacity-95">
                 <div className="pb-4 font-bold"><h1>Upload an image</h1></div>
-                <input type="file" onChange={handleImageChange} />
+                <input type="file" id="fileInput" onChange={handleImageChange} />
                 {imagePreviewUrl && (
                     <div className="mt-4">
                         <img src={imagePreviewUrl} alt="Uploaded Preview" className="max-w-full h-auto rounded p-4" />

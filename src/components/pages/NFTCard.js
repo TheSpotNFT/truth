@@ -248,7 +248,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       console.error("Recipe name not found");
       return;
     }
-    const recipeName = sanitizeName(name); // Sanitize name
+    const recipeName = name; // Sanitize name
     const link = `${window.location.origin}/?recipeName=${recipeName}`;
     navigator.clipboard.writeText(link).then(() => {
       alert("Link copied to clipboard!");
@@ -259,7 +259,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
 
   useEffect(() => {
     if (name && imageUri) {
-      const recipeName = sanitizeName(name);
+      const recipeName = name;
       setShareUrl(`${window.location.origin}/?recipeName=${recipeName}`);
       setShareImage(`https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`);
     }

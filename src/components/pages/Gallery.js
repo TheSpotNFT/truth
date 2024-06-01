@@ -233,6 +233,10 @@ const Gallery = ({ account }) => {
     }
   }, [location, allTokens]);
 
+  const sanitizeName = (name) => {
+    return name.replace(/[()]/g, '').replace(/\s+/g, '_');
+  };
+
   return (
     <div className="container mx-auto p-4 pt-0 md:pt-4">
       <div className="mx-auto w-64 h-64 pt-6 pointer-events-none block md:hidden pb-8">

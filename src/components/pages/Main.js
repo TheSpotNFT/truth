@@ -257,13 +257,17 @@ const Main = ({ account }) => {
                     </div>
                 )}
                 <div className="mb-4">
-                    <input
-                        type="text"
-                        className="block w-full mt-4 mb-2 px-3 py-2 bg-zinc-700 border border-zinc-800 rounded-md text-gray-100 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Recipe Name"
-                        value={recipeDetails.recipeName}
-                        onChange={e => setRecipeDetails({ ...recipeDetails, recipeName: e.target.value })}
-                    />
+                <input
+                type="text"
+                className="block w-full mt-4 mb-2 px-3 py-2 bg-zinc-700 border border-zinc-800 rounded-md text-gray-100 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Recipe Name"
+                value={recipeDetails.recipeName}
+                onChange={e => {
+                    const sanitizedValue = e.target.value.replace(/[^a-zA-Z0-9\s]/g, ''); // Allow only alphanumeric characters and spaces
+                    setRecipeDetails({ ...recipeDetails, recipeName: sanitizedValue });
+                }}
+                />
+
                 </div>
                 <div className="mb-4">
                     <select

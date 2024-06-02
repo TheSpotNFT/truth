@@ -283,6 +283,7 @@ const Main = ({ account }) => {
                         <option value="Sauces">Sauces</option>
                         <option value="Snacks">Snacks</option>
                         <option value="Dinner">Dinner</option>
+                        <option value="Appetizer">Appetizer</option>
                         <option value="Marinades">Marinades</option>
                         <option value="Garnishes">Garnishes</option>
                         <option value="Desserts">Desserts</option>

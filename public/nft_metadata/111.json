@@ -1,0 +1,83 @@
+{
+  "name": "Monster Rice Krispie Treats",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmfACgisro863DkwniWcwosfRWknoYDZBgfpg2YAtnmJfo",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "19 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Janet"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "butter",
+      "value": "3 tablespoons"
+    },
+    {
+      "trait_type": "marshmallows",
+      "value": "1 package (10 oz)"
+    },
+    {
+      "trait_type": "crispy rice cereal",
+      "value": "6 cups"
+    },
+    {
+      "trait_type": "Food coloring",
+      "value": "green, orange, purple"
+    },
+    {
+      "trait_type": "Candy eyes",
+      "value": "A pair for each square  (optional)"
+    },
+    {
+      "trait_type": "Chocolate chips",
+      "value": "(for melting)"
+    },
+    {
+      "trait_type": "Assorted candy decorations",
+      "value": "garnishes, and decor (optional)"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nPrepare the Pan:\n\nGrease a 9x13-inch baking dish with butter or nonstick spray.\nMelt the Butter and Marshmallows:\n\nIn a large saucepan, melt the butter over low heat.\nAdd the marshmallows and stir until completely melted.\nAdd Food Coloring:\n\nDivide the melted marshmallow mixture into three separate bowls.\nAdd a few drops of different food coloring to each bowl (green, orange, purple) and stir until the color is evenly distributed.\nCombine with Cereal:\n\nAdd 2 cups of crispy rice cereal to each bowl and stir until well coated.\nPress into Pan:\n\nPress each colored mixture into the prepared pan, creating layers if desired.\nLet cool and set.\nDecorate:\n\nOnce set, cut the treats into squares or fun shapes using cookie cutters.\nMelt chocolate chips in a microwave-safe bowl until smooth.\nUse the melted chocolate to attach candy eyes and other decorations to create monster faces.\nServe:\n\nArrange the decorated Rice Krispie treats on a platter and serve."
+    }
+  ]
+}

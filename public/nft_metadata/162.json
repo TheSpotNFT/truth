@@ -1,0 +1,79 @@
+{
+  "name": "Easy Chocolate Cookies",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmdGbHHT3ixCC5ZGs1pLK2f4zn2R9cYuXZYpNkqyb21Bqg",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Desserts"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "11"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "AJEZ"
+    },
+    {
+      "trait_type": "butter",
+      "value": "½ cup"
+    },
+    {
+      "trait_type": "shortening",
+      "value": "½ cup"
+    },
+    {
+      "trait_type": "packed brown sugar",
+      "value": "¾ cup"
+    },
+    {
+      "trait_type": "white sugar",
+      "value": "½ cup"
+    },
+    {
+      "trait_type": "egg",
+      "value": "1"
+    },
+    {
+      "trait_type": "vanilla extract",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "baking soda",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "¼ teaspoon"
+    },
+    {
+      "trait_type": "semisweet chocolate chips",
+      "value": "1 ½ cups"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Preheat the oven to 350 degrees F (175 degrees C).\n\nCombine flour, baking soda, and salt in a large bowl. Beat softened butter, shortening, sugar, brown sugar, and vanilla in another bowl until creamy. Beat in egg, then gradually add flour mixture and mix well. Stir in chocolate chips.\n\nBake on ungreased cookie sheet until edges are starting to turn golden brown, about 8 to 10 minutes."
+    }
+  ]
+}

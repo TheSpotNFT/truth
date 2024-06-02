@@ -1,0 +1,95 @@
+{
+  "name": "Gobi Aloo",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmSgfKGmP3sWZV1oagTN2xHEKL2Byy8cS6Y8d1YkPLCAzH",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "25 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Asia"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Indian"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "cumin seeds",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "medium red onion, thinly sliced",
+      "value": "1"
+    },
+    {
+      "trait_type": "large plum tomatoes, chopped",
+      "value": "2"
+    },
+    {
+      "trait_type": "minced fresh gingerroot",
+      "value": "2 teaspoons"
+    },
+    {
+      "trait_type": "red chili powder",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "garam masala",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "ground cumin",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "3/4 teaspoon"
+    },
+    {
+      "trait_type": "ground turmeric",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "head cauliflower, cut into 2 or 3 pieces",
+      "value": "1 medium"
+    },
+    {
+      "trait_type": "small potatoes, peeled and cut into thin wedges",
+      "value": "2"
+    },
+    {
+      "trait_type": "water",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "Chopped fresh cilantro",
+      "value": "optional"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Select saute setting on a 6-qt. electric pressure cooker. Adjust for medium heat; add oil. When oil is hot, cook and stir cumin seeds until fragrant and they start to pop. Add onion; cook until crisp-tender, about 2 minutes. Add tomatoes and ginger; cook 1 minute. Add chili powder, garam masala, cumin, salt and turmeric; cook until fragrant, about 1 minute. Stir in cauliflower, potatoes and water. Press cancel.\nLock lid; close pressure-release valve. Adjust to pressure-cook on high for 3 minutes. Let pressure release naturally for 5 minutes; quick-release any remaining pressure. Sprinkle with cilantro if desired."
+    }
+  ]
+}

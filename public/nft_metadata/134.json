@@ -1,0 +1,111 @@
+{
+  "name": "Repkin's BBQ Sauce",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmXhjLY8ubARyeCLjzp1A4SWg4nvfUou4GdHNYrnrYuSky",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Sauces"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Container for 16oz"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "B. Repkin"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "ketchup",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "apple cider vinegar",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "brown sugar, packed",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "honey",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "Worcestershire sauce",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "lemon juice",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "soy sauce",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "mustard (yellow or Dijon)",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "smoked paprika",
+      "value": "2 teaspoons"
+    },
+    {
+      "trait_type": "garlic powder",
+      "value": "1 teaspoon "
+    },
+    {
+      "trait_type": "onion powder",
+      "value": "1 teaspoon "
+    },
+    {
+      "trait_type": "black pepper",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "cayenne pepper (optional for heat)",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "water",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nCombine Ingredients:\n\nIn a medium saucepan, combine the ketchup, apple cider vinegar, brown sugar, honey, Worcestershire sauce, lemon juice, soy sauce, and mustard. Stir until well combined.\nAdd Spices:\n\nAdd the smoked paprika, garlic powder, onion powder, black pepper, and cayenne pepper (if using). Stir to incorporate the spices into the mixture.\nCook the Sauce:\n\nPlace the saucepan over medium heat. Bring the mixture to a simmer, stirring occasionally.\nOnce the sauce begins to simmer, reduce the heat to low and let it cook for 20-30 minutes, stirring occasionally, until the sauce has thickened to your desired consistency.\nAdjust Consistency:\n\nIf the sauce is too thick, add a little water, one tablespoon at a time, until it reaches the desired consistency.\nCool and Store:\n\nRemove the sauce from heat and let it cool to room temperature.\nTransfer the sauce to a jar or airtight container. Store in the refrigerator for up to 2 weeks.\nServings: Makes about 2 1/2 cups of BBQ sauce"
+    }
+  ]
+}

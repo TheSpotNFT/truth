@@ -1,0 +1,95 @@
+{
+  "name": "Creamy Jalapeño and Habanero Dip",
+  "description": "Avax is Cookin",
+  "image": "ipfs://Qmc7agDoswNcKfXp3HoT63vNZjWLAynxoUn1VxncoTghkT",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "6"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Mexican"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Food processor, or blender with a Mason jar"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Mach1"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Food processor, or blender with a Mason jar"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Sour Cream",
+      "value": "24-32 ounces"
+    },
+    {
+      "trait_type": "Jalapeños",
+      "value": "2"
+    },
+    {
+      "trait_type": "Habaneros",
+      "value": "2"
+    },
+    {
+      "trait_type": "Cilantro",
+      "value": "1/2 a cup (1/2 a bunch)"
+    },
+    {
+      "trait_type": "Lime Juice",
+      "value": "1/2 a lime"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Kingshit"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Begin by chopping the jalapeños, habaneros, and cilantro, then place them in a food processor. For a milder flavor, you may choose to deseed the habaneros before chopping. Squeeze the juice of half a lime into the processor. If your food processor is on the smaller side, run it to purée the ingredients, which will help create more space. Next, add 32 ounces of sour cream, filling the processor as much as possible without overfilling. Blend everything until smooth. For best results, consider chilling the dip before serving to enhance the flavors. Enjoy!"
+    }
+  ]
+}

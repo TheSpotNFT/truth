@@ -1,0 +1,91 @@
+{
+  "name": "Caprese Skewers",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmY7S55ighzHRzEjJUg6wXy2vTcR7xFPq7qLuPkSGUg35a",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "♥Aunt Suzie♥"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "cherry tomatoes",
+      "value": "1 pint"
+    },
+    {
+      "trait_type": "fresh mozzarella balls (bocconcini)",
+      "value": "1 lb"
+    },
+    {
+      "trait_type": "Balsamic glaze (store-bought or homemade)",
+      "value": "drizzle"
+    },
+    {
+      "trait_type": "Olive oil",
+      "value": "drizzle"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "optional"
+    },
+    {
+      "trait_type": "Skewers",
+      "value": "3-4"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cuddlefish"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nAssemble the Skewers:\n\nThread one cherry tomato, one mozzarella ball, and one basil leaf onto each skewer.\nRepeat until all ingredients are used.\nSeason and Serve:\n\nDrizzle the skewers with olive oil and balsamic glaze.\nSprinkle with salt and pepper to taste.\nArrange on a platter and serve immediately."
+    }
+  ]
+}

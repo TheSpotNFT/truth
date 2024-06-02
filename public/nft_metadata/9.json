@@ -1,0 +1,87 @@
+{
+  "name": "Chicken Tortilla Dump Dinner",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmPrC6BPNhg8ftFTz1SSRNUZku8nFghxY3tNJcv7B1aeTF",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "55 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "6"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "canola oil",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "diced tomatoes with chiles, such as Rotel",
+      "value": "Two 10-ounce cans"
+    },
+    {
+      "trait_type": "chicken broth",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "chili powder",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "ground cumin",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "kosher salt",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "black beans, drained and rinsed",
+      "value": "One 15.5-ounce can"
+    },
+    {
+      "trait_type": "frozen corn",
+      "value": "One 10-ounce bag"
+    },
+    {
+      "trait_type": "shredded cooked chicken (from about 1 small rotisserie chicken)",
+      "value": "5 cups"
+    },
+    {
+      "trait_type": "small corn tortillas, cut into quarters",
+      "value": "12"
+    },
+    {
+      "trait_type": "Monterey Jack cheese, shredded",
+      "value": "One 8-ounce block (about 2 cups)"
+    },
+    {
+      "trait_type": "sour cream",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "diced red onion ",
+      "value": "1/3 cup"
+    },
+    {
+      "trait_type": "loosely packed fresh cilantro, chopped ",
+      "value": "1/3 cup"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Preheat the oven to 375 degrees F. Brush a 9-by-13-inch casserole dish with the oil.\nStir together the diced tomatoes with chiles, chicken broth, chili powder, cumin and salt in a large bowl. Add the black beans, frozen corn, chicken, tortilla wedges and half the cheese and stir to evenly distribute and moisten all of the ingredients. Transfer to the prepared casserole dish and spread into an even layer. Loosely cover with aluminum foil and bake for 25 minutes.  \nRaise the oven temperature to 400 degrees F. Remove the foil and sprinkle the top with the remaining cheese. Continue to bake until the cheese is melted and just starting to brown, about 10 minutes. Top with dollops of sour cream and sprinkle with the red onion and cilantro. Serve hot."
+    }
+  ]
+}

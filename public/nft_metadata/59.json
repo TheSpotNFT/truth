@@ -1,0 +1,79 @@
+{
+  "name": "DOGE DELIGHT",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmRHW8J3xWrsB2472LzBdoa4idmcQ3eBZRijV4DU4DcQTN",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "5 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "1"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Asia"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Japanese"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Indoggo Gin (Snoops stuff)"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "!DOGE!"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Indoggo Gin (Snoops stuff)"
+    },
+    {
+      "trait_type": "Gin (Indoggo)",
+      "value": "2 oz"
+    },
+    {
+      "trait_type": "fresh lemon juice",
+      "value": "1 oz"
+    },
+    {
+      "trait_type": "simple syrup",
+      "value": "1 oz"
+    },
+    {
+      "trait_type": "peach liqueur",
+      "value": "1/2 oz"
+    },
+    {
+      "trait_type": "Club soda",
+      "value": "3 oz"
+    },
+    {
+      "trait_type": "fresh mint leaves",
+      "value": "garneesh"
+    },
+    {
+      "trait_type": "lemon wheel",
+      "value": "garnoosh"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\n1. In a cocktail shaker, combine the Indoggo Gin, lemon juice, simple syrup, and peach liqueur.\n\n2. Fill the shaker with ice and shake vigorously until well-chilled.\n\n3. Strain the mixture into a highball glass filled with ice.\n\n4. Top off the drink with a splash of club soda.\n\n5. Garnish with fresh mint leaves and a lemon wheel.\nServe immediately and enjoy your Doge Delight!"
+    }
+  ]
+}

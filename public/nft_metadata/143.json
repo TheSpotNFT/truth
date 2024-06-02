@@ -1,0 +1,55 @@
+{
+  "name": "Rocky Road Cookie Cups",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmfXrqCFrGx9RmCTcUCpb26Pj9wRUAJaquV9MdJW3C6Mzc",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "35 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "24"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "refrigerated chocolate chip cookie dough",
+      "value": "1 tube (16-1/2 ounces)"
+    },
+    {
+      "trait_type": "miniature marshmallows",
+      "value": "3/4 cup"
+    },
+    {
+      "trait_type": "miniature semisweet chocolate chips",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "sliced almonds, toasted",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Preheat oven to 350°. Shape dough into 1-1/4-in. balls; press evenly onto bottom and up sides of 24 greased mini-muffin cups.\n\n\nBake until edges are golden, 10-12 minutes. Using the back of a measuring teaspoon, make an indentation in each cup. Immediately place 3 marshmallows and 1/4 teaspoon chocolate chips in each cup; sprinkle with almonds. Return to oven; bake 1 minute longer. Cool completely in pans on wire racks."
+    }
+  ]
+}

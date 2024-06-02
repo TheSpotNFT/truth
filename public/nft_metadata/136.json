@@ -1,0 +1,79 @@
+{
+  "name": "Korean Beef and Rice",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmYG2CHF4zJ2RrkDB5HnSgL3bcVfnn8mjssNt9gqHHmWYn",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "3"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Asia"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Korean"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "TOH"
+    },
+    {
+      "trait_type": "lean ground beef (90% lean)",
+      "value": "1 pound"
+    },
+    {
+      "trait_type": "garlic cloves, minced",
+      "value": "3"
+    },
+    {
+      "trait_type": "packed brown sugar",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "reduced-sodium soy sauce",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "sesame oil",
+      "value": "2 teaspoons"
+    },
+    {
+      "trait_type": "ground ginger",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "crushed red pepper flakes",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "pepper",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "hot cooked brown rice",
+      "value": "2-2/3 cups"
+    },
+    {
+      "trait_type": "Method",
+      "value": "In a large skillet, cook beef and garlic over medium heat 6-8 minutes or until beef is no longer pink, breaking beef into crumbles. Meanwhile, in a small bowl, mix brown sugar, soy sauce, oil and seasonings.\n\nStir sauce into beef; heat through. Serve with rice. Sprinkle with green onions."
+    }
+  ]
+}

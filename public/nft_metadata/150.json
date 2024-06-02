@@ -1,0 +1,67 @@
+{
+  "name": "OLD FASHIONED RHUBARB MUFFINS",
+  "description": "Avax is Cookin",
+  "image": "ipfs://Qmb2yxqzaQUYYRoxTiQYXJovp19gVsr3szJwbDxzXCJESW",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Baked Goods"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "40 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "2 1⁄2 cups "
+    },
+    {
+      "trait_type": " sugar",
+      "value": "2⁄3 cup "
+    },
+    {
+      "trait_type": " baking powder",
+      "value": "3 teaspoons "
+    },
+    {
+      "trait_type": "milk",
+      "value": "1 cup "
+    },
+    {
+      "trait_type": "oil",
+      "value": "1⁄4 cup"
+    },
+    {
+      "trait_type": " vanilla",
+      "value": "1⁄2 teaspoon "
+    },
+    {
+      "trait_type": "egg, beaten",
+      "value": "1"
+    },
+    {
+      "trait_type": "rhubarb, finely chopped",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Combine flour, sugar, and baking powder. Set aside.\nCombine milk, oil, vanilla, and egg in a mixing bowl.\nAdd dry ingredients, and stir just until mixed.\nFold in rhubarb.\nFill 12 to 18 muffin cups that have been sprayed with cooking spray, 2/3 full.\nBake at 400 degrees for 20 to 25 minutes."
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "name": "Chicken Stir Fry",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmapU1EJsRrHuwH5gxnwb9UivybBMNp9egRaAcyja5jc6p",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "30 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Chinese"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Sauce: chicken broth",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "Sauce: tamari soy sauce",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "Sauce: dry sherry",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "Sauce: honey",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "Sauce: sesame oil",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "Sauce: rice vinegar",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "Stir Fry: avocado oil",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "Stir Fry: boneless skinless chicken breast, cut into 1-inch pieces",
+      "value": "1 pound"
+    },
+    {
+      "trait_type": "Stir Fry: salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "Stir Fry: red bell pepper, deseeded and chopped",
+      "value": "1"
+    },
+    {
+      "trait_type": "Stir Fry: carrot, thinly sliced",
+      "value": "1 small"
+    },
+    {
+      "trait_type": "Stir Fry: broccoli florets, cut into bite-sized pieces",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "Stir Fry: yellow onion, chopped",
+      "value": "1 small"
+    },
+    {
+      "trait_type": "Stir Fry: finely grated fresh ginger",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "Stir Fry: garlic cloves, minced",
+      "value": "4"
+    },
+    {
+      "trait_type": "Garnish: sesame seeds",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "Garnish: Green Onion sliced",
+      "value": "1"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cuddlefish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Kingshit"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Creature World"
+    },
+    {
+      "trait_type": "Method",
+      "value": "In a small bowl, whisk together the chicken broth, soy sauce, dry sherry, honey, sesame oil, rice vinegar, and arrowroot powder. Set aside.\nChicken stir-fry sauce in a bowl.\n\nIn a large skillet or wok on medium high heat, add 1 tablespoon of oil. Add the chicken in a flat layer. Season with salt and pepper, and cook until lightly browned, about 4-5 minutes, stirring as needed. Remove the chicken to a plate.\n\nLeaving any juices in the pan, add 1 tablespoon of oil along with the red bell pepper, onion, carrot, and broccoli. Cook the vegetables until tender, about 3-4 minutes.\nSautéing vegetables in a pan for chicken stir-fry.\nAdd the chicken back to the pan with the minced ginger and garlic. Stir for 30 seconds. Pour in the sauce and stir fry for another 1-2 minutes, until the sauce thickens. Garnish with green onion and sesame seeds before serving."
+    }
+  ]
+}

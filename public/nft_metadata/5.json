@@ -1,0 +1,63 @@
+{
+  "name": "Brown Sugar Oatmeal Cookies",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmSJ3t8ZmqXBHquW4DRgTMFdq1CMaN7Y23ZUcgrVAFJqzs",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Desserts"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "30 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "24"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Packed Brown Sugar",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "salter butter, softened",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "vanilla extract",
+      "value": "2 tsp"
+    },
+    {
+      "trait_type": "eggs",
+      "value": "2"
+    },
+    {
+      "trait_type": "all purpose flour",
+      "value": "1-1/2 cups"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1 tsp"
+    },
+    {
+      "trait_type": "baking soda",
+      "value": "1/2 tsp"
+    },
+    {
+      "trait_type": "old-fashioned oats",
+      "value": "3 cups"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Preheat the oven to 350 degrees F.\nIn the bowl of an electric mixer (or using a hand mixer), beat together the brown sugar and butter until fluffy. Beat in the vanilla. Add the eggs one at a time, scraping the bowl after each one.\nMix together the flour, salt and baking soda in a medium bowl. Add it into the creamed mixture in 2 to 3 batches, mixing until just combined. Mix in the oats until just combined.\nUse your preferred size cookie scoop (or a regular spoon) to drop portions of dough onto baking sheets, spacing them a couple inches apart. Bake until dark and chewy, 12 to 13 minutes. If you'd like a crispier cookie, just cook a little longer!\nLet the cookies cool slightly on the baking sheets, then transfer onto a plate for serving.\nAdd 1/2 cup finely chopped nuts to the flour mixture if you'd like a nutty flavor and crunch."
+    }
+  ]
+}

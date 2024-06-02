@@ -1,0 +1,127 @@
+{
+  "name": "Lentil Curry",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmdiVCU3gmknr3VMeLf8387FneocDtmZGK8jF8C77n6R9d",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Asia"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Indian"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Bishop"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "green or brown lentils, rinsed",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "large onion, chopped",
+      "value": "1"
+    },
+    {
+      "trait_type": "garlic, minced",
+      "value": "2 cloves"
+    },
+    {
+      "trait_type": "fresh ginger, grated",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "curry powder",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "ground cumin",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "ground coriander",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "ground turmeric",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "cayenne pepper",
+      "value": "1/4 teaspoon (optional)"
+    },
+    {
+      "trait_type": "diced tomatoes",
+      "value": "1 can (14.5 oz)"
+    },
+    {
+      "trait_type": "coconut milk",
+      "value": "1 can (14.5 oz)"
+    },
+    {
+      "trait_type": "vegetable broth",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "Fresh cilantro",
+      "value": "for garnish"
+    },
+    {
+      "trait_type": "Cooked rice or naan bread",
+      "value": "for serving"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\nCook the Aromatics:\n\nHeat the olive oil in a large pot over medium heat.\nAdd the chopped onion and cook until softened, about 5 minutes.\nAdd the minced garlic and grated ginger, and cook for another minute.\n\nAdd the Spices:\n\nStir in the curry powder, ground cumin, ground coriander, ground turmeric, and cayenne pepper (if using).\nCook for another 2 minutes, stirring constantly.\n\nAdd the Lentils and Liquids:\n\nAdd the rinsed lentils, diced tomatoes (with their juice), coconut milk, and vegetable broth.\nBring to a boil, then reduce the heat to low and simmer, uncovered, for about 30-35 minutes, or until the lentils are tender and the sauce has thickened.\n\nSeason and Serve:\n\n\nSeason with salt and pepper to taste.\n\nGarnish with fresh cilantro.\n\nServe over cooked rice or with naan bread."
+    }
+  ]
+}

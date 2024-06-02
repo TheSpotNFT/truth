@@ -1,0 +1,59 @@
+{
+  "name": "Classic Balsamic Vinaigrette",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmZnWZu8AAag9rLx4dujSBAryuTxRs3Em4Ep2KSaP9dSBY",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dressings"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "5 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Dressing container"
+    },
+    {
+      "trait_type": "extra-virgin olive oil",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "balsamic vinegar",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "Dijon mustard",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "garlic, minced",
+      "value": "1 clove"
+    },
+    {
+      "trait_type": "honey",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nCombine Ingredients:\nIn a small bowl, whisk together the balsamic vinegar, Dijon mustard, minced garlic, and honey.\nAdd Oil:\nSlowly drizzle in the extra-virgin olive oil while whisking continuously until the dressing is well combined and emulsified.\nSeason:\nSeason with salt and pepper to taste.\nServe:\nUse immediately or store in an airtight container in the refrigerator for up to one week."
+    }
+  ]
+}

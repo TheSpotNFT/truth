@@ -1,0 +1,91 @@
+{
+  "name": "Apricot Fluff",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmUmUTc5jnRhp9hBzECDwM3xvCjFSor5YnZJxMVGrqE9DG",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Desserts"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "10"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "♥Aunt Suzie♥"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "apricot or peach yogurt",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "apricot gelatin",
+      "value": "1 package (3 ounces)"
+    },
+    {
+      "trait_type": "frozen reduced-fat whipped topping \"thawed\"",
+      "value": "1 carton (8 ounces)"
+    },
+    {
+      "trait_type": "mini marshmallows",
+      "value": "1 package (10 ounces)"
+    },
+    {
+      "trait_type": "peeled fresh apricots - cubed",
+      "value": "3 cups"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Spot"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Directions:\n\nIn a large bowl, add yogurt to gelatin; stir 2 minutes to completely dissolve. Gently stir in whipped topping, then marshmallows and apricots. Refrigerate until firm, at least 4 hours.\n\nNutrition Facts\n3/4 cup: 225 calories, 3g fat (3g saturated fat), 1mg cholesterol, 57mg sodium, 44g carbohydrate (36g sugars, 1g fiber), 3g protein."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Fudgy Mint Cookies",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmSBctcPxxbVJPs8qTrzJYNMECURXepfM7KTpfL7UpWpkV",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Desserts"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "25 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "36"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "devil's food cake mix (regular size)",
+      "value": " 1 package "
+    },
+    {
+      "trait_type": "butter, softened",
+      "value": "1/2 cup "
+    },
+    {
+      "trait_type": "large eggs, room temperature",
+      "value": "2"
+    },
+    {
+      "trait_type": "water",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "confectioners' sugar",
+      "value": "2 tablespoons "
+    },
+    {
+      "trait_type": "chocolate-covered thin mint candies",
+      "value": "2 packages (5 ounces each) "
+    },
+    {
+      "trait_type": "Method",
+      "value": "Preheat oven to 375°. In a large bowl, mix cake mix, butter, eggs and water to form a soft dough. Shape dough into 1-in. balls; roll in confectioners' sugar. Place 2 in. apart on ungreased baking sheets.\n\nBake until set, 8-10 minutes. Immediately press a mint into center of each cookie. Cool on pans 2 minutes. Remove from pans to wire racks to cool."
+    }
+  ]
+}

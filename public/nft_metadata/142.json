@@ -1,0 +1,55 @@
+{
+  "name": "Pixie Dust Cookies",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmWn8FAYezFyotQte56tT7sAVCbQu7ARPWWpBXJf5eCJ1p",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "30 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "42"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "butter, softened",
+      "value": " 3/4 cup plus 2 tablespoons "
+    },
+    {
+      "trait_type": "sugar ",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "pearl dust ",
+      "value": "to top"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Preheat oven to 350°. In a large bowl, cream butter and sugar. Gradually beat in flour (dough will be crumbly). Shape into a ball.\n\nOn a lightly floured surface, press dough to 1/2-in. thickness. Cut with a floured 1-in. diamond-shaped cookie cutter. Place 1 in. apart on ungreased baking sheets. Sprinkle with pearl dust. Bake 12-15 minutes or until firm. Cool on pans 2 minutes. Remove to wire racks to cool."
+    }
+  ]
+}

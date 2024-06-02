@@ -1,0 +1,87 @@
+{
+  "name": "Whiskey Sour",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmNPGQfuBBjxQu9fJdWCGPo3NrRgkws1Nwcr3V4XtDX2Gt",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "5 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "1"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "cocktail shaker"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "DeFi Elixirist"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "cocktail shaker"
+    },
+    {
+      "trait_type": "bourbon whiskey",
+      "value": "2 oz"
+    },
+    {
+      "trait_type": "fresh lemon juice",
+      "value": "3/4 oz"
+    },
+    {
+      "trait_type": "simple syrup",
+      "value": "1/2 oz"
+    },
+    {
+      "trait_type": "ice",
+      "value": "preference"
+    },
+    {
+      "trait_type": "lemon wheel",
+      "value": "garnish"
+    },
+    {
+      "trait_type": "maraschino cherry",
+      "value": "garnish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Spot"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "No Chill"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\nIn a cocktail shaker, combine the bourbon, lemon juice, and simple syrup.\n\nFill the shaker with ice and shake vigorously for about 15 seconds.\n\nStrain the mixture into an old-fashioned glass filled with ice.\n\nGarnish with a lemon wheel and a maraschino cherry."
+    }
+  ]
+}

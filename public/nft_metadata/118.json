@@ -1,0 +1,79 @@
+{
+  "name": "Old-Fashioned Hot Cocoa",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmXR1RKAGWauExRWN94C2vKnFZCVFt7DmgohUyxTzW4t1u",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "5 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "2"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "whole milk",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "unsweetened cocoa powder",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "granulated sugar",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "vanilla extract",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "A pinch"
+    },
+    {
+      "trait_type": "whipped cream or marshmallows",
+      "value": " topping (optional)"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nHeat the Milk:\n\nIn a small saucepan, heat the milk over medium heat until it is hot but not boiling.\nMix Dry Ingredients:\n\nIn a small bowl, whisk together the cocoa powder, sugar, and salt.\nCombine and Whisk:\n\nAdd the dry ingredients to the hot milk, whisking continuously until the cocoa and sugar are completely dissolved and the mixture is smooth.\nAdd Vanilla:\n\nRemove the saucepan from heat and stir in the vanilla extract.\nServe:\n\nPour the hot cocoa into mugs and top with whipped cream or marshmallows, if desired. Serve immediately."
+    }
+  ]
+}

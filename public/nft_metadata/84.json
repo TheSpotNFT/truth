@@ -1,0 +1,95 @@
+{
+  "name": "Larb Gai",
+  "description": "Avax is Cookin",
+  "image": "ipfs://Qmd4aSmcPVp8MsNmxW9r9GcE1pPmxnJrK2xiNckrCZrCXN",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "30 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Asia"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Thai"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "ground chicken",
+      "value": "1 pound"
+    },
+    {
+      "trait_type": "canola oil",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "shallots, thinly sliced",
+      "value": "2"
+    },
+    {
+      "trait_type": "green or red fresh chiles, seeded and chopped",
+      "value": "2"
+    },
+    {
+      "trait_type": "garlic cloves, minced",
+      "value": "2"
+    },
+    {
+      "trait_type": "lime juice",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "fish sauce",
+      "value": "3 tablespoons"
+    },
+    {
+      "trait_type": "sweet chili sauce",
+      "value": "1 tablespoons"
+    },
+    {
+      "trait_type": "brown sugar",
+      "value": "2 teaspoons"
+    },
+    {
+      "trait_type": "Sriracha chili sauce",
+      "value": "1 to 2 teaspoons"
+    },
+    {
+      "trait_type": "fresh cilantro leaves",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "minced fresh mint",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "Hot cooked sticky rice",
+      "value": "as needed"
+    },
+    {
+      "trait_type": "Boston lettuce leaves",
+      "value": "optional"
+    },
+    {
+      "trait_type": "Method",
+      "value": "In a large skillet, cook chicken over medium heat until no longer pink, 8-10 minutes, breaking it into crumbles; drain. In the same skillet, heat oil over medium heat. Add shallots and chiles; cook and stir until tender, 3-4 minutes. Add garlic; cook 1 minute longer.\n\nStir in the cooked chicken, lime juice, fish sauce, chili sauce, brown sugar and Sriracha. Cook and stir until heated through. Stir in cilantro and mint. Serve with rice, and lettuce leaves if desired."
+    }
+  ]
+}

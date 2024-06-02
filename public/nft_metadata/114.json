@@ -1,0 +1,99 @@
+{
+  "name": "Awesome Thanksgiving Corn Pudding",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmNwxuBYpmySPBg6z6PUF83AViBScmzCbbxADYyiJGYG4q",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "fresh or frozen corn kernels",
+      "value": "4 cups"
+    },
+    {
+      "trait_type": "butter, melted",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "heavy cream",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "whole milk",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "large eggs",
+      "value": "3"
+    },
+    {
+      "trait_type": "granulated sugar",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "baking powder",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "black pepper",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "nutmeg",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "shredded cheddar cheese",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "crumbled cooked bacon (optional)",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "chopped fresh chives",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nPreheat the Oven:\n\nPreheat your oven to 350°F (175°C). Grease a 9x13-inch baking dish.\nPrepare the Corn Mixture:\n\nIn a large bowl, combine the corn kernels and melted butter.\nMix Wet Ingredients:\n\nIn a separate bowl, whisk together the heavy cream, whole milk, and eggs.\nCombine Dry Ingredients:\n\nIn another bowl, mix the sugar, flour, baking powder, salt, black pepper, and nutmeg.\nCombine All Ingredients:\n\nGradually add the dry ingredients to the wet ingredients, whisking continuously until smooth.\nStir in the corn mixture, cheddar cheese, bacon (if using), and chopped chives.\nBake:\n\nPour the mixture into the prepared baking dish.\nBake in the preheated oven for 45-50 minutes, or until the top is golden brown and a toothpick inserted into the center comes out clean.\nServe:\n\nLet the corn pudding cool slightly before serving. Garnish with additional chives if desired."
+    }
+  ]
+}

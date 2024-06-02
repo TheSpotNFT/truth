@@ -1,0 +1,91 @@
+{
+  "name": "Rainbow Fruit Punch",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmRsu3MF8tHr8gdAwLso4T9FMFHLqZxrhYgSW2wdMdHg7n",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "large pitcher for serving"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Janet"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "pineapple juice",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "orange juice",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "cranberry juice",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "lemon-lime soda",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "Fresh fruit slices (strawberries, oranges, lemons)",
+      "value": "for garnish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\nPrepare the Punch:\nIn a large pitcher, combine the pineapple juice, orange juice, cranberry juice, and lemon-lime soda.\nStir well to mix.\nServe:\nFill cups with ice cubes and pour the punch over the ice.\nGarnish with fresh fruit slices."
+    }
+  ]
+}

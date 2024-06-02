@@ -1,0 +1,99 @@
+{
+  "name": "AVAX MULE",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmQiReQRZ7Bja96syJH5s8U32xFgss9BGnpgeaeWMRT6Vj",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "2 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "1"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Europe"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Other"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Avax Fam"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "whiskey",
+      "value": "2 ounces"
+    },
+    {
+      "trait_type": "fresh lemon juice",
+      "value": "½ ounce"
+    },
+    {
+      "trait_type": "ginger beer",
+      "value": "4 ounces"
+    },
+    {
+      "trait_type": "lemon wheel",
+      "value": "garnish"
+    },
+    {
+      "trait_type": "mint",
+      "value": "garnish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Avax Apes"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "No Chill"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Pour the whiskey, lime juice, and ginger beer into a desired mug. \n\nAdd ice and garnish with a lime slice. Serve immediately."
+    }
+  ]
+}

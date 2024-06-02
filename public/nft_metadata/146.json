@@ -1,0 +1,55 @@
+{
+  "name": "3 Ingredient Peanut Butter Cookies",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmWAdWtV1UfPrLYW3chTUDFDBJ7FUVB3dFGYXLmR6taroX",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "30 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "24"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "large egg, room temperature, beaten",
+      "value": "1"
+    },
+    {
+      "trait_type": "sugar",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "creamy peanut butter",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "Method",
+      "value": "In a large bowl, mix all ingredients. Scoop by level tablespoonfuls and roll into balls. Place on ungreased baking sheets and flatten with a fork.\n\nBake at 350° until set, about 18 minutes. Remove to wire racks to cool."
+    }
+  ]
+}

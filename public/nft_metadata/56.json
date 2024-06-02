@@ -1,0 +1,103 @@
+{
+  "name": "Grilled Vegetable Skewers",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmVTUdEABD5waMn5T3v1B3k6SW8GDAkHim5EJ3d2ohcBPC",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Wooden Skewers (soaked in water for 10-20 minutes)"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Wooden Skewers (soaked in water for 10-20 minutes)"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "red bell pepper, cut into chunks",
+      "value": "1"
+    },
+    {
+      "trait_type": "yellow bell pepper, cut into chunks",
+      "value": "1"
+    },
+    {
+      "trait_type": "zucchini, sliced",
+      "value": "1"
+    },
+    {
+      "trait_type": "red onion, cut into chunks",
+      "value": "1"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "balsamic vinegar",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "clove garlic, minced",
+      "value": "2 cloves"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "Soaked wooden skewers",
+      "value": "4"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Method\n\n1. In a bowl, whisk together olive oil, balsamic vinegar, minced garlic, salt, and pepper.\n2. Thread the vegetables onto the soaked wooden skewers.\n3. Brush the vegetable skewers with the marinade.\n4. Preheat the grill to medium-high heat.\n5. Grill the skewers for 10-12 minutes, turning occasionally, until the vegetables are tender and slightly charred.\n\nEnjoy"
+    }
+  ]
+}

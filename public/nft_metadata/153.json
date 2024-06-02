@@ -1,0 +1,55 @@
+{
+  "name": "Easy Coleslaw Dressing",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmZLZVe8FgkRqNS8ewjypM9e9CWpUWqo5WeCNNFZLeGZyT",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dressings"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "5 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "6"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "mayonnaise",
+      "value": "½ cup"
+    },
+    {
+      "trait_type": "white sugar",
+      "value": "2 tablespoons "
+    },
+    {
+      "trait_type": " lemon juice",
+      "value": "1 ½ tablespoons "
+    },
+    {
+      "trait_type": "vinegar",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": " ground black pepper",
+      "value": "½ teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "¼ teaspoon"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Whisk mayonnaise, sugar, lemon juice, vinegar, pepper, and salt together in a bowl until smooth and creamy.\n\nIngredients for easy coleslaw dressing whisked together in a clear bowl\n\nStore in an airtight container.\n\n"
+    }
+  ]
+}

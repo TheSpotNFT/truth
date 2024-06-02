@@ -1,0 +1,123 @@
+{
+  "name": "Quinoa Black Bean Salad",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmX2XEUvPUQchDAfzQiMC5L9o6AWbAxU2mPoJf4rBUnbyt",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Lunch"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Large serving bowl"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "♥Aunt Suzie♥"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "quinoa",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "water",
+      "value": "2 cups "
+    },
+    {
+      "trait_type": "black beans",
+      "value": "1 can (15 oz), rinsed and drained"
+    },
+    {
+      "trait_type": "red bell pepper",
+      "value": "1, chopped"
+    },
+    {
+      "trait_type": "yellow bell pepper",
+      "value": "1, chopped"
+    },
+    {
+      "trait_type": "small red onion",
+      "value": "1, finely chopped"
+    },
+    {
+      "trait_type": "corn kernels",
+      "value": "1 cup (fresh, frozen, or canned)"
+    },
+    {
+      "trait_type": "avocado",
+      "value": "1, diced"
+    },
+    {
+      "trait_type": "fresh cilantro",
+      "value": "1/4 cup chopped"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "lime juice",
+      "value": "3 tablespoons"
+    },
+    {
+      "trait_type": "ground cumin",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "black pepper",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nCook the Quinoa:\n\nRinse the quinoa under cold water.\nIn a medium saucepan, bring the quinoa and water to a boil.\nReduce the heat to low, cover, and simmer for about 15 minutes, or until the water is absorbed and the quinoa is tender.\nFluff with a fork and let it cool.\nCombine Ingredients:\n\nIn a large bowl, combine the cooked quinoa, black beans, bell peppers, red onion, corn, avocado, and cilantro.\nMake the Dressing:\n\nIn a small bowl, whisk together the olive oil, lime juice, cumin, salt, and pepper.\nAssemble the Salad:\n\nPour the dressing over the quinoa mixture and toss to combine.\nServe chilled or at room temperature."
+    }
+  ]
+}

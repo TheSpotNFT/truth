@@ -1,0 +1,87 @@
+{
+  "name": "Avocado Deviled Eggs",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmQXkqq6dPx9Tj8c687RbvjSxEW4knPowHJUjbaNVQBQaL",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "♥Aunt Suzie♥"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "hard-boiled eggs",
+      "value": "6"
+    },
+    {
+      "trait_type": "ripe avocado",
+      "value": "1"
+    },
+    {
+      "trait_type": "lime juice",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "dijon mustard",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "chopped fresh cilantro",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "paprika",
+      "value": "for garnish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cuddlefish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nPrepare the Eggs:\n\nPeel the hard-boiled eggs and slice them in half lengthwise.\nRemove the yolks and place them in a bowl.\nMake the Filling:\n\nMash the egg yolks with the avocado until smooth.\nStir in the lime juice, Dijon mustard, cilantro, salt, and pepper.\nFill the Eggs:\n\nSpoon or pipe the avocado mixture back into the egg whites.\nSprinkle with paprika for garnish.\nServe chilled."
+    }
+  ]
+}

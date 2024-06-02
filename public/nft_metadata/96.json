@@ -1,0 +1,83 @@
+{
+  "name": "Greek Yogurt Fruit Dip",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmeoVNL4UHMrJta122EMH8h9fTMgWYUYCox4sypDRnn5or",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "1"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Janet"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "greek yogurt",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "honey",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "apple",
+      "value": "1, sliced"
+    },
+    {
+      "trait_type": "strawberrys",
+      "value": "handful, washed and sliced"
+    },
+    {
+      "trait_type": "grapes",
+      "value": "handful"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nMake the Dip:\n\nIn a bowl, mix together the Greek yogurt, honey, and vanilla extract until smooth.\nServe:\n\nTransfer the dip to a serving bowl.\nArrange the fresh fruit on a platter around the dip.\nServe immediately."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "name": "Homemade Vanilla Ice Cream",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmSgDGpWMpMiakgwvUJG1BPpvn6wtTtDwY7mqhHBPGLKhC",
+  "attributes": [
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Mixing bowl, Whisk, Ice cream maker, & Airtight container"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "heavy cream",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "whole milk",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "granulated sugar",
+      "value": "3/4 cup"
+    },
+    {
+      "trait_type": "pure vanilla extract",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "pinch"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nMix Ingredients:\n\nIn a large mixing bowl, combine the heavy cream, whole milk, granulated sugar, vanilla extract, and a pinch of salt.\nWhisk the mixture until the sugar is completely dissolved.\nChill the Mixture:\n\nCover the bowl and place it in the refrigerator for at least 2 hours, or overnight, to chill.\nChurn the Ice Cream:\n\nPour the chilled mixture into an ice cream maker.\nChurn according to the manufacturer’s instructions until the mixture reaches a soft-serve consistency. This typically takes about 20-25 minutes.\nFreeze the Ice Cream:\n\nTransfer the churned ice cream into an airtight container.\nFreeze for at least 4 hours, or until firm, before serving."
+    }
+  ]
+}

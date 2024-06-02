@@ -4,7 +4,7 @@ import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from "../Con
 import { InlineShareButtons } from 'sharethis-reactjs';
 import CommentSection from "../CommentSection";
 
-const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, expanded, viewMode }) => {
+const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, expanded, viewMode, imageMapping }) => {
   const { metadata, tokenId } = token;
   const { name, imageUri, attributes: attributesStr } = metadata || {};
   const [likes, setLikes] = useState(0);
@@ -286,12 +286,15 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
     }
   }, [name, imageUri]);
 
+  // Determine the image URL to use
+  const localImageUrl = imageMapping[tokenId] || `https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`;
+
   return (
     <div className={`text-white border pr-4 pl-4 pb-4 pt-2 m-2 shadow-md rounded-lg bg-neutral-900 border-neutral-900 transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-36' : (viewMode === 'list' ? 'w-full lg:w-full' : 'w-full lg:w-1/4 2xl:w-1/6')} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
       {viewMode === 'list' ? (
         <div className="flex items-center bg-neutral-700 p-4 rounded-lg">
           <div className="w-1/12 text-left">
-            <img src={`https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`} alt={name} className="w-full h-auto max-h-24 object-contain" />
+            <img src={localImageUrl} alt={name} className="w-full h-auto max-h-24 object-contain" />
           </div>
           <div className="w-1/3 flex items-center justify-between pl-4">
             <span className="text-left">{name}</span>
@@ -305,10 +308,10 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       ) : (
         <>
           <div className="relative pt-4">
-            {imageUri ? (
+            {localImageUrl ? (
               <div className="relative group">
                 <img
-                  src={`https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`}
+                  src={localImageUrl}
                   alt={name}
                   onClick={toggleDetails}
                   className="mx-auto w-full object-cover rounded duration-300 border-zinc-900 border-8 max-w-[100vw] sm:max-w-[80vw] md:max-w-[50vw] lg:max-w-[33vw] group-hover:scale-105"
@@ -488,7 +491,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
                       <div>{attributes[attributes.length - 1].trait_type}</div>
                       <strong>
                         {attributes[attributes.length - 1].trait_type === "X Username" ? 
-                          <a href={`https://twitter.com/${attributes[attributes.length - 1].value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attributes[attributes.length - 1].value}</a> :
+                          <a href={`https://twitter.com/${attributes[attributes.length - 1].value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attributes.value}</a> :
                           attributes[attributes.length - 1].value}
                       </strong>
                     </p>
@@ -500,6 +503,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           )}
         </>
       )}
+      <div className="text-gray-600 text-xs">{tokenId}</div>
     </div>
   );
 };

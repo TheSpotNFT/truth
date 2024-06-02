@@ -1,0 +1,75 @@
+{
+  "name": "Apple Snickerdoodle Dump Cake",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmePRNsa7jWbXcA4SwLPNC7cjJbgk2JUspHFVwi2Qyext8",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Desserts"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "50 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "10"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "sliced, peeled tart apples",
+      "value": "6 cups"
+    },
+    {
+      "trait_type": "packed brown sugar",
+      "value": "1/3 cup"
+    },
+    {
+      "trait_type": "sugar",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "orange juice",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "lemon juice",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "snickerdoodle cookie mix",
+      "value": "1 package (17.9 ounces) "
+    },
+    {
+      "trait_type": "butter, melted",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "coarsely chopped pecans or walnuts",
+      "value": "1 cup "
+    },
+    {
+      "trait_type": "Whipped cream,  optional",
+      "value": "to top"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Preheat oven to 350°. Toss apples with sugars and fruit juices; spread into a greased 11x7-in. baking dish.\n\nPlace cookie mix in a bowl; stir in contents of cinnamon-sugar packet. Sprinkle over apples. Drizzle with butter. Top with pecans.\nBake until golden brown and apples are tender, 35-40 minutes. Serve warm, with whipped cream if desired."
+    }
+  ]
+}

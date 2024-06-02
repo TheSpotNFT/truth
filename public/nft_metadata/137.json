@@ -1,0 +1,115 @@
+{
+  "name": "Korean Wontons",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmPiu74KF8bKQwgQzQQw2QtdF2UkQqhQP58bMCxAFBAjqA",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "40 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "6"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Asia"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Korean"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "TOH"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "shredded cabbage",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "canned bean sprouts",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "shredded carrots",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "canola oil, divided",
+      "value": "1-1/2 teaspoons plus 2 tablespoons"
+    },
+    {
+      "trait_type": "ground beef",
+      "value": "1/3 pound"
+    },
+    {
+      "trait_type": "sliced green onions",
+      "value": "1/3 cup"
+    },
+    {
+      "trait_type": "sesame seeds, toasted",
+      "value": "1-1/2 teaspoons"
+    },
+    {
+      "trait_type": "minced fresh gingerroot",
+      "value": "1-1/2 teaspoons"
+    },
+    {
+      "trait_type": "garlic cloves, minced",
+      "value": "3"
+    },
+    {
+      "trait_type": "sesame oil",
+      "value": "1-1/2 teaspoons"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "pepper",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "wonton wrappers",
+      "value": "36"
+    },
+    {
+      "trait_type": "large egg, lightly beaten",
+      "value": "1"
+    },
+    {
+      "trait_type": "water",
+      "value": "3 tablespoons"
+    },
+    {
+      "trait_type": "Method",
+      "value": "In a large cast-iron or other heavy skillet, stir-fry cabbage, bean sprouts and carrots in 1-1/2 teaspoons oil until tender; set aside.\n\nIn a small skillet, cook beef over medium heat until no longer pink, crumbling the meat; drain. Add to the vegetable mixture. Stir in the onions, sesame seeds, ginger, garlic, sesame oil, salt and pepper.\nPlace about 1 tablespoon of filling in the center of each wonton wrapper. Combine egg and water. Moisten wonton edges with egg mixture; fold opposite corners over filling and press to seal.\nHeat remaining oil in a large cast-iron skillet. Cook wontons in batches until golden brown, 1-2 minutes on each side, adding more oil if needed."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "name": "Chicken Club Sandwich",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmYSSmBLX5R36yVdXvsEU8QDsyyp9jo54yoDy2KtG1foNP",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Lunch"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Janet"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "boneless, skinless chicken breasts",
+      "value": "2"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "thick-cut bacon",
+      "value": "4 slices"
+    },
+    {
+      "trait_type": "favorite bread (sourdough, ciabatta, or whole grain)",
+      "value": "8 slices"
+    },
+    {
+      "trait_type": "ripe avocado, sliced",
+      "value": "1"
+    },
+    {
+      "trait_type": "large tomato, sliced",
+      "value": "1"
+    },
+    {
+      "trait_type": "mixed greens (arugula, spinach, or lettuce)",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "crumbled blue cheese (for the twist)",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "mayonnaise",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "Dijon mustard",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "honey",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "lemon juice",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nPrepare the Chicken:\n\nSeason the chicken breasts with salt and pepper.\nHeat the olive oil in a skillet over medium-high heat.\nCook the chicken breasts for about 6-7 minutes per side, or until fully cooked and golden brown. Let rest for a few minutes, then slice thinly.\nCook the Bacon:\n\nIn the same skillet, cook the bacon until crispy. Drain on paper towels and set aside.\nPrepare the Bread:\n\nToast the bread slices until golden brown.\nMake the Sauce:\n\nIn a small bowl, mix the mayonnaise, Dijon mustard, honey, and lemon juice until well combined.\nAssemble the Sandwich:\n\nSpread the sauce on one side of each slice of bread.\nLayer the chicken slices, bacon, avocado, tomato, and mixed greens on four slices of bread.\nSprinkle crumbled blue cheese on top of the mixed greens.\nTop with the remaining slices of bread, sauce side down.\nServe:\n\nCut the sandwiches in half and serve immediately.\n(Quarter the recipe if just making for 1 person)"
+    }
+  ]
+}

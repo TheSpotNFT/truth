@@ -1,0 +1,51 @@
+{
+  "name": "Pecan Caramel Candies",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmUCuLint2rRBWkkNAGaDbrCbv8YHeqX88ixzZxRiB1EEX",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "35 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "42"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": " pretzels",
+      "value": "54"
+    },
+    {
+      "trait_type": " Rolo candies",
+      "value": "54 (about 11 ounces)"
+    },
+    {
+      "trait_type": " pecan halves",
+      "value": "54"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Preheat oven to 250°. Place pretzels 1 in. apart on foil-lined baking sheets. Top each with a Rolo candy\n\nBake 3-4 minutes or until candies are softened. (Rolos will still retain their shape.) Immediately top with pecans, pressing to spread candy into pretzel. Let stand until set."
+    }
+  ]
+}

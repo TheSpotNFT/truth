@@ -1,0 +1,95 @@
+{
+  "name": "Shrimp Cocktail Platter",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmXP25vE6SNyeSdUyFdVp7J6bWUPCdgxzzEBmUwmuRaVZs",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "French"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "large shrimp, peeled and deveined",
+      "value": "2 lbs"
+    },
+    {
+      "trait_type": "lemon, halved",
+      "value": "1"
+    },
+    {
+      "trait_type": "Old Bay seasoning",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "ice",
+      "value": "for serving"
+    },
+    {
+      "trait_type": "lemon wedges",
+      "value": "for garnish"
+    },
+    {
+      "trait_type": "ketchup",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "prepared horseradish",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "lemon juice",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "worcestershire sauce",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "hot sauce",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nPrepare the Shrimp:\n\nFill a large pot with water and bring to a boil.\nAdd the lemon halves and Old Bay seasoning.\nAdd the shrimp and cook for 2-3 minutes, until the shrimp are pink and opaque.\nDrain and transfer the shrimp to a bowl of ice water to cool quickly. Drain again.\n\nMake the Cocktail Sauce:\n\nIn a bowl, combine the ketchup, horseradish, lemon juice, Worcestershire sauce, hot sauce, and salt. Mix well.\n\nAssemble the Platter:\n\nArrange the shrimp on a large platter over a bed of ice.\nGarnish with fresh lemon wedges.\nServe with the cocktail sauce in a small bowl on the side."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Easy 5Ingredient Salmon",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmTQyrY57xej8JSDyLBuTmqbKZT6k9kn4w75kFrxwJorLi",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "5 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "AJEZ"
+    },
+    {
+      "trait_type": "garlic powder",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "dried basil",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "½ teaspoon"
+    },
+    {
+      "trait_type": "fillets salmon",
+      "value": "6 ounce"
+    },
+    {
+      "trait_type": "butter",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "lemon wedges",
+      "value": "4"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Stir garlic powder, basil, and salt together in a small bowl. Rub the mixture evenly over salmon.\n\nMelt butter in a large skillet over medium heat. Add salmon and cook until browned and flaky, about 5 minutes per side.\n\nServe salmon with lemon wedges."
+    }
+  ]
+}

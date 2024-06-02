@@ -1,0 +1,83 @@
+{
+  "name": "Watermelon Feta Salad",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmbQUznangWRF6zXsRbpgehz5xLtozo2xdGkwHH1ChhU3z",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Greek"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "watermelon",
+      "value": "4 cups - cubed"
+    },
+    {
+      "trait_type": "feta cheese",
+      "value": "1 cup - crumbled"
+    },
+    {
+      "trait_type": "fresh mint leaves",
+      "value": "1/4 cup - chopped"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "balsamic glaze",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Method\n\n1. In a large bowl, combine the watermelon cubes and crumbled feta cheese.\n2. Sprinkle the chopped mint leaves over the salad.\n3. Drizzle with olive oil and balsamic glaze.\n4. Season with salt and pepper to taste.\n5. Gently toss to combine all ingredients.\nServe and enjoy!"
+    }
+  ]
+}

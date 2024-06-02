@@ -1,0 +1,95 @@
+{
+  "name": "Tzatziki",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmepvuvArYyfRBDjLnqyJXK7sRtntK1j46AUwHBx66ydP2",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Europe"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Mediterranean"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Junk"
+    },
+    {
+      "trait_type": "English cucumber, partially peeled (striped)",
+      "value": "3/4"
+    },
+    {
+      "trait_type": "kosher salt, divided",
+      "value": "1 tsp"
+    },
+    {
+      "trait_type": "garlic cloves, peeled, finely grated or minced",
+      "value": "4-5 cloves"
+    },
+    {
+      "trait_type": "white vinegar",
+      "value": "1 tsp"
+    },
+    {
+      "trait_type": "Extra Virgin Olive Oil",
+      "value": "1 tbsp"
+    },
+    {
+      "trait_type": "plain Greek yogurt",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "chopped fresh dill or mint",
+      "value": "handful"
+    },
+    {
+      "trait_type": "ground white pepper",
+      "value": "1/4 tsp"
+    },
+    {
+      "trait_type": "warm pita bread",
+      "value": "3-4 pieces to serve with"
+    },
+    {
+      "trait_type": "Sliced vegetables",
+      "value": "for serving"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cuddlefish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Kingshit"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Steady"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Use a box grater to manually grate the cucumbers or you can use a small food processor to finely chop the cucumber. Toss the grated cucumbers with ½ teaspoon kosher salt. Spoon the grated cucumber into a cheese cloth or a double thickness napkin and squeeze dry.\nIn one large mixing bowl, place the garlic with remaining ½ teaspoon salt, white vinegar, and extra virgin olive oil. Mix to combine.\nAdd the grated cucumber to the bowl with the garlic mixture. Stir in the yogurt, and a pinch of white or black pepper, and the fresh herbs. Stir to combine well.\nCover and refrigerate for a bit (30 minutes to a couple hours before serving).\n\nStir the tzatziki sauce to refresh and transfer to serving bowl, drizzle with more extra virgin olive oil. Serve with your favorite sides."
+    }
+  ]
+}

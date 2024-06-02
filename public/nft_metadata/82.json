@@ -1,0 +1,123 @@
+{
+  "name": "Boeuf Bourguignon French Beef Stew",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmWtyV5ANzej1CAneWZngbMtRaecPaTWfk7ZNPUMH4zqoo",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "30 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Europe"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "French"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Yetta"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "beef chuck, cut into 1-inch cubes",
+      "value": "2 lbs"
+    },
+    {
+      "trait_type": "bacon, chopped",
+      "value": "4 slices"
+    },
+    {
+      "trait_type": "onion, chopped",
+      "value": "1 large"
+    },
+    {
+      "trait_type": "garlic, minced",
+      "value": "2 cloves"
+    },
+    {
+      "trait_type": "carrots, sliced",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "mushrooms, sliced",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "red wine (preferably Burgundy)",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "beef broth",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "tomato paste",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "dried thyme",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "bay leaves",
+      "value": "2"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "Fresh parsley",
+      "value": "for garnish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Spot"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions: Prepare the Meat: In a large Dutch oven, cook the bacon over medium heat until crispy. Remove and set aside. In the same pot, sear the beef cubes until browned on all sides. Remove and set aside. Cook the Vegetables: Add the chopped onion and garlic to the pot and sauté until softened. Add the carrots and mushrooms, and cook for another 5 minutes. Combine Ingredients: Return the beef and bacon to the pot. Sprinkle the flour over the mixture and stir to coat the meat and vegetables. Pour in the red wine and beef broth, and add the tomato paste, thyme, and bay leaves. Bring to a boil, then reduce heat to low and simmer, covered, for 2-3 hours, or until the beef is tender. Serve: Remove the bay leaves before serving. Garnish with fresh parsley and serve with crusty bread or mashed potatoes."
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Scottish Shortbread",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmcjjGcncvayWGqGiBmCipMvm85rfVsBAj765XjBXm5taV",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Desserts"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "35 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "48"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "",
+      "value": ""
+    },
+    {
+      "trait_type": "",
+      "value": ""
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "AJEZ"
+    },
+    {
+      "trait_type": "butter, softened",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "4 to 4-1/2 cups"
+    },
+    {
+      "trait_type": "brown sugar",
+      "value": "1 cup packed"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Flatten each biscuit into a 4 inch circle. Place 1 tablespoon filling in the center of each biscuit. Wrap dough around the filling into a ball and crimp the dough to seal it tightly.  Flatten the filled ball of dough into a patty shape. \nHeat a non stick skillet over medium-low  heat. Add 2 teaspoon of oil and, working with 2 to 3 at a time, place the filled dough, seam side down into the skillet. Place lid on skillet and cook until the bottom side is golden brown and toasted, 3 to 4 minutes.  Flip the pastries and cook until golden on both sides and the dough along the outside is cooked, an additional 3 to 4 minutes.  \nRepeat with the remaining filled pastries and oil"
+    }
+  ]
+}

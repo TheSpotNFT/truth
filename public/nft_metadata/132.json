@@ -1,0 +1,111 @@
+{
+  "name": "Pork Roast",
+  "description": "Avax is Cookin",
+  "image": "ipfs://Qmc952o1R36m1gZo8GZA9nqMzvxYYfp5Gw9wKoFzHRHEwM",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "pork loin roast",
+      "value": "3-4 pound"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "large potatoes, peeled and cut into chunks",
+      "value": "4"
+    },
+    {
+      "trait_type": "large onions, peeled and cut into wedges",
+      "value": "2"
+    },
+    {
+      "trait_type": "celery stalks, cut into large pieces",
+      "value": "4"
+    },
+    {
+      "trait_type": "garlic, minced",
+      "value": "4 cloves"
+    },
+    {
+      "trait_type": "dried thyme",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "dried rosemary",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "chicken broth",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "white wine (optional)",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "Dijon mustard",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "Fresh parsley",
+      "value": "for garnish (optional)"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nPrepare the Pork Roast:\n\nPreheat your oven to 350°F (175°C).\nSeason the pork roast generously with salt and pepper.\nIn a large oven-safe skillet or Dutch oven, heat the olive oil over medium-high heat. Sear the pork roast on all sides until it is browned, about 3-4 minutes per side. Remove the pork roast from the skillet and set aside.\nPrepare the Vegetables:\n\nIn the same skillet, add the potatoes, onions, celery, and garlic. Cook for about 5 minutes, stirring occasionally, until the vegetables start to soften.\nSeason the vegetables with thyme, rosemary, salt, and pepper.\nDeglaze and Roast:\n\nPour the chicken broth and white wine (if using) into the skillet to deglaze, scraping up any browned bits from the bottom of the pan.\nStir in the Dijon mustard.\nReturn the pork roast to the skillet, placing it on top of the vegetables.\nRoast in the Oven:\n\nTransfer the skillet to the preheated oven.\nRoast for 1.5 to 2 hours, or until the internal temperature of the pork reaches 145°F (63°C) and the vegetables are tender.\nRest and Serve:\n\nRemove the skillet from the oven and let the pork roast rest for 10 minutes before slicing.\nGarnish with fresh parsley if desired.\nServe the sliced pork roast with the roasted vegetables."
+    }
+  ]
+}

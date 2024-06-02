@@ -1,0 +1,79 @@
+{
+  "name": "Cilantro Dressing",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmT7CMyAtAniHSJZyYpxxf1VmrqA3BBBA1x3qwFn2QmtMN",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dressings"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Blender"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Junk"
+    },
+    {
+      "trait_type": "X Username",
+      "value": "junkunderground"
+    },
+    {
+      "trait_type": "avocado",
+      "value": "1/2"
+    },
+    {
+      "trait_type": "greek yogurt",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "water",
+      "value": "1/2 cup (more if needed to adjust consistency)"
+    },
+    {
+      "trait_type": "cilantro leaves and stems",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "garlic",
+      "value": "1 small clove"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/2 tsp"
+    },
+    {
+      "trait_type": "lime juice",
+      "value": "squeeze"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "No Chill"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Put all ingredients into blender and blend until smooth and pourable, adjust water quantity if needed.\nUse as a dressing or a sauce"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "name": "Egg Clouds",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmUzWyfBxsfgcANSDpYg1uNNyq5KkkSJPMNgwcQxfQviAU",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Breakfast"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "24 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "large eggs, separated",
+      "value": "4"
+    },
+    {
+      "trait_type": "Italian seasoning",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/8 teaspoon"
+    },
+    {
+      "trait_type": "pepper",
+      "value": "1/8 teaspoon"
+    },
+    {
+      "trait_type": "Parmesan cheese shredded",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "minced fresh basil",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "finely chopped oil-packed sun-dried tomatoes",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Kingshit"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Method\n\nPreheat oven to 450°. Separate eggs; place whites in a large bowl and yolks in 4 separate small bowls. Beat egg whites, Italian seasoning, salt and pepper until stiff peaks form.\n\nIn a 9-in. cast-iron skillet generously coated with cooking spray, drop egg white mixture into 4 mounds. With the back of a spoon, create a small well in the center of each mound. Sprinkle with cheese. Bake until light brown, about 5 minutes. Gently slip 1 egg yolk into each mound. Bake until yolks are set, 3-5 minutes longer. Sprinkle with basil and tomatoes. Serve immediately.\n\nNutrition Facts\n1 serving: 96 calories, 6g fat (2g saturated fat), 190mg cholesterol, 234mg sodium, 1g carbohydrate (0 sugars, 0 fiber), 8g protein. Diabetic Exchanges: 1 medium-fat meat."
+    }
+  ]
+}

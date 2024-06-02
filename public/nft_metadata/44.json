@@ -1,0 +1,95 @@
+{
+  "name": "Bacon Maple Grits Puff",
+  "description": "Avax is Cookin",
+  "image": "ipfs://Qmd7yjRT8ekzm5n5FrwQJZkAXc9mJ5Y5oNpWbd1Gq5aJpJ",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Breakfast"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "8"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "bacon strips, chopped",
+      "value": "8"
+    },
+    {
+      "trait_type": "2% milk",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "water",
+      "value": "1-1/4 cups"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "quick-cooking grits",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "maple syrup",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "large eggs, lightly beaten",
+      "value": "4"
+    },
+    {
+      "trait_type": "Minced fresh chives",
+      "value": "optional"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Spot"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Kingshit"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Avax Apes"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Method\n\nPreheat oven to 350°. In a large skillet, cook bacon over medium heat until crisp, stirring occasionally. Remove with a slotted spoon; drain on paper towels. Reserve 2 tablespoons drippings.\n\nIn a large saucepan, bring milk, water and salt to a boil. Slowly stir in grits. Reduce heat to medium-low; cook, covered, 5-7 minutes or until thickened, stirring occasionally. Remove from heat; stir in maple syrup, half of the cooked bacon and reserved drippings.\n\nIn a small bowl, whisk a small amount of hot grits into eggs until blended; return all to pan, mixing well. Transfer to a greased 8-in. square baking dish.\n\nBake, uncovered, 1 hour or until a knife inserted in the center comes out clean. Sprinkle with remaining bacon and, if desired, chives; let stand 5 minutes before serving."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "name": "Tropical Long Island Iced Tea",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmY28FHgbzUJqWd5LfTrBWrLjqH8cfjvYFp3vMQqQHR7aV",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "5 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "1"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Cocktail Shaker set up (Not necessary, but helpful)"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "DeFi Elixirist"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "gin",
+      "value": "1/2 oz"
+    },
+    {
+      "trait_type": "tequila",
+      "value": "1/2 oz"
+    },
+    {
+      "trait_type": "triple sec",
+      "value": "1/2 oz"
+    },
+    {
+      "trait_type": "pineapple juice",
+      "value": "1 oz"
+    },
+    {
+      "trait_type": "orange juice",
+      "value": "1 oz"
+    },
+    {
+      "trait_type": "lime juice",
+      "value": "1/2 oz"
+    },
+    {
+      "trait_type": "simple syrup",
+      "value": "1/2 oz"
+    },
+    {
+      "trait_type": "Pineapple slice and maraschino cherry",
+      "value": "for garnish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "No Chill"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Spot"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\nMix the Alcohols:\n\nIn a cocktail shaker, combine the vodka, white rum, gin, tequila, and triple sec.\n\nAdd the Juices:\n\nAdd the pineapple juice, orange juice, lime juice, and simple syrup to the shaker.\n\nShake:\n\nFill the shaker with ice and shake vigorously until well-chilled.\n\nServe:\n\nFill a highball or hurricane glass with ice.\nStrain the mixture into the glass.\nTop off with a splash of cola.\n\nGarnish:\n\nGarnish with a slice of pineapple and a maraschino cherry."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "name": "Cryptocasual Cake",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmSQqSXaHgzSuMZqzmKpe2XWDJj5pSBcCvwotRKCUusmeJ",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Desserts"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "30 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "6"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Europe"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "French"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Googles"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "@cryptocasualeth"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Googles"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Freshly Uttered Milk",
+      "value": "1 L"
+    },
+    {
+      "trait_type": "Eggs",
+      "value": "4"
+    },
+    {
+      "trait_type": "Sugar",
+      "value": "1g"
+    },
+    {
+      "trait_type": "Salt",
+      "value": "0.5g"
+    },
+    {
+      "trait_type": "Nutmeg",
+      "value": "0.1g"
+    },
+    {
+      "trait_type": "Vanilla Extract",
+      "value": "0.1g"
+    },
+    {
+      "trait_type": "Cream",
+      "value": "0.25L"
+    },
+    {
+      "trait_type": "Dark Chocolate ",
+      "value": "1g"
+    },
+    {
+      "trait_type": "Strawberries ",
+      "value": "10"
+    },
+    {
+      "trait_type": "Baking Flour",
+      "value": "0.5g"
+    },
+    {
+      "trait_type": "Carmel",
+      "value": "0.25g"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Steady"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "No Chill"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Put on Googles so milk doesn’t spray in eyes\n- squeeze 1L of milk directly into the bowl\n-whisk with the eggs, sugar, salt, flour, nutmeg, vanilla and cream for 15 mins till smooth\n-pour on baking sheet and cook for 35 at 450 degrees\n-dip the strawberries in the Carmel you melted and layer them onto of the cake with the dark chocolate to get a rich flavour!\n-enjoy with a glass of freshly uttered milk for maximum satisfaction "
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "name": "Cinnamon Applesauce Pancakes",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmehJxJs7XAwHXfkg5uhhixFb3AqtqjqEYzgXqLYaFegrK",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Breakfast"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "2"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Apple Jack"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "buttermilk pancake mix",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "ground cinnamon",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "chunky cinnamon applesauce",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "water",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "maple syrup",
+      "value": "if desired"
+    },
+    {
+      "trait_type": "butter",
+      "value": "if desired"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Kingshit"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Avax Apes"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Method\n\nCombine pancake mix and cinnamon. Add applesauce and water; stir just until moistened.\n\nPour batter by 1/4 cupfuls onto a greased hot griddle; turn when bubbles form on top. Cook until the second side is golden brown. Serve with syrup and butter.\n\nNutrition Facts\n\n3 pancakes (calculated without syrup and butter): 218 calories, 2g fat (0 saturated fat), 0 cholesterol, 649mg sodium, 50g carbohydrate (18g sugars, 2g fiber), 3g protein."
+    }
+  ]
+}

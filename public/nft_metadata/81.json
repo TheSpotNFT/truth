@@ -1,0 +1,79 @@
+{
+  "name": "Pogácsa (Hungarian Cheese Biscuits)",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmaMZEywEvUZLs2H1UTUDkpHkswuuBSfdKh6b5puKyRNBo",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Europe"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Other"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Yetta"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "baking powder",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "cold butter, cubed",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "grated cheese (e.g., Gruyère, Emmental, or Cheddar)",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "sour cream",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "egg, beaten (for egg wash)",
+      "value": "q"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\nPrepare the Dough:\n\nPreheat the oven to 375°F (190°C).\nIn a large bowl, combine the flour, salt, and baking powder.\nCut in the cold butter until the mixture resembles coarse crumbs.\nStir in the grated cheese and sour cream until the dough comes together.\n\nShape the Biscuits:\n\nRoll out the dough on a lightly floured surface to about 1/2-inch thickness.\n\nCut out rounds using a biscuit cutter or a glass.\nPlace the rounds on a baking sheet lined with parchment paper.\nBake:\n\nBrush the tops of the biscuits with the beaten egg.\nBake for 15-20 minutes, or until golden brown.\n\nServe:\n\nServe warm or at room temperature."
+    }
+  ]
+}

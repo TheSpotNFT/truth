@@ -1,0 +1,115 @@
+{
+  "name": "This Ain't @pplebee's Quesadilla Burger",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmSoPaM2FLWztMxtUGKAMZadE4zy3wamHsNNMDEZpjAm6C",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "NawT @pplebee's Quesadilla Hamburger"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "ground beef",
+      "value": "1-1/3 pounds"
+    },
+    {
+      "trait_type": "salt",
+      "value": "3/4 teaspoon"
+    },
+    {
+      "trait_type": "pepper",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "canola oil",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "pepper jack cheese",
+      "value": "4 slices"
+    },
+    {
+      "trait_type": "mini flour tortillas",
+      "value": "8"
+    },
+    {
+      "trait_type": "shredded cheddar cheese",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "cooked bacon strips, halved",
+      "value": "4"
+    },
+    {
+      "trait_type": "lettuce leaves",
+      "value": "4"
+    },
+    {
+      "trait_type": "chipotle ranch salad dressing",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "pico de gallo",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cuddlefish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Spot"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Directions:\n\nShape ground beef into four 5-in.-wide patties. Sprinkle with salt and pepper. In a large skillet, heat oil over medium heat. Add burgers; cook until a thermometer reads 160°, 4-6 minutes on each side. Remove from heat; top with pepper jack cheese. Cover and let stand 5 minutes.\n\nMeanwhile, place tortillas on a griddle. Sprinkle 1/4 cup cheddar cheese on each tortilla. Cook over low heat until cheese is melted, 1-2 minutes; remove from heat. Top half the tortillas with burgers, bacon, lettuce, ranch dressing and pico de gallo; top with remaining tortillas, cheese side down."
+    }
+  ]
+}

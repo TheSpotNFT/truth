@@ -1,0 +1,79 @@
+{
+  "name": "Paloma cocktail",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmdcZgKRdjnKbv9DZjtVxcVfW5QE2mFQV5biciS7ywxw1h",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "8 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "1"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "DeFi Elixirist"
+    },
+    {
+      "trait_type": "bourbon or rye whiskey",
+      "value": "2 oz"
+    },
+    {
+      "trait_type": "sugar cube",
+      "value": "1"
+    },
+    {
+      "trait_type": "Angostura bitters",
+      "value": "2-3 dashes"
+    },
+    {
+      "trait_type": "club soda",
+      "value": "Splash "
+    },
+    {
+      "trait_type": "Orange twist",
+      "value": "for garnish"
+    },
+    {
+      "trait_type": "Maraschino cherry",
+      "value": "for garnish (optional)"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "No Chill"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Spot"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nPrepare the Glass:\n\nPlace the sugar cube in an old-fashioned glass.\nAdd the bitters and a splash of club soda.\nMuddle and Mix:\n\nMuddle the sugar cube until it dissolves.\nFill the glass with ice and add the whiskey.\nStir gently to combine.\nGarnish and Serve:\n\nGarnish with an orange twist and a maraschino cherry (if using).\nServe immediately."
+    }
+  ]
+}

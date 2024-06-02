@@ -1,0 +1,99 @@
+{
+  "name": "Grilled Lemon Herb Chicken",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmXaGqG8ptWhtz7AYYAPY6T2YVu9kFxWsQQMokzT31UFa6",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Container for marinade"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Container for marinade"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "boneless skinless chicken breasts",
+      "value": "4"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "lemon juice",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "cloves garlic - minced",
+      "value": "3"
+    },
+    {
+      "trait_type": "fresh thyme - chopped",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "fresh rosemary - chopped",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Method\n\n1. In a bowl, whisk together olive oil, lemon juice, minced garlic, thyme, rosemary, salt, and pepper.\n2. Place the chicken breasts in a resealable plastic bag and pour the marinade over them. Seal the bag and refrigerate for at least 30 minutes.\n3. Preheat the grill to medium-high heat.\n4. Grill the chicken breasts for 6-7 minutes on each side or until fully cooked.\n5. Remove from the grill and let rest for a few minutes before serving."
+    }
+  ]
+}

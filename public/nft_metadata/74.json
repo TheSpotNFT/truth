@@ -1,0 +1,99 @@
+{
+  "name": "BBQ Jackfruit Tacos",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmUFg7xfFDejaQqSnFhxVrD4cssKeuPGWcowEbAadTE1Z9",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "♥Aunt Suzie♥"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "young green jackfruit in water or brine, drained and rinsed",
+      "value": "2 cans (20 oz each)"
+    },
+    {
+      "trait_type": "small onion, finely chopped",
+      "value": "1"
+    },
+    {
+      "trait_type": "garlic, minced",
+      "value": "3 cloves"
+    },
+    {
+      "trait_type": "BBQ sauce",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "smoked paprika",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "ground cumin",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "ground black pepper",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "small corn or flour tortillas",
+      "value": "for serving"
+    },
+    {
+      "trait_type": "shredded cabbage, sliced avocado, chopped cilantro, lime wedges",
+      "value": "toppings"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\nPrepare the Jackfruit:\n\nCut the jackfruit into smaller pieces, removing any seeds.\nUse your fingers or a fork to shred the jackfruit into a pulled-pork-like texture.\n\nCook the Onion and Garlic:\n\nHeat the olive oil in a large skillet over medium heat.\nAdd the chopped onion and cook until softened, about 5 minutes.\nAdd the minced garlic and cook for another minute.\n\nAdd the Jackfruit and Spices:\n\nStir in the shredded jackfruit, smoked paprika, ground cumin, ground black pepper, and salt.\nCook for about 10 minutes, stirring occasionally, until the jackfruit starts to brown.\n\nAdd the BBQ Sauce:\n\nPour in the BBQ sauce and stir to coat the jackfruit evenly.\nReduce the heat to low and simmer for another 10 minutes, allowing the flavors to meld.\n\nAssemble the Tacos:\n\nWarm the tortillas in a dry skillet or microwave.\nFill each tortilla with the BBQ jackfruit.\nTop with shredded cabbage, sliced avocado, chopped cilantro, and a squeeze of lime juice."
+    }
+  ]
+}

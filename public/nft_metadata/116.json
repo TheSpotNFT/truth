@@ -1,0 +1,87 @@
+{
+  "name": "Peach Vinaigrette Dressing",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmV9cSe9NhSPnn3t4QZeezyT8MNdJfEckWzqnkn3sMpgWT",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dressings"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "2"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "large ripe peach, peeled and pitted",
+      "value": "1"
+    },
+    {
+      "trait_type": "extra-virgin olive oil",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "white wine vinegar",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "honey",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "dijon mustard",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "black pepper",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "fresh thyme leaves (optional)",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Prepare the Peach:\n\nPeel and pit the peach, then cut it into chunks.\nBlend Ingredients:\n\nIn a blender or food processor, combine the peach chunks, olive oil, white wine vinegar, honey, Dijon mustard, salt, and black pepper. Blend until smooth.\nAdd Herbs:\n\nIf using fresh thyme leaves, stir them into the blended dressing.\nServe:\n\nUse immediately or store in an airtight container in the refrigerator for up to one week. Shake well before using."
+    }
+  ]
+}

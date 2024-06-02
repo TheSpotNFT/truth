@@ -1,0 +1,95 @@
+{
+  "name": "Pressure-Cooker Manchester Stew",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmS2hqw3oMj7427yb1XVjEAf3CeV2gWxdJWQXSBDSC2Kvk",
+  "attributes": [
+    {
+      "trait_type": "Preparation Time",
+      "value": "25 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "6"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Europe"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "onions, chopped",
+      "value": "2 medium"
+    },
+    {
+      "trait_type": "garlic cloves, minced",
+      "value": "2"
+    },
+    {
+      "trait_type": "dried oregano",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "dry red wine",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "small red potatoes, quartered",
+      "value": "1 pound"
+    },
+    {
+      "trait_type": "kidney beans, rinsed and drained",
+      "value": "1 can (16 ounces)"
+    },
+    {
+      "trait_type": "sliced fresh mushrooms",
+      "value": "1/2 pound"
+    },
+    {
+      "trait_type": "leeks (white portions only), sliced",
+      "value": "2 medium"
+    },
+    {
+      "trait_type": "fresh baby carrots",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "water",
+      "value": "1/2-2 cups"
+    },
+    {
+      "trait_type": "no-salt-added diced tomatoes",
+      "value": "1 can (14-1/2 ounces)"
+    },
+    {
+      "trait_type": "dried thyme",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "pepper",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "Fresh basil leaves",
+      "value": "optional"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Select saute setting on a 6-qt. electric pressure cooker. Adjust for medium heat; add oil. When oil is hot, cook and stir onions until crisp-tender, 2-3 minutes. Add garlic and oregano; cook and stir 1 minute longer. Stir in wine. Bring to a boil; cook until liquid is reduced by half, 3-4 minutes. Press cancel.\n\nAdd potatoes, beans, mushrooms, leeks and carrots. Stir in water, tomatoes, thyme, salt and pepper. Lock lid; close pressure-release valve. Adjust to pressure-cook on high for 3 minutes. Allow pressure to release naturally for 10 minutes, then quick-release any remaining pressure. Top with basil."
+    }
+  ]
+}

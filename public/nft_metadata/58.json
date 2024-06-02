@@ -1,0 +1,111 @@
+{
+  "name": "Chicken Avocado Salad",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmTddWAoCnuMRVQAkv9eyHFtvHEzpirn7MaPYy42i2M4DY",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Lunch"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Mixing bowl"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Dot"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Mixing bowl"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "cooked chicken breast, shredded",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "ripe avocado, diced",
+      "value": "1"
+    },
+    {
+      "trait_type": "cherry tomatoes, halved",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "red onion, finely chopped",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "fresh cilantro, chopped",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "Greek yogurt",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "lime juice",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "mixed greens (lettuce)",
+      "value": "4 cups"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cuddlefish"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\nIn a large bowl, combine the shredded chicken, diced avocado, cherry tomatoes, red onion, and cilantro.\n\nIn a small bowl, mix the Greek yogurt, lime juice, salt, and pepper.\n\nPour the yogurt dressing over the chicken mixture and gently toss to coat.\n\nServe the chicken avocado salad over a bed of mixed greens."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "name": "Stew's Beef Stew",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmTYjPHCFYax9y3SM8A4iAc7WuLdZeGsHXvzueyMyVrPJ7",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "6"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "1 large bowl, 1 large pot"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Stew"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "1 large bowl, 1 large pot"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "beef chuck",
+      "value": "2 lbs, cut into 1-inch cubes"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "3 tablespoons"
+    },
+    {
+      "trait_type": "large onion",
+      "value": "1, chopped"
+    },
+    {
+      "trait_type": "garlic",
+      "value": "3 cloves, minced"
+    },
+    {
+      "trait_type": "carrots",
+      "value": "4, sliced"
+    },
+    {
+      "trait_type": "potatoes",
+      "value": "4, peeled and cubed"
+    },
+    {
+      "trait_type": "beef broth",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "red wine",
+      "value": "1 cup (optional)"
+    },
+    {
+      "trait_type": "tomato paste",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "worcestershire sauce",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "dried thyme",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "dried rosemary",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "bay leaves",
+      "value": "2"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "fresh parsley",
+      "value": "1/4 cup, chopped (for garnish)"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Method-\n\nPrepare the Beef:\n\nIn a large bowl, season the beef cubes with salt and pepper.\nSprinkle the flour over the beef and toss to coat evenly.\nBrown the Beef:\n\nIn a large pot or Dutch oven, heat the olive oil over medium-high heat.\nAdd the beef cubes in batches, browning them on all sides. Remove and set aside.\n\nCook the Vegetables:\n\nIn the same pot, add the chopped onion and cook until softened, about 5 minutes.\n\nAdd the minced garlic and cook for another minute.\n\nCombine Ingredients:\n\nReturn the beef to the pot and add the carrots and potatoes.\nStir in the tomato paste, Worcestershire sauce, thyme, rosemary, and bay leaves.\n\nPour in the beef broth and red wine (if using).\n\nSimmer:\n\nBring the mixture to a boil, then reduce the heat to low.\nCover and simmer for 1.5 to 2 hours, or until the beef and vegetables are tender.\n\nFinal Touch:\n\nRemove the bay leaves and adjust seasoning with salt and pepper if needed.\n\nGarnish with chopped fresh parsley before serving."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Zesty Irish Coffee",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmbPagvpxYHY7VcD3b1oD8qcBUqCwvRhkQrTK7BquYTZUT",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "1"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Other"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Other"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "DeFi Elixirist"
+    },
+    {
+      "trait_type": "Irish whiskey",
+      "value": "1 1/2 oz"
+    },
+    {
+      "trait_type": "hot brewed coffee",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "brown sugar",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "heavy cream, lightly whipped",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "orange peel",
+      "value": "1"
+    },
+    {
+      "trait_type": "orange zest",
+      "value": "garnish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "No Chill"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Spot"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\nPreheat a glass mug with a twisted orange peel, by filling it with hot water and letting it sit for a minute. Pour out the water.\n\nAdd the brown sugar to the mug, then pour in the hot coffee and stir until the sugar is dissolved.\n\nStir in the Irish whiskey.\n\nGently float the lightly whipped cream on top by pouring it over the back of a spoon.\n\nGarnish with orange zest."
+    }
+  ]
+}

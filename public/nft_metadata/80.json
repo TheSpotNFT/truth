@@ -1,0 +1,99 @@
+{
+  "name": "Apfelpfannkuchen German Apple Pancakes",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmQgr69RHyvVSGX2nNtQUQPXcUSo16AA8t1WHzUiaDjVPT",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Breakfast"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Europe"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Other"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Yetta"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "large apples, peeled and cored",
+      "value": "2, thinly sliced"
+    },
+    {
+      "trait_type": "eggs",
+      "value": "3"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "milk",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "sugar",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "vanilla extract",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "butter",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "Powdered sugar",
+      "value": "for dusting"
+    },
+    {
+      "trait_type": "Ground cinnamon",
+      "value": "for dusting (optional)"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cuddlefish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions: Prepare the Apples: Preheat the oven to 425°F (220°C). Melt the butter in a large ovenproof skillet over medium heat. Add the apple slices and cook until softened, about 5 minutes. Make the Batter: In a mixing bowl, whisk together the eggs, flour, milk, sugar, salt, and vanilla extract until smooth. Cook the Pancake: Pour the batter over the softened apples in the skillet. Transfer the skillet to the preheated oven and bake for 15-20 minutes, or until the pancake is puffed and golden brown. Serve: Dust the pancake with powdered sugar and ground cinnamon if desired. Serve warm."
+    }
+  ]
+}

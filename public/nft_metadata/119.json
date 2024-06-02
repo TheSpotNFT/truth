@@ -1,0 +1,75 @@
+{
+  "name": "Creamy Avocado Lime Dressing",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmQPutq4KzLqiGbxXb4DWgETKnbm3bzZGRG4J5ajWWjH6D",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dressings"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Blender"
+    },
+    {
+      "trait_type": "ripe avocado",
+      "value": "1"
+    },
+    {
+      "trait_type": "plain Greek yogurt",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "fresh lime juice",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "honey",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "garlic, minced",
+      "value": "1 clove"
+    },
+    {
+      "trait_type": "fresh cilantro leaves",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "jalapeño, seeded and chopped (optional, for a bit of heat)",
+      "value": "1"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nCombine Ingredients:\nIn a blender or food processor, combine the avocado, Greek yogurt, fresh lime juice, olive oil, honey, minced garlic, cilantro leaves, and jalapeño (if using).\nBlend:\nBlend until smooth and creamy.\nSeason:\nSeason with salt and pepper to taste.\nServe:\nUse immediately or store in an airtight container in the refrigerator for up to three days."
+    }
+  ]
+}

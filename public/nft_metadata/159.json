@@ -1,0 +1,63 @@
+{
+  "name": "Keto Alfredo Sauce",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmTx7RWiiUzEgjtXcp7kJWvkFFX55hMZAnw3Mm5E3k9nTg",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Sauces"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "5 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "5"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "AJEZ"
+    },
+    {
+      "trait_type": "unsalted butter",
+      "value": "½ cup"
+    },
+    {
+      "trait_type": "cloves garlic, crushed",
+      "value": "2"
+    },
+    {
+      "trait_type": "cream cheese, softened",
+      "value": "4 ounce"
+    },
+    {
+      "trait_type": "grated Parmesan cheese",
+      "value": "1 ½ cups"
+    },
+    {
+      "trait_type": "pinch salt",
+      "value": "for taste"
+    },
+    {
+      "trait_type": "ground nutmeg",
+      "value": "for taste"
+    },
+    {
+      "trait_type": "white pepper",
+      "value": "for taste"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Gather the ingredients.\n\nMelt butter in a medium saucepan over low heat. Add garlic and cook until fragrant, about 2 minutes.\n\nStir in heavy cream and cream cheese. Gradually add Parmesan cheese, stirring constantly until well incorporated and melted, about 5 to 7 minutes.\n\nStir in salt, nutmeg, and white pepper. The sauce will thicken as it cools."
+    }
+  ]
+}

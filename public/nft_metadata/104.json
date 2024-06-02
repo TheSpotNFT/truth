@@ -1,0 +1,87 @@
+{
+  "name": "Spinach and Feta Stuffed Mushrooms",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmUu75frgAsdDX7yPPCPA2DHH11Ej3XYyhTorxdHfEzeei",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "large button mushrooms, stems removed and finely chopped",
+      "value": "24"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "garlic, minced",
+      "value": "2 cloves"
+    },
+    {
+      "trait_type": "fresh spinach, chopped",
+      "value": "4 cups"
+    },
+    {
+      "trait_type": "crumbled feta cheese",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "breadcrumbs",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "grated parmesan cheese",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nPrepare the Mushrooms:\n\nPreheat the oven to 375°F (190°C).\nClean the mushroom caps and remove the stems. Finely chop the stems and set aside.\nCook the Filling:\n\nIn a skillet, heat the olive oil over medium heat.\nAdd the minced garlic and chopped mushroom stems, and cook until softened, about 3-4 minutes.\nAdd the chopped spinach and cook until wilted, about 2 minutes.\nRemove from heat and stir in the crumbled feta cheese, breadcrumbs, grated Parmesan cheese, salt, and pepper.\nStuff the Mushrooms:\n\nSpoon the spinach and feta mixture into each mushroom cap, pressing down slightly to pack the filling.\nBake:\n\nArrange the stuffed mushrooms on a baking sheet.\nBake in the preheated oven for 15-20 minutes, or until the mushrooms are tender and the filling is golden brown.\nServe:\n\nTransfer to a serving platter and serve warm."
+    }
+  ]
+}

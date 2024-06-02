@@ -1,0 +1,103 @@
+{
+  "name": "Gingerbread Pancakes",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmaTgD2ENM8j9knJJp55W3DZvJsaqU55niZnHhcT4VrqBW",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Breakfast"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "5 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "12"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "♥Aunt Suzie♥"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "pancake mix",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "molasses",
+      "value": "4 teaspoons"
+    },
+    {
+      "trait_type": "ground cinnamon",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "ground ginger",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "ground cloves",
+      "value": "1/8 teaspoon"
+    },
+    {
+      "trait_type": "water",
+      "value": "1-1/2 cups"
+    },
+    {
+      "trait_type": "Maple Syrup",
+      "value": "if desired"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "No Chill"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cuddlefish"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Method:\n\nIn a small bowl, combine the pancake mix, molasses, cinnamon, ginger and cloves. Stir in water just until dry ingredients are moistened.\n\nPour batter by 1/4 cupfuls onto a greased hot griddle; turn when bubbles form on top. Cook until the second side is golden brown. Serve with syrup if desired.\n\n\nNutrition Facts:\n\n3 pancakes: 248 calories, 2g fat (0 saturated fat), 0 cholesterol, 972mg sodium, 54g carbohydrate (10g sugars, 1g fiber), 5g protein."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "name": "Samosas",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmNxScKGByzSo6qADaXZTe86rMwtEWo5uyGfWs5QkpYJnE",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "35 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "12"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Asia"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Indian"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "TOH"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "ghee or canola oil",
+      "value": "3 tablespoons"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "caraway seeds",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "cold water",
+      "value": "3/4 cup"
+    },
+    {
+      "trait_type": "FILLING:",
+      "value": "Below"
+    },
+    {
+      "trait_type": "medium potatoes, peeled and chopped",
+      "value": "5"
+    },
+    {
+      "trait_type": "canola oil",
+      "value": "6 tablespoons, divided"
+    },
+    {
+      "trait_type": "fresh or frozen peas, thawed",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "minced fresh gingerroot",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "garam masala",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "cumin seeds",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "Optional:",
+      "value": "Fennel seeds, crushed coriander seeds, caraway seeds or amchur (dried mango powder)"
+    },
+    {
+      "trait_type": "Method",
+      "value": "In a large bowl, combine flour, ghee, salt and caraway seeds until mixture resembles bread crumbs. Gradually stir in enough water to form a firm dough. Turn onto a lightly floured surface; knead until smooth and elastic, 6-8 minutes. Cover and let rest for 1 hour.\n\nPlace potatoes in a large saucepan and cover with water. Bring to a boil. Reduce heat and cook until just tender, 8-10 minutes; drain. Set aside to cool slightly. In a large skillet, heat 3 tablespoons oil over medium heat. Add potatoes and cook until potatoes start to cling to the skillet, about 5 minutes. Stir in peas, ginger, garam masala, cumin seeds and salt; cook until heated through, about 2 minutes. Stir in optional ingredients as desired. Set aside.\n\nDivide dough into 6 pieces. Roll 1 piece of dough into a 10x6-in. oval. Cut dough in half. Moisten straight edge with water. Bring 1 corner of half moon up to meet the other corner of half moon, forming a cone. Pinch seam to seal. Fill with 3-4 tablespoons potato mixture. Moisten curved edge of dough with water; fold over top of filling and press seam to seal. Gently press the bottom of each samosa to flatten slightly. Repeat with remaining dough and filling.\n\nPreheat air fryer to 350°. Brush the samosas with the remaining 3 tablespoons oil. In batches, arrange in a single layer, without touching, on tray in air-fryer basket. Cook until golden brown, about 15 minutes."
+    }
+  ]
+}

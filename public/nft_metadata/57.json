@@ -1,0 +1,107 @@
+{
+  "name": "Summer Berry Sangria",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmZoaDc8RQ11SLfhbcu2d9tpchXfC4fXnikVyHccarVnMo",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "6"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Mexican"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Dot"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "white wine",
+      "value": "1 bottle (750 ml)"
+    },
+    {
+      "trait_type": "strawberries",
+      "value": "1 cup, sliced"
+    },
+    {
+      "trait_type": "blueberries",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "raspberries",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "brandy",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "orange juice",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "simple syrup",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "club soda",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "fresh mint leaves",
+      "value": "garnish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Method\n\n1. In a large pitcher, combine the white wine, sliced strawberries, blueberries, raspberries, brandy, orange juice, and simple syrup.\n\n2. Stir well and refrigerate for at least 2 hours to allow the flavors to meld.\n\n3. Just before serving, add the club soda and gently stir.\n\n4. Serve the sangria over ice and garnish with fresh mint leaves."
+    }
+  ]
+}

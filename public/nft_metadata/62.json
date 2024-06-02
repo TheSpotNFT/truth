@@ -1,0 +1,75 @@
+{
+  "name": "Maple Old Fashioned",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmWdPUnNQZwiSAxB5J2XLYXaTXcCyDosQHiYPHLNKaubSW",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "5 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "1"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Other"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Other"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "DeFi Elixirist"
+    },
+    {
+      "trait_type": "rye whiskey",
+      "value": "2 oz"
+    },
+    {
+      "trait_type": "pure maple syrup",
+      "value": "1/2 oz"
+    },
+    {
+      "trait_type": "angostura bitters",
+      "value": "2 dashes"
+    },
+    {
+      "trait_type": "Orange twist",
+      "value": "garnish"
+    },
+    {
+      "trait_type": "ice",
+      "value": "few cubes"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "No Chill"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\nIn a mixing glass, combine the rye whiskey, maple syrup, and Angostura bitters.\n\nFill the glass with ice and stir until well-chilled.\n\nStrain the mixture into a rocks glass over a large ice cube.\n\nGarnish with an orange twist."
+    }
+  ]
+}

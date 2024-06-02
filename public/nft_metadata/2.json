@@ -1,0 +1,67 @@
+{
+  "name": "BossShit",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmXqtVEZiuHQYnLujNeJePC2SuttvSy5dypTxCJQSFbiW9",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "69 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "420"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Difficult"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Asia"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Other"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Patience "
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Addicted"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Patience "
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Time",
+      "value": "Lots"
+    },
+    {
+      "trait_type": "Skill ",
+      "value": "Litte"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Put in all the time, then question all life choices."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "name": "Tropical Smoothie",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmPf8rGqCv1zEfpsaMehhqr69wkVkXWo6zsD6vYiAM6cKn",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "blender"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Janet"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "frozen mango chunks",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "frozen pineapple chunks",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "banana",
+      "value": "1"
+    },
+    {
+      "trait_type": "coconut milk",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "orange juice",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "Fresh mint leaves",
+      "value": "for garnish"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\nBlend the Ingredients:\nIn a blender, combine the frozen mango chunks, frozen pineapple chunks, banana, coconut milk, and orange juice.\nBlend until smooth.\nServe:\nPour the smoothie into cups and garnish with fresh mint leaves."
+    }
+  ]
+}

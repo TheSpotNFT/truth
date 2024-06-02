@@ -1,0 +1,87 @@
+{
+  "name": "Killer Waffles",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmWX5fc5WugSSfReqjaYtTRTGrcxdHghTnzMohAjy945D3",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Breakfast"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Junk"
+    },
+    {
+      "trait_type": "Flour",
+      "value": "1-1/2 cups"
+    },
+    {
+      "trait_type": "Cornstarch ",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "Baking powder",
+      "value": "1 tsp"
+    },
+    {
+      "trait_type": "Baking soda",
+      "value": "1/2 tsp"
+    },
+    {
+      "trait_type": "Salt",
+      "value": "1 tsp"
+    },
+    {
+      "trait_type": "Milk",
+      "value": "2 cups"
+    },
+    {
+      "trait_type": "Vegetable oil",
+      "value": "2/3 cup"
+    },
+    {
+      "trait_type": "Eggs",
+      "value": "2"
+    },
+    {
+      "trait_type": "Sugar",
+      "value": "3 tsp"
+    },
+    {
+      "trait_type": "Vanilla",
+      "value": "1-1/2 tsp"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Mix dry ingredients, then add wet ingredients. Mix until in a pourable consistancy. Then heat waffle iron allowing the batter to sit while waffle iron is heating. Once waffle iron is hot, pour that sweet, sweet batter on there and let it sizzle..."
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cuddlefish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "name": "General Tso’s Stew",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmUNauwBPoisKB32v5P59jgaB2S5YkpvanvKYTsxQM273B",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "130 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "6"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Asia"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Chinese"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "TOH"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "tomato juice",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "pickled cherry peppers, chopped",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "soy sauce",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "hoisin sauce",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "peanut oil",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "crushed red pepper flakes",
+      "value": "1 to 2 teaspoons"
+    },
+    {
+      "trait_type": "shredded cooked chicken",
+      "value": "1 pound"
+    },
+    {
+      "trait_type": "chopped onion",
+      "value": "1-1/2 cups"
+    },
+    {
+      "trait_type": "chopped fresh broccoli",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "chopped green onions",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "sesame seeds, toasted",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "Method",
+      "value": "In a 4- or 5-quart slow cooker, combine the first 6 ingredients. Stir in chicken, onion and broccoli. Cook, covered, on low 2 hours or until vegetables are tender. Top with green onions and sesame seeds to serve."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "name": "Chocolate Lava Cakes",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmZcCyGb3BChdT1sPcHvancZwPXG88hHmLzK7amFcKZsuH",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Desserts"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "butter ",
+      "value": "1 stick"
+    },
+    {
+      "trait_type": "bittersweet chocolate ",
+      "value": "2 ounces"
+    },
+    {
+      "trait_type": "semisweet chocolate ",
+      "value": "2 ounces"
+    },
+    {
+      "trait_type": "powdered sugar ",
+      "value": "1 1/4 cups"
+    },
+    {
+      "trait_type": "whole eggs",
+      "value": "2"
+    },
+    {
+      "trait_type": "egg yolks ",
+      "value": "3"
+    },
+    {
+      "trait_type": "vanilla",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "Vanilla ice cream",
+      "value": "for serving"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Preheat the oven to 425 degrees F. Spray four custard cups with baking spray and place on a baking sheet.\nMicrowave the butter, bittersweet chocolate and semisweet chocolate in a large bowl on high until the butter is melted, about 1 minute. Whisk until the chocolate is also melted. Stir in the sugar until well blended. Whisk in the eggs and egg yolks, then add the vanilla. Stir in the flour. Divide the mixture among the custard cups.\nBake until the sides are firm and the centers are soft, about 13 minutes. Let stand 1 minute. Invert on individual plates while warm and serve with vanilla ice cream."
+    }
+  ]
+}

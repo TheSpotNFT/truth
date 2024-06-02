@@ -1,0 +1,75 @@
+{
+  "name": "E.T. Piggy Blankets",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmYGrmkFGsV9NFHQ5BUWM12XdiSfawSKy3hQd7SQwZNrZ2",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Breakfast"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "♥Aunt Suzie♥"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "refrigerated crescent roll dough",
+      "value": "1 can (8 oz)"
+    },
+    {
+      "trait_type": "cocktail wieners",
+      "value": "24"
+    },
+    {
+      "trait_type": "melted butter",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "everything bagel seasoning",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "cream cheese",
+      "value": "for dipping (optional)"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nPreheat the Oven:\n\nPreheat your oven to 375°F (190°C).\nPrepare the Dough:\n\nUnroll the crescent roll dough and separate it into triangles.\nCut each triangle into three smaller triangles.\nWrap the Wieners:\n\nPlace one cocktail wiener on the wide end of each triangle.\nRoll up the dough around the wiener and place it seam-side down on a baking sheet.\nAdd the Twist:\n\nBrush the tops of the rolled wieners with melted butter.\nSprinkle everything bagel seasoning generously over the top.\nBake:\n\nBake in the preheated oven for 12-15 minutes, or until the dough is golden brown and cooked through.\nServe:\n\nServe warm, optionally with a side of cream cheese for dipping."
+    }
+  ]
+}

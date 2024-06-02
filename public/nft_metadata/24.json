@@ -1,0 +1,115 @@
+{
+  "name": "Honey Pork and Peppers",
+  "description": "Avax is Cookin",
+  "image": "ipfs://Qmbr883y3THpduzm7kzRMjgJ3e8HTCZ3ZGnxjBaXAZtpTY",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "24 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "5"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "boneless pork - cut into 1-inch cubes",
+      "value": "1-1/2 Pounds"
+    },
+    {
+      "trait_type": "canola oil",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "brown gravy mix",
+      "value": "1 envelope (.87 ounce)"
+    },
+    {
+      "trait_type": "water",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "honey",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "soy sauce",
+      "value": "3 tablespoons"
+    },
+    {
+      "trait_type": "red wine vinegar",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "ground ginger",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "garlic powder",
+      "value": "1/8 teaspoon"
+    },
+    {
+      "trait_type": "medium onion, cut into wedges",
+      "value": "1"
+    },
+    {
+      "trait_type": "medium sweet red pepper, cut into 1-inch pieces",
+      "value": "1"
+    },
+    {
+      "trait_type": "medium green pepper, cut into 1-inch pieces",
+      "value": "1"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Steady"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "No Chill"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Directions:\nIn a large skillet over medium heat, cook pork in oil until browned, about 15 minutes.\n\nIn a small bowl, combine the gravy mix, water, honey, soy sauce, vinegar, ginger and garlic powder; add to the pork. \n\nCover and simmer for 20 minutes, stirring occasionally. Add onion and peppers; cook 5-10 minutes longer. Serve with rice.\n\nNutrition Facts:\n1 serving: 288 calories, 12g fat (3g saturated fat), 67mg cholesterol, 870mg sodium, 20g carbohydrate (15g sugars, 1g fiber), 26g protein."
+    }
+  ]
+}

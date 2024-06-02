@@ -1,0 +1,95 @@
+{
+  "name": "Pina Colada Party Dip (PCPD)",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmT9jzEKmpnu6ttb3MEhqqqQdM5Ft1FeMSeguoSPGVmy8U",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Desserts"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "20"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "♥Aunt Suzie♥"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "2% milk",
+      "value": "1-1/4 cups cold"
+    },
+    {
+      "trait_type": "pineapple yogurt",
+      "value": "3/4 cup"
+    },
+    {
+      "trait_type": "instant coconut cream pudding mix",
+      "value": "1 package (3.4 ounces)"
+    },
+    {
+      "trait_type": "frozen whipped topping - \"thawed\"",
+      "value": "1 carton (8 ounces)"
+    },
+    {
+      "trait_type": "toasted unsweetened coconut flakes and maraschino cherries",
+      "value": "optional"
+    },
+    {
+      "trait_type": "fresh pineapple wedges",
+      "value": "optional"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Spot"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Directions:\nIn a large bowl, whisk milk, yogurt and pudding mix 2 minutes (mixture will be thick). Fold in whipped topping. Refrigerate, covered, at least 2 hours.\n\nIf desired, top with coconut and cherries before serving. Serve with pineapple and wafers.\n\nPerfect for your summer parties, anytime of the year!"
+    }
+  ]
+}

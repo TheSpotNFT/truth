@@ -1,0 +1,83 @@
+{
+  "name": "Veggie Pinwheels",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmXVoWH1gxbD5Ldq1JQBSGsGcPTzKuT7iKLWY1Zxtrs2Bq",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Janet"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "whole wheat tortillas",
+      "value": "4"
+    },
+    {
+      "trait_type": "cream cheese, softened",
+      "value": "8 oz"
+    },
+    {
+      "trait_type": "shredded carrots",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "chopped bell peppers",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "chopped cucumber",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "baby spinach leaves",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "ranch seasoning mix",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\n\nPrepare the Filling:\nIn a bowl, mix the softened cream cheese with the ranch seasoning mix.\nAssemble the Pinwheels:\nSpread the cream cheese mixture evenly over each tortilla.\nSprinkle the shredded carrots, chopped bell peppers, chopped cucumber, and baby spinach leaves over the cream cheese.\nRoll up each tortilla tightly and slice into 1-inch pinwheels.\nServe:\nArrange the 24 pinwheels on a platter and serve."
+    }
+  ]
+}

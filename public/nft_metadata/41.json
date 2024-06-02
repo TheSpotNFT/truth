@@ -1,0 +1,107 @@
+{
+  "name": "Pepe Legs Provençal",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmV2vv1XSsLHZT3ygM59nCHMzmDoh7ANMPSHx2due74JMB",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "10 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "2"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Difficult"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Europe"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "French"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "Pepe le Frog"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "frog legs",
+      "value": "1 pound"
+    },
+    {
+      "trait_type": "flour",
+      "value": "1/4 cup"
+    },
+    {
+      "trait_type": "Salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "garlic cloves, minced",
+      "value": "3"
+    },
+    {
+      "trait_type": "white wine",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "chicken broth",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "lemon juice",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "fresh parsley, chopped",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Creature World"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Method\n\nSeason frog legs with salt and pepper and dredge in flour.\n\nHeat olive oil in a skillet over medium-high heat.\nCook frog legs until golden brown, about 3-4 minutes per side.\nRemove frog legs from the skillet and set aside.\n\nAdd minced garlic to the skillet and sauté for 1 minute.\n\nPour in white wine and chicken broth, scraping up any browned bits.\nAdd lemon juice and bring to a simmer.\n\nReturn frog legs to the skillet and cook for an additional 2-3 minutes.\n\nGarnish with fresh parsley and serve hot."
+    }
+  ]
+}

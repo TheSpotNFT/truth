@@ -1,0 +1,107 @@
+{
+  "name": "Smoked Salmon Cucumber Bites",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmYpBqhwVZTHPiAkFUnZHaLsR8oDAJWMJPA4UQk2VrdRNY",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "20 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "12"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Europe"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Other"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Common kitchen stuff"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "0.o"
+    },
+    {
+      "trait_type": "Egg-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "large cucumbers",
+      "value": "2"
+    },
+    {
+      "trait_type": "smoked salmon, thinly sliced",
+      "value": "8 oz"
+    },
+    {
+      "trait_type": "cream cheese, softened",
+      "value": "8 oz"
+    },
+    {
+      "trait_type": "fresh dill, chopped",
+      "value": "2 tablespoons"
+    },
+    {
+      "trait_type": "lemon juice",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "salt and pepper",
+      "value": "to taste"
+    },
+    {
+      "trait_type": "capers",
+      "value": "optional"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Avax Apes"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cuddlefish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Quirkies"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nPrepare the Cucumbers:\n\nSlice the cucumbers into 1/2-inch thick rounds. Use a small melon baller to scoop out a bit of the center of each cucumber slice, creating a small well (do not scoop all the way through).\nPrepare the Filling:\n\nIn a bowl, combine the softened cream cheese, chopped dill, lemon juice, salt, and pepper. Mix until smooth and well combined.\nAssemble the Bites:\n\nSpoon or pipe the cream cheese mixture into the well of each cucumber slice.\nTop each cucumber slice with a small piece of smoked salmon.\nGarnish with additional dill and capers, if desired.\n\nServings: 24 cucumber bites"
+    }
+  ]
+}

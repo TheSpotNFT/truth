@@ -1,0 +1,119 @@
+{
+  "name": "Sour Cream Coffee Cake",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmY6nfm1s5NdvHVy3Hp3njntpjdtAhArwFVAuFMcP3FUvB",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Desserts"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "0 minutes"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Basic baking supplies"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "For the Cake:",
+      "value": "-"
+    },
+    {
+      "trait_type": "unsalted butter, softened",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "sugar",
+      "value": "1 1/2 cups"
+    },
+    {
+      "trait_type": "large eggs",
+      "value": "3"
+    },
+    {
+      "trait_type": "vanilla extract",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "sour cream",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "all-purpose flour",
+      "value": "2 1/2 cups"
+    },
+    {
+      "trait_type": "baking powder",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "baking soda",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "For the Streusel:",
+      "value": "-"
+    },
+    {
+      "trait_type": "brown sugar",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "chopped pecans or walnuts",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "ground cinnamon",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "For the Glaze:",
+      "value": "-"
+    },
+    {
+      "trait_type": "powdered sugar",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "milk",
+      "value": "2-3 tablespoons"
+    },
+    {
+      "trait_type": "vanilla extract",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nPrepare the Cake:\n\nPreheat the oven to 350°F (175°C). Grease and flour a 9x13-inch baking pan.\nIn a large bowl, cream the butter and sugar until light and fluffy.\nAdd the eggs one at a time, beating well after each addition. Stir in the vanilla and sour cream.\nIn a separate bowl, whisk together the flour, baking powder, baking soda, and salt.\nGradually add the dry ingredients to the wet ingredients, mixing until just combined.\nPrepare the Streusel:\n\nIn a small bowl, combine the brown sugar, chopped nuts, and cinnamon.\nAssemble the Cake:\n\nSpread half of the batter into the prepared baking pan.\nSprinkle half of the streusel mixture over the batter.\nSpread the remaining batter over the streusel and top with the remaining streusel.\nBake:\n\nBake in the preheated oven for 35-40 minutes, or until a toothpick inserted into the center comes out clean.\nPrepare the Glaze:\n\nIn a small bowl, whisk together the powdered sugar, milk, and vanilla extract until smooth.\nDrizzle the glaze over the cooled cake before serving."
+    }
+  ]
+}

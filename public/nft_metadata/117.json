@@ -1,0 +1,83 @@
+{
+  "name": "Anti-Sickness Elixir",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmUs4aP1uKRYGwHUN9c6vEu58gUjnR5vGAAvZVg5XEgT1T",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Drinks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "5 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "1"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Region",
+      "value": "North America"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "American"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "DeFi Elixirist"
+    },
+    {
+      "trait_type": "hot water",
+      "value": "1 cup"
+    },
+    {
+      "trait_type": "fresh lemon juice",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "raw honey",
+      "value": "1 tablespoon"
+    },
+    {
+      "trait_type": "grated fresh ginger",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "turmeric powder",
+      "value": "1/4 teaspoon"
+    },
+    {
+      "trait_type": "cayenne pepper (optional)",
+      "value": "A pinch"
+    },
+    {
+      "trait_type": "lemon slice and a sprig of fresh mint for garnish (optional)",
+      "value": "garnish"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Spot"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Cozyverse"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Instructions:\nHeat the Water:\n\nHeat the water until it's hot but not boiling.\nCombine Ingredients:\n\nIn a mug, combine the lemon juice, raw honey, grated ginger, turmeric powder, and cayenne pepper (if using).\nAdd Water:\n\nPour the hot water into the mug and stir well to dissolve the honey and mix the ingredients thoroughly.\nGarnish and Serve:\n\nGarnish with a slice of lemon and a sprig of fresh mint if desired.\nServe immediately while hot."
+    }
+  ]
+}

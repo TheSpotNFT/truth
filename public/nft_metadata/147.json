@@ -1,0 +1,59 @@
+{
+  "name": "Confetti Cake Batter Cookies",
+  "description": "Avax is Cookin",
+  "image": "ipfs://QmPNHRYWMXn8DwqcX71F7AcsZFQqKbtEYSY9m4CpFoUjs6",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Snacks"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "25 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "24"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Easy"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "Yes"
+    },
+    {
+      "trait_type": "Nut-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "butter, softened",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "large eggs, room temperature",
+      "value": "2"
+    },
+    {
+      "trait_type": "vanilla extract",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "Funfetti cake mix",
+      "value": "1 package"
+    },
+    {
+      "trait_type": "Method",
+      "value": "In a large bowl, beat butter, eggs and vanilla until combined. Beat in cake mix. Refrigerate, covered, 2 hours or until firm enough to roll.\n\nPreheat oven to 350°. On a well-floured surface, roll dough to 1/4-in. thickness. Cut with a floured 2-1/2-in. cookie cutter. Place 1 in. apart on ungreased baking sheets. Bake until set, 8-10 minutes. Remove from pans to wire racks to cool completely. Decorate as desired."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "name": "Greek Lemon Chicken",
+  "description": "Avax is Cookin",
+  "image": "ipfs://Qmb16T4wsChHqnTJfyenrLifCkToojytG8GUNDPXG23vyU",
+  "attributes": [
+    {
+      "trait_type": "Category",
+      "value": "Dinner"
+    },
+    {
+      "trait_type": "Preparation Time",
+      "value": "15 minutes"
+    },
+    {
+      "trait_type": "Serving Size",
+      "value": "4"
+    },
+    {
+      "trait_type": "Difficulty Level",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Region",
+      "value": "Europe"
+    },
+    {
+      "trait_type": "Cuisine Type",
+      "value": "Greek"
+    },
+    {
+      "trait_type": "Kid-Specific",
+      "value": "No"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Grill"
+    },
+    {
+      "trait_type": "Contributor",
+      "value": "YiaYia"
+    },
+    {
+      "trait_type": "Special Equipment",
+      "value": "Grill"
+    },
+    {
+      "trait_type": "Soy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Shellfish-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Gluten-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "Dairy-Free",
+      "value": "true"
+    },
+    {
+      "trait_type": "lemon",
+      "value": "2 medium zested and juiced"
+    },
+    {
+      "trait_type": "olive oil",
+      "value": "1/2 cup"
+    },
+    {
+      "trait_type": "garlic cloves",
+      "value": "2 minced"
+    },
+    {
+      "trait_type": "dried oregano",
+      "value": "2 teaspoons"
+    },
+    {
+      "trait_type": "paprika",
+      "value": "1 teaspoon"
+    },
+    {
+      "trait_type": "ground coriander",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "salt",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "coarsely ground pepper",
+      "value": "1/2 teaspoon"
+    },
+    {
+      "trait_type": "bone-in chicken thighs",
+      "value": "2 pounds"
+    },
+    {
+      "trait_type": "crumbled feta cheese",
+      "value": "optional"
+    },
+    {
+      "trait_type": "minced parsley",
+      "value": "optional"
+    },
+    {
+      "trait_type": "sliced lemons",
+      "value": "optional"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "The Arena"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "No Chill"
+    },
+    {
+      "trait_type": "Community Tag",
+      "value": "Quirkies"
+    },
+    {
+      "trait_type": "Method",
+      "value": "Directions:\n\nIn a small bowl, whisk the first 8 ingredients until blended. Reserve 1/3 cup marinade. Pour remaining marinade into a shallow dish. Add chicken; turn to coat. Refrigerate, covered, 30 minutes. Cover and refrigerate remaining marinade.\n\nDrain chicken, discarding marinade in dish.\n\nPlace chicken on grill rack, skin side down. Grill, covered, over medium heat 6-8 minutes. Turn; grill until a thermometer reads 170°-175°, 6-8 minutes longer.\n\nRemove chicken to a serving platter; drizzle with remaining 1/3 cup marinade. If desired, top with crumbled feta, parsley, and lemon slices."
+    }
+  ]
+}

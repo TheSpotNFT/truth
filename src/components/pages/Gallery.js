@@ -311,6 +311,7 @@ const Gallery = ({ account }) => {
               <option value="Marinades">Marinades</option>
               <option value="Garnishes">Garnishes</option>
               <option value="Desserts">Desserts</option>
+              <option value="Baked Goods">Baked Goods</option>
               <option value="Drinks">Drinks</option>
               <option value="Cleaners">Cleaners</option>
               <option value="Other">Other</option>

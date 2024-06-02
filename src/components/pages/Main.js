@@ -500,9 +500,9 @@ const Main = ({ account }) => {
                     {txProcessing ? "Processing..." : "Mint Your Recipe!"}
                 </button>
             </div>
-            <div className="fixed bottom-20 left-10 w-96 h-96 pointer-events-none z-0 hidden md:block">
-                <img src={logo} className="absolute z-0" />
-            </div>
+            {/*<div className="fixed bottom-20 left-10 w-96 h-96 pointer-events-none z-0 hidden md:block">
+                <img src={logo} className="absolute z-0 opacity-50" />
+            </div>*/}
         </div>
     );
 };

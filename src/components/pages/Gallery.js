@@ -675,8 +675,8 @@ const Gallery = ({ account }) => {
               <option value="random">Random Order</option>
               <option value="newest">Newest to Oldest</option>
               <option value="oldest">Oldest to Newest</option>
-              <option value="likesDesc">Most Likes First</option>
-              <option value="tipsDesc">Most Tipped First</option>
+              {/*<option value="likesDesc">Most Likes First</option>
+              <option value="tipsDesc">Most Tipped First</option>*/}
             </select>
           </div>
         </div>

@@ -145,7 +145,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
 
   const refreshMetadata = async () => {
     try {
-      const response = await fetch(`https://glacier-api.avax.network/v1/chains/43114/nfts/collections/0x568863597b44AA509a45C15eE3Cab3150a562d32/tokens/${tokenId}:reindex`, {
+      const response = await fetch(`https://glacier-api.avax.network/v1/chains/43114/nfts/collections/0x8f58F10fD2Ec58e04a26F0A178E727BC60224ddA/tokens/${tokenId}:reindex`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -430,10 +430,10 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           )}
         </>
       )}
-       <div className="w-full pt-4">
+       {/*}<div className="w-full pt-4">
               <CommentSection erc721TokenId={token.tokenId} account={account} />
-            </div>
-      <div className="text-gray-600 text-xs">{tokenId}</div>
+    </div>*/}
+      <div className="text-gray-600 text-xs pt-4">{tokenId}</div>
     </div>
   );
 };

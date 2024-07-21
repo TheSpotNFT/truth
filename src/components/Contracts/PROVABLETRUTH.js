@@ -1,5 +1,5 @@
-export const AVAXCOOKS_ADDRESS = "0x568863597b44AA509a45C15eE3Cab3150a562d32";
-export const AVAXCOOKS_ABI = 
+export const PROVABLETRUTH_ADDRESS = "0x8f58F10fD2Ec58e04a26F0A178E727BC60224ddA";
+export const PROVABLETRUTH_ABI = 
 [
 	{
 		"inputs": [],
@@ -22,7 +22,7 @@ export const AVAXCOOKS_ABI =
 				"type": "address"
 			}
 		],
-		"name": "AVAXCOOKSminted",
+		"name": "ProvableTruthminted",
 		"type": "event"
 	},
 	{

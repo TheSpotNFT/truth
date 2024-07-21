@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { ethers, Contract } from "ethers";
-import { AVAXCOOKSLIKESANDTIPS_ABI, AVAXCOOKSLIKESANDTIPS_ADDRESS } from "../Contracts/AvaxCooksLikeAndTip";
+import { PROVABLETRUTHLIKESANDTIPS_ABI, PROVABLETRUTHLIKESANDTIPS_ADDRESS } from "../Contracts/PROVABLETRUTHLikeAndTip";
 import { InlineShareButtons } from 'sharethis-reactjs';
 import CommentSection from "../CommentSection";
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
-const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, expanded, viewMode, imageMapping }) => {
-  const { metadata, tokenId } = token;
-  const { name, imageUri, attributes: attributesStr } = metadata || {};
+const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, expanded, viewMode }) => {
+  const { name, image, attributes, description, tokenId } = token;
   const [likes, setLikes] = useState(0);
   const [hasLiked, setHasLiked] = useState(false);
   const [tipAmount, setTipAmount] = useState("");
@@ -38,14 +39,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
     { symbol: "KONG", address: "0xEbB5d4959B2FbA6318FbDa7d03cd44aE771fc999" },
   ], []);
 
-  const attributes = useMemo(() => {
-    try {
-      return JSON.parse(attributesStr);
-    } catch (e) {
-      console.error("Failed to parse attributes", e);
-      return [];
-    }
-  }, [attributesStr]);
+  const content = attributes.find(attr => attr.trait_type === "Content")?.value;
 
   const fetchTotalTips = async () => {
     try {
@@ -58,8 +52,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       const provider = new ethers.providers.Web3Provider(ethereum);
       const signer = provider.getSigner();
       const contract = new Contract(
-        AVAXCOOKSLIKESANDTIPS_ADDRESS,
-        AVAXCOOKSLIKESANDTIPS_ABI,
+        PROVABLETRUTHLIKESANDTIPS_ADDRESS,
+        PROVABLETRUTHLIKESANDTIPS_ABI,
         signer
       );
 
@@ -90,8 +84,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const contract = new Contract(
-          AVAXCOOKSLIKESANDTIPS_ADDRESS,
-          AVAXCOOKSLIKESANDTIPS_ABI,
+          PROVABLETRUTHLIKESANDTIPS_ADDRESS,
+          PROVABLETRUTHLIKESANDTIPS_ABI,
           signer
         );
 
@@ -114,8 +108,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       const provider = new ethers.providers.Web3Provider(ethereum);
       const signer = provider.getSigner();
       const contract = new Contract(
-        AVAXCOOKSLIKESANDTIPS_ADDRESS,
-        AVAXCOOKSLIKESANDTIPS_ABI,
+        PROVABLETRUTHLIKESANDTIPS_ADDRESS,
+        PROVABLETRUTHLIKESANDTIPS_ABI,
         signer
       );
 
@@ -133,8 +127,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new Contract(
-        AVAXCOOKSLIKESANDTIPS_ADDRESS,
-        AVAXCOOKSLIKESANDTIPS_ABI,
+        PROVABLETRUTHLIKESANDTIPS_ADDRESS,
+        PROVABLETRUTHLIKESANDTIPS_ABI,
         signer
       );
 
@@ -177,8 +171,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const contract = new Contract(
-          AVAXCOOKSLIKESANDTIPS_ADDRESS,
-          AVAXCOOKSLIKESANDTIPS_ABI,
+          PROVABLETRUTHLIKESANDTIPS_ADDRESS,
+          PROVABLETRUTHLIKESANDTIPS_ABI,
           signer
         );
 
@@ -213,16 +207,16 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       );
 
       const contract = new Contract(
-        AVAXCOOKSLIKESANDTIPS_ADDRESS,
-        AVAXCOOKSLIKESANDTIPS_ABI,
+        PROVABLETRUTHLIKESANDTIPS_ADDRESS,
+        PROVABLETRUTHLIKESANDTIPS_ABI,
         signer
       );
 
       const amountWei = ethers.utils.parseEther(amount);
 
-      const currentAllowance = await tokenContract.allowance(signerAddress, AVAXCOOKSLIKESANDTIPS_ADDRESS);
+      const currentAllowance = await tokenContract.allowance(signerAddress, PROVABLETRUTHLIKESANDTIPS_ADDRESS);
       if (currentAllowance.lt(amountWei)) {
-        const approveTx = await tokenContract.approve(AVAXCOOKSLIKESANDTIPS_ADDRESS, amountWei);
+        const approveTx = await tokenContract.approve(PROVABLETRUTHLIKESANDTIPS_ADDRESS, amountWei);
         await approveTx.wait();
       }
 
@@ -266,11 +260,11 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
 
   const copyLinkToClipboard = () => {
     if (!name) {
-      console.error("Recipe name not found");
+      console.error("Article name not found");
       return;
     }
-    const recipeName = name; // Sanitize name
-    const link = `${window.location.origin}/?recipeName=${recipeName}`;
+    const articleName = sanitizeName(name);
+    const link = `${window.location.origin}/?articleName=${articleName}`;
     navigator.clipboard.writeText(link).then(() => {
       alert("Link copied to clipboard!");
     }).catch(err => {
@@ -279,26 +273,26 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   };
 
   useEffect(() => {
-    if (name && imageUri) {
-      const recipeName = name;
-      setShareUrl(`${window.location.origin}/?recipeName=${recipeName}`);
-      setShareImage(`https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`);
+    if (name && image) {
+      const articleName = sanitizeName(name);
+      setShareUrl(`${window.location.origin}/?articleName=${articleName}`);
+      setShareImage(`https://gateway.pinata.cloud/ipfs/${image.split("ipfs://")[1]}`);
     }
-  }, [name, imageUri]);
+  }, [name, image]);
 
   // Determine the image URL to use
-  const localImageUrl = imageMapping[tokenId] || `https://gateway.pinata.cloud/ipfs/${imageUri.split("ipfs://")[1]}`;
+  const imageUrl = image ? `https://gateway.pinata.cloud/ipfs/${image.split("ipfs://")[1]}` : null;
 
   return (
-    <div className={`text-white border pr-4 pl-4 pb-4 pt-2 m-2 shadow-md rounded-lg bg-neutral-900 border-neutral-900 transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-36' : (viewMode === 'list' ? 'w-full lg:w-full' : 'w-full lg:w-1/4 2xl:w-1/6')} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
+    <div className={`text-white border pr-4 pl-4 pb-4 pt-2 m-2 shadow-md rounded-lg bg-neutral-900 border-neutral-900 transition-all duration-300 ease-in-out ${showDetails ? 'fixed inset-0 z-50 h-screen overflow-y-auto pt-36' : (viewMode === 'list' ? 'w-full lg:w-full' : 'w-full lg:w-1/3 2xl:w-1/6')} ${showBookmarks ? (hasBookmarked ? 'block' : 'hidden') : 'block'}`}>
       {viewMode === 'list' ? (
         <div className="flex items-center bg-neutral-700 p-4 rounded-lg">
           <div className="w-1/12 text-left">
-            <img src={localImageUrl} alt={name} className="w-full h-auto max-h-24 object-contain" />
+            <img src={imageUrl} alt={name} className="w-full h-auto max-h-24 object-contain" />
           </div>
           <div className="w-1/3 flex items-center justify-between pl-4">
             <span className="text-left">{name}</span>
-            <button onClick={toggleDetails} className="bg-neutral-800 text-white rounded px-4 py-2">View Recipe</button>
+            <button onClick={toggleDetails} className="bg-neutral-800 text-white rounded px-4 py-2">View Article</button>
           </div>
           <div className="w-1/3 flex items-center justify-between pl-4">
             <span className="text-left">{contributor}</span>
@@ -308,13 +302,13 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       ) : (
         <>
           <div className="relative pt-4">
-            {localImageUrl ? (
+            {imageUrl ? (
               <div className="relative group">
                 <img
-                  src={localImageUrl}
+                  src={imageUrl}
                   alt={name}
                   onClick={toggleDetails}
-                  className="mx-auto w-full object-cover rounded duration-300 border-zinc-900 border-8 max-w-[100vw] sm:max-w-[80vw] md:max-w-[50vw] lg:max-w-[33vw] group-hover:scale-105"
+                  className="mx-auto w-full object-cover rounded duration-300 border-zinc-900 border-8 max-w-[100vw] sm:max-w-[80vw] md:max-w-[33vw] lg:max-w-[25vw] group-hover:scale-105"
                 />
                 <button onClick={toggleDetails} className="absolute top-0 right-0 p-2">
                   <div style={{ transform: `rotate(${showDetails ? '135deg' : '0deg'})`, transition: 'transform 0.3s ease' }}>
@@ -331,7 +325,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
             )}
           </div>
 
-          <h2 className="font-bold text-lg xl:text-2xl mt-2 text-center pt-8">{name || "Unnamed Recipe"}</h2>
+          <h2 className="font-bold text-lg xl:text-2xl mt-2 text-center pt-8">{name || "Unnamed Article"}</h2>
           <h2 className="font-bold text-lg mt-2 text-center pb-8">{`Contributor: ${contributor || "None"}`}</h2>
 
           <div className="flex items-center justify-end mt-2 space-x-2 pb-4 sm:pr-6 lg:pr-6 xl:pr-4 2xl:pr-3">
@@ -371,74 +365,32 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
               </button>
             </div>
             <div className="pl-4">
-  <button onClick={refreshMetadata} className="bg-avax-red text-white pl-2 pr-2 py-1 rounded hover:bg-red-600">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      x="0px"
-      y="0px"
-      width="25"
-      height="25"
-      viewBox="0 0 32 32"
-    >
-      
-      <path d="M 15 3 C 12.031398 3 9.3028202 4.0834384 7.2070312 5.875 A 1.0001 1.0001 0 1 0 8.5058594 7.3945312 C 10.25407 5.9000929 12.516602 5 15 5 C 20.19656 5 24.450989 8.9379267 24.951172 14 L 22 14 L 26 20 L 30 14 L 26.949219 14 C 26.437925 7.8516588 21.277839 3 15 3 z M 4 10 L 0 16 L 3.0507812 16 C 3.562075 22.148341 8.7221607 27 15 27 C 17.968602 27 20.69718 25.916562 22.792969 24.125 A 1.0001 1.0001 0 1 0 21.494141 22.605469 C 19.74593 24.099907 17.483398 25 15 25 C 9.80344 25 5.5490109 21.062074 5.0488281 16 L 8 16 L 4 10 z" fill="white"></path>
-    </svg>
-  </button>
-</div>
-
-
-
-
-            
-          </div>
-          {/* Add ShareThis Inline Share Buttons 
-          <div className="pt-2">
-            <InlineShareButtons
-              config={{
-                alignment: 'center',  // alignment of buttons (left, center, right)
-                color: 'social',      // set the color of buttons (social, white)
-                enabled: true,        // show/hide buttons (true, false)
-                font_size: 16,        // font size for the buttons
-                labels: 'cta',        // button labels (cta, counts, null)
-                language: 'en',       // which language to use (see LANGUAGES)
-                networks: [           // which networks to include (see SHARING NETWORKS)
-                  'twitter',
-                  'facebook',
-                  'pinterest'
-                ],
-                padding: 12,          // padding within buttons (INTEGER)
-                radius: 4,            // the corner radius on each button (INTEGER)
-                show_total: false,
-                size: 40,             // the size of each button (INTEGER)
-                url: `${shareUrl}`,        // Use the recipe name or tokenId as the URL
-                image: shareImage,    // Use the NFT image URL
-                description: `Check out this amazing recipe: ${name}`,  // Use the recipe name as the description
-                title: name,            // Use the recipe name as the title
-              }}
-            />
-          </div>*/}
-          <div className="pt-0 pb-4 pl-2 pr-2 ">
-            {Object.entries(totalTips).some(([symbol, amount]) => parseFloat(amount) > 0) && (
-              <h3 className="text-lg font-semibold mb-2">Tips</h3>
-            )}
-            {Object.entries(totalTips).map(([symbol, amount], index) => (
-              parseFloat(amount) > 0 && (
-                <div key={index} className="flex justify-between items-center py-1">
-                  {amount} {`$${symbol}`}
-                </div>
-              )
-            ))}
+              <button onClick={refreshMetadata} className="bg-avax-red text-white pl-2 pr-2 py-1 rounded hover:bg-red-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 32 32"
+                >
+                  <path d="M 15 3 C 12.031398 3 9.3028202 4.0834384 7.2070312 5.875 A 1.0001 1.0001 0 1 0 8.5058594 7.3945312 C 10.25407 5.9000929 12.516602 5 15 5 C 20.19656 5 24.450989 8.9379267 24.951172 14 L 22 14 L 26 20 L 30 14 L 26.949219 14 C 26.437925 7.8516588 21.277839 3 15 3 z M 4 10 L 0 16 L 3.0507812 16 C 3.562075 22.148341 8.7221607 27 15 27 C 17.968602 27 20.69718 25.916562 22.792969 24.125 A 1.0001 1.0001 0 1 0 21.494141 22.605469 C 19.74593 24.099907 17.483398 25 15 25 C 9.80344 25 5.5490109 21.062074 5.0488281 16 L 8 16 L 4 10 z" fill="white"></path>
+                </svg>
+              </button>
+            </div>
           </div>
           {showTipInputs && (
             <>
-              <div className="pb-4"><input
-                type="number"
-                placeholder="Tip Amount"
-                disabled={!account}
-                value={tipAmount}
-                onChange={(e) => setTipAmount(e.target.value)}
-                className={`shadow appearance-none border rounded py-2 px-3 bg-neutral-800 border-neutral-700 text-gray-100 leading-tight focus:outline-none focus:shadow-outline ${showDetails ? "w-96" : "w-full"}`}
-              /></div>
+              <div className="pb-4">
+                <input
+                  type="number"
+                  placeholder="Tip Amount"
+                  disabled={!account}
+                  value={tipAmount}
+                  onChange={(e) => setTipAmount(e.target.value)}
+                  className={`shadow appearance-none border rounded py-2 px-3 bg-neutral-800 border-neutral-700 text-gray-100 leading-tight focus:outline-none focus:shadow-outline ${showDetails ? "w-96" : "w-full"}`}
+                />
+              </div>
               <select
                 value={selectedToken}
                 onChange={(e) => setSelectedToken(e.target.value)}
@@ -458,51 +410,29 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           )}
           <div className="pt-4">
             <button onClick={toggleTipInputs} className={`bg-neutral-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red duration-300 text-white px-3 py-1 rounded`}>
-              {showTipInputs ? "Hide Tipping" : "Tip Recipe Holder"}
+              {showTipInputs ? "Hide Tipping" : "Tip Article Holder"}
             </button>
           </div>
           <div className="pt-4">
             <button onClick={toggleDetails} className={`bg-neutral-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red duration-300 text-white px-3 py-1 rounded`}>
-              {showDetails ? "Hide Recipe" : "View Recipe"}
+              {showDetails ? "Hide Article" : "View Article"}
             </button>
-                {/* Comments Section */}
-                <div className="w-full pt-4">
-                <CommentSection erc721TokenId={token.tokenId} account={account} />
-              </div>
+            {/* Comments Section */}
+           
           </div>
           {showDetails && (
             <div className="grid grid-cols-2 gap-4 p-4">
-              <div className="col-span-1">
-                {attributes.slice(0, -1).map((attr, index) => (
-                  <div key={index} className="bg-zinc-800 text-avax-white rounded p-2 drop-shadow-md mb-2 text-sm md:text-base xl:text-lg">
-                    <p>{attr.trait_type}: <strong>
-                      {attr.trait_type === "X Username" ? 
-                      <a href={`https://arena.social/${attr.value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attr.value}</a> :
-                        attr.value 
-                      }</strong>
-                    </p>
-                  </div>
-                ))}
+              <div className="col-span-2 bg-zinc-800 text-avax-white rounded p-2 drop-shadow-md mb-2 text-sm md:text-base xl:text-lg">
+                <ReactQuill value={content} readOnly={true} theme="bubble" />
               </div>
-              <div className="col-span-1 flex flex-col justify-between">
-                {attributes.length > 0 && (
-                  <div className="bg-zinc-800 text-avax-white rounded p-2 drop-shadow-md h-full flex items-center justify-center text-sm md:text-base xl:text-lg">
-                    <p>
-                      <div>{attributes[attributes.length - 1].trait_type}</div>
-                      <strong>
-                        {attributes[attributes.length - 1].trait_type === "X Username" ? 
-                          <a href={`https://twitter.com/${attributes[attributes.length - 1].value}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700">{attributes.value}</a> :
-                          attributes[attributes.length - 1].value}
-                      </strong>
-                    </p>
-                  </div>
-                )}
-              </div>
-          
+         
             </div>
           )}
         </>
       )}
+       <div className="w-full pt-4">
+              <CommentSection erc721TokenId={token.tokenId} account={account} />
+            </div>
       <div className="text-gray-600 text-xs">{tokenId}</div>
     </div>
   );

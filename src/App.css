@@ -1,5 +1,5 @@
 .bg-custom-gradient {
-  background: linear-gradient(to bottom, #4cb1ac 0px, #4cb1ac 390px, orange 375px, orange 775px, rgb(194, 23, 0) 775px);
+  background: rgb(0, 0, 0);
   height: 100vh;
 
 }

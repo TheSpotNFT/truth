@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ethers, Contract } from "ethers";
-import { AVAXCOOKS_ABI, AVAXCOOKS_ADDRESS } from "../Contracts/AvaxCooks";
+import { PROVABLETRUTH_ABI, PROVABLETRUTH_ADDRESS } from "../Contracts/PROVABLETRUTH";
 import logo from "../../assets/iprs_spot.png";
 
 const UpdateNFTImage = ({ account }) => {
@@ -20,7 +20,7 @@ const UpdateNFTImage = ({ account }) => {
 
         const options = {
             method: 'GET',
-            url: `https://glacier-api.avax.network/v1/chains/43114/nfts/collections/0x568863597b44AA509a45C15eE3Cab3150a562d32/tokens/${tokenId}`,
+            url: `https://glacier-api.avax.network/v1/chains/43114/nfts/collections/0x8f58F10fD2Ec58e04a26F0A178E727BC60224ddA/tokens/${tokenId}`,
             headers: { accept: 'application/json' }
         };
 
@@ -157,8 +157,8 @@ const UpdateNFTImage = ({ account }) => {
                 const provider = new ethers.providers.Web3Provider(ethereum);
                 const signer = provider.getSigner();
                 const contract = new Contract(
-                    AVAXCOOKS_ADDRESS,
-                    AVAXCOOKS_ABI,
+                    PROVABLETRUTH_ADDRESS,
+                    PROVABLETRUTH_ABI,
                     signer
                 );
 

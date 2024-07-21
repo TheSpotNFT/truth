@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import { COMMENTING_ABI, COMMENTING_ADDRESS } from './Contracts/CommentingContract';
 import { VIBES_ABI, VIBES_ADDRESS } from './Contracts/VibesContract';
-import { AVAXCOOKS_ABI, AVAXCOOKS_ADDRESS } from './Contracts/AvaxCooks';
+import { PROVABLETRUTH_ABI, PROVABLETRUTH_ADDRESS } from './Contracts/PROVABLETRUTH';
 import { db, auth, signInAnonymously } from '../firebase3';
 import { setDoc, getDoc, doc, updateDoc, increment, collection, addDoc, query, where, getDocs, Timestamp } from 'firebase/firestore';
 import good from "../assets/gud.png";
@@ -77,14 +77,14 @@ const CommentComponent = ({ erc721TokenId, account }) => {
   
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-    const avaxcooksContract = new ethers.Contract(AVAXCOOKS_ADDRESS, AVAXCOOKS_ABI, signer);
+    const PROVABLETRUTHContract = new ethers.Contract(PROVABLETRUTH_ADDRESS, PROVABLETRUTH_ABI, signer);
     const erc1155Contract = new ethers.Contract(VIBES_ADDRESS, VIBES_ABI, signer);
   
     // Determine token ID based on comment type
     const tokenId = isGood ? 1 : 2;
   
     // Fetch the NFT owner's address (assuming this information is available in your setup)
-    const nftOwnerAddress = await avaxcooksContract.ownerOf(erc721TokenId);
+    const nftOwnerAddress = await PROVABLETRUTHContract.ownerOf(erc721TokenId);
   
     // Mint and send ERC-1155 token
     try {
@@ -163,10 +163,11 @@ const CommentComponent = ({ erc721TokenId, account }) => {
 
   return (
     <div className="bg-neutral-900 border-neutral-800 rounded-lg shadow-md w-full">
-      <div className="mb-4 flex items-center justify-between">
+      <div className='w-full border-t-2 pb-8 border-gray-400 px-8'></div>
+      <div className="mb-4 px-4 flex items-center justify-between">
         <button
           onClick={() => setShowComments(!showComments)}
-          className="bg-neutral-800 text-white text-xs rounded px-4 py-2 hover:bg-avax-red transition duration-300 w-[60%]"
+          className="bg-neutral-800 text-white text-xs rounded px-6 py-2 hover:bg-avax-red transition duration-300 w-[60%]"
         >
           {showComments ? 'Hide Comments' : 'Show Comments'}
         </button>

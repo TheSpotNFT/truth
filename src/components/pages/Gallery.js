@@ -56,42 +56,32 @@ const Gallery = ({ account }) => {
   const fetchAllItems = async () => {
     if (loading) return;
     setLoading(true);
-
+  
     try {
-      const { ethereum } = window;
-      if (!ethereum) {
-        console.error("Ethereum object not found");
-        return;
-      }
-
-      const provider = new ethers.providers.Web3Provider(ethereum);
-      const signer = provider.getSigner();
-      //console.log("Provider and Signer initialized");
-
+      const provider = new ethers.providers.JsonRpcProvider('https://api.avax.network/ext/bc/C/rpc'); // Use Avalanche public RPC
       const contract = new Contract(
         PROVABLETRUTH_ADDRESS,
         PROVABLETRUTH_ABI,
-        signer
+        provider
       );
-      //console.log("Contract initialized");
-
+  
       // Ensure totalSupply is a function in the contract
       if (typeof contract.totalSupply !== "function") {
         console.error("totalSupply is not a function in the contract");
         return;
       }
-
+  
       const totalSupply = await contract.totalSupply();
       setTotalSupply(totalSupply.toNumber()); // Update the total supply state
       console.log("Total supply fetched:", totalSupply.toString());
-
+  
       const fetchMetadata = async (tokenId) => {
         const options = {
           method: 'GET',
           url: `https://glacier-api.avax.network/v1/chains/43114/nfts/collections/0x8f58F10fD2Ec58e04a26F0A178E727BC60224ddA/tokens/${tokenId}`,
           headers: { accept: 'application/json' }
         };
-
+  
         try {
           const response = await axios.request(options);
           if (response.data && response.data.metadata) {
@@ -112,14 +102,14 @@ const Gallery = ({ account }) => {
           return null;
         }
       };
-
+  
       const tokenPromises = [];
       for (let i = 1; i <= totalSupply; i++) {
         tokenPromises.push(fetchMetadata(i));
       }
-
+  
       const allFetchedTokens = (await Promise.all(tokenPromises)).filter(token => token !== null);
-
+  
       setAllTokens(allFetchedTokens);
       filterAndSortTokens(allFetchedTokens);
     } catch (err) {
@@ -128,10 +118,11 @@ const Gallery = ({ account }) => {
       setLoading(false);
     }
   };
-
+  
   useEffect(() => {
     fetchAllItems();
   }, []);
+  
 
   const toggleSortLikes = () => {
     setSortLikes(!sortLikes);

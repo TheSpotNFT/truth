@@ -223,20 +223,23 @@ const Main = ({ account }) => {
 />
                     </div>
                     <div className="flex space-x-4">
-                        <button
-                            onClick={handleSubmit}
-                            disabled={txProcessing}
-                            className="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded"
-                        >
-                            {txProcessing ? "Processing..." : "Submit Article"}
-                        </button>
-                        <button
-                            onClick={handleReset}
-                            className="bg-gray-400 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded"
-                        >
-                            Reset Form
-                        </button>
-                    </div>
+    <button
+        onClick={handleSubmit}
+        disabled={txProcessing || !account}
+        className={`font-bold py-2 px-4 rounded ${
+            txProcessing || !account ? 'bg-gray-500 text-white cursor-not-allowed' : 'bg-gray-300 hover:bg-gray-400 text-black'
+        }`}
+    >
+        {txProcessing ? "Processing..." : (!account ? "Login to Submit" : "Submit Article (0.25 Avax)")}
+    </button>
+    <button
+        onClick={handleReset}
+        className="bg-gray-400 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded"
+    >
+        Reset Form
+    </button>
+</div>
+
                 </div>
             </div>
         </div>

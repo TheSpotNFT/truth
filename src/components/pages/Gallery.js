@@ -272,7 +272,7 @@ const Gallery = ({ account }) => {
               className="text-gray-200 bg-neutral-700 shadow-md text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
           </div>
-          <div className="flex-1 w-full md:pr-0 pl-2">
+          <div className="flex-1 w-full md:pr-0 md:pl-2">
             <input
               type="text"
               value={contributorSearch}

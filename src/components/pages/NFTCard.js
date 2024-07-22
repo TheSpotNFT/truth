@@ -76,6 +76,10 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
 
   const contributorObj = attributes.find(attr => attr.trait_type === "Contributor");
   const contributor = contributorObj ? contributorObj.value : "Unknown";
+  
+  const creatorObj = attributes.find(attr => attr.trait_type === "Creator");
+  const creator = creatorObj ? creatorObj.value : null;
+  const formattedCreator = creator ? `${creator.slice(0, 4)}...${creator.slice(-4)}` : null;
 
   const fetchLikesAndCheckLiked = async (tokenId) => {
     try {
@@ -326,7 +330,12 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           </div>
 
           <h2 className="font-bold text-lg xl:text-2xl mt-2 text-center pt-8">{name || "Unnamed Article"}</h2>
-          <h2 className="font-bold text-lg mt-2 text-center pb-8">{`Contributor: ${contributor || "None"}`}</h2>
+          <h2 className="font-bold text-lg mt-2 text-center pb-2">{`Contributor: ${contributor || "None"}`}</h2>
+          {creator && (
+            <h2 className="font-bold text-lg mt-2 text-center pb-8">
+              Creator: <a href={`https://snowscan.xyz/address/${creator}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">{formattedCreator}</a>
+            </h2>
+          )}
 
           <div className="flex items-center justify-end mt-2 space-x-2 pb-4 sm:pr-6 lg:pr-6 xl:pr-4 2xl:pr-3">
             <div className="pr-2"><p className="text-gray-600 text-lg font-bold pl-4">{likes}</p></div>

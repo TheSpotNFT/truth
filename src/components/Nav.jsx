@@ -13,7 +13,7 @@ export const Nav = ({
   logoutOfWeb3Modal,
 }) => {
   let Links = [
-    { name: "Add Article", link: "/gallery" },
+    { name: "Add Piece", link: "/gallery" },
     { name: "Read", link: "/" },
     { name: "Getting Started", link: "/faq" },
     { name: "Twitter", link: "https://twitter.com/thespotUG" },
@@ -30,7 +30,7 @@ export const Nav = ({
           <div className="flex flex-col items-center w-full xl:flex-row xl:justify-between">
             <div className="flex items-center justify-center w-full xl:justify-start xl:w-auto pl-2">
 
-              <span className="text-lg  flex md:text-3xl font-bold text-white z-30">ProSo</span>
+              <span className="text-lg  flex md:text-3xl font-bold text-white z-30 pl-20">ProSo</span>
             </div>
             <ul
               className={`pr-12 overflow-y-visible xl:flex xl:items-center absolute xl:static bg-neutral-700 left-0 sm:w-full md:w-1/3 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "md:top-20 sm:top-[75px] opacity-100 shadow-md" : "top-[-250px] md:top-[-300px] z-10"
@@ -59,7 +59,7 @@ export const Nav = ({
             onClick={() => setOpen(!open)}
             className="text-3xl absolute left-8 top-6 md:top-6 cursor-pointer xl:hidden z-40"
           >
-            <div className="mx-auto justify-center items-center text-white font-4xl pb-2">?</div>
+            <div className="mx-auto justify-center items-center text-white font-4xl pb-2 w-36">?</div>
           </div>
           <div className="z-30"><LogoutButton
             account={account}

@@ -134,7 +134,8 @@ const Main = ({ account }) => {
                 image: `ipfs://${imageUrl}`,
                 attributes: [
                     { trait_type: "Contributor", value: articleDetails.contributor },
-                    { trait_type: "Content", value: articleDetails.content }
+                    { trait_type: "Content", value: articleDetails.content },
+                    { trait_type: "Creator", value: account }
                 ]
             };
             const metadataUrl = await uploadMetadataToIPFS(metadata);
@@ -160,11 +161,11 @@ const Main = ({ account }) => {
             <div className="container mx-auto">
                 <div className="pb-8">
                     <button onClick={goToGallery} className="bg-neutral-700 hover:bg-neutral-600 text-white font-bold py-2 px-4 rounded w-full h-24 text-2xl">
-                        Back to Articles
+                        Back to Pieces
                     </button>
                 </div>
                 <div className="bg-neutral-900 p-6 rounded-lg shadow-md">
-                    <h1 className="text-2xl font-bold mb-4 text-neutral-400">Submit an Article</h1>
+                    <h1 className="text-2xl font-bold mb-4 text-neutral-400">Submit Your Piece</h1>
                   
                     <div className="mb-4">
                         <input
@@ -219,27 +220,26 @@ const Main = ({ account }) => {
   value={articleDetails.content}
   onChange={(value) => setArticleDetails({ ...articleDetails, content: value })}
   className="bg-gray-800 text-gray-300 border-0 placeholder-gray-500 h-96 pb-12"
-  placeholder="Write your article content sadashere..."
+  placeholder="Write your article content here..."
 />
                     </div>
                     <div className="flex space-x-4">
-    <button
-        onClick={handleSubmit}
-        disabled={txProcessing || !account}
-        className={`font-bold py-2 px-4 rounded ${
-            txProcessing || !account ? 'bg-gray-500 text-white cursor-not-allowed' : 'bg-gray-300 hover:bg-gray-400 text-black'
-        }`}
-    >
-        {txProcessing ? "Processing..." : (!account ? "Login to Submit" : "Submit Article (0.25 Avax)")}
-    </button>
-    <button
-        onClick={handleReset}
-        className="bg-gray-400 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded"
-    >
-        Reset Form
-    </button>
-</div>
-
+                        <button
+                            onClick={handleSubmit}
+                            disabled={txProcessing || !account}
+                            className={`font-bold py-2 px-4 rounded ${
+                                txProcessing || !account ? 'bg-gray-500 text-white cursor-not-allowed' : 'bg-gray-300 hover:bg-gray-400 text-black'
+                            }`}
+                        >
+                            {txProcessing ? "Processing..." : (!account ? "Login to Submit" : "Submit Article (0.25 Avax)")}
+                        </button>
+                        <button
+                            onClick={handleReset}
+                            className="bg-gray-400 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded"
+                        >
+                            Reset Form
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

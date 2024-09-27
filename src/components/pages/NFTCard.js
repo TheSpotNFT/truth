@@ -7,7 +7,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, expanded, viewMode }) => {
-  const { name, image, attributes, description, tokenId } = token;
+  const { name, image, attributes = [], description, tokenId } = token.parsedMetadata || {};
   const [likes, setLikes] = useState(0);
   const [hasLiked, setHasLiked] = useState(false);
   const [tipAmount, setTipAmount] = useState("");
@@ -18,6 +18,9 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   const [hasBookmarked, setHasBookmarked] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
   const [shareImage, setShareImage] = useState('');
+
+  // Ensure attributes is always an array, default to empty if undefined
+  const safeAttributes = Array.isArray(attributes) ? attributes : [];
 
   const toggleDetails = () => {
     setShowDetails(!showDetails);
@@ -39,7 +42,8 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
     { symbol: "KONG", address: "0xEbB5d4959B2FbA6318FbDa7d03cd44aE771fc999" },
   ], []);
 
-  const content = attributes.find(attr => attr.trait_type === "Content")?.value;
+  // Safely fetch the content attribute value
+  const content = safeAttributes.find(attr => attr.trait_type === "Content")?.value || "";
 
   const fetchTotalTips = async () => {
     try {
@@ -74,10 +78,11 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
     fetchTotalTips();
   }, [tokenId, account, availableTokens]);
 
-  const contributorObj = attributes.find(attr => attr.trait_type === "Contributor");
+  // Fetch contributor and creator information safely
+  const contributorObj = safeAttributes.find(attr => attr.trait_type === "Contributor");
   const contributor = contributorObj ? contributorObj.value : "Unknown";
   
-  const creatorObj = attributes.find(attr => attr.trait_type === "Creator");
+  const creatorObj = safeAttributes.find(attr => attr.trait_type === "Creator");
   const creator = creatorObj ? creatorObj.value : null;
   const formattedCreator = creator ? `${creator.slice(0, 4)}...${creator.slice(-4)}` : null;
 
@@ -146,27 +151,6 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   useEffect(() => {
     fetchBookmarkStatus();
   }, [account]);
-
-  const refreshMetadata = async () => {
-    try {
-      const response = await fetch(`https://glacier-api.avax.network/v1/chains/43114/nfts/collections/0x8f58F10fD2Ec58e04a26F0A178E727BC60224ddA/tokens/${tokenId}:reindex`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-      });
-
-      if (response.ok) {
-        alert('Metadata refreshed successfully!');
-      } else {
-        alert('Error refreshing metadata. Please try again later.');
-      }
-    } catch (error) {
-      console.error("Error refreshing metadata:", error);
-      alert('Error refreshing metadata. Please try again later.');
-    }
-  };
 
   const onLike = async (tokenId) => {
     try {
@@ -373,7 +357,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
                 </svg>
               </button>
             </div>
-            <div className="pl-4">
+            {/*<div className="pl-4">
               <button onClick={refreshMetadata} className="bg-avax-red text-white pl-2 pr-2 py-1 rounded hover:bg-red-600">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -386,7 +370,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
                   <path d="M 15 3 C 12.031398 3 9.3028202 4.0834384 7.2070312 5.875 A 1.0001 1.0001 0 1 0 8.5058594 7.3945312 C 10.25407 5.9000929 12.516602 5 15 5 C 20.19656 5 24.450989 8.9379267 24.951172 14 L 22 14 L 26 20 L 30 14 L 26.949219 14 C 26.437925 7.8516588 21.277839 3 15 3 z M 4 10 L 0 16 L 3.0507812 16 C 3.562075 22.148341 8.7221607 27 15 27 C 17.968602 27 20.69718 25.916562 22.792969 24.125 A 1.0001 1.0001 0 1 0 21.494141 22.605469 C 19.74593 24.099907 17.483398 25 15 25 C 9.80344 25 5.5490109 21.062074 5.0488281 16 L 8 16 L 4 10 z" fill="white"></path>
                 </svg>
               </button>
-            </div>
+            </div>*/}
           </div>
           {showTipInputs && (
             <>
@@ -439,9 +423,6 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           )}
         </>
       )}
-       {/*}<div className="w-full pt-4">
-              <CommentSection erc721TokenId={token.tokenId} account={account} />
-    </div>*/}
       <div className="text-gray-600 text-xs pt-4">{tokenId}</div>
     </div>
   );

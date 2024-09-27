@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { ethers, Contract } from "ethers";
-import axios from "axios";
 import NFTCard from "./NFTCard";
 import { PROVABLETRUTHLIKESANDTIPS_ABI, PROVABLETRUTHLIKESANDTIPS_ADDRESS } from '../Contracts/PROVABLETRUTHLikeAndTip';
 import { PROVABLETRUTH_ABI, PROVABLETRUTH_ADDRESS } from "../Contracts/PROVABLETRUTH";
 import { useLocation } from 'react-router-dom';
 import { signInAnonymously } from "../../firebase3";
 
+
 const Gallery = ({ account }) => {
   const [allTokens, setAllTokens] = useState([]);
   const [displayTokens, setDisplayTokens] = useState([]);
   const [loading, setLoading] = useState(false);
   const [totalSupply, setTotalSupply] = useState(0); // New state for total supply
-  const [pageToken, setPageToken] = useState(null);
   const [showBookmarks, setShowBookmarks] = useState(false);
   const [articleType, setArticleType] = useState('all');
   const [sortLikes, setSortLikes] = useState(false);
@@ -28,11 +27,20 @@ const Gallery = ({ account }) => {
   const [tipsData, setTipsData] = useState({});
   const [expandedTokenId, setExpandedTokenId] = useState(null);
   const [viewMode, setViewMode] = useState('card'); // New state for view mode
+  const [moralisInitialized, setMoralisInitialized] = useState(false);
 
   useEffect(() => {
     // Sign in anonymously on component mount
-    signInAnonymously();
+    console.log("Attempting to sign in anonymously");
+    signInAnonymously()
+      .then(() => console.log("Anonymous sign-in successful"))
+      .catch(err => console.error("Anonymous sign-in failed", err));
   }, []);
+
+  useEffect(() => {
+    console.log("Calling fetchAllItems");
+    fetchAllItems();
+  }, []); // Call fetchAllItems once on component mount
 
   const shuffleArray = (array) => {
     const shuffledArray = array.slice();
@@ -47,68 +55,78 @@ const Gallery = ({ account }) => {
 
   const toggleSortTips = () => {
     setSortTips(!sortTips);
+    console.log("Sort tips toggled:", !sortTips);
   };
 
   const handleTipsFetch = (tokenId, tips) => {
+    console.log("Fetched tips for token ID", tokenId, ":", tips);
     setTipsData(prev => ({ ...prev, [tokenId]: tips }));
   };
 
   const fetchAllItems = async () => {
     if (loading) return;
     setLoading(true);
+    console.log("Fetching all items...");
   
     try {
-      const provider = new ethers.providers.JsonRpcProvider('https://api.avax.network/ext/bc/C/rpc'); // Use Avalanche public RPC
-      const contract = new Contract(
-        PROVABLETRUTH_ADDRESS,
-        PROVABLETRUTH_ABI,
-        provider
-      );
+      let allFetchedTokens = [];
+      let cursor = null;
   
-      // Ensure totalSupply is a function in the contract
-      if (typeof contract.totalSupply !== "function") {
-        console.error("totalSupply is not a function in the contract");
-        return;
-      }
+      while (true) {
+        console.log("Fetching page with cursor:", cursor); // Debugging line
   
-      const totalSupply = await contract.totalSupply();
-      setTotalSupply(totalSupply.toNumber()); // Update the total supply state
-      console.log("Total supply fetched:", totalSupply.toString());
+        const url = new URL(`https://deep-index.moralis.io/api/v2.2/nft/0x8f58F10fD2Ec58e04a26F0A178E727BC60224ddA`);
+        const params = {
+          chain: "avalanche",
+          format: "decimal",
+          limit: 100,
+          cursor: cursor,
+        };
+        Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
   
-      const fetchMetadata = async (tokenId) => {
         const options = {
-          method: 'GET',
-          url: `https://glacier-api.avax.network/v1/chains/43114/nfts/collections/0x8f58F10fD2Ec58e04a26F0A178E727BC60224ddA/tokens/${tokenId}`,
-          headers: { accept: 'application/json' }
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            "X-API-Key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjUzNzNiZmVlLTMxODctNGVlMi1hNTJjLWQzNmFmYzQ1OTAzMiIsIm9yZ0lkIjoiMjQ4NzU1IiwidXNlcklkIjoiMjUxOTk2IiwidHlwZUlkIjoiZDc0ZjE3OWQtNjYxMC00N2JmLWJjYzctYjJjZWIyNmZmY2VmIiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3MjczMTM0NzEsImV4cCI6NDg4MzA3MzQ3MX0.eT8VsglTQqOnENcgO2TD_jfMH0GLFVrkvVUBLrdzmek",
+          },
         };
   
-        try {
-          const response = await axios.request(options);
-          if (response.data && response.data.metadata) {
-            const metadata = {
-              tokenId: tokenId,
-              name: response.data.metadata.name,
-              description: response.data.metadata.description,
-              image: response.data.metadata.imageUri,
-              attributes: JSON.parse(response.data.metadata.attributes)
-            };
-            return metadata;
-          } else {
-            console.error(`Metadata not found for token ID ${tokenId}`);
-            return null;
-          }
-        } catch (error) {
-          console.error(`Error fetching metadata for token ID ${tokenId}:`, error);
-          return null;
-        }
-      };
+        const response = await fetch(url, options);
+        const data = await response.json();
   
-      const tokenPromises = [];
-      for (let i = 1; i <= totalSupply; i++) {
-        tokenPromises.push(fetchMetadata(i));
+        if (response.ok && data && Array.isArray(data.result)) {
+          console.log(`Fetched ${data.result.length} tokens`); // Debugging line
+  
+          // Parse the metadata for each token
+          const parsedTokens = data.result.map(token => {
+            try {
+              if (token.metadata) {
+                token.parsedMetadata = JSON.parse(token.metadata);
+              } else {
+                token.parsedMetadata = {};
+              }
+            } catch (error) {
+              console.error(`Error parsing metadata for token ID ${token.token_id}:`, error);
+              token.parsedMetadata = {}; // Set to an empty object on error
+            }
+            return token;
+          });
+  
+          allFetchedTokens = [...allFetchedTokens, ...parsedTokens];
+  
+          if (data.cursor) {
+            cursor = data.cursor;
+          } else {
+            console.log("No more pages to fetch."); // Debugging line
+            break; // No more pages
+          }
+        } else {
+          throw new Error(data.message || "Error fetching data");
+        }
       }
   
-      const allFetchedTokens = (await Promise.all(tokenPromises)).filter(token => token !== null);
+      console.log("Total tokens fetched:", allFetchedTokens.length); // Debugging line
   
       setAllTokens(allFetchedTokens);
       filterAndSortTokens(allFetchedTokens);
@@ -119,126 +137,108 @@ const Gallery = ({ account }) => {
     }
   };
   
-  useEffect(() => {
-    fetchAllItems();
-  }, []);
+  
+  
   
 
-  const toggleSortLikes = () => {
-    setSortLikes(!sortLikes);
-  };
-
-  const fetchLikesAndCheckLiked = async (tokenId) => {
-    try {
-      const { ethereum } = window;
-      if (ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const contract = new Contract(
-          PROVABLETRUTHLIKESANDTIPS_ADDRESS,
-          PROVABLETRUTHLIKESANDTIPS_ABI,
-          signer
-        );
-
-        const count = await contract.likes(tokenId);
-        setLikes(parseInt(count.toString(), 10));
-      }
-    } catch (error) {
-      console.error("Error fetching likes count or checking liked status:", error);
-    }
-  };
 
   useEffect(() => {
-    if (allTokens.length > 0) {
-      allTokens.forEach(token => fetchLikesAndCheckLiked(token.tokenId));
-    }
-  }, [allTokens]);
-
-  useEffect(() => {
+    console.log("Tokens or filter options changed, filtering and sorting tokens...");
     filterAndSortTokens(allTokens);
-  }, [articleType, community, searchText1, searchText2, searchText3, recipeNameSearch, contributorSearch, sortOption, sortLikes, sortTips]);
+  }, [allTokens, articleType, community, searchText1, searchText2, searchText3, recipeNameSearch, contributorSearch, sortOption, sortLikes, sortTips]);
 
   const filterAndSortTokens = (tokens) => {
-    // Ensure tokens have proper metadata and attributes
-    let filteredTokens = tokens.filter(token => token.name && token.description && token.attributes);
+    console.log("checking...", tokens);
+    console.log("Filtering and sorting tokens...", tokens.length);
     
-    //console.log('Full Token List:', tokens);
-   // console.log('Tokens after initial filtering:', filteredTokens);
+    let filteredTokens = tokens.map(token => {
+      let parsedMetadata = {};
+
+      if (token.metadata) {
+        if (typeof token.metadata === 'string') {
+          try {
+            parsedMetadata = JSON.parse(token.metadata);
+          } catch (error) {
+            console.error("Error parsing token metadata:", error);
+            parsedMetadata = {};
+          }
+        } else {
+          parsedMetadata = token.metadata;
+        }
+      }
+
+      return {
+        ...token,
+        parsedMetadata,
+        tokenId: Number(token.token_id) // Convert tokenId to number
+      };
+    }).filter(token => {
+      return token.parsedMetadata && token.parsedMetadata.attributes;
+    });
+
+    console.log("Filtered tokens after parsing metadata:", filteredTokens.length);
 
     // Filter based on article type (category)
     if (articleType !== 'all') {
-        filteredTokens = filteredTokens.filter(token => token.description.toLowerCase() === articleType.toLowerCase());
+      filteredTokens = filteredTokens.filter(token => token.parsedMetadata.description.toLowerCase() === articleType.toLowerCase());
     }
-    //console.log('Tokens after articleType filtering:', filteredTokens);
 
     // Apply search terms filtering (keyword search in content)
     const searchTerms = [searchText1, searchText2, searchText3].filter(text => text.trim() !== '');
     if (searchTerms.length > 0) {
-        filteredTokens = filteredTokens.filter(token => {
-            try {
-                const contentAttribute = token.attributes.find(attr => attr.trait_type === 'Content');
-                return contentAttribute && searchTerms.every(term =>
-                    contentAttribute.value.toLowerCase().includes(term.toLowerCase())
-                );
-            } catch (error) {
-                console.error("Error parsing attributes for search terms filtering:", error, token);
-                return false;
-            }
-        });
+      filteredTokens = filteredTokens.filter(token => {
+        const contentAttribute = token.parsedMetadata.attributes.find(attr => attr.trait_type === 'Content');
+        return contentAttribute && searchTerms.every(term =>
+          contentAttribute.value.toLowerCase().includes(term.toLowerCase())
+        );
+      });
     }
-    //console.log('Tokens after search terms filtering:', filteredTokens);
 
     // Filter based on article name (title)
     if (recipeNameSearch.trim() !== '') {
-        filteredTokens = filteredTokens.filter(token => token.name.toLowerCase().includes(recipeNameSearch.toLowerCase()));
+      filteredTokens = filteredTokens.filter(token => token.parsedMetadata.name.toLowerCase().includes(recipeNameSearch.toLowerCase()));
     }
-    //console.log('Tokens after recipeNameSearch filtering:', filteredTokens);
 
     // Filter based on contributor search
     if (contributorSearch.trim() !== '') {
-        filteredTokens = filteredTokens.filter(token => {
-            try {
-                return token.attributes.some(attr => attr.trait_type === "Contributor" && attr.value.toLowerCase().includes(contributorSearch.toLowerCase()));
-            } catch (error) {
-               // console.error("Error parsing attributes for contributorSearch filtering:", error, token);
-                return false;
-            }
-        });
+      filteredTokens = filteredTokens.filter(token => {
+        return token.parsedMetadata.attributes.some(attr => attr.trait_type === "Contributor" && attr.value.toLowerCase().includes(contributorSearch.toLowerCase()));
+      });
     }
-    //console.log('Tokens after contributorSearch filtering:', filteredTokens);
+
+    console.log("Filtered tokens after all conditions:", filteredTokens.length);
 
     // Apply sorting based on selected option
     switch (sortOption) {
-        case 'likesDesc':
-            filteredTokens.sort((a, b) => b.likes - a.likes);
-            break;
-        case 'tipsDesc':
-            filteredTokens.sort((a, b) => {
-                const tipsA = Object.values(tipsData[a.tokenId] || {}).reduce((acc, val) => acc + parseFloat(val), 0);
-                const tipsB = Object.values(tipsData[b.tokenId] || {}).reduce((acc, val) => acc + parseFloat(val), 0);
-                return tipsB - tipsA;
-            });
-            break;
-        case 'newest':
-            filteredTokens.sort((a, b) => b.tokenId - a.tokenId);
-            break;
-        case 'oldest':
-            filteredTokens.sort((a, b) => a.tokenId - b.tokenId);
-            break;
-        case 'random':
-        default:
-            filteredTokens = shuffleArray(filteredTokens);
-            break;
+      case 'likesDesc':
+        filteredTokens.sort((a, b) => b.likes - a.likes);
+        break;
+      case 'tipsDesc':
+        filteredTokens.sort((a, b) => {
+          const tipsA = Object.values(tipsData[a.tokenId] || {}).reduce((acc, val) => acc + parseFloat(val), 0);
+          const tipsB = Object.values(tipsData[b.tokenId] || {}).reduce((acc, val) => acc + parseFloat(val), 0);
+          return tipsB - tipsA;
+        });
+        break;
+      case 'newest':
+        filteredTokens.sort((a, b) => b.tokenId - a.tokenId);
+        break;
+      case 'oldest':
+        filteredTokens.sort((a, b) => a.tokenId - b.tokenId);
+        break;
+      case 'random':
+      default:
+        filteredTokens = shuffleArray(filteredTokens);
+        break;
     }
 
     setDisplayTokens(filteredTokens);
-    //console.log('Final filtered tokens:', filteredTokens);
-};
-
-
+    console.log("Display tokens set:", filteredTokens.length);
+  };
 
   const toggleBookmarks = () => {
     setShowBookmarks(!showBookmarks);
+    console.log("Show bookmarks toggled:", !showBookmarks);
   };
 
   useEffect(() => {
@@ -249,17 +249,14 @@ const Gallery = ({ account }) => {
       const token = allTokens.find(token => token.metadata && token.metadata.name === formattedName);
       if (token) {
         setExpandedTokenId(token.tokenId);
+        console.log("Expanded token ID set to:", token.tokenId);
       }
     }
   }, [location, allTokens]);
 
-  const sanitizeName = (name) => {
-    return name.replace(/[()]/g, '').replace(/\s+/g, '_');
-  };
-
   return (
     <div className="container mx-auto p-4 pt-0 md:pt-4">
-      <h1 className="text-6xl pb-8 pt-12 font-bold mb-4 text-neutral-800">Browse {totalSupply} Piece</h1> {/* Use totalSupply here */}
+      <h1 className="text-6xl pb-8 pt-12 font-bold mb-4 text-neutral-800">Browse {displayTokens.length} Piece</h1> {/* Use totalSupply here */}
       <div className="py-0 md:pb-0 md:py-0 lg:px-32 xl:px-48 mx-auto 2xl:px-32">
         {/* Search Inputs */}
         <div className="flex flex-col md:flex-row items-center justify-center w-full space-y-2 md:space-y-0 mt-2 pb-2">

@@ -298,7 +298,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
 
   const copyLinkToClipboard = () => {
     if (!name) {
-      console.error("Article name not found");
+      console.error("Piece name not found");
       return;
     }
     const articleName = sanitizeName(name);
@@ -363,7 +363,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
             )}
           </div>
 
-          <h2 className="font-bold text-lg xl:text-2xl mt-2 text-center pt-8">{name || "Unnamed Article"}</h2>
+          <h2 className="font-bold text-lg xl:text-2xl mt-2 text-center pt-8">{name || "Unnamed Piece"}</h2>
           <h2 className="font-bold text-lg mt-2 text-center pb-2">{`Contributor: ${contributor || "None"}`}</h2>
           {creator && (
             <h2 className="font-bold text-lg mt-2 text-center pb-8">
@@ -453,12 +453,12 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           )}
           <div className="pt-4">
             <button onClick={toggleTipInputs} className={`bg-neutral-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red duration-300 text-white px-3 py-1 rounded`}>
-              {showTipInputs ? "Hide Tipping" : "Tip Article Holder"}
+              {showTipInputs ? "Hide Tipping" : "Tip Piece Holder"}
             </button>
           </div>
           <div className="pt-4">
             <button onClick={toggleDetails} className={`bg-neutral-800 ${showDetails ? "w-96" : "w-full"} hover:bg-avax-red duration-300 text-white px-3 py-1 rounded`}>
-              {showDetails ? "Hide Article" : "View Article"}
+              {showDetails ? "Hide Piece" : "View Piece"}
             </button>
             {/* Comments Section */}
            

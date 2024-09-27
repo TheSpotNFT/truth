@@ -18,6 +18,9 @@ export const Nav = ({
     { name: "Getting Started", link: "/faq" },
     { name: "Twitter", link: "https://twitter.com/thespotUG" },
     { name: "Discord", link: "https://discord.gg/pJT7ndQ88F" },
+    { name: "ProSo Contract", link: "https://snowscan.xyz/address/0x8f58F10fD2Ec58e04a26F0A178E727BC60224ddA" },
+    { name: "LikesAndTips Contract", link: "https://snowscan.xyz/address/0x4d2ca1228eAAbB03aB2F5686598451341F69Db55" },
+
   ];
 
   const [open, setOpen] = useState(false);
@@ -33,7 +36,7 @@ export const Nav = ({
               <span className="text-lg  flex md:text-3xl font-bold text-white z-30 pl-20">ProSo</span>
             </div>
             <ul
-              className={`pr-12 overflow-y-visible xl:flex xl:items-center absolute xl:static bg-neutral-700 left-0 sm:w-full md:w-1/3 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "md:top-20 sm:top-[75px] opacity-100 shadow-md" : "top-[-250px] md:top-[-300px] z-10"
+              className={`pr-12 overflow-y-visible xl:flex xl:items-center absolute xl:static bg-neutral-700 left-0 sm:w-full md:w-1/3 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "md:top-20 sm:top-[75px] opacity-100 shadow-md" : "top-[-250px] md:top-[-350px] z-10"
                 }`}
             >
               {Links.map((link) => (

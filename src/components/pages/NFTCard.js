@@ -19,6 +19,9 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   const [shareUrl, setShareUrl] = useState('');
   const [shareImage, setShareImage] = useState('');
 
+  const finalTokenId = token.tokenId; // Use token.tokenId directly for all function calls
+
+
   // Ensure attributes is always an array, default to empty if undefined
   const safeAttributes = Array.isArray(attributes) ? attributes : [];
 
@@ -63,7 +66,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
 
       let tips = {};
       for (const token of availableTokens) {
-        const tipDetails = await contract.getTipsForToken(tokenId, token.address);
+        const tipDetails = await contract.getTipsForToken(finalTokenId, token.address);
         const total = tipDetails.reduce((acc, tip) => acc.add(ethers.BigNumber.from(tip.amount)), ethers.BigNumber.from(0));
         const formattedTotal = ethers.utils.formatEther(total.toString());
         tips[token.symbol] = Math.floor(parseFloat(formattedTotal)).toString();
@@ -76,7 +79,14 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
 
   useEffect(() => {
     fetchTotalTips();
-  }, [tokenId, account, availableTokens]);
+  }, [finalTokenId, account, availableTokens]);
+
+  useEffect(() => {
+    console.log("Token received in NFTCard:", token);
+    console.log("Parsed Metadata:", token.parsedMetadata);
+    console.log("Token ID:", finalTokenId);
+  }, [token]);
+  
 
   // Fetch contributor and creator information safely
   const contributorObj = safeAttributes.find(attr => attr.trait_type === "Contributor");
@@ -86,7 +96,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   const creator = creatorObj ? creatorObj.value : null;
   const formattedCreator = creator ? `${creator.slice(0, 4)}...${creator.slice(-4)}` : null;
 
-  const fetchLikesAndCheckLiked = async (tokenId) => {
+  const fetchLikesAndCheckLiked = async (finalTokenId) => {
     try {
       const { ethereum } = window;
       if (ethereum) {
@@ -98,10 +108,10 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           signer
         );
 
-        const count = await contract.likes(tokenId);
+        const count = await contract.likes(finalTokenId);
         setLikes(parseInt(count.toString(), 10));
 
-        const liked = await contract.hasLiked(tokenId, account);
+        const liked = await contract.hasLiked(finalTokenId, account);
         setHasLiked(liked);
       }
     } catch (error) {
@@ -109,11 +119,15 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
     }
   };
 
-  const onBookmark = async (tokenId) => {
+  const onBookmark = async (finalTokenId) => {
     try {
+      console.log("Attempting to bookmark token ID:", finalTokenId);
       const { ethereum } = window;
-      if (!ethereum) return;
-
+      if (!ethereum) {
+        console.error("Ethereum object not found");
+        return;
+      }
+  
       const provider = new ethers.providers.Web3Provider(ethereum);
       const signer = provider.getSigner();
       const contract = new Contract(
@@ -121,9 +135,10 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
         PROVABLETRUTHLIKESANDTIPS_ABI,
         signer
       );
-
-      const tx = await contract.bookmark(tokenId);
+  
+      const tx = await contract.bookmark(finalTokenId);
       await tx.wait();
+      console.log("Successfully bookmarked token ID:", finalTokenId);
       fetchBookmarkStatus();
     } catch (error) {
       console.error("Error toggling bookmark state:", error);
@@ -141,7 +156,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
         signer
       );
 
-      const bookmarked = await contract.hasBookmarked(tokenId, account);
+      const bookmarked = await contract.hasBookmarked(finalTokenId, account);
       setHasBookmarked(bookmarked);
     } catch (error) {
       console.error("Error fetching bookmark status:", error);
@@ -152,8 +167,31 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
     fetchBookmarkStatus();
   }, [account]);
 
-  const onLike = async (tokenId) => {
+  useEffect(() => {
+    console.log("Account prop received:", account);
+    fetchBookmarkStatus();
+  }, [account]);
+
+  useEffect(() => {
+    const checkNetwork = async () => {
+      const { ethereum } = window;
+      if (ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const network = await provider.getNetwork();
+        console.log("Connected network:", network);
+        if (network.chainId !== 43114) { // Replace with your target chain ID
+          console.error("Incorrect network. Please switch to the correct network.");
+        }
+      }
+    };
+    checkNetwork();
+  }, []);
+  
+  
+
+  const onLike = async (finalTokenId) => {
     try {
+      console.log("Attempting to like token ID:", finalTokenId);
       const { ethereum } = window;
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
@@ -163,17 +201,21 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           PROVABLETRUTHLIKESANDTIPS_ABI,
           signer
         );
-
-        const tx = await contract.like(tokenId);
+        console.log("Signer address:", await signer.getAddress());
+  
+        const tx = await contract.like(finalTokenId);
         await tx.wait();
-        fetchLikesAndCheckLiked(tokenId);
+        console.log("Successfully liked token ID:", finalTokenId);
+        fetchLikesAndCheckLiked(finalTokenId);
+      } else {
+        console.error("Ethereum object not found");
       }
     } catch (error) {
       console.error("Error toggling like state:", error);
     }
   };
 
-  const onTip = async (tokenId, tokenAddress, amount) => {
+  const onTip = async (finalTokenId, tokenAddress, amount) => {
     try {
       const { ethereum } = window;
       if (!ethereum) {
@@ -208,7 +250,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
         await approveTx.wait();
       }
 
-      const tipTx = await contract.tip(tokenId, tokenAddress, amountWei);
+      const tipTx = await contract.tip(finalTokenId, tokenAddress, amountWei);
       await tipTx.wait();
     } catch (error) {
       console.error("Error performing tip:", error);
@@ -216,11 +258,15 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
   };
 
   useEffect(() => {
-    fetchLikesAndCheckLiked(tokenId);
+    fetchLikesAndCheckLiked(finalTokenId);
   }, [account]);
 
   const handleLike = () => {
-    onLike(tokenId);
+    if (!account) {
+      console.error("No account connected. Please connect your wallet.");
+      return;
+    }
+    onLike(finalTokenId);
   };
 
   const handleTip = () => {
@@ -235,11 +281,15 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
       return;
     }
 
-    onTip(tokenId, tokenData.address, tipAmount);
+    onTip(finalTokenId, tokenData.address, tipAmount);
   };
 
   const handleBookmark = () => {
-    onBookmark(tokenId);
+    if (!account) {
+      console.error("No account connected. Please connect your wallet.");
+      return;
+    }
+    onBookmark(finalTokenId);
   };
 
   const sanitizeName = (name) => {
@@ -423,7 +473,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           )}
         </>
       )}
-      <div className="text-gray-600 text-xs pt-4">{tokenId}</div>
+      <div className="text-gray-600 text-xs pt-4">{finalTokenId}</div>
     </div>
   );
 };

@@ -465,7 +465,7 @@ const NFTCard = ({ token, account, showBookmarks, galleryLikes, onTipsFetch, exp
           </div>
           {showDetails && (
             <div className="grid grid-cols-2 gap-4 p-4">
-              <div className="col-span-2 bg-zinc-800 text-avax-white rounded p-2 drop-shadow-md mb-2 text-sm md:text-base xl:text-lg">
+              <div className="col-span-2 bg-zinc-800 text-avax-white rounded p-2 drop-shadow-md mb-2 text-sm md:text-base xl:text-lg sm:pb-36 md:pb-0">
                 <ReactQuill value={content} readOnly={true} theme="bubble" />
               </div>
          

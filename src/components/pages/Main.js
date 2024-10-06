@@ -214,13 +214,13 @@ const Main = ({ account }) => {
                         )}
                     </div>
                     <div className="mb-4">
-                        <div className="pb-6 text-neutral-400 font-bold text-2xl">Your Article</div>
+                        <div className="pb-6 text-neutral-400 font-bold text-2xl">Your Piece</div>
                     <ReactQuill
   theme="snow"
   value={articleDetails.content}
   onChange={(value) => setArticleDetails({ ...articleDetails, content: value })}
   className="bg-gray-800 text-gray-300 border-0 placeholder-gray-500 h-96 pb-12"
-  placeholder="Write your article content here..."
+  placeholder="Write your piece content here..."
 />
                     </div>
                     <div className="flex space-x-4">
